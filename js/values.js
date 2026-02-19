@@ -28,7 +28,7 @@ const ITEMS = [
     demand: "Decent",      trend: "Stable",     change: "+1,000,000",
     description: "High-performance vehicle from Season 6. Streamlined chassis and sustained resale demand among veteran traders.",
     notes: "S6 · Updated 4 days ago",
-    image: "assets/item-images/vehicles/torpedo.png"
+    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5q1g0nfmULCjKkJaSXLEo7SM0yyEl5VZyzqZPc3fXVw4HPxZ1HygydEzziDk3cDJ6uU4gIWfuQFHEdJqaeInko6zc9QIy_0fdDmtofNUipBuJJcj9W6PodZGrtC_LBlnVednXS3tN4GxuSc5m-Me9F5yxLhlQ2E2BCczb6pjQzEmBkn6WeswHWvfeXq3N/s614/Torpedo.jpg"
   },
   {
     name: "Beignet",       type: "Vehicle",
@@ -36,7 +36,7 @@ const ITEMS = [
     demand: "High",        trend: "Stable",     change: "+500,000",
     description: "Fan-favourite novelty vehicle from Season 8. Unique appearance and high-level requirement make it a rare find in active trades.",
     notes: "S8 · L10 · Updated 4 weeks ago",
-    image: "assets/item-images/vehicles/beignet.png"
+    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFyqwIeAI21wapBfNhCjPO_sAwv5NjrArpmGkTt6iaaXEm7TfFfZja4Bc9PGfgibMPOGUWnjoBoyNMVauUDT9nGLaI9YS6q9UlNn7XB7sOFuTkbaSdsVv14RRUXCRRyPUWyW0NxXV7TOEurB18_aAypxy4BExZXzECXKABQWBSc1Km3RW1dz8zMPHoEXHV/s800/Beignet.jpg"
   },
   {
     name: "Celsior",       type: "Vehicle",
