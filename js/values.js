@@ -553,9 +553,9 @@ const ITEMS = [
     name: "Thrusters",     type: "Spoiler",
     value: 40000000,       duped: 37000000,
     demand: "High",        trend: "Stable",     change: "",
-    description: "Thruster spoiler from Season 2. High demand due to exclusivity.",
+    description: "The Rocket Thrusters spoiler was one of the first animated spoilers added to Jailbreak. It is known for being rare because it was only obtainable in Season 2, and gets overpayments from collectors.",
     notes: "S2 · L9 · Updated 1 month ago",
-    image: ""
+    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOLKfDsF5xCRZ-q0NuUiKp7sSMfOT9-gztw8qak0D96eAcsmn-EYbgWclLtYG_RK2e4HHvP4Ow0hzV0bhFxemG6HaR6VCyAK0xxz2WfMIJHg0DGirrRjYZ67s2Ij6Fz3SnVE2GMHbkjMQ9_LuaIiFxVWArk3wFpuIOJLPr1dtSxUV6y_NnuTMDYaHgSrVU/s1003/Rocket%20Thrusters.jpg"
   },
   
   {
