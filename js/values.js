@@ -30,7 +30,7 @@ const ITEMS = [
     demand:"High",       trend:"Stable",
     change:"+500,000",   dupeChange:null,  demandChange:"",          trendChange:"",
     description:"Limited seasonal vehicle from Season 2. Sleek aerodynamic design and early-season origin make it one of the most coveted vehicles in the trading scene.",
-    tags:"S2",           updatedAt:_ago(0,7),
+    tags:"Limited",           updatedAt:_ago(0,7),
     image:"assets/item-images/vehicles/javelin.webp"
   },
   {
@@ -39,7 +39,7 @@ const ITEMS = [
     demand:"Decent",     trend:"Stable",
     change:"+1,000,000", dupeChange:"+500,000", demandChange:"",     trendChange:"",
     description:"High-performance vehicle from Season 6. Streamlined chassis and sustained resale demand among veteran traders.",
-    tags:"S6",           updatedAt:_ago(0,4),
+    tags:"S2",           updatedAt:_ago(0,4),
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5q1g0nfmULCjKkJaSXLEo7SM0yyEl5VZyzqZPc3fXVw4HPxZ1HygydEzziDk3cDJ6uU4gIWfuQFHEdJqaeInko6zc9QIy_0fdDmtofNUipBuJJcj9W6PodZGrtC_LBlnVednXS3tN4GxuSc5m-Me9F5yxLhlQ2E2BCczb6pjQzEmBkn6WeswHWvfeXq3N/s614/Torpedo.jpg"
   },
   {
