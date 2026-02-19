@@ -416,8 +416,8 @@ const ITEMS = [
   {
     name:"HyperShift L5",type:"Color",
     value:356000000,     duped:312500000,
-    demand:"Decent",     trend:"Stable",
-    change:"",           dupeChange:"", demandChange:"",             trendChange:"",
+    demand:"High",     trend:"Stable",
+    change:"+1,0000,000",           dupeChange:"+500,000", demandChange:"",             trendChange:"",
     description:"The rarest HyperShift obtained by collecting all Level 5 hyperchromes. Unique gradient rainbow effect.",
     tags:"Max Tier",     updatedAt:_ago(0,90),
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg9-__7QNY0CECkeRZfpLTSa1-Lj6ZFdAVXdFRE433E7tHAzFElQ0cXTxBEJ2f-kJ1H4lNiLIbTbfbIAO-rixEDZO2_K69HtbK2llyJ6_cKIC5iFhIQgpVKIPii0IFiWbAv-JpGobahC4woU7nnoHHIw3TJzsDz2sHfM97ZccLJ1p3qUYaHrQNspr2yWn9N/s327/Hyper%20Shift.gif"
@@ -428,7 +428,7 @@ const ITEMS = [
     demand:"Very Low",   trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Rainbow color referencing all Level 4 HyperChromes combined.",
-    tags:"L4",           updatedAt:_ago(0,90),
+    tags:"L4",           updatedAt:_ago(0),
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg9-__7QNY0CECkeRZfpLTSa1-Lj6ZFdAVXdFRE433E7tHAzFElQ0cXTxBEJ2f-kJ1H4lNiLIbTbfbIAO-rixEDZO2_K69HtbK2llyJ6_cKIC5iFhIQgpVKIPii0IFiWbAv-JpGobahC4woU7nnoHHIw3TJzsDz2sHfM97ZccLJ1p3qUYaHrQNspr2yWn9N/s327/Hyper%20Shift.gif"
   },
   {
