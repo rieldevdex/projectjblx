@@ -30,7 +30,7 @@ const ITEMS = [
     change: "+1,000,000",
     description: "The Torpedo is a seasonal vehicle in Jailbreak. Added in the 2018 Winter Update, it has the fourth-highest top speed in-game, beaten only by Scorpion, Brulee and the Jet Ski. The Torpedo required either Level 30 in OG Season 1 or Level 5 in OG Season 2, both on the Criminal team, for players to obtain it.",
     notes: "S2 · Updated 4 days ago",
-    image: "https://www.jailbreaktradingnetwork.com/images/torpedo.png" // TODO: Replace with JBLX hosted image
+    image: "assets/item-images/vehicles/torpedo.png" // TODO: Replace with JBLX hosted image
   },
   {
     name: "Beignet",
@@ -42,7 +42,7 @@ const ITEMS = [
     change: "+500,000",
     description: "The Beignet is a seasonal vehicle in Jailbreak. It was featured as the grand prize in Season 6: Race to the Top. It currently has the seventh-highest top speed in-game. The Beignet was obtained by reaching Level 10 through Contracts.",
     notes: "S6 · L10 · Updated 4 weeks ago",
-    image: "https://www.jailbreaktradingnetwork.com/images/beignet.png" // TODO: Replace with JBLX hosted image
+    image: "assets/item-images/vehicles/beignet.png" // TODO: Replace with JBLX hosted image
   },
   {
     name: "Celsior",
@@ -54,7 +54,7 @@ const ITEMS = [
     change: "-500,000",
     description: "One of the most overrated vehicle inside of Roblox Jailbreak. Literally a fucking flying brick.",
     notes: "S8 · L10 · Updated 6 days ago",
-    image: "https://www.jailbreaktradingnetwork.com/images/celsior.png" // TODO: Replace with JBLX hosted image
+    image: "assets/item-images/vehicles/celsior.png" // TODO: Replace with JBLX hosted image
   },
   {
     name: "Proto-8",
