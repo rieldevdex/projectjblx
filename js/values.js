@@ -58,7 +58,7 @@ const ITEMS = [
     change:"-500,000",   dupeChange:"-300,000", demandChange:"↓ was Decent", trendChange:"",
     description:"Refined luxury vehicle from Season 14. Facing a slight downtrend as newer seasonal releases compete for trader attention.",
     tags:"S14 · L10",    updatedAt:_ago(0,6),
-    image:"assets/item-images/vehicles/celsior.png"
+    image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGIZaPmMDb0C5v0sRtJUqRxVJ31ys4fcTRyyH5kSd1i1lH6ZulbkeKYCIJspDKSYBMW7tzpBnq0n_ADzauMS14NDBwyp__MydqeTXVEBX0fVXNWFNLGENr0-g03iHJ5X0S4U32sunUtTq4EF_oD8y85B7Qw7c2KK8mCEWrCO2mRcmThRi0Qknv50YF1zRw/s974/Celsior.jpg"
   },
   {
     name:"Proto-8",      type:"Vehicle",
