@@ -280,8 +280,8 @@ const ITEMS = [
   },
   {
     name: "Shell Classic", type: "Vehicle",
-    value: 2000000,        duped: null,
-    demand: "Low",         trend: "Stable",     change: "",
+    value: 2500000,        duped: null,
+    demand: "Medium",         trend: "Stable",     change: "",
     description: "The Shell Classic can be obtained from Tier 5 Legendary safes. The Shell Classic is based on a vintage roadster, but has rather unimpressive performance, making its demand extremely low.",
     notes: "Updated 1 month ago",
     image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOFE1YmGsnfnyZCpJZLoiIQhduqO9eL0CavZdstPt3-Jvt2r1zS2GAR6evwTh8aeymmuTQSZt8ITlVunQgPvSH-8VEABOLIFHx3xwyXO159xE3P_rzeqJqOiaaOVr-F4-qeHfVe8GCRzqV_ri3z7vuNrozxL0nj6i6_RZlWgo8ZX9rJ5-ipEWIZFLbuqQx/s565/Shell%20Classic.jpg"
