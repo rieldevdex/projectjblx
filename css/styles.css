@@ -866,10 +866,14 @@ tr:hover .row-img-wrap { border-color: var(--border-hi); }
   border: 1px solid;
   white-space: nowrap;
 }
-.type-vehicle     { color: #00c8f0; background: rgba(0,200,240,0.10); border-color: rgba(0,200,240,0.28); }
-.type-hyperchrome { color: #b07aff; background: rgba(176,122,255,0.10); border-color: rgba(176,122,255,0.28); }
+.type-vehicle     { color: #00c8f0; background: rgba(0,200,240,0.10);   border-color: rgba(0,200,240,0.28); }
+.type-spoiler     { color: #ff7eb3; background: rgba(255,126,179,0.10); border-color: rgba(255,126,179,0.28); }
+.type-texture     { color: #ff9f43; background: rgba(255,159,67,0.10);  border-color: rgba(255,159,67,0.28); }
+.type-color       { color: #a29bfe; background: rgba(162,155,254,0.10); border-color: rgba(162,155,254,0.28); }
+.type-rim         { color: #55efc4; background: rgba(85,239,196,0.10);  border-color: rgba(85,239,196,0.28); }
+.type-drift       { color: #fd79a8; background: rgba(253,121,168,0.10); border-color: rgba(253,121,168,0.28); }
+.type-horn        { color: #fdcb6e; background: rgba(253,203,110,0.10); border-color: rgba(253,203,110,0.28); }
 .type-furniture   { color: #ffd166; background: rgba(255,209,102,0.10); border-color: rgba(255,209,102,0.28); }
-.type-cosmetic    { color: #39e07a; background: rgba(57,224,122,0.10); border-color: rgba(57,224,122,0.28); }
 
 .badge-demand {
   display: inline-flex;
@@ -1102,6 +1106,40 @@ tr:hover .row-img-wrap { border-color: var(--border-hi); }
   color: #b07aff;
   letter-spacing: 0.04em;
 }
+
+
+/* ── LIVE UPDATED TIMER ───────────────────────────────────────── */
+.updated-time {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+}
+.updated-time .upd-icon { opacity: 0.5; margin-right: 3px; }
+
+/* ── STAT CHANGE BADGES (demand / trend shifts) ──────────────── */
+.change-prev {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  margin-left: 5px;
+  letter-spacing: 0.02em;
+  opacity: 0.75;
+}
+
+/* Modal last-updated bar */
+.modal-updated {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  margin-top: 10px;
+  letter-spacing: 0.04em;
+}
+.modal-updated svg { opacity: 0.45; flex-shrink: 0; }
 
 /* ================================================================
    TEAMS PAGE

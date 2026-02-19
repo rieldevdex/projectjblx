@@ -74,9 +74,13 @@
         <select class="filter-select" id="type-filter">
           <option value="">All Types</option>
           <option value="Vehicle">Vehicles</option>
-          <option value="HyperChrome">HyperChromes</option>
-          <option value="Furniture">Furniture</option>
-          <option value="Cosmetics">Cosmetics</option>
+          <option value="Spoiler">Spoilers</option>
+          <option value="Texture">Textures</option>
+          <option value="Color">Colors</option>
+          <option value="Rim">Rims</option>
+          <option value="Drift">Drifts</option>
+          <option value="Horn">Horns</option>
+          <option value="Furniture">Furnitures</option>
         </select>
 
         <select class="filter-select" id="demand-filter">
@@ -113,7 +117,8 @@
             <th>Duped</th>
             <th class="sortable" data-sort="demand">Demand <span class="sort-arrow">↕</span></th>
             <th>Trend</th>
-            <th>Notes</th>
+            <th>Tags</th>
+            <th>Updated</th>
           </tr>
         </thead>
         <tbody></tbody>
@@ -159,8 +164,12 @@
         <div class="modal-divider"></div>
         <div class="modal-desc-label">Description</div>
         <p class="modal-desc" id="modal-desc"></p>
-        <div class="modal-desc-label" style="margin-top:12px;">Notes</div>
+        <div class="modal-desc-label" style="margin-top:12px;">Tags</div>
         <p class="modal-notes" id="modal-notes"></p>
+        <div class="modal-updated">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Last updated: <span id="modal-updated-time" data-ts=""></span>
+        </div>
       </div>
     </div>
   </div>
