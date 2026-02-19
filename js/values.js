@@ -417,7 +417,7 @@ const ITEMS = [
   {
     name: "JB8",           type: "Vehicle",
     value: 3500000,        duped: null,
-    demand: "Low",         trend: "Stable",     change: "",
+    demand: "Medium",         trend: "Stable",     change: "",
     description: "Jailbreak 8 vehicle. Steady low-tier.",
     notes: "Updated 1 month ago",
     image: ""
@@ -425,7 +425,7 @@ const ITEMS = [
   {
     name: "Wedge",         type: "Vehicle",
     value: 2500000,        duped: null,
-    demand: "Low",         trend: "Stable",     change: "",
+    demand: "Decent",         trend: "Stable",     change: "",
     description: "Wedge-shaped vehicle. Low demand.",
     notes: "Updated 1 month ago",
     image: ""
