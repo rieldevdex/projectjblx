@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Values — JBLX</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="stylesheet" href="css/styles.css" />
   <script src="js/theme.js"></script>
-  <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body>
 
@@ -37,68 +37,78 @@
   <!-- ── MAIN ─────────────────────────────────────────────── -->
   <main class="values-main">
 
-    <!-- Toolbar -->
     <div class="values-toolbar">
 
-      <!-- Mode toggle -->
-      <div class="mode-toggle" role="group" aria-label="View mode">
-        <button class="mode-btn active" data-mode="card">
+      <!-- Row 1: Mode toggle + search + item count -->
+      <div class="toolbar-row">
+        <div class="mode-toggle" role="group" aria-label="View mode">
+          <button class="mode-btn active" data-mode="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+              <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+            </svg>
+            Card
+          </button>
+          <button class="mode-btn" data-mode="list">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
+              <line x1="8" y1="18" x2="21" y2="18"/><circle cx="3" cy="6" r="1.5"/>
+              <circle cx="3" cy="12" r="1.5"/><circle cx="3" cy="18" r="1.5"/>
+            </svg>
+            List
+          </button>
+        </div>
+
+        <div class="search-wrap">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
-            <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
           </svg>
-          Card
-        </button>
-        <button class="mode-btn" data-mode="list">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
-            <line x1="8" y1="18" x2="21" y2="18"/><circle cx="3" cy="6" r="1.5"/><circle cx="3" cy="12" r="1.5"/><circle cx="3" cy="18" r="1.5"/>
-          </svg>
-          List
-        </button>
+          <input type="text" id="search-input" class="search-input" placeholder="Search items…" autocomplete="off" />
+        </div>
+
+        <span class="item-count" id="item-count"></span>
       </div>
 
-      <!-- Search -->
-      <div class="search-wrap">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-        </svg>
-        <input type="text" id="search-input" class="search-input" placeholder="Search items…" autocomplete="off" />
+      <!-- Row 2: Type + Demand + Trend filters -->
+      <div class="toolbar-row">
+        <select class="filter-select" id="type-filter">
+          <option value="">All Types</option>
+          <option value="Vehicle">Vehicles</option>
+          <option value="HyperChrome">HyperChromes</option>
+          <option value="Furniture">Furniture</option>
+          <option value="Cosmetic">Cosmetics</option>
+        </select>
+
+        <select class="filter-select" id="demand-filter">
+          <option value="">All Demands</option>
+          <option value="High">High</option>
+          <option value="Decent">Decent</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+          <option value="Very Low">Very Low</option>
+        </select>
+
+        <select class="filter-select" id="trend-filter">
+          <option value="">All Trends</option>
+          <option value="Stable">Stable</option>
+          <option value="Hyped">Hyped</option>
+          <option value="Rising">Rising</option>
+          <option value="Falling">Falling</option>
+        </select>
       </div>
-
-      <!-- Demand filter -->
-      <select class="filter-select" id="demand-filter">
-        <option value="">All Demands</option>
-        <option value="High">High</option>
-        <option value="Decent">Decent</option>
-        <option value="Medium">Medium</option>
-        <option value="Low">Low</option>
-        <option value="Very Low">Very Low</option>
-      </select>
-
-      <!-- Trend filter -->
-      <select class="filter-select" id="trend-filter">
-        <option value="">All Trends</option>
-        <option value="Stable">Stable</option>
-        <option value="Hyped">Hyped</option>
-        <option value="Rising">Rising</option>
-        <option value="Falling">Falling</option>
-      </select>
-
-      <span class="item-count" id="item-count"></span>
     </div>
 
-    <!-- ── CARD VIEW ──────────────────────────────────────── -->
+    <!-- Card view -->
     <div id="card-view"></div>
 
-    <!-- ── LIST VIEW ─────────────────────────────────────── -->
+    <!-- List view -->
     <div id="list-view" style="display:none;">
       <table class="values-table">
         <thead>
           <tr>
             <th style="width:68px"></th>
             <th class="sortable" data-sort="name">Item <span class="sort-arrow">↕</span></th>
-            <th>Type</th>
+            <th class="sortable" data-sort="type">Type <span class="sort-arrow">↕</span></th>
             <th class="sortable" data-sort="value">Value <span class="sort-arrow">↕</span></th>
             <th>Duped</th>
             <th class="sortable" data-sort="demand">Demand <span class="sort-arrow">↕</span></th>
@@ -110,30 +120,24 @@
       </table>
     </div>
 
+    <!-- Pagination -->
+    <div class="pagination" id="pagination"></div>
+
   </main>
 
   <!-- ── MODAL ─────────────────────────────────────────────── -->
   <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-name">
     <div class="modal">
-
-      <!-- Image -->
       <div class="modal-img-wrap">
         <img id="modal-img" src="" alt="" />
         <div class="modal-img-fallback" id="modal-img-fallback"></div>
         <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
       </div>
-
-      <!-- Content -->
       <div class="modal-content">
-
         <div class="modal-header">
-          <div>
-            <div class="modal-name" id="modal-name"></div>
-          </div>
+          <div class="modal-name" id="modal-name"></div>
           <span class="modal-type" id="modal-type"></span>
         </div>
-
-        <!-- Stats grid -->
         <div class="modal-grid">
           <div class="modal-stat">
             <div class="modal-stat-label">Cash Value</div>
@@ -152,26 +156,20 @@
             <div id="modal-trend"></div>
           </div>
         </div>
-
         <div class="modal-divider"></div>
-
         <div class="modal-desc-label">Description</div>
         <p class="modal-desc" id="modal-desc"></p>
-
         <div class="modal-desc-label" style="margin-top:12px;">Notes</div>
         <p class="modal-notes" id="modal-notes"></p>
-
       </div>
     </div>
   </div>
 
-  <!-- ── FOOTER ────────────────────────────────────────────── -->
   <footer class="site-footer">
     <span>© 2025 JBLX — Jailbreak Listing Exchange</span>
     <span>Not affiliated with Badimo or Roblox</span>
   </footer>
 
   <script src="js/values.js"></script>
-
 </body>
 </html>
