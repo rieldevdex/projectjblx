@@ -16,9 +16,9 @@ const ITEMS = [
     demand: "High",
     trend: "Stable",
     change: "+500,000",
-    description: "Limited seasonal vehicle from Season 2. A sleek, high-speed car with a distinct aerodynamic design that makes it one of the most sought-after vehicles in the Jailbreak trading scene.",
-    notes: "S2 · Updated 1 week ago",
-    image: "assets/item-images/vehicles/javelin.webp" // TODO: Replace with JBLX hosted image
+    description: "The Javelin is a limited-time vehicle in Jailbreak. Released on November 4th, 2022, it was featured as the fifth and final vehicle of the 5 Days of Vehicles Update and was only available to obtain for 48 hours.",
+    notes: "Updated 1 week ago",
+    image: "assets/item-images/vehicles/javelin.webp"
   },
   {
     name: "Torpedo",
@@ -28,7 +28,7 @@ const ITEMS = [
     demand: "Decent",
     trend: "Stable",
     change: "+1,000,000",
-    description: "A high-performance aquatic/road hybrid vehicle from Season 6. Known for its streamlined chassis and strong resale demand among veteran traders.",
+    description: "The Torpedo is a seasonal vehicle in Jailbreak. Added in the 2018 Winter Update, it has the fourth-highest top speed in-game, beaten only by Scorpion, Brulee and the Jet Ski. The Torpedo required either Level 30 in OG Season 1 or Level 5 in OG Season 2, both on the Criminal team, for players to obtain it.",
     notes: "S2 · Updated 4 days ago",
     image: "https://www.jailbreaktradingnetwork.com/images/torpedo.png" // TODO: Replace with JBLX hosted image
   },
@@ -40,7 +40,7 @@ const ITEMS = [
     demand: "High",
     trend: "Stable",
     change: "+500,000",
-    description: "Modeled after the Bugatti Bolide, known for its extraordinary stats and performance, as well as superb looks.",
+    description: "The Beignet is a seasonal vehicle in Jailbreak. It was featured as the grand prize in Season 6: Race to the Top. It currently has the seventh-highest top speed in-game. The Beignet was obtained by reaching Level 10 through Contracts.",
     notes: "S6 · L10 · Updated 4 weeks ago",
     image: "https://www.jailbreaktradingnetwork.com/images/beignet.png" // TODO: Replace with JBLX hosted image
   },
@@ -124,7 +124,7 @@ const ITEMS = [
     demand: "Decent",
     trend: "Hyped",
     change: "+1,000,000",
-    description: "Banana",
+    description: "The Banana Car is a seasonal vehicle in Jailbreak. It was the Level 10 grand prize of Season 5: Let the Memes Begin. The Banana Car spawned at the Season Hypezone where all of the seasonal vehicles in seasons under the contract system have spawned.",
     notes: "S5 · L10 · Updated 19 hours ago",
     image: "https://www.jailbreaktradingnetwork.com/images/bananacar.png" // TODO: Replace with JBLX hosted image
   },
