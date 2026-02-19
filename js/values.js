@@ -579,7 +579,7 @@ const ITEMS = [
   // Add Textures as type "Texture"
   {
     name: "Checker",       type: "Texture",
-    value: 42500000,       duped: 38000000,
+    value: 41000000,       duped: 38000000,
     demand: "Decent",      trend: "Stable",     change: "",
     description: "The Checkers Texture could be obtained by purchasing access to Badimo's Vehicle Testing game for 25 Robux. The game has become private, and this texture is no longer obtainable.",
     notes: "Retired · Updated 1 week ago",
