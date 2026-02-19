@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Values — JBLX</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/theme.js"></script>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+<body>
+
+  <!-- ── TOP NAV ──────────────────────────────────────────── -->
+  <nav class="top-nav">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/images/jblx-logo.png" alt="JBLX" />
+    </a>
+    <div class="nav-links">
+      <a href="values.html" class="nav-link active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+        <span>Values</span>
+      </a>
+      <a href="teams.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span>Team</span>
+      </a>
+      <a href="disc.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+        <span>Discord</span>
+      </a>
+      <button class="theme-toggle" title="Toggle theme">
+        <span class="toggle-icon">☀</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── MAIN ─────────────────────────────────────────────── -->
+  <main class="values-main">
+
+    <!-- Toolbar -->
+    <div class="values-toolbar">
+
+      <!-- Mode toggle -->
+      <div class="mode-toggle" role="group" aria-label="View mode">
+        <button class="mode-btn active" data-mode="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+          </svg>
+          Card
+        </button>
+        <button class="mode-btn" data-mode="list">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
+            <line x1="8" y1="18" x2="21" y2="18"/><circle cx="3" cy="6" r="1.5"/><circle cx="3" cy="12" r="1.5"/><circle cx="3" cy="18" r="1.5"/>
+          </svg>
+          List
+        </button>
+      </div>
+
+      <!-- Search -->
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="text" id="search-input" class="search-input" placeholder="Search items…" autocomplete="off" />
+      </div>
+
+      <!-- Demand filter -->
+      <select class="filter-select" id="demand-filter">
+        <option value="">All Demands</option>
+        <option value="High">High</option>
+        <option value="Decent">Decent</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+        <option value="Very Low">Very Low</option>
+      </select>
+
+      <!-- Trend filter -->
+      <select class="filter-select" id="trend-filter">
+        <option value="">All Trends</option>
+        <option value="Stable">Stable</option>
+        <option value="Hyped">Hyped</option>
+        <option value="Rising">Rising</option>
+        <option value="Falling">Falling</option>
+      </select>
+
+      <span class="item-count" id="item-count"></span>
+    </div>
+
+    <!-- ── CARD VIEW ──────────────────────────────────────── -->
+    <div id="card-view"></div>
+
+    <!-- ── LIST VIEW ─────────────────────────────────────── -->
+    <div id="list-view" style="display:none;">
+      <table class="values-table">
+        <thead>
+          <tr>
+            <th style="width:68px"></th>
+            <th class="sortable" data-sort="name">Item <span class="sort-arrow">↕</span></th>
+            <th>Type</th>
+            <th class="sortable" data-sort="value">Value <span class="sort-arrow">↕</span></th>
+            <th>Duped</th>
+            <th class="sortable" data-sort="demand">Demand <span class="sort-arrow">↕</span></th>
+            <th>Trend</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <!-- ── MODAL ─────────────────────────────────────────────── -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+    <div class="modal">
+
+      <!-- Image -->
+      <div class="modal-img-wrap">
+        <img id="modal-img" src="" alt="" />
+        <div class="modal-img-fallback" id="modal-img-fallback"></div>
+        <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+      </div>
+
+      <!-- Content -->
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <div>
+            <div class="modal-name" id="modal-name"></div>
+          </div>
+          <span class="modal-type" id="modal-type"></span>
+        </div>
+
+        <!-- Stats grid -->
+        <div class="modal-grid">
+          <div class="modal-stat">
+            <div class="modal-stat-label">Cash Value</div>
+            <div class="modal-stat-value" id="modal-value"></div>
+          </div>
+          <div class="modal-stat">
+            <div class="modal-stat-label">Duped Value</div>
+            <div class="modal-stat-value" id="modal-duped"></div>
+          </div>
+          <div class="modal-stat">
+            <div class="modal-stat-label">Demand</div>
+            <div id="modal-demand"></div>
+          </div>
+          <div class="modal-stat">
+            <div class="modal-stat-label">Trend</div>
+            <div id="modal-trend"></div>
+          </div>
+        </div>
+
+        <div class="modal-divider"></div>
+
+        <div class="modal-desc-label">Description</div>
+        <p class="modal-desc" id="modal-desc"></p>
+
+        <div class="modal-desc-label" style="margin-top:12px;">Notes</div>
+        <p class="modal-notes" id="modal-notes"></p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <span>© 2025 JBLX — Jailbreak Listing Exchange</span>
+    <span>Not affiliated with Badimo or Roblox</span>
+  </footer>
+
+  <script src="js/values.js"></script>
+
+</body>
+</html>
