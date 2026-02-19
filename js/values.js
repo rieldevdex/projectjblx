@@ -99,39 +99,31 @@ const ITEMS = [
     value: 15000000,       duped: null,
     demand: "Decent",      trend: "Stable",     change: "",
     description: "Fiery-themed variant of the M12 from Season 3. Maintains steady trading volume with consistent mid-tier demand.",
-    notes: "S3 · Updated 19 hours ago",
+    notes: "Updated 19 hours ago",
     image: ""
   },
   {
     name: "Stallion",      type: "Vehicle",
-    value: 14000000,       duped: 12000000,
+    value: 200000,       duped: null,
     demand: "Decent",      trend: "Stable",     change: "+500,000",
-    description: "A powerful muscle car with classic American styling. Popular among collectors for its aggressive look and respectable value floor.",
-    notes: "S9 · Updated 1 week ago",
+    description: "A powerful muscle car with classic American styling.",
+    notes: "Updated 1 week ago",
     image: ""
   },
   {
     name: "Brulee",        type: "Vehicle",
-    value: 13500000,       duped: null,
+    value: 3000000,       duped: null,
     demand: "Decent",      trend: "Stable",     change: "",
-    description: "Dessert-themed novelty vehicle. Part of the culinary series alongside Macaron and Carbonara.",
-    notes: "S11 · Updated 2 weeks ago",
-    image: ""
-  },
-  {
-    name: "Widebody Concept", type: "Vehicle",
-    value: 13000000,       duped: null,
-    demand: "Medium",      trend: "Falling",    change: "-500,000",
-    description: "Wide-body styled concept car with an aggressive stance. Demand has softened as the market shifts toward newer seasonal vehicles.",
-    notes: "S13 · L10 · Updated 5 days ago",
+    description: "A retired vehicle, later replaced with the Eclaire. Second-fastest vehicle in the game.",
+    notes: "S2 · Updated 2 weeks ago",
     image: ""
   },
   {
     name: "Rattler",       type: "Vehicle",
-    value: 12500000,       duped: null,
+    value: 4000000,       duped: null,
     demand: "Medium",      trend: "Stable",     change: "",
-    description: "Snake-themed vehicle with a bold, exotic design. Holds mid-tier value with a reliable collector base.",
-    notes: "S12 · Updated 3 weeks ago",
+    description: "A customized Hot-Rod version from Season 4.",
+    notes: "S4 · Updated 3 weeks ago",
     image: ""
   },
   {
@@ -151,14 +143,6 @@ const ITEMS = [
     image: ""
   },
   {
-    name: "Badger",        type: "Vehicle",
-    value: 9800000,        duped: null,
-    demand: "Decent",      trend: "Rising",     change: "+300,000",
-    description: "A rugged all-terrain vehicle with a stocky build. Slowly gaining traction in the market.",
-    notes: "S16 · Updated 4 days ago",
-    image: ""
-  },
-  {
     name: "Crew Capsule",  type: "Vehicle",
     value: 9500000,        duped: null,
     demand: "Very Low",    trend: "Stable",     change: "-500,000",
@@ -172,14 +156,6 @@ const ITEMS = [
     demand: "High",        trend: "Stable",     change: "+500,000",
     description: "Stylish European-inspired vehicle with a loyal collector base. High demand relative to its value tier.",
     notes: "Updated 19 hours ago",
-    image: ""
-  },
-  {
-    name: "Stealth",       type: "Vehicle",
-    value: 8500000,        duped: null,
-    demand: "Medium",      trend: "Stable",     change: "",
-    description: "Sleek dark-toned vehicle with a military stealth aesthetic. Consistent collector appeal in mid-range trades.",
-    notes: "S10 · Updated 2 weeks ago",
     image: ""
   },
   {
@@ -223,32 +199,8 @@ const ITEMS = [
     image: ""
   },
   {
-    name: "LM002",         type: "Vehicle",
-    value: 5000000,        duped: null,
-    demand: "Medium",      trend: "Stable",     change: "",
-    description: "Classic luxury SUV with historical significance in the Jailbreak lineup. Steady but unspectacular demand.",
-    notes: "Updated 6 weeks ago",
-    image: ""
-  },
-  {
-    name: "Lunar Roving Vehicle", type: "Vehicle",
-    value: 4500000,        duped: null,
-    demand: "Medium",      trend: "Falling",    change: "-300,000",
-    description: "Space exploration-themed vehicle. Quirky novelty keeps some collector interest but overall sentiment has softened.",
-    notes: "Updated 2 months ago",
-    image: ""
-  },
-  {
-    name: "Tiburon",       type: "Vehicle",
-    value: 4000000,        duped: null,
-    demand: "Low",         trend: "Stable",     change: "",
-    description: "A sleek coupe with a shark-inspired name. Limited demand outside of dedicated collectors.",
-    notes: "S4 · Updated 2 months ago",
-    image: ""
-  },
-  {
     name: "Roadster",      type: "Vehicle",
-    value: 3500000,        duped: null,
+    value: 600000,        duped: null,
     demand: "Low",         trend: "Stable",     change: "",
     description: "Classic open-top sports car. Nostalgic value for long-time players but limited appeal in the current meta.",
     notes: "Updated 3 months ago",
@@ -256,9 +208,9 @@ const ITEMS = [
   },
   {
     name: "Blade",         type: "Vehicle",
-    value: 20000000,       duped: null,
-    demand: "Medium",      trend: "Stable",     change: "",
-    description: "Sleek and fast vehicle with blade-like design. Steady demand in mid-tier trades.",
+    value: null,       duped: null,
+    demand: null,      trend: null,     change: null,
+    description: "Reference-only. A removed copyright vehicle replicated from the Blad 2099 movie.",
     notes: "Updated 2 weeks ago",
     image: ""
   },
@@ -344,7 +296,7 @@ const ITEMS = [
   },
   {
     name: "Shell Classic", type: "Vehicle",
-    value: 1750000,        duped: null,
+    value: 2000000,        duped: null,
     demand: "Low",         trend: "Stable",     change: "",
     description: "Classic shell vehicle. Low but steady demand.",
     notes: "Updated 1 month ago",
@@ -549,7 +501,7 @@ const ITEMS = [
   },
   {
     name: "Piano",         type: "Furniture",
-    value: 7500000,        duped: null,
+    value: 1000000,        duped: null,
     demand: "Decent",      trend: "Stable",     change: "",
     description: "Grand piano apartment item. A prestigious furniture piece that signals high-level collector status.",
     notes: "Updated 1 month ago",
@@ -564,7 +516,7 @@ const ITEMS = [
     image: ""
   },
   {
-    name: "Bookshelf",     type: "Furniture",
+    name: "Trapped Bookshelf",     type: "Furniture",
     value: 3500000,        duped: null,
     demand: "Low",         trend: "Stable",     change: "",
     description: "Wall-mounted bookshelf furniture. Low demand but a clean addition to any apartment setup.",
@@ -612,88 +564,7 @@ const ITEMS = [
     image: ""
   },
 
-  // ════════════ COSMETICS ═══════════════════════════════════════
-  {
-    name: "Shark Fin Spoiler", type: "Cosmetic",
-    value: 8500000,        duped: null,
-    demand: "High",        trend: "Stable",     change: "+200,000",
-    description: "A premium shark fin spoiler cosmetic. One of the rarest and most recognisable spoiler styles in the game.",
-    notes: "Updated 1 week ago",
-    image: ""
-  },
-  {
-    name: "Galaxy Rim",    type: "Cosmetic",
-    value: 7000000,        duped: null,
-    demand: "Decent",      trend: "Stable",     change: "",
-    description: "Rare galaxy-patterned rim cosmetic. Visually striking design that holds strong value among rim collectors.",
-    notes: "Updated 2 weeks ago",
-    image: ""
-  },
-  {
-    name: "Chrome Rim",    type: "Cosmetic",
-    value: 5500000,        duped: null,
-    demand: "Decent",      trend: "Rising",     change: "+300,000",
-    description: "Classic chrome rim finish. Timeless aesthetic driving a slow but consistent upward value trend.",
-    notes: "Updated 1 week ago",
-    image: ""
-  },
-  {
-    name: "Neon Underglow (Purple)", type: "Cosmetic",
-    value: 4500000,        duped: null,
-    demand: "Medium",      trend: "Stable",     change: "",
-    description: "Purple neon underglow body colour modifier. Popular cosmetic for traders who want to stand out in active lobbies.",
-    notes: "Updated 3 weeks ago",
-    image: ""
-  },
-  {
-    name: "Gold Tire Sticker", type: "Cosmetic",
-    value: 4000000,        duped: null,
-    demand: "Medium",      trend: "Stable",     change: "",
-    description: "Premium gold-lettered tire sticker. Subtle yet high-status cosmetic detail favoured by high-end traders.",
-    notes: "Updated 1 month ago",
-    image: ""
-  },
-  {
-    name: "Sniper Skin (Crimson)", type: "Cosmetic",
-    value: 3800000,        duped: null,
-    demand: "Medium",      trend: "Stable",     change: "",
-    description: "Limited crimson weapon skin for the sniper rifle. Rare cosmetic with niche but stable collector demand.",
-    notes: "Updated 1 month ago",
-    image: ""
-  },
-  {
-    name: "Dragon Drift",  type: "Cosmetic",
-    value: 3500000,        duped: null,
-    demand: "Decent",      trend: "Rising",     change: "+200,000",
-    description: "Dragon-themed drift trail cosmetic. Increasingly popular in the community, with value gently climbing.",
-    notes: "Updated 2 weeks ago",
-    image: ""
-  },
-  {
-    name: "Racing Spoiler",type: "Cosmetic",
-    value: 2500000,        duped: null,
-    demand: "Low",         trend: "Stable",     change: "",
-    description: "Standard racing-style spoiler. Low demand but commonly included as filler in larger trade packages.",
-    notes: "Updated 2 months ago",
-    image: ""
-  },
-  {
-    name: "Bone Tire Style", type: "Cosmetic",
-    value: 2000000,        duped: null,
-    demand: "Low",         trend: "Stable",     change: "",
-    description: "Bone-pattern tire style cosmetic. Niche appeal among Halloween-themed collector sets.",
-    notes: "Updated 2 months ago",
-    image: ""
-  },
-  {
-    name: "Standard Horn", type: "Cosmetic",
-    value: 500000,         duped: null,
-    demand: "Very Low",    trend: "Falling",    change: "",
-    description: "Basic vehicle horn cosmetic. Minimal trade value — mainly included in bulk deals to round off trades.",
-    notes: "Updated 3 months ago",
-    image: ""
-  },
-  // Add Spoilers as type "Spoiler"
+  // ════════════ Cosmetics ═══════════════════════════════════════
   {
     name: "Thrusters",     type: "Spoiler",
     value: 40000000,       duped: 37000000,
@@ -702,6 +573,7 @@ const ITEMS = [
     notes: "S2 · L9 · Updated 1 month ago",
     image: ""
   },
+  
   {
     name: "Snow Shovel",   type: "Spoiler",
     value: 8500000,        duped: 8000000,
@@ -731,7 +603,7 @@ const ITEMS = [
   },
   {
     name: "Drip",          type: "Texture",
-    value: 20000000,       duped: 17750000,
+    value: 20000000,       duped: null,
     demand: "Medium",      trend: "Stable",     change: "",
     description: "Drip texture from Season 5. Medium demand.",
     notes: "S5 · L8 · Updated 1 month ago",
@@ -739,7 +611,7 @@ const ITEMS = [
   },
   {
     name: "Snowstorm",     type: "Texture",
-    value: 7500000,        duped: 7000000,
+    value: 7500000,        duped: null,
     demand: "Low",         trend: "Stable",     change: "",
     description: "Snowstorm texture. Season limited with low demand.",
     notes: "Season Limited · Updated 1 month ago",
@@ -823,7 +695,7 @@ function trendClass(t) {
 }
 // Mapping type string → CSS class suffix (no spaces, lowercase)
 function typeClass(t) {
-  return { Vehicle:'type-vehicle', HyperChrome:'type-hyperchrome', Furniture:'type-furniture', Cosmetic:'type-cosmetic', Texture:'type-texture', Spoiler:'type-spoiler', Rim:'type-rim', 'Tire Sticker':'type-tiresticker' }[t] || '';
+  return { Vehicle:'type-vehicle', HyperChrome:'type-hyperchrome', Furniture:'type-furniture', Cosmetics:'type-cosmetics', Texture:'type-texture', Spoiler:'type-spoiler', Rim:'type-rim', 'Tire Sticker':'type-tiresticker' }[t] || '';
 }
 
 const TREND_ICON = { Stable: '—', Hyped: '🔥', Rising: '▲', Falling: '▼' };
