@@ -30,7 +30,7 @@ const ITEMS = [
   // ════════════ VEHICLES ════════════════════════════════════════
   {
     name:"Javelin",      type:"Vehicle",
-    value:50000000,      duped:44750000,
+    value:50000000,      duped:49500000,
     demand:"High",       trend:"Stable",
     change:"+500,000",   dupeChange:"",  demandChange:"",          trendChange:"",
     description:"The closing vehicle of the 2022 '5 Days of Vehicles' event, available for just 48 hours at $929,929. One of the best-performing vehicles in the game with a top speed of around 390 MPH.",
@@ -70,7 +70,7 @@ const ITEMS = [
   },
   {
     name:"Proto-8",      type:"Vehicle",
-    value:31000000,      duped:30000000,
+    value:30000000,      duped:29500000,
     demand:"High",       trend:"Stable",
     change:"+500,000",   dupeChange:"", demandChange:"",           trendChange:"",
     description:"Grand prize of Season 14: 'For the Champions.' This electric race car delivers excellent handling and one of the quickest acceleration rates in the game, with a top speed of ~210 MPH.",
