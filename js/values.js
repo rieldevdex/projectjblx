@@ -987,12 +987,12 @@ const ITEMS = [
     image:""
   },
   {
-    name:"Hyper Yellow '23 L5", type:"Color",
+    name:"Hyper Yellow L5", type:"Color",
     value:20000000,      duped:null,
     demand:"High",       trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"The 2023 variant of Hyper Yellow L5, evolved by grinding the Cargo or Passenger Train.",
-    tags:"'23 · L5 · Train Heists", updatedAt:_ago(0,43),
+    description:"Evolved by grinding the Cargo or Passenger Train.",
+    tags:"L5 · Train Heists", updatedAt:_ago(0,43),
     obtainable:false,    remarks:"",     pullValue:"",
     image:""
   },
@@ -1013,36 +1013,6 @@ const ITEMS = [
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"A mid-tier stepping stone toward the Level 5 Hyper Green, evolved by grinding the Bank.",
     tags:"L4 · Bank Heist", updatedAt:_ago(0,13),
-    obtainable:false,    remarks:"",     pullValue:"",
-    image:""
-  },
-  {
-    name:"Hyper Yellow '25 L5", type:"Color",
-    value:18500000,      duped:null,
-    demand:"High",       trend:"Stable",
-    change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"The 2025 variant of Hyper Yellow L5, evolved by grinding the Cargo or Passenger Train.",
-    tags:"'25 · L5 · Train Heists", updatedAt:_ago(0,43),
-    obtainable:false,    remarks:"",     pullValue:"",
-    image:""
-  },
-  {
-    name:"Hyper Yellow '24 L5", type:"Color",
-    value:18000000,      duped:null,
-    demand:"High",       trend:"Stable",
-    change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"The 2024 variant of Hyper Yellow L5, evolved by grinding the Cargo or Passenger Train.",
-    tags:"'24 · L5 · Train Heists", updatedAt:_ago(0,31),
-    obtainable:false,    remarks:"",     pullValue:"",
-    image:""
-  },
-  {
-    name:"Hyper Yellow '26 L5", type:"Color",
-    value:18000000,      duped:null,
-    demand:"High",       trend:"Stable",
-    change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"The 2026 variant of Hyper Yellow L5, evolved by grinding the Cargo or Passenger Train.",
-    tags:"'26 · L5 · Train Heists", updatedAt:_ago(0,34),
     obtainable:false,    remarks:"",     pullValue:"",
     image:""
   },
