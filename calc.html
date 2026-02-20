@@ -129,7 +129,7 @@
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--r-xl);
-  overflow: visible;   /* needed for dropdown */
+  overflow: visible;
   min-height: 480px;
   transition: border-color 0.2s;
 }
@@ -194,7 +194,7 @@
 .panel-search-wrap {
   padding: 12px 16px;
   border-bottom: 1px solid var(--border);
-  position: relative;   /* anchor for dropdown */
+  position: relative;
 }
 .panel-search-icon {
   position: absolute;
@@ -318,9 +318,7 @@
   flex-shrink: 0;
 }
 
-.srd-demand {
-  flex-shrink: 0;
-}
+.srd-demand { flex-shrink: 0; }
 
 .srd-add {
   padding: 5px 0;
@@ -404,7 +402,6 @@
 .sel-row:last-child { border-bottom: none; }
 .sel-row:hover { background: var(--surface2); }
 
-/* Thumb with duped badge */
 .sel-thumb-wrap {
   position: relative;
   width: 44px; height: 36px;
@@ -442,7 +439,6 @@
 }
 .sel-row.is-duped .sel-duped-strip { display: block; }
 
-/* Centre info */
 .sel-info { min-width: 0; }
 .sel-name {
   font-family: var(--font-display);
@@ -462,7 +458,6 @@
   transition: color 0.2s;
 }
 
-/* Controls: toggle + remove */
 .sel-controls {
   display: flex;
   flex-direction: column;
@@ -471,7 +466,6 @@
   flex-shrink: 0;
 }
 
-/* Clean / Duped pill toggle */
 .cd-toggle {
   display: inline-flex;
   border-radius: 6px;
@@ -494,10 +488,7 @@
 }
 .cd-btn.active-clean { background: rgba(57,224,122,0.16); color: #39e07a; }
 .cd-btn.active-duped { background: rgba(224,48,64,0.16);  color: #e03040; }
-.cd-btn:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
+.cd-btn:disabled { opacity: 0.3; cursor: not-allowed; }
 
 .sel-remove {
   width: 22px; height: 22px;
@@ -531,7 +522,6 @@
   font-style: italic;
 }
 
-/* Summary card states */
 .summary-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -545,7 +535,6 @@
 .summary-card.s-slight-lose { border-color: rgba(224,120,32,0.35); }
 .summary-card.s-lose        { border-color: rgba(224,48,64,0.45); }
 
-/* Top row: verdict block + metrics strip */
 .summary-top {
   display: flex;
   align-items: stretch;
@@ -593,7 +582,6 @@
   color: var(--text-muted);
 }
 
-/* Metrics strip */
 .metrics-strip {
   flex: 1;
   display: flex;
@@ -628,7 +616,6 @@
 .mc-val.dn   { color: #e03040; }
 .mc-val.warn { color: #e07820; }
 
-/* Demand alert banner */
 .demand-alert {
   display: flex;
   align-items: center;
@@ -642,7 +629,6 @@
 }
 .demand-alert svg { flex-shrink: 0; opacity: 0.9; }
 
-/* Detail grid at bottom */
 .summary-detail-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
@@ -671,7 +657,6 @@
 .db-val.up { color: #39e07a; }
 .db-val.dn { color: #e03040; }
 
-/* Confidence bar */
 .conf-track {
   height: 3px;
   background: var(--border);
@@ -687,20 +672,10 @@
 
 /* ── RESPONSIVE ──────────────────────────────────────────────── */
 @media (max-width: 860px) {
-  .trade-arena {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  .trade-vs {
-    flex-direction: row;
-    padding: 10px 0;
-    justify-content: center;
-  }
+  .trade-arena { grid-template-columns: 1fr; gap: 0; }
+  .trade-vs { flex-direction: row; padding: 10px 0; justify-content: center; }
   .vs-dot-top, .vs-dot-bot {
-    width: 50px;
-    height: 2px;
-    min-height: unset;
-    flex: none;
+    width: 50px; height: 2px; min-height: unset; flex: none;
     background: linear-gradient(to right, transparent, var(--border-hi));
   }
   .vs-dot-bot { background: linear-gradient(to right, var(--border-hi), transparent); }
@@ -731,6 +706,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
         <span>Calculator</span>
       </a>
+      <a href="info.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>Info</span>
+      </a>
       <a href="teams.html" class="nav-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         <span>Team</span>
@@ -739,7 +718,7 @@
         <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
         <span>Discord</span>
       </a>
-      <button class="theme-toggle" title="Toggle theme">
+      <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
         <span class="toggle-icon">☀</span>
       </button>
     </div>
@@ -757,7 +736,7 @@
           </svg>
           Trade Value Calculator
         </div>
-        <div class="calc-page-sub">Search the item database · toggle Clean / Duped per item · get an instant trade verdict. Values are database-authoritative — no manual edits.</div>
+        <div class="calc-page-sub">Search the item database · toggle Clean / Duped per item · get an instant trade verdict. Values are database-authoritative — no manual edits. <a href="info.html" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">How does this work?</a></div>
       </div>
       <button class="btn-clear-all" id="btn-clear">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg>
@@ -836,14 +815,14 @@
   <script>
 /* ================================================================
    JBLX TRADE CALCULATOR ENGINE  (vanilla JS, no page reloads)
-   - Reads ITEMS, fmtValue, demandClass from values.js
-   - Strict DB values only — no manual entry
-   - Each side: array of { uid, item, state:'clean'|'duped', value }
 ================================================================ */
 
-// ── Constants ────────────────────────────────────────────────────
-const DEMAND_WEIGHT = { High:6, Solid:5, Medium:4, Low:3, Minimal:2, Nonexistent:1 };
-const DEMAND_NAMES  = { 1:'Nonexistent', 2:'Minimal', 3:'Low', 4:'Medium', 5:'Solid', 6:'High' };
+const DEMAND_WEIGHT = {
+  'Very High':7, High:6, Solid:5, Medium:4, Average:3, Low:2, Minimal:1, Nonexistent:0
+};
+const DEMAND_NAMES = Object.fromEntries(
+  Object.entries(DEMAND_WEIGHT).map(([k,v]) => [v, k])
+);
 
 const VERDICT = [
   { min:  8,        cls:'s-win',         label:'Win',         emoji:'🏆' },
@@ -853,35 +832,23 @@ const VERDICT = [
   { min: -Infinity, cls:'s-lose',        label:'Lose',        emoji:'❌' },
 ];
 
-// ── State ────────────────────────────────────────────────────────
 const SIDES = { offer: [], request: [] };
 let _nextUID = 1;
 const uid = () => _nextUID++;
 
-// ── Helpers ──────────────────────────────────────────────────────
 const abbr = name => name.replace(/[^A-Z0-9]/gi,'').slice(0,3).toUpperCase();
 
-function thumbHTML(item, wrapClass) {
-  const fb = `<span class="${wrapClass}-fb">${abbr(item.name)}</span>`;
-  if (!item.image) return fb;
-  return `<img src="${item.image}" alt="" loading="lazy"
-    onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'">${fb.replace('display:inline-flex','display:inline-flex').replace(wrapClass+'-fb',wrapClass+'-fb" style="display:none')}`;
-}
-
-function demandScore(item) { return DEMAND_WEIGHT[item.demand] ?? 0; }
-
+function demandScore(item) { return DEMAND_WEIGHT[item.demand] ?? -1; }
 function avgDemand(entries) {
-  const rated = entries.filter(e => demandScore(e.item) > 0);
+  const rated = entries.filter(e => demandScore(e.item) >= 0);
   if (!rated.length) return null;
   return rated.reduce((s,e) => s + demandScore(e.item), 0) / rated.length;
 }
-
 function demandName(score) {
   if (score === null) return 'N/A';
-  return DEMAND_NAMES[Math.round(Math.max(1, Math.min(6, score)))] ?? 'N/A';
+  return DEMAND_NAMES[Math.round(Math.max(0, Math.min(7, score)))] ?? 'N/A';
 }
 
-// ── Search ───────────────────────────────────────────────────────
 function search(q) {
   if (!q) return [];
   const lo = q.toLowerCase();
@@ -891,20 +858,14 @@ function search(q) {
 function renderDropdown(side, results, q) {
   const dd = document.getElementById(`${side}-dropdown`);
   if (!q.trim()) { dd.classList.remove('open'); return; }
-
   dd.classList.add('open');
-
   if (!results.length) {
     dd.innerHTML = `<div class="srd-empty">No items found for "<strong>${escHtml(q)}</strong>"</div>`;
     return;
   }
-
-  const demCls = item => `badge-demand ${demandClass(item.demand)}`;
-
   dd.innerHTML = `
     <div class="srd-header">${results.length} result${results.length !== 1 ? 's' : ''}</div>
     <div class="srd-scroll" id="${side}-srd-scroll"></div>`;
-
   const scroll = dd.querySelector('.srd-scroll');
   results.forEach(item => {
     const imgBlock = item.image
@@ -912,7 +873,6 @@ function renderDropdown(side, results, q) {
            onerror="this.style.display='none';this.nextElementSibling.style.removeProperty('display')">
          <span class="srd-thumb-fb" style="display:none">${abbr(item.name)}</span>`
       : `<span class="srd-thumb-fb">${abbr(item.name)}</span>`;
-
     const row = document.createElement('div');
     row.className = 'srd-row';
     row.innerHTML = `
@@ -922,14 +882,13 @@ function renderDropdown(side, results, q) {
         <div class="srd-type">${item.type}</div>
       </div>
       <span class="srd-val">${fmtValue(item.value)}</span>
-      <span class="srd-demand ${demCls(item)}" style="font-size:0.55rem;font-family:var(--font-mono)">${item.demand}</span>
+      <span class="srd-demand badge-demand ${demandClass(item.demand)}" style="font-size:0.55rem">${item.demand}</span>
       <button class="srd-add">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
           stroke-linecap="round" stroke-linejoin="round" width="10" height="10">
           <path d="M12 5v14M5 12h14"/>
         </svg>Add
       </button>`;
-
     row.querySelector('.srd-add').addEventListener('click', () => {
       addItem(side, item);
       const inp = document.getElementById(`${side}-search`);
@@ -937,12 +896,10 @@ function renderDropdown(side, results, q) {
       dd.classList.remove('open');
       inp.focus();
     });
-
     scroll.appendChild(row);
   });
 }
 
-// ── Add / Remove / Toggle ────────────────────────────────────────
 function addItem(side, item) {
   SIDES[side].push({ uid: uid(), item, state: 'clean', value: item.value });
   refreshSelected(side);
@@ -960,16 +917,11 @@ function removeItem(side, id) {
 function toggleCondition(side, id) {
   const e = SIDES[side].find(x => x.uid === id);
   if (!e) return;
-
   if (e.state === 'clean' && e.item.duped !== null) {
-    e.state = 'duped';
-    e.value = e.item.duped;
+    e.state = 'duped'; e.value = e.item.duped;
   } else {
-    e.state = 'clean';
-    e.value = e.item.value;
+    e.state = 'clean'; e.value = e.item.value;
   }
-
-  // Surgical DOM update — no full re-render
   const row = document.querySelector(`[data-uid="${id}"]`);
   if (row) {
     row.querySelector('.sel-value').textContent = fmtValue(e.value);
@@ -981,11 +933,9 @@ function toggleCondition(side, id) {
   refreshSummary();
 }
 
-// ── Render selected list ──────────────────────────────────────────
 function refreshSelected(side) {
   const wrap    = document.getElementById(`${side}-selected`);
   const entries = SIDES[side];
-
   if (!entries.length) {
     wrap.innerHTML = `
       <div class="panel-empty-state">
@@ -999,21 +949,16 @@ function refreshSelected(side) {
       </div>`;
     return;
   }
-
   const list = document.createElement('div');
   list.className = 'selected-list';
-
   entries.forEach(e => {
     const { uid: id, item, state, value } = e;
     const hasDuped = item.duped !== null;
-
-    // Image block
     const imgBlock = item.image
       ? `<img src="${item.image}" alt="" loading="lazy"
            onerror="this.style.display='none';this.nextElementSibling.style.removeProperty('display')">
          <span class="sel-thumb-fb" style="display:none">${abbr(item.name)}</span>`
       : `<span class="sel-thumb-fb">${abbr(item.name)}</span>`;
-
     const row = document.createElement('div');
     row.className = `sel-row${state === 'duped' ? ' is-duped' : ''}`;
     row.dataset.uid = id;
@@ -1034,7 +979,6 @@ function refreshSelected(side) {
             data-cd="duped"${!hasDuped ? ' disabled title="No duped value in database"' : ''}>Duped</button>
         </div>
       </div>`;
-
     row.querySelector('.sel-remove').addEventListener('click', () => removeItem(side, id));
     row.querySelector('[data-cd="clean"]').addEventListener('click', () => {
       if (e.state !== 'clean') toggleCondition(side, id);
@@ -1046,23 +990,19 @@ function refreshSelected(side) {
     }
     list.appendChild(row);
   });
-
   wrap.innerHTML = '';
   wrap.appendChild(list);
 }
 
-// ── Totals ───────────────────────────────────────────────────────
 function refreshTotal(side) {
   const total = SIDES[side].reduce((s, e) => s + e.value, 0);
   document.getElementById(`${side}-total`).textContent = fmtValue(total);
 }
 
-// ── Trade Summary ─────────────────────────────────────────────────
 function refreshSummary() {
   const el      = document.getElementById('trade-summary');
   const offer   = SIDES.offer;
   const request = SIDES.request;
-
   if (!offer.length && !request.length) {
     el.innerHTML = '<div class="summary-placeholder">Add items to both sides to see your trade verdict.</div>';
     return;
@@ -1071,57 +1011,35 @@ function refreshSummary() {
     el.innerHTML = '<div class="summary-placeholder">Add items to the other panel to compare.</div>';
     return;
   }
-
   const offerTotal   = offer.reduce((s,e) => s + e.value, 0);
   const requestTotal = request.reduce((s,e) => s + e.value, 0);
-
-  // ── Upgrade Allowance ─────────────────────────────────────────
-  // When trading N items for M items (N > M) you're consolidating.
-  // Each extra item on the offering side carries a 4% allowance —
-  // this represents the expected "upgrade tax" everyone pays when
-  // merging multiple items into one. The verdict is judged against
-  // the adjusted diff, not the raw diff.
-  const extraOfferItems = Math.max(0, offer.length - request.length);
-  const UPGRADE_RATE    = 0.04; // 4% of offerTotal per extra item
+  const extraOfferItems  = Math.max(0, offer.length - request.length);
+  const UPGRADE_RATE     = 0.04;
   const upgradeAllowance = extraOfferItems * UPGRADE_RATE * offerTotal;
-  const isUpgrade = extraOfferItems > 0;
-
-  // Raw diff: positive = you receive more value than you give
+  const isUpgrade        = extraOfferItems > 0;
   const rawDiff = requestTotal - offerTotal;
-  // Adjusted diff: credit offering side with allowance when upgrading
   const adjDiff = rawDiff + upgradeAllowance;
-
   const pct = offerTotal > 0
     ? (adjDiff / offerTotal) * 100
     : (requestTotal > 0 ? 100 : 0);
-
-  // Verdict (based on adjusted diff)
   const v        = VERDICT.find(x => pct >= x.min);
   const dirClass = adjDiff >= 0 ? 'up' : 'dn';
   const rawClass = rawDiff >= 0 ? 'up' : 'dn';
   const sign     = adjDiff >= 0 ? '+' : '';
   const pctSign  = pct     >= 0 ? '+' : '';
-
-  // Demand
   const offerDS   = avgDemand(offer);
   const requestDS = avgDemand(request);
   const demandWarn = offerDS !== null && requestDS !== null && adjDiff > 0 && requestDS < offerDS;
-
-  // Confidence
   const ap = Math.abs(pct);
   const [confLabel, confPct, confColor] =
-    ap >= 15 ? ['High',     92, '#39e07a'] :
-    ap >=  6 ? ['Medium',   62, '#e07820'] :
-    ap >=  2 ? ['Low',      36, '#e03040'] :
-               ['Very Low', 14, '#6b7280'];
-
-  // Duped counts
+    ap >= 15 ? ['High',    92, '#39e07a'] :
+    ap >=  6 ? ['Medium',  62, '#e07820'] :
+    ap >=  2 ? ['Low',     36, '#e03040'] :
+               ['Very Low',14, '#6b7280'];
   const totalDuped = offer.filter(e => e.state==='duped').length
                    + request.filter(e => e.state==='duped').length;
-
   el.innerHTML = `
     <div class="summary-card ${v.cls}">
-
       <div class="summary-top">
         <div class="verdict-block">
           <div class="verdict-emoji">${v.emoji}</div>
@@ -1149,7 +1067,6 @@ function refreshSummary() {
           </div>
         </div>
       </div>
-
       ${isUpgrade ? `
       <div class="demand-alert" style="background:rgba(162,155,254,0.07);border-color:rgba(162,155,254,0.25);color:#a29bfe;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -1162,10 +1079,8 @@ function refreshSummary() {
           An upgrade allowance of <strong>${fmtValue(Math.round(upgradeAllowance))}</strong>
           (${(UPGRADE_RATE * 100)}% × ${extraOfferItems}) has been applied.
           Raw diff: <span style="color:${rawDiff>=0?'#39e07a':'#e03040'}">${rawDiff>=0?'+':''}${fmtValue(rawDiff)}</span>.
-          Overpaying when consolidating multiple items into one is normal and expected.
         </span>
       </div>` : ''}
-
       ${demandWarn ? `
       <div class="demand-alert">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -1175,11 +1090,10 @@ function refreshSummary() {
         </svg>
         <span>
           <strong>Value Win — Demand Loss.</strong>
-          You gain value, but the items you're offering have higher demand than what you receive.
-          You may be giving up liquidity that's harder to replace.
+          You gain value, but the items you offer have higher demand than what you receive back.
+          You may be giving up liquidity that's hard to replace.
         </span>
       </div>` : ''}
-
       <div class="summary-detail-grid">
         <div class="detail-block">
           <div class="db-lbl">You ${adjDiff >= 0 ? 'Gain' : 'Lose'}</div>
@@ -1219,32 +1133,25 @@ function refreshSummary() {
     </div>`;
 }
 
-// ── XSS safety ───────────────────────────────────────────────────
 function escHtml(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-// ── Wire search inputs ────────────────────────────────────────────
 ['offer','request'].forEach(side => {
   const inp = document.getElementById(`${side}-search`);
   const dd  = document.getElementById(`${side}-dropdown`);
-
   inp.addEventListener('input', () => {
     renderDropdown(side, search(inp.value.trim()), inp.value.trim());
   });
-
   inp.addEventListener('focus', () => {
     if (inp.value.trim()) renderDropdown(side, search(inp.value.trim()), inp.value.trim());
   });
-
-  // Close when clicking outside
   document.addEventListener('pointerdown', e => {
     const wrap = inp.closest('.panel-search-wrap');
     if (!wrap.contains(e.target)) dd.classList.remove('open');
   }, { capture: true });
 });
 
-// ── Clear all ─────────────────────────────────────────────────────
 document.getElementById('btn-clear').addEventListener('click', () => {
   SIDES.offer = []; SIDES.request = [];
   ['offer','request'].forEach(s => {
@@ -1257,7 +1164,21 @@ document.getElementById('btn-clear').addEventListener('click', () => {
   refreshSummary();
 });
 
-// ── Boot ──────────────────────────────────────────────────────────
+// Theme toggle
+const themeBtn = document.getElementById('theme-toggle');
+if (themeBtn) {
+  const saved = localStorage.getItem('jblx-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', saved);
+  themeBtn.querySelector('.toggle-icon').textContent = saved === 'dark' ? '☀' : '🌙';
+  themeBtn.addEventListener('click', () => {
+    const cur  = document.documentElement.getAttribute('data-theme');
+    const next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('jblx-theme', next);
+    themeBtn.querySelector('.toggle-icon').textContent = next === 'dark' ? '☀' : '🌙';
+  });
+}
+
 refreshSelected('offer');
 refreshSelected('request');
 refreshSummary();

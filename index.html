@@ -10,11 +10,9 @@
 </head>
 <body class="index-body">
 
-  <!-- Animated background -->
   <div class="bg-grid"></div>
   <div class="bg-glow"></div>
 
-  <!-- Decorative chart line -->
   <svg class="bg-chart" viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="chartGrad" x1="0" y1="0" x2="1" y2="0">
@@ -40,12 +38,10 @@
     <circle cx="1440" cy="28"  r="6"   fill="rgba(0,200,240,1)"/>
   </svg>
 
-  <!-- Theme toggle -->
-  <button class="theme-toggle" style="position:fixed;top:18px;right:20px;z-index:100;" title="Toggle theme">
+  <button class="theme-toggle" id="theme-toggle" style="position:fixed;top:18px;right:20px;z-index:100;" title="Toggle theme">
     <span class="toggle-icon">☀</span>
   </button>
 
-  <!-- ── HERO ─────────────────────────────────────────────── -->
   <main class="hero">
 
     <img src="assets/images/jblx-logo.png" alt="JBLX" class="hero-logo" />
@@ -76,6 +72,20 @@
             </svg>
           </div>
           <span>Calculator</span>
+        </div>
+        <span class="btn-arrow">→</span>
+      </a>
+
+      <a href="info.html" class="hero-btn">
+        <div class="btn-left">
+          <div class="btn-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+          </div>
+          <span>Information</span>
         </div>
         <span class="btn-arrow">→</span>
       </a>
@@ -112,5 +122,20 @@
 
   <p class="index-footer">© 2025 JBLX — Not affiliated with Badimo or Roblox</p>
 
+  <script>
+    const themeBtn = document.getElementById('theme-toggle');
+    if (themeBtn) {
+      const saved = localStorage.getItem('jblx-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+      themeBtn.textContent = saved === 'dark' ? '☀️' : '🌙';
+      themeBtn.addEventListener('click', () => {
+        const cur = document.documentElement.getAttribute('data-theme');
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('jblx-theme', next);
+        themeBtn.textContent = next === 'dark' ? '☀️' : '🌙';
+      });
+    }
+  </script>
 </body>
 </html>
