@@ -573,7 +573,7 @@ const ITEMS = [
   {
     name:"Drip",         type:"Texture",
     value:20000000,      duped:null,
-    demand:"Medium",     trend:"Stable",
+    demand:"High",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Supreme-inspired texture from Season 5 Level 8 reward. Considered a meme item.",
     tags:"S5 · L8",      updatedAt:_ago(0,30),
