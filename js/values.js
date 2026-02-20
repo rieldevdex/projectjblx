@@ -33,9 +33,9 @@ const ITEMS = [
     value:50000000,      duped:44750000,
     demand:"High",       trend:"Stable",
     change:"+500,000",   dupeChange:"",  demandChange:"",          trendChange:"",
-    description:"Limited seasonal vehicle from Season 2. Sleek aerodynamic design and early-season origin make it one of the most coveted vehicles in the trading scene.",
-    tags:"S2",           updatedAt:_ago(0,7),
-    obtainable:false,    remarks:"",     pullValue:"",
+    description:"The closing vehicle of the 2022 '5 Days of Vehicles' event, available for just 48 hours at $929,929. One of the best-performing vehicles in the game with a top speed of around 390 MPH.",
+    tags:"5 Days of Vehicles · 2022 Event",           updatedAt:_ago(0,7),
+    obtainable:false,    remarks:"Usually have big overpays.",     pullValue:"",
     image:"assets/item-images/vehicles/javelin.webp"
   },
   {
@@ -43,8 +43,8 @@ const ITEMS = [
     value:49000000,      duped:44000000,
     demand:"High",       trend:"Stable",
     change:"+1,000,000", dupeChange:"+500,000", demandChange:"",     trendChange:"",
-    description:"High-performance vehicle from Season 6. Streamlined chassis and sustained resale demand among veteran traders.",
-    tags:"S6",           updatedAt:_ago(0,4),
+    description:"Nicknamed the 'Soapbar,' this vehicle was added during the 2018 Winter event and served as the criminal reward for OG Seasons 1 and 2, requiring a $750,000 purchase. Features one of the highest top speeds at ~395 MPH.",
+    tags:"OG S1 · OG S2 · Winter 2018",           updatedAt:_ago(0,4),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5q1g0nfmULCjKkJaSXLEo7SM0yyEl5VZyzqZPc3fXVw4HPxZ1HygydEzziDk3cDJ6uU4gIWfuQFHEdJqaeInko6zc9QIy_0fdDmtofNUipBuJJcj9W6PodZGrtC_LBlnVednXS3tN4GxuSc5m-Me9F5yxLhlQ2E2BCczb6pjQzEmBkn6WeswHWvfeXq3N/s614/Torpedo.jpg"
   },
@@ -53,8 +53,8 @@ const ITEMS = [
     value:40000000,      duped:37000000,
     demand:"High",       trend:"Stable",
     change:"+500,000",   dupeChange:"+300,000", demandChange:"",     trendChange:"",
-    description:"Fan-favourite novelty vehicle from Season 8. Unique appearance and high-level requirement make it a rare find in active trades.",
-    tags:"S8 · L10",     updatedAt:_ago(0,28),
+    description:"Grand prize of Season 6: 'Race to the Top,' earned at Level 10. Features good handling and acceleration, reaching a solid top speed of around 305 MPH.",
+    tags:"S6 · L10",     updatedAt:_ago(0,28),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFyqwIeAI21wapBfNhCjPO_sAwv5NjrArpmGkTt6iaaXEm7TfFfZja4Bc9PGfgibMPOGUWnjoBoyNMVauUDT9nGLaI9YS6q9UlNn7XB7sOFuTkbaSdsVv14RRUXCRRyPUWyW0NxXV7TOEurB18_aAypxy4BExZXzECXKABQWBSc1Km3RW1dz8zMPHoEXHV/s800/Beignet.jpg"
   },
@@ -63,8 +63,8 @@ const ITEMS = [
     value:33000000,      duped:31000000,
     demand:"Medium",     trend:"Stable",
     change:"-500,000",   dupeChange:"-300,000", demandChange:"↓ was Solid", trendChange:"",
-    description:"Refined luxury vehicle from Season 14. Facing a slight downtrend as newer seasonal releases compete for trader attention.",
-    tags:"S14 · L10",    updatedAt:_ago(0,6),
+    description:"Grand prize of Season 8: 'Looking to the Future.' The Celsior is a flying vehicle that can be spawned anywhere with the Pro Garage pass, offering reasonable flight performance at ~115 MPH.",
+    tags:"S8 · L10",    updatedAt:_ago(0,6),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"assets/item-images/vehicles/celsior.png"
   },
@@ -73,8 +73,8 @@ const ITEMS = [
     value:31000000,      duped:30000000,
     demand:"High",       trend:"Stable",
     change:"+500,000",   dupeChange:"", demandChange:"",           trendChange:"",
-    description:"Futuristic concept vehicle from Season 17. High demand sustained by its unique aesthetic and clean trade history.",
-    tags:"S17 · L10",    updatedAt:_ago(0,21),
+    description:"Grand prize of Season 14: 'For the Champions.' This electric race car delivers excellent handling and one of the quickest acceleration rates in the game, with a top speed of ~210 MPH.",
+    tags:"S14 · L10",    updatedAt:_ago(0,21),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgINxDHzFRtNfLUzJfvkpFLXGxesu73SLaW_nQQaKkAAZEmkR4S92I0ffaZ6A90DskKVinKUWY7nVJhFY7IC2zOtHYCIsE2qzxENhFDQTVc6T2lp9Ny1UVTI_vSJthdovV_ptenXv2fa89n9GIOcWoK-pBU7zJI4HVxUHg5jaMbhdPM98RqvKNREaL1BWRg/s873/Proto-08.jpg"
   },
@@ -83,7 +83,7 @@ const ITEMS = [
     value:23000000,      duped:null,
     demand:"High",       trend:"Stable",
     change:"+500,000",   dupeChange:null, demandChange:"",           trendChange:"",
-    description:"Exclusive high-performance vehicle from Season 17. Features the most detailed interior and exterior of any vehicle in Jailbreak.",
+    description:"Grand prize of Season 17: 'Exploring Europe,' featuring butterfly doors and solid stats. Prized for its flashy look and extensive customization options, with a top speed of ~265 MPH.",
     tags:"S17 · L10",    updatedAt:_ago(0,28),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdJSkSRMt6payrtbDoJu3wNCj7cEAhqvRoTsl4n_-hF58UZe1dRS1j3X_6WKzbkxpz4Rvqrg0fsI0jQiLyBYXeMxC0WYQTQ79dbjxTAghc1b1Q_6N3lxMuyjoDeu6Uu7BAw0uDWdlveLXnaTf3jelv3KdzwXT-W-g1_6Ea9pjVmWEsUDO4mmUjpC/s835/Power-1.png"
@@ -93,8 +93,8 @@ const ITEMS = [
     value:21000000,      duped:18000000,
     demand:"Medium",     trend:"Stable",
     change:"+500,000",   dupeChange:"", demandChange:"",             trendChange:"",
-    description:"Spider-themed vehicle from Season 2 with a distinctive multi-legged visual design.",
-    tags:"S2",           updatedAt:_ago(0,7),
+    description:"Inspired by the iconic Batmobile, the Arachnid was the police reward for OG Seasons 1 and 2, requiring a $750,000 purchase. Notable for its quick acceleration and 125 HP health pool, with a top speed of ~235 MPH.",
+    tags:"OG S1 · OG S2",           updatedAt:_ago(0,7),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT88_JjOX43hM-_6e_pwdzgoJ1g4D1Ko2L34VtlbGTkUsyWo7olYyRupXzJTbkxp_8fgDw1NbHSX4-7PIpHyWBAQ4hO7iL0fHSu1uLMeH7lV6d68zCKhNYg2vdVZUhyuyYcd0jQ5kt7_YGy8btKaXH-TaTi4BG2BbH0PBN52Enu3uM0S7tXJdh7AKWIikK/s672/Arachnid.jpg"
   },
@@ -103,8 +103,8 @@ const ITEMS = [
     value:20000000,      duped:17000000,
     demand:"Solid",      trend:"Stable",
     change:"+500,000",   dupeChange:"", demandChange:"",             trendChange:"",
-    description:"Winter-themed vehicle from Season 1. One of the earliest seasonal vehicles, giving it nostalgic value.",
-    tags:"S1 · L10",     updatedAt:_ago(0,60),
+    description:"Grand prize of Season 7: 'Ice Cold,' earned at Level 10. This electric car delivers solid all-around performance at ~200 MPH, but required more XP to unlock than other seasonal vehicles of its era.",
+    tags:"S7 · L10",     updatedAt:_ago(0,60),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYErgc8t1GhlzEh5Ipfej1YvjbqMLh7Cru2SQdmzwP6oPc0WIwPX7QGz7AZXkcRsulW6hyXB5By7S4j-QmD_U3imhZWF-vP24dKdz7ZK4BZviZwzl1oTwvPDmJlYVFOgL5uo8sDT71GSXsj_BTPAnGLkw2udAmSn-c3yACvjr7I9jTBanGVoPd5kj0LL8T/s805/Icebreaker.jpg"
   },
@@ -113,7 +113,7 @@ const ITEMS = [
     value:19000000,      duped:16000000,
     demand:"Solid",      trend:"Stable",
     change:"+500,000",   dupeChange:"", demandChange:"",             trendChange:"",
-    description:"Eco-styled hybrid vehicle from Season 1: New Beginnings.",
+    description:"Grand prize of Season 1: 'New Beginnings,' earned at Level 10 during a notably short and challenging season. Its rarity makes it the most collector-sought vehicle in the game, with a top speed of ~205 MPH.",
     tags:"S1 · L10",     updatedAt:_ago(0,90),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjpEjbVGU65jp1FriymupigbSp08dqoEgSgBcUKlpiAGtBJ_tvrA3-ugW6MUt592bHbUmC6EE6g0Acj3Oni6pHAynDk-U2hKqZ3nLFdind-iLuTOZdgPa78U2zv9EwCN1SDZVbmWV2DGCoizH14lFEokL8SszzL3gXGiXrJ4ONK3XR_fQ7XX_XxMNc1nTrd/s755/Beam%20Hybrid.jpg"
@@ -123,7 +123,7 @@ const ITEMS = [
     value:17000000,      duped:null,
     demand:"Solid",      trend:"Hyped",
     change:"+1,000,000", dupeChange:null, demandChange:"",           trendChange:"was Stable",
-    description:"Grand prize of Season 5: Let The Memes Begin. Leaves a banana trail, high top speed but lacks traction.",
+    description:"Grand prize of Season 5: 'Let the Memes Begin,' earned at Level 10. Leaves a banana trail while driving and boasts a high top speed of ~235 MPH, though its demand remains fairly subjective.",
     tags:"S5 · L10",     updatedAt:_ago(19,0),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhj4pwYQXZSkEnEvtbtbIiKY1TsFM66rdJPSQsd6XpOyihEOqq1h6iyQ_z8zgJUGgUKA4WoiB-3tLjFF-1mRwNKXPWrEdY3AS_7aUDqNKxN8ZMCK8iSun7N34MZzvjiT85aKlnZXNfKhQMu-HSKNqxTEZ60YlUPNFtD82gmaf26flBsMkULyOtput2zkq82/s764/Banana%20Car.jpg"
@@ -133,7 +133,7 @@ const ITEMS = [
     value:15000000,      duped:null,
     demand:"Solid",      trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"A limited 5-day vehicle with an original cost of $599,000.",
+    description:"Available for $599,000 for 10 days in October 2020, the Molten M12 was also the first community-created vehicle added to the game. It delivers excellent performance with a top speed of ~295 MPH.",
     tags:"",             updatedAt:_ago(19,0),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXT3rgxrQiTBE933nditqcAXdW1QyAlvRSTCFqcXK-g1FtRxT1RDvYEZYxR1fFFwJkqi7JmfjG7hrN5ZapwSLQ35g7n6G6hFcl3QxyD126WJr3c3fENVkTlcYRSVCAfhcsSK3YN1rIrNvvctMqw4FTZE7h4b5weJsoe0uj_LvzFs7adMw-N89MAUdmsG71/s884/Molten%20M12.jpg"
@@ -143,7 +143,7 @@ const ITEMS = [
     value:11000000,      duped:null,
     demand:"Low",        trend:"Stable",
     change:"-500,000",   dupeChange:null, demandChange:"↓ was Medium", trendChange:"",
-    description:"Rugged off-road vehicle from Season 3. Falling demand as newer offerings attract trader attention.",
+    description:"OG Season 3's police prize, styled as a pickup truck. Though slow at ~170 MPH, it maintains steady collector demand and is prized for its role in Jailbreak history.",
     tags:"S3",           updatedAt:_ago(0,2),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-zOoDE0ClSgoKDjbbxY5ldQiSa1X7-dtoHaK0JStpGG0GoUENxFFBSoh8CQZZZ1ncN1dyeZpWzUDPMmuN_5Y7a9kaztAGTuqF9swWaRtUdaoovBSKeCf-IJUnC0XN6hUhw3Yz_ddFtq71s3In2CTobGRSHhcAKexzg8QYjCUR3CLkIlt6JkzgGdAb-MPv/s643/Raptor.jpg"
@@ -153,8 +153,8 @@ const ITEMS = [
     value:10000000,      duped:null,
     demand:"Solid",      trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"Electric off-road SUV from Season 2. Fan favourite for its versatility and clean aesthetic.",
-    tags:"S2 · L10",     updatedAt:_ago(0,3),
+    description:"Grand prize of Season 3: 'Looking Back,' the Volt 4x4 can traverse virtually any terrain with ease. It also carries the largest spoiler in the game but is rather slow off the line, with a top speed of ~345 MPH.",
+    tags:"S3 · L10",     updatedAt:_ago(0,3),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhfbeDIoRIjn9QxWRxZqjrZ8kKU87mWVGTJXgu1n1RNr2bzexj80UfuFSeGvmbJvG3YhN5tdd9L_abeV0-nirXdDLxM2DEPTpXgZLisSRxpSnAxQ9ePaBSU2ttmq-BxeXz96drWZW2ekjvakiiZOc3qT6LkEbEHlt4lDl8J6PKRYGxfHHIJp4kU2L43zhNr/s800/Volt%204x4.jpg"
   },
@@ -163,7 +163,7 @@ const ITEMS = [
     value:9500000,       duped:null,
     demand:"Minimal",    trend:"Stable",
     change:"-500,000",   dupeChange:null, demandChange:"↓ was Low",  trendChange:"",
-    description:"Space-themed from Season 2: Out Of This World. Famous for its egg-shape and Pro Garage spawnability.",
+    description:"Grand prize of Season 2: 'Out of this World,' the Crew Capsule was the first flying vehicle offered as a seasonal grand prize. Features an Among Us reference and can be spawned with the Pro Garage pass, with a top speed of ~90 MPH.",
     tags:"S2",           updatedAt:_ago(0,1),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhL0iBeX6U74E5LXhJuNDwMC5s4po2jtppUVitFr7UV7MOwLKi2KnKDBVTZgbalGdOz2PtFsB9QzDLkUHy57G03fdzcuL6QEOWY7vtW5h4iDpLSTPBUkrDcbVEV1DePLhV0xIdN4yBupLmXJsrwcwC6iQRv4A1AZM3jFwzduUm20ovXxEFbDK2XnX_kEyDN/s1280/Crew%20Capsule.jpg"
@@ -173,7 +173,7 @@ const ITEMS = [
     value:9000000,       duped:null,
     demand:"High",       trend:"Stable",
     change:"+500,000",   dupeChange:null, demandChange:"",           trendChange:"",
-    description:"Stylish European-inspired vehicle with a loyal collector base.",
+    description:"Available for $720,000 for 5 days from February 17–21, 2023. Known for excellent acceleration and top speed (~320 MPH), the Parisian is considered one of the best all-around vehicles in Jailbreak.",
     tags:"",             updatedAt:_ago(19,0),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLaiFJbjxzgJZ4WxMbwa5wpiRskkfN2FCut-3Mljma6Kz5RlTVJaZPswOnLom_J2YRZB5Uiei3bR057N8qgSsx8TVLtJSR8cX5m-oTpN0k1nfI5Tib6Xgo8VvOmacxrtJnHffM8dkDDhqtIKRl4s_4G7erXm0XT7cLC6kpUYqISmk9u51jJ1r-CkJAJ0lH/s689/Parisian.jpg"
@@ -183,8 +183,8 @@ const ITEMS = [
     value:7500000,       duped:null,
     demand:"Solid",      trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"Sleek tech-themed vehicle from Season 15. Distinctive lens-shaped design.",
-    tags:"S15 · L10",    updatedAt:_ago(0,30),
+    description:"Available for $899,000 for 7 days in August 2023. Delivers incredible launch acceleration and features a unique animated trailing taillight effect, with a top speed of ~280 MPH.",
+    tags:"",    updatedAt:_ago(0,30),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiz_IjRp_wVHSmLJ1XPjwfwvBqs2J4H-PeBcHr3-zk38YYBt1ltYbUp3vtjHrkbWjaPwtQanavpASfvGM7wNjnLpMJLXSUKDHpxH5RgiOOqIuHL5mcH5Nagw99qqevzfd1lzuTFnovLXixk2AiBR9kmAx3qYQVWZ4hfZiK5boCqSUX9jnCx1_82J-We5A_a/s659/Aperture.jpg"
   },
@@ -193,8 +193,8 @@ const ITEMS = [
     value:6500000,       duped:null,
     demand:"Solid",      trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"Samurai-inspired vehicle with strong visual identity.",
-    tags:"",             updatedAt:_ago(0,90),
+    description:"Grand prize of Season 15: 'Drift to Japan,' the Shogun was the first seasonal vehicle to come with an exclusive texture and spoiler. Widely considered one of the best cars for drifting, with a top speed of ~215 MPH.",
+    tags:"S15 · L10",             updatedAt:_ago(0,90),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-OSg_itUw4MKAryMi9F3C4SMyG9Jz-JAecBdmyKjWbN0zBqTC06N37coEBOfBwAIIsckG0paTfAPDLmTL4CBnlLJ14X3kAJS08JPouUpMqbehaPeWF1XKWtUEJnp2gp0aNhc2Xd1PcMePq7_b6r4Lhta_mTcNfhxV8JfqpHahF8ssYretTauO1tUqfsm5/s825/Shogun.jpg"
   },
@@ -203,7 +203,7 @@ const ITEMS = [
     value:6000000,       duped:null,
     demand:"Solid",      trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"Aggressive-styled sports vehicle with broad appeal.",
+    description:"Available for $2,000,000 for 10 days, the Scorpion is a Rocket Car equipped with rear boosters. It holds the fastest top speed in the game at over 425 MPH.",
     tags:"",             updatedAt:_ago(0,30),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEio9bcdfGjhMpLfGxxkYhJekypRcalCvXed5BiDE2fm-239MFlAH6O7tXHmFNuTZ5-8xVO_4iQpV4t1m8BQ-c7CmKLlVtSvpJhPEKg5cl-c4q3csflHs_HGWMqlxmfUVqt3_aWhCRSmsTY2vkuX1e2qPm7ZHBjWWZVQ2rWlcVpLplIkq5K_kGknBGYt17dO/s1032/Scorpion.jpg"
@@ -213,8 +213,8 @@ const ITEMS = [
     value:5500000,       duped:null,
     demand:"Solid",      trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"Food-themed novelty vehicle from Season 10. Part of the culinary series.",
-    tags:"S10 · L10",    updatedAt:_ago(19,0),
+    description:"Available for $800,000 for 5 days from December 22–27, 2023. Features distinctive backfire flames from its exhausts and good all-around performance at ~320 MPH.",
+    tags:"",    updatedAt:_ago(19,0),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhuFWcpBCUt1ZAyL3dxCiC7aodcDC42BsH0Kt_oP403ytKD9JoTcWuO6uM0HTjZh7vfSgtfmwrulcWvbKCAbw7dAkfITwYx5OCGTU1pfUbmPOMOYglUsn6mXy3zV8-YA-PQoGHrSd860tUZ6-oJ_bf4JQ3qEE2Z53LvVYhRuiaaHDzL55wDpW0cG5_9HLxf/s711/Carbonara.jpg"
   },
@@ -223,8 +223,8 @@ const ITEMS = [
     value:5500000,       duped:null,
     demand:"Solid",      trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"Pastel-coloured confectionery vehicle. Novelty appeal.",
-    tags:"",             updatedAt:_ago(0,30),
+    description:"Grand prize of Season 10: 'Rich and Famous,' the Macaron uses a unique active spoiler. Features good handling but a relatively low top speed for its class at ~310 MPH.",
+    tags:"S10 · L10",             updatedAt:_ago(0,30),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZ_dVJqfIrZ6_kFK7Qa_aaudbKhsxTv3mTobIB6HmSv1vvGgHcOSeOVcMCdrlkV-TYnsOfizsRsZS0CBwRPKw32EWXeXsEtxv5kwAiVMKr_SaUVbJgIew97kLEWtsT1ZSmZGA0-lX6ffz2_GqtlcfIfChoEw63OyvS9BIN5XkER_B6UV0D0TYGXFdmt44y/s825/Macaron.jpg"
   },
@@ -243,7 +243,7 @@ const ITEMS = [
     value:4000000,       duped:null,
     demand:"Medium",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"A customized Hot-Rod from Season 4: 'Epic Adventures'.",
+    description:"Grand prize of Season 4: 'Epic Adventures,' styled like a rat rod. Emits flames from its exhausts while driving, though overall performance is fairly mediocre at ~205 MPH.",
     tags:"S4 · L10",     updatedAt:_ago(0,21),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghdJEe2ZB-u7Y0bssDI4FYo1cSkrKKfBF11z3AWS4NlCGrTP1vKS2HUBngBcGBx_bo-2ox4sRUhGcdxyxEAGBh4_Ab-1GAGJWHbOH8OwBgJ57jX9i2dMznGTUH7z36Wy-FLDgjxwEAn3DdlDWPL0cvWO1iyRR65PA9XNs021yInSWCgKieTzjzfP5ABzmn/s805/Rattler.jpg"
@@ -253,8 +253,8 @@ const ITEMS = [
     value:3500000,       duped:null,
     demand:"Solid",      trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"The Criminal Grand Prize from OG Season 3. Low value due to its abysmal stats.",
-    tags:"S3",           updatedAt:_ago(0,30),
+    description:"The criminal grand prize for OG Season 3, originally priced at $200,000. Considered one of the slowest supercars with 3 seats, though its exclusivity has made it a sought-after collector vehicle.",
+    tags:"OG S3",           updatedAt:_ago(0,30),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQM6Q_rADEL5auKDSybICCQAWH4WYxP7RJLf9WsO-Wt1d3q1S9eTDXWx2sgPdPt4CC_QaQNnt98892hTDqGQ09cCs19uPQLM7X1fG9G0MsVtsk363omIFMqyPqGuP2CJtnUEQMDJbxl85jN2blP7gzjSay8mGSCYChumvjWXfvWfr0zrKx-Mwy_C6gVpPa/s669/JB8.jpg"
   },
@@ -263,7 +263,7 @@ const ITEMS = [
     value:3500000,       duped:null,
     demand:"Solid",      trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"Ice-themed vehicle from a limited event. Rare but low trading interest.",
+    description:"A limited event supercar from the 'Breaking the Ice' live experience. Features outstanding performance comparable to or better than the Beignet, complete with snow particle effects and a top speed of ~330 MPH.",
     tags:"",             updatedAt:_ago(0,30),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5zmzwoiqnkXRQQpT9NS6A0SSLweaMucAo-azhyphenhyphen0GJa0CBzy1eq3KcTQgdspJfH9pvV8lAikLJ3q8zYJ9kjrVWYBbjy0KJy4UzSU9Ia_0h5PsgDi91nvg2g_CBx385DuLemN6M_As_5gFdxLNyCObwSbAr4LjUjlKT6H5-qwFhGW5jLpqYAw8u58GruePq/s1174/Iceborn.jpg"
@@ -273,8 +273,8 @@ const ITEMS = [
     value:3500000,       duped:null,
     demand:"Solid",      trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"A limited vehicle with original cost of $349,000, commonly known as the 'god of handling'.",
-    tags:"S16 · L10",    updatedAt:_ago(0,30),
+    description:"Available for $649,000 for 11 days from July 1–11, 2022. Features an animated rear spoiler, exceptional handling, and versatile acceleration — commonly known as the 'god of handling' at ~240 MPH.",
+    tags:"",    updatedAt:_ago(0,30),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiSWR9_K7dXx4UrAq7Lz8Nq7C-WkS20PEX0hIayWvH_MGss-OimoMT_rqb2vqCZsH2CguGumgLpMoBCCJJ54TqF3JhCV-6fMY2grZpQjrV56GcxVZ5RAwKtkiHxBfv8wKTL8vq8Fca0nLm2GfizdE4RXAITYAXDAb7Jb-I6cYQFWYwrHPjw2-782WPrfxM1/s619/Snake.jpg"
   },
@@ -283,7 +283,7 @@ const ITEMS = [
     value:3500000,       duped:null,
     demand:"Solid",      trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"High-performance limited vehicle from 2021 5 Days of Vehicles.",
+    description:"Available for $599,000 for 9 days from September 3–12, 2021, as part of the '5 Days of Vehicles' event. Features respectable acceleration and a top speed of ~220 MPH.",
     tags:"",             updatedAt:_ago(0,30),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEMdTqJD_ZMYnio3mG2x1pi2bA7JfN7Qvc3WPRSE4ufr3SUgAcgeA4sBxLjSENW57ytPtWx4bk90u5Qfe5AmJwR_VS2edBDPmCthEJ-t7lI-ECGlX7eh15CSPnC2tXgoaq7S6trQHe8QBCRY4LaFw7wwiOZ0AvRfO9WExACBti5Zmb8rv3GTCf7OrJMeN0/s656/Torero.jpg"
@@ -293,8 +293,8 @@ const ITEMS = [
     value:3000000,       duped:null,
     demand:"Solid",      trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"Miniature toy vehicle from Season 11. Fun novelty item.",
-    tags:"S11 · L10",    updatedAt:_ago(0,30),
+    description:"Level 8 prize for Season 11: 'Toys and Collectibles,' the Tiny Toy is a 1-seater miniature Camaro convertible. Small in size with mediocre top speed (~130 MPH) but impressive maneuverability.",
+    tags:"S11 · L8",    updatedAt:_ago(0,30),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi57lpG7DRd3WS3Ct7_MFdQFFGQ0LAvTURkZG5CGOIyvb-aR9520J9Rre5mJk1xcHY1JX8St9XDwrI2BeDvnEO7flEypry1DR2vLMnYwYpPhfdtxC1yiBMEl05KuTB5YBdD8ryisi9yqtmvEA8dvvIcjYOtOOeZo2bY5i4zF362jZqi9JeHlA_DurhgHz6Z/s675/Tiny%20Toy.jpg"
   },
@@ -303,7 +303,7 @@ const ITEMS = [
     value:3000000,       duped:null,
     demand:"Solid",      trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"A retired vehicle, later replaced with the Eclaire. Second-fastest vehicle in the game.",
+    description:"Purchasable for $500,000 from June 2017 until March 2020, when it was retired and replaced by the Eclaire. Can reach very high speeds (~415 MPH) if given enough distance to accelerate.",
     tags:"",             updatedAt:_ago(0,14),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiiS52CZQTjHIeTtc_RMHGWei42sFlCFFcvzxHpxM9IxIMX2N8U2xv_eBGA4zVG-yW_k_8guxCpEt2yJaxN_Ah9x9qJMTxB2Mexptuo4lh77txoZV4J5JFTPMS1ePj4UNjTFyJ83xZB0Vy2OBVV3VzEzqdqrhYGjfdwYSd8fn5NCsORl-QEP8IG3wnhWe0L/s579/Brulee.jpg"
@@ -313,8 +313,8 @@ const ITEMS = [
     value:2500000,       duped:null,
     demand:"Solid",      trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"Blocky-themed vehicle from Season 3. Nostalgic appeal.",
-    tags:"S3 · L10",     updatedAt:_ago(0,30),
+    description:"Grand prize of Season 11: 'Toys and Collectibles,' the Bloxy is a LEGO-inspired vehicle. Though controversial on release, it offers good handling and acceleration at ~205 MPH..",
+    tags:"S11 · L10",     updatedAt:_ago(0,30),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgs_e5dUJGHhsg8YootQGEaqPxjm7q-3AHN1ix0aE2ooex3dGGDtRXMG1Ilrow61NogGV86MZJuFdhavkyHsGuZUDDBWIunD6DL4i5qnQlu-g2dUYdJ5ldZoXSVC5IFy8IvIDm0TF1A2rv3XZA7Ps_U4JicERwwnWAzJ21M4lFgn75z_zaDGQa6mFZ8yv_W/s730/Bloxy.jpg"
   },
@@ -323,14 +323,14 @@ const ITEMS = [
     value:2500000,       duped:null,
     demand:"Medium",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"Obtained from Tier 5 Legendary safes. Vintage roadster-based with unimpressive performance.",
-    tags:"",             updatedAt:_ago(0,30),
+    description:"Used to be obtainable from Tier 5 Legendary safes. Based on a vintage roadster but with unimpressive performance at ~185 MPH, resulting in extremely low demand despite its rarity.",
+    tags:"Tier 5 Safes - Retired",             updatedAt:_ago(0,30),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOFE1YmGsnfnyZCpJZLoiIQhduqO9eL0CavZdstPt3-Jvt2r1zS2GAR6evwTh8aeymmuTQSZt8ITlVunQgPvSH-8VEABOLIFHx3xwyXO159xE3P_rzeqJqOiaaOVr-F4-qeHfVe8GCRzqV_ri3z7vuNrozxL0nj6i6_RZlWgo8ZX9rJ5-ipEWIZFLbuqQx/s565/Shell%20Classic.jpg"
   },
   {
     name:"Jackrabbit",   type:"Vehicle",
-    value:2500000,       duped:null,
+    value:2000000,       duped:null,
     demand:"Low",        trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Level 8 reward for Season 9: 'A New Journey.' Decent off-roader but has slow top speed.",
@@ -343,7 +343,7 @@ const ITEMS = [
     value:2500000,       duped:1250000,
     demand:"Medium",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"Futuristic concept vehicle. Currently obtainable in-game. Moderate collector interest.",
+    description:"An obtainable vehicle for $2,500,000 and a common entry point into trading. Features great top speed at ~315 MPH, four seats, and a unique light strip that moves across the vehicle.",
     tags:"Obtainable",   updatedAt:_ago(0,30),
     obtainable:true,     remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg3ivIQtdxAjkYV47t55zgfIw5Ct7l8aTSDPD2U8p6hWtflpE6TVU-psM5SJBSdTggAA39nyn06k32Z4yZt_tVemNliG31bVpCJ3BYlxSi9TwhtiOKEPScFdzW44tCtYuTGAi-3ZTBoVmcIm3qFd14csH14tCFmhOL4VBEFloT1RPOp8rYhSgYCD6qlZ1/s619/Concept.jpg"
@@ -363,7 +363,7 @@ const ITEMS = [
     value:1500000,       duped:null,
     demand:"Minimal",    trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
-    description:"Grand prize for Season 19: 'Northern Winter.' Decent seating and tow hitch but very slow, and the season ran for 3 months.",
+    description:"Grand prize of Season 19: 'Northern Winter,' featuring decent seating and a tow hitch. Despite these perks, it is slow at ~140 MPH and the season ran for 3 months — keeping demand very low.",
     tags:"S19 · L10",    updatedAt:_ago(0,30),
     obtainable:false,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuiPiZruf4ch5h3agNN59sXJkImCWI3q1UG6j39j9D4Nt9KLruvdi9afI5u9o_xunIILsT_Lg_V1FM0fYcgf4dyozYRObF-doBmlqK3dFoY6roLQOBmsqsg8s6F1vHk6uZVmMoNh-LLZLunBcvwBBhFv3l_-DbQ7CJTqafe1KeNod1BVNEE3XfymLdgPCe/s810/Frost%20Crawler.jpg"
