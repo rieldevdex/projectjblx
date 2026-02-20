@@ -251,7 +251,7 @@ const ITEMS = [
   },
   {
     name:"Iceborn",      type:"Vehicle",
-    value:3500000,       duped:null,
+    value:3000000,       duped:null,
     demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Ice-themed vehicle from a limited event. Rare but low trading interest.",
@@ -269,7 +269,7 @@ const ITEMS = [
   },
   {
     name:"Torero",       type:"Vehicle",
-    value:3500000,       duped:null,
+    value:4000000,       duped:null,
     demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"High-performance limited vehicle from 2021 5 Days of Vehicles.",
