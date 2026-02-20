@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trade Calculator — JBLX</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/theme.js"></script>
+  <style>
+/* ================================================================
+   CALC PAGE  —  Trade Value Calculator
+   Strict DB values · Live search · Clean / Duped toggle
+================================================================ */
+
+/* ── PAGE SHELL ──────────────────────────────────────────────── */
+.calc-main {
+  flex: 1;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 26px 24px 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ── PAGE HEADER ─────────────────────────────────────────────── */
+.calc-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.28s var(--ease) both;
+}
+.calc-page-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.1;
+}
+.calc-page-title svg { color: var(--accent); flex-shrink: 0; }
+.calc-page-sub {
+  font-size: 0.77rem;
+  color: var(--text-dim);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.btn-clear-all {
+  padding: 8px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 2px;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.btn-clear-all:hover {
+  color: #e03040;
+  border-color: rgba(224,48,64,0.35);
+  background: rgba(224,48,64,0.06);
+}
+
+/* ── ARENA: two panels + VS divider ─────────────────────────── */
+.trade-arena {
+  display: grid;
+  grid-template-columns: 1fr 50px 1fr;
+  gap: 0;
+  align-items: start;
+  animation: fadeUp 0.34s var(--ease) 0.04s both;
+}
+
+/* ── VS COLUMN ───────────────────────────────────────────────── */
+.trade-vs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 86px;
+}
+.vs-dot-top,
+.vs-dot-bot {
+  width: 2px;
+  min-height: 28px;
+  flex: 1;
+  background: linear-gradient(to bottom, transparent, var(--border-hi));
+}
+.vs-dot-bot {
+  background: linear-gradient(to bottom, var(--border-hi), transparent);
+}
+.vs-pill {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1.5px solid var(--border-hi);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+/* ── PANEL ───────────────────────────────────────────────────── */
+.trade-panel {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  overflow: visible;   /* needed for dropdown */
+  min-height: 480px;
+  transition: border-color 0.2s;
+}
+.panel-offer   { border-color: rgba(0,200,240,0.2); }
+.panel-request { border-color: rgba(255,126,179,0.2); }
+
+/* Panel header bar */
+.panel-header {
+  padding: 17px 20px 14px;
+  border-bottom: 1px solid var(--border);
+  border-radius: var(--r-xl) var(--r-xl) 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.panel-offer   .panel-header { background: linear-gradient(110deg, rgba(0,200,240,0.055) 0%, transparent 60%); }
+.panel-request .panel-header { background: linear-gradient(110deg, rgba(255,126,179,0.055) 0%, transparent 60%); }
+
+.panel-label {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.panel-offer   .panel-label { color: var(--accent); }
+.panel-request .panel-label { color: #ff7eb3; }
+
+.panel-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.panel-offer   .panel-dot { background: var(--accent); box-shadow: 0 0 7px var(--accent); }
+.panel-request .panel-dot { background: #ff7eb3;        box-shadow: 0 0 7px #ff7eb3; }
+
+.panel-total-group { text-align: right; flex-shrink: 0; }
+.panel-total-lbl {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1px;
+}
+.panel-total-val {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: color 0.15s;
+}
+.panel-offer   .panel-total-val { color: var(--accent); }
+.panel-request .panel-total-val { color: #ff7eb3; }
+
+/* ── SEARCH SECTION ──────────────────────────────────────────── */
+.panel-search-wrap {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  position: relative;   /* anchor for dropdown */
+}
+.panel-search-icon {
+  position: absolute;
+  left: 27px; top: 50%; transform: translateY(-50%);
+  width: 14px; height: 14px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+.panel-search-input {
+  width: 100%;
+  padding: 9px 12px 9px 34px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.panel-search-input::placeholder { color: var(--text-muted); }
+.panel-offer   .panel-search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0,200,240,0.10);
+}
+.panel-request .panel-search-input:focus {
+  border-color: #ff7eb3;
+  box-shadow: 0 0 0 3px rgba(255,126,179,0.10);
+}
+
+/* ── SEARCH RESULTS DROPDOWN ─────────────────────────────────── */
+.search-results-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% - 4px);
+  left: 0; right: 0;
+  z-index: 400;
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--r-lg);
+  box-shadow: 0 18px 54px rgba(0,0,0,0.6);
+  overflow: hidden;
+  flex-direction: column;
+}
+.search-results-dropdown.open { display: flex; }
+
+.srd-header {
+  padding: 7px 14px 5px;
+  background: var(--bg3);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.53rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.srd-scroll {
+  overflow-y: auto;
+  max-height: 320px;
+}
+
+.srd-row {
+  display: grid;
+  grid-template-columns: 42px 1fr 80px auto 58px;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.09s;
+  cursor: default;
+}
+.srd-row:last-child { border-bottom: none; }
+.srd-row:hover { background: var(--surface2); }
+
+.srd-thumb {
+  width: 40px; height: 32px;
+  border-radius: 5px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.srd-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.srd-thumb-fb {
+  font-family: var(--font-display);
+  font-size: 0.54rem;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.55;
+  letter-spacing: 0.03em;
+}
+
+.srd-name {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.srd-type {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.srd-val {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffd166;
+  text-align: right;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.srd-demand {
+  flex-shrink: 0;
+}
+
+.srd-add {
+  padding: 5px 0;
+  width: 52px;
+  border-radius: var(--r);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  flex-shrink: 0;
+  transition: opacity 0.14s, transform 0.12s;
+}
+.panel-offer   .srd-add { background: var(--accent); color: #000; }
+.panel-request .srd-add { background: #ff7eb3;        color: #000; }
+.srd-add:hover  { opacity: 0.82; transform: scale(1.04); }
+.srd-add:active { transform: scale(0.97); }
+
+.srd-empty {
+  padding: 22px;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ── SELECTED ITEMS SECTION ──────────────────────────────────── */
+.panel-selected-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-empty-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 36px 24px;
+  text-align: center;
+  color: var(--text-muted);
+}
+.panel-empty-state svg { opacity: 0.12; }
+.panel-empty-state-title {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  margin-bottom: 2px;
+}
+.panel-empty-state-sub {
+  font-size: 0.72rem;
+  font-style: italic;
+}
+
+.selected-list {
+  overflow-y: auto;
+  max-height: 480px;
+}
+
+/* Individual selected item row */
+.sel-row {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.09s;
+  animation: fadeUp 0.16s var(--ease) both;
+}
+.sel-row:last-child { border-bottom: none; }
+.sel-row:hover { background: var(--surface2); }
+
+/* Thumb with duped badge */
+.sel-thumb-wrap {
+  position: relative;
+  width: 44px; height: 36px;
+  border-radius: 6px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.sel-thumb-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.sel-thumb-fb {
+  font-family: var(--font-display);
+  font-size: 0.57rem;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.5;
+  letter-spacing: 0.04em;
+}
+.sel-duped-strip {
+  display: none;
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(224,48,64,0.85);
+  font-family: var(--font-mono);
+  font-size: 0.45rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  padding: 1px 0;
+}
+.sel-row.is-duped .sel-duped-strip { display: block; }
+
+/* Centre info */
+.sel-info { min-width: 0; }
+.sel-name {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 3px;
+}
+.sel-value {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ffd166;
+  transition: color 0.2s;
+}
+
+/* Controls: toggle + remove */
+.sel-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+/* Clean / Duped pill toggle */
+.cd-toggle {
+  display: inline-flex;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.cd-btn {
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border: none;
+  background: var(--bg3);
+  color: var(--text-muted);
+  transition: background 0.14s, color 0.14s;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+.cd-btn.active-clean { background: rgba(57,224,122,0.16); color: #39e07a; }
+.cd-btn.active-duped { background: rgba(224,48,64,0.16);  color: #e03040; }
+.cd-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.sel-remove {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: rgba(224,48,64,0.08);
+  color: var(--c-falling);
+  border: 1px solid rgba(224,48,64,0.16);
+  font-size: 0.72rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.12s, transform 0.12s;
+  line-height: 1;
+}
+.sel-remove:hover { background: rgba(224,48,64,0.22); transform: scale(1.12); }
+
+/* ── TRADE SUMMARY ────────────────────────────────────────────── */
+.trade-summary {
+  animation: fadeUp 0.38s var(--ease) 0.1s both;
+}
+
+.summary-placeholder {
+  background: var(--surface);
+  border: 1px dashed var(--border-hi);
+  border-radius: var(--r-xl);
+  padding: 28px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-style: italic;
+}
+
+/* Summary card states */
+.summary-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.summary-card.s-win         { border-color: rgba(57,224,122,0.45); }
+.summary-card.s-slight-win  { border-color: rgba(57,224,122,0.22); }
+.summary-card.s-fair        { border-color: rgba(90,96,128,0.35); }
+.summary-card.s-slight-lose { border-color: rgba(224,120,32,0.35); }
+.summary-card.s-lose        { border-color: rgba(224,48,64,0.45); }
+
+/* Top row: verdict block + metrics strip */
+.summary-top {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border);
+}
+
+.verdict-block {
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  min-width: 190px;
+}
+.s-win        .verdict-block { background: linear-gradient(120deg, rgba(57,224,122,0.09) 0%, transparent 100%); }
+.s-slight-win .verdict-block { background: linear-gradient(120deg, rgba(57,224,122,0.05) 0%, transparent 100%); }
+.s-fair       .verdict-block { background: transparent; }
+.s-slight-lose .verdict-block { background: linear-gradient(120deg, rgba(224,120,32,0.06) 0%, transparent 100%); }
+.s-lose       .verdict-block { background: linear-gradient(120deg, rgba(224,48,64,0.08) 0%, transparent 100%); }
+
+.verdict-emoji { font-size: 1.9rem; line-height: 1; flex-shrink: 0; }
+
+.verdict-status {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.s-win         .verdict-status { color: #39e07a; }
+.s-slight-win  .verdict-status { color: #7de8a6; }
+.s-fair        .verdict-status { color: var(--text-dim); }
+.s-slight-lose .verdict-status { color: #e07820; }
+.s-lose        .verdict-status { color: #e03040; }
+
+.verdict-sub {
+  font-family: var(--font-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Metrics strip */
+.metrics-strip {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.metric-cell {
+  padding: 14px 22px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  min-width: 96px;
+}
+.metric-cell:last-child { border-right: none; }
+.mc-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.51rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.mc-val {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+}
+.mc-val.up   { color: #39e07a; }
+.mc-val.dn   { color: #e03040; }
+.mc-val.warn { color: #e07820; }
+
+/* Demand alert banner */
+.demand-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 22px;
+  background: rgba(224,120,32,0.07);
+  border-top: 1px solid rgba(224,120,32,0.22);
+  font-size: 0.74rem;
+  color: #c88830;
+  line-height: 1.45;
+}
+.demand-alert svg { flex-shrink: 0; opacity: 0.9; }
+
+/* Detail grid at bottom */
+.summary-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+  border-top: 1px solid var(--border);
+}
+.detail-block {
+  padding: 14px 20px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.detail-block:last-child { border-right: none; }
+.db-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.51rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.db-val {
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.db-val.up { color: #39e07a; }
+.db-val.dn { color: #e03040; }
+
+/* Confidence bar */
+.conf-track {
+  height: 3px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+.conf-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.55s var(--ease), background 0.3s;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .trade-arena {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .trade-vs {
+    flex-direction: row;
+    padding: 10px 0;
+    justify-content: center;
+  }
+  .vs-dot-top, .vs-dot-bot {
+    width: 50px;
+    height: 2px;
+    min-height: unset;
+    flex: none;
+    background: linear-gradient(to right, transparent, var(--border-hi));
+  }
+  .vs-dot-bot { background: linear-gradient(to right, var(--border-hi), transparent); }
+  .summary-top { flex-direction: column; }
+  .verdict-block { border-right: none; border-bottom: 1px solid var(--border); min-width: unset; width: 100%; }
+}
+@media (max-width: 560px) {
+  .calc-main { padding: 16px 12px 52px; }
+  .srd-row { grid-template-columns: 36px 1fr auto; }
+  .srd-val, .srd-demand { display: none; }
+  .metric-cell { min-width: 80px; padding: 12px 14px; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- ── TOP NAV ──────────────────────────────────────────── -->
+  <nav class="top-nav">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/images/jblx-logo.png" alt="JBLX" />
+    </a>
+    <div class="nav-links">
+      <a href="values.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+        <span>Values</span>
+      </a>
+      <a href="calc.html" class="nav-link active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+        <span>Calculator</span>
+      </a>
+      <a href="teams.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span>Team</span>
+      </a>
+      <a href="disc.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+        <span>Discord</span>
+      </a>
+      <button class="theme-toggle" title="Toggle theme">
+        <span class="toggle-icon">☀</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── MAIN ─────────────────────────────────────────────── -->
+  <main class="calc-main">
+
+    <!-- Page header -->
+    <div class="calc-page-header">
+      <div>
+        <div class="calc-page-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+          </svg>
+          Trade Value Calculator
+        </div>
+        <div class="calc-page-sub">Search the item database · toggle Clean / Duped per item · get an instant trade verdict. Values are database-authoritative — no manual edits.</div>
+      </div>
+      <button class="btn-clear-all" id="btn-clear">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg>
+        Clear All
+      </button>
+    </div>
+
+    <!-- Trade arena -->
+    <div class="trade-arena">
+
+      <!-- ── OFFERING PANEL ─────────────────────────────── -->
+      <div class="trade-panel panel-offer">
+        <div class="panel-header">
+          <div class="panel-label">
+            <div class="panel-dot"></div>
+            You Offer
+          </div>
+          <div class="panel-total-group">
+            <span class="panel-total-lbl">Total Value</span>
+            <span class="panel-total-val" id="offer-total">0</span>
+          </div>
+        </div>
+
+        <div class="panel-search-wrap">
+          <svg class="panel-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input class="panel-search-input" id="offer-search" type="text" placeholder="Search items to offer…" autocomplete="off" spellcheck="false" />
+          <div class="search-results-dropdown" id="offer-dropdown"></div>
+        </div>
+
+        <div class="panel-selected-wrap" id="offer-selected"></div>
+      </div>
+
+      <!-- ── VS ────────────────────────────────────────── -->
+      <div class="trade-vs">
+        <div class="vs-dot-top"></div>
+        <div class="vs-pill">VS</div>
+        <div class="vs-dot-bot"></div>
+      </div>
+
+      <!-- ── REQUESTING PANEL ──────────────────────────── -->
+      <div class="trade-panel panel-request">
+        <div class="panel-header">
+          <div class="panel-label">
+            <div class="panel-dot"></div>
+            You Request
+          </div>
+          <div class="panel-total-group">
+            <span class="panel-total-lbl">Total Value</span>
+            <span class="panel-total-val" id="request-total">0</span>
+          </div>
+        </div>
+
+        <div class="panel-search-wrap">
+          <svg class="panel-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input class="panel-search-input" id="request-search" type="text" placeholder="Search items you want…" autocomplete="off" spellcheck="false" />
+          <div class="search-results-dropdown" id="request-dropdown"></div>
+        </div>
+
+        <div class="panel-selected-wrap" id="request-selected"></div>
+      </div>
+
+    </div><!-- /trade-arena -->
+
+    <!-- Trade Summary -->
+    <div class="trade-summary" id="trade-summary"></div>
+
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2025 JBLX — Jailbreak Listing Exchange</span>
+    <span>Not affiliated with Badimo or Roblox</span>
+  </footer>
+
+  <!-- Shared values database -->
+  <script src="js/values.js"></script>
+  <script>
+/* ================================================================
+   JBLX TRADE CALCULATOR ENGINE  (vanilla JS, no page reloads)
+   - Reads ITEMS, fmtValue, demandClass from values.js
+   - Strict DB values only — no manual entry
+   - Each side: array of { uid, item, state:'clean'|'duped', value }
+================================================================ */
+
+// ── Constants ────────────────────────────────────────────────────
+const DEMAND_WEIGHT = { High:6, Solid:5, Medium:4, Low:3, Minimal:2, Nonexistent:1 };
+const DEMAND_NAMES  = { 1:'Nonexistent', 2:'Minimal', 3:'Low', 4:'Medium', 5:'Solid', 6:'High' };
+
+const VERDICT = [
+  { min:  8,        cls:'s-win',         label:'Win',         emoji:'🏆' },
+  { min:  2,        cls:'s-slight-win',  label:'Slight Win',  emoji:'📈' },
+  { min: -2,        cls:'s-fair',        label:'Fair',        emoji:'⚖️'  },
+  { min: -8,        cls:'s-slight-lose', label:'Slight Lose', emoji:'📉' },
+  { min: -Infinity, cls:'s-lose',        label:'Lose',        emoji:'❌' },
+];
+
+// ── State ────────────────────────────────────────────────────────
+const SIDES = { offer: [], request: [] };
+let _nextUID = 1;
+const uid = () => _nextUID++;
+
+// ── Helpers ──────────────────────────────────────────────────────
+const abbr = name => name.replace(/[^A-Z0-9]/gi,'').slice(0,3).toUpperCase();
+
+function thumbHTML(item, wrapClass) {
+  const fb = `<span class="${wrapClass}-fb">${abbr(item.name)}</span>`;
+  if (!item.image) return fb;
+  return `<img src="${item.image}" alt="" loading="lazy"
+    onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'">${fb.replace('display:inline-flex','display:inline-flex').replace(wrapClass+'-fb',wrapClass+'-fb" style="display:none')}`;
+}
+
+function demandScore(item) { return DEMAND_WEIGHT[item.demand] ?? 0; }
+
+function avgDemand(entries) {
+  const rated = entries.filter(e => demandScore(e.item) > 0);
+  if (!rated.length) return null;
+  return rated.reduce((s,e) => s + demandScore(e.item), 0) / rated.length;
+}
+
+function demandName(score) {
+  if (score === null) return 'N/A';
+  return DEMAND_NAMES[Math.round(Math.max(1, Math.min(6, score)))] ?? 'N/A';
+}
+
+// ── Search ───────────────────────────────────────────────────────
+function search(q) {
+  if (!q) return [];
+  const lo = q.toLowerCase();
+  return ITEMS.filter(i => i.name.toLowerCase().includes(lo)).slice(0, 35);
+}
+
+function renderDropdown(side, results, q) {
+  const dd = document.getElementById(`${side}-dropdown`);
+  if (!q.trim()) { dd.classList.remove('open'); return; }
+
+  dd.classList.add('open');
+
+  if (!results.length) {
+    dd.innerHTML = `<div class="srd-empty">No items found for "<strong>${escHtml(q)}</strong>"</div>`;
+    return;
+  }
+
+  const demCls = item => `badge-demand ${demandClass(item.demand)}`;
+
+  dd.innerHTML = `
+    <div class="srd-header">${results.length} result${results.length !== 1 ? 's' : ''}</div>
+    <div class="srd-scroll" id="${side}-srd-scroll"></div>`;
+
+  const scroll = dd.querySelector('.srd-scroll');
+  results.forEach(item => {
+    const imgBlock = item.image
+      ? `<img src="${item.image}" alt="" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.removeProperty('display')">
+         <span class="srd-thumb-fb" style="display:none">${abbr(item.name)}</span>`
+      : `<span class="srd-thumb-fb">${abbr(item.name)}</span>`;
+
+    const row = document.createElement('div');
+    row.className = 'srd-row';
+    row.innerHTML = `
+      <div class="srd-thumb">${imgBlock}</div>
+      <div>
+        <div class="srd-name">${escHtml(item.name)}</div>
+        <div class="srd-type">${item.type}</div>
+      </div>
+      <span class="srd-val">${fmtValue(item.value)}</span>
+      <span class="srd-demand ${demCls(item)}" style="font-size:0.55rem;font-family:var(--font-mono)">${item.demand}</span>
+      <button class="srd-add">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round" width="10" height="10">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>Add
+      </button>`;
+
+    row.querySelector('.srd-add').addEventListener('click', () => {
+      addItem(side, item);
+      const inp = document.getElementById(`${side}-search`);
+      inp.value = '';
+      dd.classList.remove('open');
+      inp.focus();
+    });
+
+    scroll.appendChild(row);
+  });
+}
+
+// ── Add / Remove / Toggle ────────────────────────────────────────
+function addItem(side, item) {
+  SIDES[side].push({ uid: uid(), item, state: 'clean', value: item.value });
+  refreshSelected(side);
+  refreshTotal(side);
+  refreshSummary();
+}
+
+function removeItem(side, id) {
+  SIDES[side] = SIDES[side].filter(e => e.uid !== id);
+  refreshSelected(side);
+  refreshTotal(side);
+  refreshSummary();
+}
+
+function toggleCondition(side, id) {
+  const e = SIDES[side].find(x => x.uid === id);
+  if (!e) return;
+
+  if (e.state === 'clean' && e.item.duped !== null) {
+    e.state = 'duped';
+    e.value = e.item.duped;
+  } else {
+    e.state = 'clean';
+    e.value = e.item.value;
+  }
+
+  // Surgical DOM update — no full re-render
+  const row = document.querySelector(`[data-uid="${id}"]`);
+  if (row) {
+    row.querySelector('.sel-value').textContent = fmtValue(e.value);
+    row.classList.toggle('is-duped', e.state === 'duped');
+    row.querySelector('[data-cd="clean"]').classList.toggle('active-clean', e.state === 'clean');
+    row.querySelector('[data-cd="duped"]').classList.toggle('active-duped', e.state === 'duped');
+  }
+  refreshTotal(side);
+  refreshSummary();
+}
+
+// ── Render selected list ──────────────────────────────────────────
+function refreshSelected(side) {
+  const wrap    = document.getElementById(`${side}-selected`);
+  const entries = SIDES[side];
+
+  if (!entries.length) {
+    wrap.innerHTML = `
+      <div class="panel-empty-state">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="38" height="38">
+          <circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/>
+        </svg>
+        <div>
+          <div class="panel-empty-state-title">Nothing here yet</div>
+          <div class="panel-empty-state-sub">Search above to add items</div>
+        </div>
+      </div>`;
+    return;
+  }
+
+  const list = document.createElement('div');
+  list.className = 'selected-list';
+
+  entries.forEach(e => {
+    const { uid: id, item, state, value } = e;
+    const hasDuped = item.duped !== null;
+
+    // Image block
+    const imgBlock = item.image
+      ? `<img src="${item.image}" alt="" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.removeProperty('display')">
+         <span class="sel-thumb-fb" style="display:none">${abbr(item.name)}</span>`
+      : `<span class="sel-thumb-fb">${abbr(item.name)}</span>`;
+
+    const row = document.createElement('div');
+    row.className = `sel-row${state === 'duped' ? ' is-duped' : ''}`;
+    row.dataset.uid = id;
+    row.innerHTML = `
+      <div class="sel-thumb-wrap">
+        ${imgBlock}
+        <div class="sel-duped-strip">DUPED</div>
+      </div>
+      <div class="sel-info">
+        <div class="sel-name">${escHtml(item.name)}</div>
+        <div class="sel-value">${fmtValue(value)}</div>
+      </div>
+      <div class="sel-controls">
+        <button class="sel-remove" title="Remove item">✕</button>
+        <div class="cd-toggle">
+          <button class="cd-btn${state === 'clean' ? ' active-clean' : ''}" data-cd="clean">Clean</button>
+          <button class="cd-btn${state === 'duped' ? ' active-duped' : ''}"
+            data-cd="duped"${!hasDuped ? ' disabled title="No duped value in database"' : ''}>Duped</button>
+        </div>
+      </div>`;
+
+    row.querySelector('.sel-remove').addEventListener('click', () => removeItem(side, id));
+    row.querySelector('[data-cd="clean"]').addEventListener('click', () => {
+      if (e.state !== 'clean') toggleCondition(side, id);
+    });
+    if (hasDuped) {
+      row.querySelector('[data-cd="duped"]').addEventListener('click', () => {
+        if (e.state !== 'duped') toggleCondition(side, id);
+      });
+    }
+    list.appendChild(row);
+  });
+
+  wrap.innerHTML = '';
+  wrap.appendChild(list);
+}
+
+// ── Totals ───────────────────────────────────────────────────────
+function refreshTotal(side) {
+  const total = SIDES[side].reduce((s, e) => s + e.value, 0);
+  document.getElementById(`${side}-total`).textContent = fmtValue(total);
+}
+
+// ── Trade Summary ─────────────────────────────────────────────────
+function refreshSummary() {
+  const el      = document.getElementById('trade-summary');
+  const offer   = SIDES.offer;
+  const request = SIDES.request;
+
+  if (!offer.length && !request.length) {
+    el.innerHTML = '<div class="summary-placeholder">Add items to both sides to see your trade verdict.</div>';
+    return;
+  }
+  if (!offer.length || !request.length) {
+    el.innerHTML = '<div class="summary-placeholder">Add items to the other panel to compare.</div>';
+    return;
+  }
+
+  const offerTotal   = offer.reduce((s,e) => s + e.value, 0);
+  const requestTotal = request.reduce((s,e) => s + e.value, 0);
+
+  // ── Upgrade Allowance ─────────────────────────────────────────
+  // When trading N items for M items (N > M) you're consolidating.
+  // Each extra item on the offering side carries a 4% allowance —
+  // this represents the expected "upgrade tax" everyone pays when
+  // merging multiple items into one. The verdict is judged against
+  // the adjusted diff, not the raw diff.
+  const extraOfferItems = Math.max(0, offer.length - request.length);
+  const UPGRADE_RATE    = 0.04; // 4% of offerTotal per extra item
+  const upgradeAllowance = extraOfferItems * UPGRADE_RATE * offerTotal;
+  const isUpgrade = extraOfferItems > 0;
+
+  // Raw diff: positive = you receive more value than you give
+  const rawDiff = requestTotal - offerTotal;
+  // Adjusted diff: credit offering side with allowance when upgrading
+  const adjDiff = rawDiff + upgradeAllowance;
+
+  const pct = offerTotal > 0
+    ? (adjDiff / offerTotal) * 100
+    : (requestTotal > 0 ? 100 : 0);
+
+  // Verdict (based on adjusted diff)
+  const v        = VERDICT.find(x => pct >= x.min);
+  const dirClass = adjDiff >= 0 ? 'up' : 'dn';
+  const rawClass = rawDiff >= 0 ? 'up' : 'dn';
+  const sign     = adjDiff >= 0 ? '+' : '';
+  const pctSign  = pct     >= 0 ? '+' : '';
+
+  // Demand
+  const offerDS   = avgDemand(offer);
+  const requestDS = avgDemand(request);
+  const demandWarn = offerDS !== null && requestDS !== null && adjDiff > 0 && requestDS < offerDS;
+
+  // Confidence
+  const ap = Math.abs(pct);
+  const [confLabel, confPct, confColor] =
+    ap >= 15 ? ['High',     92, '#39e07a'] :
+    ap >=  6 ? ['Medium',   62, '#e07820'] :
+    ap >=  2 ? ['Low',      36, '#e03040'] :
+               ['Very Low', 14, '#6b7280'];
+
+  // Duped counts
+  const totalDuped = offer.filter(e => e.state==='duped').length
+                   + request.filter(e => e.state==='duped').length;
+
+  el.innerHTML = `
+    <div class="summary-card ${v.cls}">
+
+      <div class="summary-top">
+        <div class="verdict-block">
+          <div class="verdict-emoji">${v.emoji}</div>
+          <div>
+            <div class="verdict-status">${v.label}</div>
+            <div class="verdict-sub">Trade Verdict</div>
+          </div>
+        </div>
+        <div class="metrics-strip">
+          <div class="metric-cell">
+            <div class="mc-lbl">Adj. Diff</div>
+            <div class="mc-val ${dirClass}">${sign}${fmtValue(Math.abs(adjDiff))}</div>
+          </div>
+          <div class="metric-cell">
+            <div class="mc-lbl">Net %</div>
+            <div class="mc-val ${dirClass}">${pctSign}${pct.toFixed(1)}%</div>
+          </div>
+          <div class="metric-cell">
+            <div class="mc-lbl">Offering</div>
+            <div class="mc-val">${fmtValue(offerTotal)}</div>
+          </div>
+          <div class="metric-cell">
+            <div class="mc-lbl">Requesting</div>
+            <div class="mc-val">${fmtValue(requestTotal)}</div>
+          </div>
+        </div>
+      </div>
+
+      ${isUpgrade ? `
+      <div class="demand-alert" style="background:rgba(162,155,254,0.07);border-color:rgba(162,155,254,0.25);color:#a29bfe;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+          <polyline points="17 11 21 7 17 3"/><line x1="21" y1="7" x2="9" y2="7"/>
+          <polyline points="7 21 3 17 7 13"/><line x1="15" y1="17" x2="3" y2="17"/>
+        </svg>
+        <span>
+          <strong>Upgrade Trade — ${extraOfferItems} extra item${extraOfferItems > 1 ? 's' : ''} on offer side.</strong>
+          An upgrade allowance of <strong>${fmtValue(Math.round(upgradeAllowance))}</strong>
+          (${(UPGRADE_RATE * 100)}% × ${extraOfferItems}) has been applied.
+          Raw diff: <span style="color:${rawDiff>=0?'#39e07a':'#e03040'}">${rawDiff>=0?'+':''}${fmtValue(rawDiff)}</span>.
+          Overpaying when consolidating multiple items into one is normal and expected.
+        </span>
+      </div>` : ''}
+
+      ${demandWarn ? `
+      <div class="demand-alert">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+        <span>
+          <strong>Value Win — Demand Loss.</strong>
+          You gain value, but the items you're offering have higher demand than what you receive.
+          You may be giving up liquidity that's harder to replace.
+        </span>
+      </div>` : ''}
+
+      <div class="summary-detail-grid">
+        <div class="detail-block">
+          <div class="db-lbl">You ${adjDiff >= 0 ? 'Gain' : 'Lose'}</div>
+          <div class="db-val ${dirClass}">${sign}${fmtValue(Math.abs(adjDiff))}</div>
+        </div>
+        ${isUpgrade ? `
+        <div class="detail-block">
+          <div class="db-lbl">Upgrade Allowance</div>
+          <div class="db-val" style="color:#a29bfe">+${fmtValue(Math.round(upgradeAllowance))}</div>
+        </div>` : `
+        <div class="detail-block">
+          <div class="db-lbl">Offer Demand</div>
+          <div class="db-val">${demandName(offerDS)}</div>
+        </div>`}
+        <div class="detail-block">
+          <div class="db-lbl">${isUpgrade ? 'Raw Diff' : 'Request Demand'}</div>
+          <div class="db-val ${isUpgrade ? rawClass : ''}">${isUpgrade
+            ? (rawDiff>=0?'+':'') + fmtValue(rawDiff)
+            : demandName(requestDS)}</div>
+        </div>
+        <div class="detail-block">
+          <div class="db-lbl">Duped Items</div>
+          <div class="db-val${totalDuped > 0 ? ' dn' : ''}">${totalDuped === 0 ? 'None' : totalDuped + ' item' + (totalDuped !== 1 ? 's' : '')}</div>
+        </div>
+        <div class="detail-block">
+          <div class="db-lbl">Item Count</div>
+          <div class="db-val">${offer.length} ↔ ${request.length}</div>
+        </div>
+        <div class="detail-block">
+          <div class="db-lbl">Confidence</div>
+          <div class="db-val">${confLabel}</div>
+          <div class="conf-track">
+            <div class="conf-fill" style="width:${confPct}%;background:${confColor}"></div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+}
+
+// ── XSS safety ───────────────────────────────────────────────────
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── Wire search inputs ────────────────────────────────────────────
+['offer','request'].forEach(side => {
+  const inp = document.getElementById(`${side}-search`);
+  const dd  = document.getElementById(`${side}-dropdown`);
+
+  inp.addEventListener('input', () => {
+    renderDropdown(side, search(inp.value.trim()), inp.value.trim());
+  });
+
+  inp.addEventListener('focus', () => {
+    if (inp.value.trim()) renderDropdown(side, search(inp.value.trim()), inp.value.trim());
+  });
+
+  // Close when clicking outside
+  document.addEventListener('pointerdown', e => {
+    const wrap = inp.closest('.panel-search-wrap');
+    if (!wrap.contains(e.target)) dd.classList.remove('open');
+  }, { capture: true });
+});
+
+// ── Clear all ─────────────────────────────────────────────────────
+document.getElementById('btn-clear').addEventListener('click', () => {
+  SIDES.offer = []; SIDES.request = [];
+  ['offer','request'].forEach(s => {
+    refreshSelected(s);
+    refreshTotal(s);
+    const inp = document.getElementById(`${s}-search`);
+    inp.value = '';
+    document.getElementById(`${s}-dropdown`).classList.remove('open');
+  });
+  refreshSummary();
+});
+
+// ── Boot ──────────────────────────────────────────────────────────
+refreshSelected('offer');
+refreshSelected('request');
+refreshSummary();
+  </script>
+</body>
+</html>

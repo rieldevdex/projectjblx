@@ -30,16 +30,16 @@ const ITEMS = [
     demand:"High",       trend:"Stable",
     change:"+500,000",   dupeChange:null,  demandChange:"",          trendChange:"",
     description:"Limited seasonal vehicle from Season 2. Sleek aerodynamic design and early-season origin make it one of the most coveted vehicles in the trading scene.",
-    tags:"Limited",           updatedAt:_ago(0,7),
+    tags:"S2",           updatedAt:_ago(0,7),
     image:"assets/item-images/vehicles/javelin.webp"
   },
   {
     name:"Torpedo",      type:"Vehicle",
     value:49000000,      duped:44000000,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"+1,000,000", dupeChange:"+500,000", demandChange:"",     trendChange:"",
     description:"High-performance vehicle from Season 6. Streamlined chassis and sustained resale demand among veteran traders.",
-    tags:"S2",           updatedAt:_ago(0,4),
+    tags:"S6",           updatedAt:_ago(0,4),
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5q1g0nfmULCjKkJaSXLEo7SM0yyEl5VZyzqZPc3fXVw4HPxZ1HygydEzziDk3cDJ6uU4gIWfuQFHEdJqaeInko6zc9QIy_0fdDmtofNUipBuJJcj9W6PodZGrtC_LBlnVednXS3tN4GxuSc5m-Me9F5yxLhlQ2E2BCczb6pjQzEmBkn6WeswHWvfeXq3N/s614/Torpedo.jpg"
   },
   {
@@ -55,10 +55,10 @@ const ITEMS = [
     name:"Celsior",      type:"Vehicle",
     value:33000000,      duped:31000000,
     demand:"Medium",     trend:"Stable",
-    change:"-500,000",   dupeChange:"-300,000", demandChange:"↓ was Decent", trendChange:"",
+    change:"-500,000",   dupeChange:"-300,000", demandChange:"↓ was Solid", trendChange:"",
     description:"Refined luxury vehicle from Season 14. Facing a slight downtrend as newer seasonal releases compete for trader attention.",
     tags:"S14 · L10",    updatedAt:_ago(0,6),
-    image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGIZaPmMDb0C5v0sRtJUqRxVJ31ys4fcTRyyH5kSd1i1lH6ZulbkeKYCIJspDKSYBMW7tzpBnq0n_ADzauMS14NDBwyp__MydqeTXVEBX0fVXNWFNLGENr0-g03iHJ5X0S4U32sunUtTq4EF_oD8y85B7Qw7c2KK8mCEWrCO2mRcmThRi0Qknv50YF1zRw/s974/Celsior.jpg"
+    image:"assets/item-images/vehicles/celsior.png"
   },
   {
     name:"Proto-8",      type:"Vehicle",
@@ -90,7 +90,7 @@ const ITEMS = [
   {
     name:"Icebreaker",   type:"Vehicle",
     value:20000000,      duped:17000000,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"+500,000",   dupeChange:"", demandChange:"",             trendChange:"",
     description:"Winter-themed vehicle from Season 1. One of the earliest seasonal vehicles, giving it nostalgic value.",
     tags:"S1 · L10",     updatedAt:_ago(0,60),
@@ -99,7 +99,7 @@ const ITEMS = [
   {
     name:"Beam Hybrid",  type:"Vehicle",
     value:19000000,      duped:16000000,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"+500,000",   dupeChange:"", demandChange:"",             trendChange:"",
     description:"Eco-styled hybrid vehicle from Season 1: New Beginnings.",
     tags:"S1 · L10",     updatedAt:_ago(0,90),
@@ -108,7 +108,7 @@ const ITEMS = [
   {
     name:"Banana Car",   type:"Vehicle",
     value:17000000,      duped:null,
-    demand:"Decent",     trend:"Hyped",
+    demand:"Solid",     trend:"Hyped",
     change:"+1,000,000", dupeChange:null, demandChange:"",           trendChange:"was Stable",
     description:"Grand prize of Season 5: Let The Memes Begin. Leaves a banana trail, high top speed but lacks traction.",
     tags:"S5 · L10",     updatedAt:_ago(19,0),
@@ -117,7 +117,7 @@ const ITEMS = [
   {
     name:"Molten M12",   type:"Vehicle",
     value:15000000,      duped:null,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"A limited 5-day vehicle with an original cost of $599,000.",
     tags:"",             updatedAt:_ago(19,0),
@@ -126,7 +126,7 @@ const ITEMS = [
   {
     name:"Stallion",     type:"Vehicle",
     value:200000,        duped:null,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"A powerful muscle car with classic American styling.",
     tags:"",             updatedAt:_ago(0,7),
@@ -135,7 +135,7 @@ const ITEMS = [
   {
     name:"Brulee",       type:"Vehicle",
     value:3000000,       duped:null,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"A retired vehicle, later replaced with the Eclaire. Second-fastest vehicle in the game.",
     tags:"",             updatedAt:_ago(0,14),
@@ -162,7 +162,7 @@ const ITEMS = [
   {
     name:"Volt 4x4",     type:"Vehicle",
     value:10000000,      duped:null,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Electric off-road SUV from Season 2. Fan favourite for its versatility and clean aesthetic.",
     tags:"S2 · L10",     updatedAt:_ago(0,3),
@@ -171,7 +171,7 @@ const ITEMS = [
   {
     name:"Crew Capsule", type:"Vehicle",
     value:9500000,       duped:null,
-    demand:"Very Low",   trend:"Stable",
+    demand:"Minimal",   trend:"Stable",
     change:"-500,000",   dupeChange:null, demandChange:"↓ was Low",  trendChange:"",
     description:"Space-themed from Season 2: Out Of This World. Famous for its egg-shape and Pro Garage spawnability.",
     tags:"S2",           updatedAt:_ago(0,1),
@@ -189,7 +189,7 @@ const ITEMS = [
   {
     name:"Aperture",     type:"Vehicle",
     value:7500000,       duped:null,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Sleek tech-themed vehicle from Season 15. Distinctive lens-shaped design.",
     tags:"S15 · L10",    updatedAt:_ago(0,30),
@@ -198,7 +198,7 @@ const ITEMS = [
   {
     name:"Shogun",       type:"Vehicle",
     value:6500000,       duped:null,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Samurai-inspired vehicle with strong visual identity.",
     tags:"",             updatedAt:_ago(0,90),
@@ -207,7 +207,7 @@ const ITEMS = [
   {
     name:"Scorpion",     type:"Vehicle",
     value:6000000,       duped:null,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Aggressive-styled sports vehicle with broad appeal.",
     tags:"",             updatedAt:_ago(0,30),
@@ -216,7 +216,7 @@ const ITEMS = [
   {
     name:"Carbonara",    type:"Vehicle",
     value:5500000,       duped:null,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Food-themed novelty vehicle from Season 10. Part of the culinary series.",
     tags:"S10 · L10",    updatedAt:_ago(19,0),
@@ -225,7 +225,7 @@ const ITEMS = [
   {
     name:"Macaron",      type:"Vehicle",
     value:5500000,       duped:null,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Pastel-coloured confectionery vehicle. Novelty appeal.",
     tags:"",             updatedAt:_ago(0,30),
@@ -234,7 +234,7 @@ const ITEMS = [
   {
     name:"Roadster",     type:"Vehicle",
     value:600000,        duped:null,
-    demand:"Very Low",   trend:"Stable",
+    demand:"Minimal",   trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Obtainable vehicle. Low demand.",
     tags:"",             updatedAt:_ago(0,90),
@@ -243,7 +243,7 @@ const ITEMS = [
   {
     name:"JB8",          type:"Vehicle",
     value:3500000,       duped:null,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"The Criminal Grand Prize from OG Season 3. Low value due to its abysmal stats.",
     tags:"S3",           updatedAt:_ago(0,30),
@@ -252,7 +252,7 @@ const ITEMS = [
   {
     name:"Iceborn",      type:"Vehicle",
     value:3500000,       duped:null,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Ice-themed vehicle from a limited event. Rare but low trading interest.",
     tags:"",             updatedAt:_ago(0,30),
@@ -261,7 +261,7 @@ const ITEMS = [
   {
     name:"Snake",        type:"Vehicle",
     value:3500000,       duped:null,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"A limited vehicle with original cost of $349,000, commonly known as the 'god of handling'.",
     tags:"S16 · L10",    updatedAt:_ago(0,30),
@@ -270,7 +270,7 @@ const ITEMS = [
   {
     name:"Torero",       type:"Vehicle",
     value:3500000,       duped:null,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"High-performance limited vehicle from 2021 5 Days of Vehicles.",
     tags:"",             updatedAt:_ago(0,30),
@@ -279,7 +279,7 @@ const ITEMS = [
   {
     name:"Concept",      type:"Vehicle",
     value:2500000,       duped:null,
-    demand:"Very Low",   trend:"Stable",
+    demand:"Minimal",   trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Futuristic concept vehicle. Moderate collector interest.",
     tags:"",             updatedAt:_ago(0,30),
@@ -288,7 +288,7 @@ const ITEMS = [
   {
     name:"Bloxy",        type:"Vehicle",
     value:2500000,       duped:null,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Blocky-themed vehicle from Season 3. Nostalgic appeal.",
     tags:"S3 · L10",     updatedAt:_ago(0,30),
@@ -297,7 +297,7 @@ const ITEMS = [
   {
     name:"Tiny Toy",     type:"Vehicle",
     value:3000000,       duped:null,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Miniature toy vehicle from Season 11. Fun novelty item.",
     tags:"S11 · L10",    updatedAt:_ago(0,30),
@@ -306,7 +306,7 @@ const ITEMS = [
   {
     name:"Frost Crawler",type:"Vehicle",
     value:1500000,       duped:null,
-    demand:"Very Low",   trend:"Stable",
+    demand:"Minimal",   trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Grand prize for Season 19: 'Northern Winter.' Decent seating and tow hitch but very slow, and the season ran for 3 months.",
     tags:"S19 · L10",    updatedAt:_ago(0,30),
@@ -315,7 +315,7 @@ const ITEMS = [
   {
     name:"Manta",        type:"Vehicle",
     value:1500000,       duped:null,
-    demand:"Very Low",   trend:"Stable",
+    demand:"Minimal",   trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Introduced in Season 23 as part of the Tier 5 Legendary Safe revamp.",
     tags:"S23",          updatedAt:_ago(0,30),
@@ -342,7 +342,7 @@ const ITEMS = [
   {
     name:"Longhorn",     type:"Vehicle",
     value:1500000,       duped:null,
-    demand:"Very Low",   trend:"Stable",
+    demand:"Minimal",   trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Grand prize for Season 18: 'Wild West.' Convertible roof but underwhelming performance.",
     tags:"S18 · L10",    updatedAt:_ago(0,30),
@@ -351,7 +351,7 @@ const ITEMS = [
   {
     name:"Maverick",     type:"Vehicle",
     value:1000000,       duped:null,
-    demand:"Very Low",   trend:"Stable",
+    demand:"Minimal",   trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Grand prize for Season 22: 'Made in America.' Good off-road but underwhelming otherwise.",
     tags:"S22 · L10",    updatedAt:_ago(0,30),
@@ -360,7 +360,7 @@ const ITEMS = [
   {
     name:"Megalodon",    type:"Vehicle",
     value:1250000,       duped:null,
-    demand:"Very Low",   trend:"Stable",
+    demand:"Minimal",   trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Purchasable for $300,000 from Dec 2017 until retired July 12, 2020.",
     tags:"",             updatedAt:_ago(0,30),
@@ -369,7 +369,7 @@ const ITEMS = [
   {
     name:"OG Monster",   type:"Vehicle",
     value:1000000,       duped:null,
-    demand:"Very Low",   trend:"Stable",
+    demand:"Minimal",   trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Grand prize for Season 21: 'Rewind.' Based on the Monster Truck before its revamp.",
     tags:"S21 · L10",    updatedAt:_ago(0,30),
@@ -378,7 +378,7 @@ const ITEMS = [
   {
     name:"Striker",      type:"Vehicle",
     value:1250000,       duped:null,
-    demand:"Very Low",   trend:"Stable",
+    demand:"Minimal",   trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Grand prize of Season 20: 'Apocalypse.' Features a minigun on its roof.",
     tags:"S20",          updatedAt:_ago(0,30),
@@ -387,7 +387,7 @@ const ITEMS = [
   {
     name:"Venom",        type:"Vehicle",
     value:500000,        duped:null,
-    demand:"Very Low",   trend:"Stable",
+    demand:"Minimal",   trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Obtained from Tier IV Crime safes. Popular with new players for its design and top speed.",
     tags:"",             updatedAt:_ago(0,30),
@@ -396,7 +396,7 @@ const ITEMS = [
   {
     name:"Hammerhead",   type:"Vehicle",
     value:300000,        duped:null,
-    demand:"Very Low",   trend:"Stable",
+    demand:"Minimal",   trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Purchasable from Tier III Police safes. Wedge-like shape usable as a ramp.",
     tags:"",             updatedAt:_ago(0,30),
@@ -405,7 +405,7 @@ const ITEMS = [
   {
     name:"Wedge",        type:"Vehicle",
     value:2500000,       duped:null,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"A retro-themed vehicle introduced in Season 23: Back to the 80s.",
     tags:"S23 · L10",    updatedAt:_ago(0,30),
@@ -416,8 +416,8 @@ const ITEMS = [
   {
     name:"HyperShift L5",type:"Color",
     value:356000000,     duped:312500000,
-    demand:"High",     trend:"Stable",
-    change:"+1,0000,000",           dupeChange:"+500,000", demandChange:"",             trendChange:"",
+    demand:"Solid",     trend:"Stable",
+    change:"",           dupeChange:"", demandChange:"",             trendChange:"",
     description:"The rarest HyperShift obtained by collecting all Level 5 hyperchromes. Unique gradient rainbow effect.",
     tags:"Max Tier",     updatedAt:_ago(0,90),
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg9-__7QNY0CECkeRZfpLTSa1-Lj6ZFdAVXdFRE433E7tHAzFElQ0cXTxBEJ2f-kJ1H4lNiLIbTbfbIAO-rixEDZO2_K69HtbK2llyJ6_cKIC5iFhIQgpVKIPii0IFiWbAv-JpGobahC4woU7nnoHHIw3TJzsDz2sHfM97ZccLJ1p3qUYaHrQNspr2yWn9N/s327/Hyper%20Shift.gif"
@@ -425,16 +425,16 @@ const ITEMS = [
   {
     name:"HyperShift L4",type:"Color",
     value:250500000,     duped:null,
-    demand:"Very Low",   trend:"Stable",
+    demand:"Minimal",   trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Rainbow color referencing all Level 4 HyperChromes combined.",
-    tags:"L4",           updatedAt:_ago(0),
+    tags:"L4",           updatedAt:_ago(0,90),
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg9-__7QNY0CECkeRZfpLTSa1-Lj6ZFdAVXdFRE433E7tHAzFElQ0cXTxBEJ2f-kJ1H4lNiLIbTbfbIAO-rixEDZO2_K69HtbK2llyJ6_cKIC5iFhIQgpVKIPii0IFiWbAv-JpGobahC4woU7nnoHHIw3TJzsDz2sHfM97ZccLJ1p3qUYaHrQNspr2yWn9N/s327/Hyper%20Shift.gif"
   },
   {
     name:"Hyper Diamond L5",type:"Color",
     value:70000000,      duped:60000000,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:"", demandChange:"",             trendChange:"",
     description:"Evolved by grinding the Jewelry Store. One of the most popular hyperchrome colors.",
     tags:"L5",           updatedAt:_ago(0,30),
@@ -443,7 +443,7 @@ const ITEMS = [
   {
     name:"Hyper Blue L5", type:"Color",
     value:61000000,      duped:50000000,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:"", demandChange:"",             trendChange:"",
     description:"Evolved by grinding the Cargo Plane. Considered the most time-consuming hyperchrome.",
     tags:"L5",           updatedAt:_ago(0,30),
@@ -452,7 +452,7 @@ const ITEMS = [
   {
     name:"Hyper Pink L5", type:"Color",
     value:58000000,      duped:51000000,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:"", demandChange:"",             trendChange:"",
     description:"Evolved by grinding the Casino. Straightforward but time-consuming.",
     tags:"L5",           updatedAt:_ago(0,30),
@@ -461,7 +461,7 @@ const ITEMS = [
   {
     name:"Hyper Blue L4", type:"Color",
     value:51000000,      duped:null,
-    demand:"Very Low",   trend:"Stable",
+    demand:"Minimal",   trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Mid-tier blue hyperchrome with intense metallic sheen.",
     tags:"L4",           updatedAt:_ago(0,7),
@@ -480,7 +480,7 @@ const ITEMS = [
     name:"Hyper Purple L5",type:"Color",
     value:43000000,      duped:40000000,
     demand:"High",       trend:"Rising",
-    change:"+500,000",   dupeChange:"+300,000", demandChange:"↑ was Decent", trendChange:"was Stable",
+    change:"+500,000",   dupeChange:"+300,000", demandChange:"↑ was Solid", trendChange:"was Stable",
     description:"Purple hyperchrome with rich violet shift, gaining popularity.",
     tags:"L5",           updatedAt:_ago(0,30),
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvTv3uPw2mg5fERhSYE3RhyphenhypheniNI93drup2q9p7fgFZGGkWIPW5rfcoLfUyGnR8FCI6Rcb0Y74eIV1arn5ONn_hXDJj04eZzcuyb1_UXEqh4fpHERs5IGWHXsjHnc68R5kjP67cHdlVKkLp09TgmUT33JZy1Bh9CPNxjwzaM2TBBkc_w_0zD8y-uaays-hiS/s675/Purple%20Level%205.jpg"
@@ -497,7 +497,7 @@ const ITEMS = [
   {
     name:"Hyper Orange L5",type:"Color",
     value:34000000,      duped:31500000,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:"", demandChange:"",             trendChange:"",
     description:"High-tier orange hyperchrome with intense metallic sheen.",
     tags:"L5",           updatedAt:_ago(0,14),
@@ -564,7 +564,7 @@ const ITEMS = [
   {
     name:"Checker",      type:"Texture",
     value:41000000,      duped:38000000,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:"", demandChange:"",             trendChange:"",
     description:"Obtained via Badimo's Vehicle Testing game for 25 Robux. That game is now private — permanently unobtainable.",
     tags:"Retired",      updatedAt:_ago(0,7),
@@ -613,7 +613,7 @@ const ITEMS = [
   {
     name:"Pool Table",   type:"Furniture",
     value:9000000,       duped:null,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Full-size pool table. Rare apartment decoration with steady demand.",
     tags:"",             updatedAt:_ago(0,21),
@@ -658,7 +658,7 @@ const ITEMS = [
   {
     name:"Piano",        type:"Furniture",
     value:1000000,       duped:null,
-    demand:"Decent",     trend:"Stable",
+    demand:"Solid",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Grand piano apartment item. Prestigious furniture piece.",
     tags:"",             updatedAt:_ago(0,30),
@@ -676,7 +676,7 @@ const ITEMS = [
   {
     name:"Couch",        type:"Furniture",
     value:2000000,       duped:null,
-    demand:"Very Low",   trend:"Stable",
+    demand:"Minimal",   trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Standard apartment couch. Common drop with minimal trader interest.",
     tags:"",             updatedAt:_ago(0,90),
@@ -685,7 +685,7 @@ const ITEMS = [
   {
     name:"Coffee Table", type:"Furniture",
     value:1500000,       duped:null,
-    demand:"Very Low",   trend:"Falling",
+    demand:"Minimal",   trend:"Falling",
     change:"-100,000",   dupeChange:null, demandChange:"",           trendChange:"was Stable",
     description:"Basic apartment accessory. Very low demand — mostly acquired passively.",
     tags:"",             updatedAt:_ago(0,90),
@@ -712,18 +712,19 @@ function fmtValue(n) {
   return n.toLocaleString();
 }
 
-const DEMAND_ORDER = { High:5, Decent:4, Medium:3, Low:2, 'Very Low':1 };
+const DEMAND_ORDER = { High:6, Solid:5, Medium:4, Low:3, Minimal:2, Nonexistent:1 };
 function demandClass(d) {
-  return {High:'d-high',Decent:'d-decent',Medium:'d-medium',Low:'d-low','Very Low':'d-verylow'}[d]||'';
+  return {High:'d-high',Solid:'d-solid',Medium:'d-medium',Low:'d-low',Minimal:'d-minimal',Nonexistent:'d-nonexistent'}[d]||'';
 }
 function trendClass(t) {
   return {Stable:'t-stable',Hyped:'t-hyped',Rising:'t-rising',Falling:'t-falling'}[t]||'';
 }
 function typeClass(t) {
   return {
-    Vehicle:'type-vehicle', Spoiler:'type-spoiler', Texture:'type-texture',
-    Color:'type-color',     Rim:'type-rim',          Drift:'type-drift',
-    Horn:'type-horn',       Furniture:'type-furniture'
+    Vehicle:'type-vehicle',       Spoiler:'type-spoiler',       Texture:'type-texture',
+    Color:'type-color',           Rim:'type-rim',               Drift:'type-drift',
+    Horn:'type-horn',             Furniture:'type-furniture',
+    'Tyre Style':'type-tyre-style', 'Tyre Sticker':'type-tyre-sticker', 'Weapon Skin':'type-weapon-skin'
   }[t]||'';
 }
 
