@@ -35,7 +35,7 @@ const ITEMS = [
     change:"+500,000",   dupeChange:"",  demandChange:"",          trendChange:"",
     description:"The closing vehicle of the 2022 '5 Days of Vehicles' event, available for just 48 hours at $929,929. One of the best-performing vehicles in the game with a top speed of around 390 MPH.",
     tags:"5 Days of Vehicles · 2022 Event",           updatedAt:_ago(0,7),
-    obtainable:false,    remarks:"Usually have big overpays.",     pullValue:"",
+    obtainable:false,    remarks:"Usually have big overpays.",     pullValue:"+5m",
     image:"assets/item-images/vehicles/javelin.webp"
   },
   {
