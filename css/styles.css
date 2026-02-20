@@ -1933,23 +1933,6 @@ tr:hover .row-img-wrap { border-color: var(--border-hi); }
   .hero-logo { width: 240px; }
   .hero-btn .btn-left span { display: none; }
 }
-/* Obtainable badge on cards */
-.item-card.is-obtainable::after {
-  content: "Obtainable";
-  position: absolute;
-  top: 8px; right: 8px;
-  background: var(--c-obtainable-bg);
-  color: var(--c-obtainable);
-  font-family: var(--font-mono);
-  font-size: 0.58rem;
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 999px;
-  border: 1px solid var(--c-obtainable-border);
-  box-shadow: 0 0 8px rgba(67,232,176,0.4);
-  animation: pulseGlow 2s infinite;
-  z-index: 2;
-}
 
 /* Force modal sections to show when data exists */
 #modal-remarks-section, #modal-pull-section {
@@ -1970,25 +1953,36 @@ tr:hover .row-img-wrap { border-color: var(--border-hi); }
   }
 }
 
-/* Obtainable Badge – now works on cards + modal */
-.item-card.is-obtainable {
-  position: relative;
-}
-.item-card.is-obtainable::after {
+/* ── OBTAINABLE PILL — BIT TRANSPARENT VERSION ───────────────────────────── */
+.item-card.is-obtainable::after,
+.modal-obtainable-strip {
   content: "OBTAINABLE";
   position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(67,232,176,0.15);
-  color: #43e8b0;
+  top: 14px;
+  right: 14px;
+  background: rgba(15, 23, 42, 0.3);
+  color: #67e8b5;
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  padding: 3px 10px;
+  letter-spacing: 0.09em;
+  padding: 5px 15px;
   border-radius: 9999px;
-  border: 1px solid rgba(67,232,176,0.4);
-  letter-spacing: 0.06em;
-  box-shadow: 0 0 12px rgba(67,232,176,0.5);
-  z-index: 5;
-  animation: pulseGlow 3s infinite;
+  border: 2px solid #67e8b5;
+  box-shadow: 0 0 22px rgba(103, 232, 181, 0.85);
+  z-index: 20;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+  transition: opacity 0.2s ease;
+}
+
+.modal-obtainable-strip {
+  font-size: 0.71rem;
+  padding: 6px 16px;
+}
+
+/* Hide badge on hover so "Show Details" is clean (exactly as in your screenshot) */
+.item-card:hover.is-obtainable::after {
+  opacity: 0;
 }

@@ -10,10 +10,8 @@
   <style>
 /* ================================================================
    CALC PAGE  —  Trade Value Calculator
-   Strict DB values · Live search · Clean / Duped toggle
 ================================================================ */
 
-/* ── PAGE SHELL ──────────────────────────────────────────────── */
 .calc-main {
   flex: 1;
   max-width: 1320px;
@@ -53,7 +51,15 @@
   line-height: 1.5;
 }
 
-.btn-clear-all {
+/* Header action buttons */
+.header-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.btn-action {
   padding: 8px 16px;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -68,18 +74,15 @@
   display: flex;
   align-items: center;
   gap: 7px;
-  flex-shrink: 0;
-  align-self: flex-start;
-  margin-top: 2px;
   transition: color 0.15s, border-color 0.15s, background 0.15s;
 }
-.btn-clear-all:hover {
+.btn-action:hover {
   color: #e03040;
   border-color: rgba(224,48,64,0.35);
   background: rgba(224,48,64,0.06);
 }
 
-/* ── ARENA: two panels + VS divider ─────────────────────────── */
+/* ── ARENA ─────────────────────────────────────────────────── */
 .trade-arena {
   display: grid;
   grid-template-columns: 1fr 50px 1fr;
@@ -88,23 +91,19 @@
   animation: fadeUp 0.34s var(--ease) 0.04s both;
 }
 
-/* ── VS COLUMN ───────────────────────────────────────────────── */
 .trade-vs {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 86px;
 }
-.vs-dot-top,
-.vs-dot-bot {
+.vs-dot-top, .vs-dot-bot {
   width: 2px;
   min-height: 28px;
   flex: 1;
   background: linear-gradient(to bottom, transparent, var(--border-hi));
 }
-.vs-dot-bot {
-  background: linear-gradient(to bottom, var(--border-hi), transparent);
-}
+.vs-dot-bot { background: linear-gradient(to bottom, var(--border-hi), transparent); }
 .vs-pill {
   width: 34px; height: 34px;
   border-radius: 50%;
@@ -136,15 +135,15 @@
 .panel-offer   { border-color: rgba(0,200,240,0.2); }
 .panel-request { border-color: rgba(255,126,179,0.2); }
 
-/* Panel header bar */
 .panel-header {
-  padding: 17px 20px 14px;
+  padding: 14px 16px 12px;
   border-bottom: 1px solid var(--border);
   border-radius: var(--r-xl) var(--r-xl) 0 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 .panel-offer   .panel-header { background: linear-gradient(110deg, rgba(0,200,240,0.055) 0%, transparent 60%); }
 .panel-request .panel-header { background: linear-gradient(110deg, rgba(255,126,179,0.055) 0%, transparent 60%); }
@@ -168,9 +167,17 @@
   flex-shrink: 0;
 }
 .panel-offer   .panel-dot { background: var(--accent); box-shadow: 0 0 7px var(--accent); }
-.panel-request .panel-dot { background: #ff7eb3;        box-shadow: 0 0 7px #ff7eb3; }
+.panel-request .panel-dot { background: #ff7eb3; box-shadow: 0 0 7px #ff7eb3; }
 
-.panel-total-group { text-align: right; flex-shrink: 0; }
+/* Panel right side: total + controls */
+.panel-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.panel-total-group { text-align: right; }
 .panel-total-lbl {
   display: block;
   font-family: var(--font-mono);
@@ -183,12 +190,51 @@
 .panel-total-val {
   display: block;
   font-family: var(--font-mono);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   transition: color 0.15s;
 }
 .panel-offer   .panel-total-val { color: var(--accent); }
 .panel-request .panel-total-val { color: #ff7eb3; }
+
+/* Panel control buttons */
+.panel-ctrl-btns {
+  display: flex;
+  gap: 4px;
+}
+.panel-ctrl-btn {
+  padding: 5px 10px;
+  border-radius: var(--r);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  transition: color 0.14s, border-color 0.14s, background 0.14s;
+}
+.panel-ctrl-btn:hover {
+  color: var(--text);
+  border-color: var(--border-hi);
+  background: var(--surface2);
+}
+.panel-ctrl-btn.mirror-btn:hover {
+  color: var(--accent);
+  border-color: rgba(0,200,240,0.35);
+  background: rgba(0,200,240,0.07);
+}
+.panel-ctrl-btn.clear-btn:hover {
+  color: #e03040;
+  border-color: rgba(224,48,64,0.35);
+  background: rgba(224,48,64,0.06);
+}
 
 /* ── SEARCH SECTION ──────────────────────────────────────────── */
 .panel-search-wrap {
@@ -216,16 +262,10 @@
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 .panel-search-input::placeholder { color: var(--text-muted); }
-.panel-offer   .panel-search-input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(0,200,240,0.10);
-}
-.panel-request .panel-search-input:focus {
-  border-color: #ff7eb3;
-  box-shadow: 0 0 0 3px rgba(255,126,179,0.10);
-}
+.panel-offer   .panel-search-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,200,240,0.10); }
+.panel-request .panel-search-input:focus { border-color: #ff7eb3; box-shadow: 0 0 0 3px rgba(255,126,179,0.10); }
 
-/* ── SEARCH RESULTS DROPDOWN ─────────────────────────────────── */
+/* ── DROPDOWN ─────────────────────────────────────────────────── */
 .search-results-dropdown {
   display: none;
   position: absolute;
@@ -252,11 +292,7 @@
   color: var(--text-muted);
   flex-shrink: 0;
 }
-
-.srd-scroll {
-  overflow-y: auto;
-  max-height: 320px;
-}
+.srd-scroll { overflow-y: auto; max-height: 320px; }
 
 .srd-row {
   display: grid;
@@ -266,7 +302,6 @@
   padding: 9px 14px;
   border-bottom: 1px solid var(--border);
   transition: background 0.09s;
-  cursor: default;
 }
 .srd-row:last-child { border-bottom: none; }
 .srd-row:hover { background: var(--surface2); }
@@ -291,7 +326,6 @@
   opacity: 0.55;
   letter-spacing: 0.03em;
 }
-
 .srd-name {
   font-family: var(--font-display);
   font-size: 0.88rem;
@@ -307,7 +341,6 @@
   color: var(--text-muted);
   margin-top: 1px;
 }
-
 .srd-val {
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -317,9 +350,7 @@
   white-space: nowrap;
   flex-shrink: 0;
 }
-
 .srd-demand { flex-shrink: 0; }
-
 .srd-add {
   padding: 5px 0;
   width: 52px;
@@ -339,10 +370,9 @@
   transition: opacity 0.14s, transform 0.12s;
 }
 .panel-offer   .srd-add { background: var(--accent); color: #000; }
-.panel-request .srd-add { background: #ff7eb3;        color: #000; }
+.panel-request .srd-add { background: #ff7eb3; color: #000; }
 .srd-add:hover  { opacity: 0.82; transform: scale(1.04); }
 .srd-add:active { transform: scale(0.97); }
-
 .srd-empty {
   padding: 22px;
   text-align: center;
@@ -351,12 +381,8 @@
   font-style: italic;
 }
 
-/* ── SELECTED ITEMS SECTION ──────────────────────────────────── */
-.panel-selected-wrap {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
+/* ── SELECTED ITEMS ────────────────────────────────────────────── */
+.panel-selected-wrap { flex: 1; display: flex; flex-direction: column; }
 
 .panel-empty-state {
   flex: 1;
@@ -378,23 +404,16 @@
   color: var(--text-dim);
   margin-bottom: 2px;
 }
-.panel-empty-state-sub {
-  font-size: 0.72rem;
-  font-style: italic;
-}
+.panel-empty-state-sub { font-size: 0.72rem; font-style: italic; }
 
-.selected-list {
-  overflow-y: auto;
-  max-height: 480px;
-}
+.selected-list { overflow-y: auto; max-height: 480px; }
 
-/* Individual selected item row */
 .sel-row {
   display: grid;
-  grid-template-columns: 48px 1fr auto;
+  grid-template-columns: 44px 1fr auto;
   align-items: center;
-  gap: 11px;
-  padding: 10px 16px;
+  gap: 10px;
+  padding: 9px 14px;
   border-bottom: 1px solid var(--border);
   transition: background 0.09s;
   animation: fadeUp 0.16s var(--ease) both;
@@ -404,7 +423,7 @@
 
 .sel-thumb-wrap {
   position: relative;
-  width: 44px; height: 36px;
+  width: 40px; height: 34px;
   border-radius: 6px;
   background: var(--bg3);
   border: 1px solid var(--border);
@@ -417,7 +436,7 @@
 .sel-thumb-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .sel-thumb-fb {
   font-family: var(--font-display);
-  font-size: 0.57rem;
+  font-size: 0.55rem;
   font-weight: 700;
   color: var(--accent);
   opacity: 0.5;
@@ -429,9 +448,9 @@
   bottom: 0; left: 0; right: 0;
   background: rgba(224,48,64,0.85);
   font-family: var(--font-mono);
-  font-size: 0.45rem;
+  font-size: 0.4rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   text-align: center;
   color: #fff;
@@ -440,32 +459,104 @@
 .sel-row.is-duped .sel-duped-strip { display: block; }
 
 .sel-info { min-width: 0; }
+.sel-name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
 .sel-name {
   font-family: var(--font-display);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 600;
   color: var(--text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: 3px;
+}
+.sel-qty-badge {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-glow);
+  border: 1px solid var(--border-hi);
+  border-radius: 4px;
+  padding: 1px 5px;
+  letter-spacing: 0.02em;
+}
+.sel-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
 }
 .sel-value {
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #ffd166;
   transition: color 0.2s;
 }
+.sel-each {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
 
+/* Right controls column */
 .sel-controls {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 6px;
+  gap: 5px;
   flex-shrink: 0;
 }
 
+/* Qty stepper */
+.qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: var(--bg3);
+}
+.qty-btn {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.12s, background 0.12s;
+}
+.qty-btn:hover { color: var(--accent); background: var(--accent-glow-sm); }
+.qty-btn:active { transform: scale(0.9); }
+.qty-display {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text);
+  min-width: 18px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  padding: 0 2px;
+  line-height: 22px;
+  height: 22px;
+}
+
+/* Clean/Duped toggle */
 .cd-toggle {
   display: inline-flex;
   border-radius: 6px;
@@ -473,11 +564,11 @@
   overflow: hidden;
 }
 .cd-btn {
-  padding: 4px 10px;
+  padding: 3px 8px;
   font-family: var(--font-mono);
-  font-size: 0.58rem;
+  font-size: 0.55rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   cursor: pointer;
   border: none;
   background: var(--bg3);
@@ -488,15 +579,15 @@
 }
 .cd-btn.active-clean { background: rgba(57,224,122,0.16); color: #39e07a; }
 .cd-btn.active-duped { background: rgba(224,48,64,0.16);  color: #e03040; }
-.cd-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.cd-btn:disabled { opacity: 0.28; cursor: not-allowed; }
 
 .sel-remove {
-  width: 22px; height: 22px;
+  width: 20px; height: 20px;
   border-radius: 50%;
-  background: rgba(224,48,64,0.08);
+  background: rgba(224,48,64,0.07);
   color: var(--c-falling);
-  border: 1px solid rgba(224,48,64,0.16);
-  font-size: 0.72rem;
+  border: 1px solid rgba(224,48,64,0.15);
+  font-size: 0.68rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -506,10 +597,8 @@
 }
 .sel-remove:hover { background: rgba(224,48,64,0.22); transform: scale(1.12); }
 
-/* ── TRADE SUMMARY ────────────────────────────────────────────── */
-.trade-summary {
-  animation: fadeUp 0.38s var(--ease) 0.1s both;
-}
+/* ── SUMMARY ──────────────────────────────────────────────────── */
+.trade-summary { animation: fadeUp 0.38s var(--ease) 0.1s both; }
 
 .summary-placeholder {
   background: var(--surface);
@@ -549,7 +638,7 @@
   gap: 14px;
   flex-shrink: 0;
   border-right: 1px solid var(--border);
-  min-width: 190px;
+  min-width: 185px;
 }
 .s-win        .verdict-block { background: linear-gradient(120deg, rgba(57,224,122,0.09) 0%, transparent 100%); }
 .s-slight-win .verdict-block { background: linear-gradient(120deg, rgba(57,224,122,0.05) 0%, transparent 100%); }
@@ -557,11 +646,10 @@
 .s-slight-lose .verdict-block { background: linear-gradient(120deg, rgba(224,120,32,0.06) 0%, transparent 100%); }
 .s-lose       .verdict-block { background: linear-gradient(120deg, rgba(224,48,64,0.08) 0%, transparent 100%); }
 
-.verdict-emoji { font-size: 1.9rem; line-height: 1; flex-shrink: 0; }
-
+.verdict-emoji { font-size: 1.8rem; line-height: 1; flex-shrink: 0; }
 .verdict-status {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -573,10 +661,9 @@
 .s-fair        .verdict-status { color: var(--text-dim); }
 .s-slight-lose .verdict-status { color: #e07820; }
 .s-lose        .verdict-status { color: #e03040; }
-
 .verdict-sub {
   font-family: var(--font-mono);
-  font-size: 0.52rem;
+  font-size: 0.5rem;
   letter-spacing: 0.13em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -589,25 +676,25 @@
   flex-wrap: wrap;
 }
 .metric-cell {
-  padding: 14px 22px;
+  padding: 14px 18px;
   border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 2px;
-  min-width: 96px;
+  min-width: 90px;
 }
 .metric-cell:last-child { border-right: none; }
 .mc-lbl {
   font-family: var(--font-mono);
-  font-size: 0.51rem;
+  font-size: 0.5rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
 }
 .mc-val {
   font-family: var(--font-mono);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--text);
   white-space: nowrap;
@@ -615,34 +702,50 @@
 .mc-val.up   { color: #39e07a; }
 .mc-val.dn   { color: #e03040; }
 .mc-val.warn { color: #e07820; }
+.mc-val.neu  { color: var(--text-dim); }
 
-.demand-alert {
+/* Alert banners */
+.summary-alert {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
-  padding: 11px 22px;
-  background: rgba(224,120,32,0.07);
-  border-top: 1px solid rgba(224,120,32,0.22);
+  padding: 10px 20px;
   font-size: 0.74rem;
-  color: #c88830;
-  line-height: 1.45;
+  line-height: 1.5;
+  border-top: 1px solid var(--border);
 }
-.demand-alert svg { flex-shrink: 0; opacity: 0.9; }
+.summary-alert svg { flex-shrink: 0; margin-top: 1px; opacity: 0.9; }
+.summary-alert.alert-upgrade {
+  background: rgba(57,224,122,0.06);
+  border-color: rgba(57,224,122,0.2);
+  color: #5dd68a;
+}
+.summary-alert.alert-downgrade {
+  background: rgba(224,48,64,0.06);
+  border-color: rgba(224,48,64,0.2);
+  color: #e05060;
+}
+.summary-alert.alert-demand {
+  background: rgba(224,120,32,0.06);
+  border-color: rgba(224,120,32,0.2);
+  color: #c88830;
+}
 
+/* Detail grid */
 .summary-detail-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
   border-top: 1px solid var(--border);
 }
 .detail-block {
-  padding: 14px 20px;
+  padding: 13px 18px;
   border-right: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 .detail-block:last-child { border-right: none; }
 .db-lbl {
   font-family: var(--font-mono);
-  font-size: 0.51rem;
+  font-size: 0.5rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -650,12 +753,14 @@
 }
 .db-val {
   font-family: var(--font-mono);
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   font-weight: 700;
   color: var(--text);
 }
 .db-val.up { color: #39e07a; }
 .db-val.dn { color: #e03040; }
+.db-val.warn { color: #e07820; }
+.db-val.neu { color: var(--text-dim); }
 
 .conf-track {
   height: 3px;
@@ -672,7 +777,7 @@
 
 /* ── RESPONSIVE ──────────────────────────────────────────────── */
 @media (max-width: 860px) {
-  .trade-arena { grid-template-columns: 1fr; gap: 0; }
+  .trade-arena { grid-template-columns: 1fr; }
   .trade-vs { flex-direction: row; padding: 10px 0; justify-content: center; }
   .vs-dot-top, .vs-dot-bot {
     width: 50px; height: 2px; min-height: unset; flex: none;
@@ -680,13 +785,14 @@
   }
   .vs-dot-bot { background: linear-gradient(to right, var(--border-hi), transparent); }
   .summary-top { flex-direction: column; }
-  .verdict-block { border-right: none; border-bottom: 1px solid var(--border); min-width: unset; width: 100%; }
+  .verdict-block { border-right: none; border-bottom: 1px solid var(--border); min-width: unset; }
 }
 @media (max-width: 560px) {
   .calc-main { padding: 16px 12px 52px; }
   .srd-row { grid-template-columns: 36px 1fr auto; }
   .srd-val, .srd-demand { display: none; }
-  .metric-cell { min-width: 80px; padding: 12px 14px; }
+  .metric-cell { min-width: 80px; padding: 10px 12px; }
+  .panel-ctrl-btn span { display: none; }
 }
   </style>
 </head>
@@ -736,12 +842,14 @@
           </svg>
           Trade Value Calculator
         </div>
-        <div class="calc-page-sub">Search the item database · toggle Clean / Duped per item · get an instant trade verdict. Values are database-authoritative — no manual edits. <a href="info.html" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">How does this work?</a></div>
+        <div class="calc-page-sub">Search items · toggle Clean / Duped / Limited · stack quantities · get an instant trade verdict. <a href="info.html" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">How does this work?</a></div>
       </div>
-      <button class="btn-clear-all" id="btn-clear">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg>
-        Clear All
-      </button>
+      <div class="header-actions">
+        <button class="btn-action" id="btn-clear">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg>
+          Clear All
+        </button>
+      </div>
     </div>
 
     <!-- Trade arena -->
@@ -754,9 +862,21 @@
             <div class="panel-dot"></div>
             You Offer
           </div>
-          <div class="panel-total-group">
-            <span class="panel-total-lbl">Total Value</span>
-            <span class="panel-total-val" id="offer-total">0</span>
+          <div class="panel-header-right">
+            <div class="panel-ctrl-btns">
+              <button class="panel-ctrl-btn mirror-btn" id="mirror-offer-to-request" title="Copy offer items to request side">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <span>Mirror</span>
+              </button>
+              <button class="panel-ctrl-btn clear-btn" id="clear-offer" title="Clear offer items">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M3 6h18"/><path d="M19 6l-1 14H6L5 6"/></svg>
+                <span>Clear</span>
+              </button>
+            </div>
+            <div class="panel-total-group">
+              <span class="panel-total-lbl">Total Value</span>
+              <span class="panel-total-val" id="offer-total">0</span>
+            </div>
           </div>
         </div>
 
@@ -783,9 +903,21 @@
             <div class="panel-dot"></div>
             You Request
           </div>
-          <div class="panel-total-group">
-            <span class="panel-total-lbl">Total Value</span>
-            <span class="panel-total-val" id="request-total">0</span>
+          <div class="panel-header-right">
+            <div class="panel-ctrl-btns">
+              <button class="panel-ctrl-btn mirror-btn" id="mirror-request-to-offer" title="Copy request items to offer side">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+                <span>Mirror</span>
+              </button>
+              <button class="panel-ctrl-btn clear-btn" id="clear-request" title="Clear request items">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M3 6h18"/><path d="M19 6l-1 14H6L5 6"/></svg>
+                <span>Clear</span>
+              </button>
+            </div>
+            <div class="panel-total-group">
+              <span class="panel-total-lbl">Total Value</span>
+              <span class="panel-total-val" id="request-total">0</span>
+            </div>
           </div>
         </div>
 
@@ -814,9 +946,12 @@
   <script src="js/values.js"></script>
   <script>
 /* ================================================================
-   JBLX TRADE CALCULATOR ENGINE  (vanilla JS, no page reloads)
+   JBLX TRADE CALCULATOR ENGINE
+   Features: quantity stacking · clean/duped/limited toggle ·
+             mirror sides · individual/global clear · full summary
 ================================================================ */
 
+// ── DEMAND WEIGHTS ────────────────────────────────────────────
 const DEMAND_WEIGHT = {
   'Very High':7, High:6, Solid:5, Medium:4, Average:3, Low:2, Minimal:1, Nonexistent:0
 };
@@ -824,6 +959,7 @@ const DEMAND_NAMES = Object.fromEntries(
   Object.entries(DEMAND_WEIGHT).map(([k,v]) => [v, k])
 );
 
+// ── VERDICT THRESHOLDS ────────────────────────────────────────
 const VERDICT = [
   { min:  8,        cls:'s-win',         label:'Win',         emoji:'🏆' },
   { min:  2,        cls:'s-slight-win',  label:'Slight Win',  emoji:'📈' },
@@ -832,21 +968,34 @@ const VERDICT = [
   { min: -Infinity, cls:'s-lose',        label:'Lose',        emoji:'❌' },
 ];
 
+// ── STATE ─────────────────────────────────────────────────────
+// Each entry: { uid, item, state ('clean'|'duped'|'limited'), value (per-item), qty }
 const SIDES = { offer: [], request: [] };
 let _nextUID = 1;
 const uid = () => _nextUID++;
 
+// ── HELPERS ───────────────────────────────────────────────────
 const abbr = name => name.replace(/[^A-Z0-9]/gi,'').slice(0,3).toUpperCase();
 
 function demandScore(item) { return DEMAND_WEIGHT[item.demand] ?? -1; }
+
 function avgDemand(entries) {
+  // Weighted by qty
   const rated = entries.filter(e => demandScore(e.item) >= 0);
   if (!rated.length) return null;
-  return rated.reduce((s,e) => s + demandScore(e.item), 0) / rated.length;
+  const totalQty = rated.reduce((s,e) => s + e.qty, 0);
+  return rated.reduce((s,e) => s + demandScore(e.item) * e.qty, 0) / totalQty;
 }
+
 function demandName(score) {
   if (score === null) return 'N/A';
   return DEMAND_NAMES[Math.round(Math.max(0, Math.min(7, score)))] ?? 'N/A';
+}
+
+function escHtml(s) {
+  return String(s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
 function search(q) {
@@ -855,17 +1004,97 @@ function search(q) {
   return ITEMS.filter(i => i.name.toLowerCase().includes(lo)).slice(0, 35);
 }
 
+// ── ITEM ADD / REMOVE / QTY ───────────────────────────────────
+
+function addItem(side, item) {
+  const isLimited = isObtainableLimited(item);
+  const initState = (isLimited && item.duped !== null) ? 'limited' : 'clean';
+  const initValue = (isLimited && item.duped !== null) ? item.duped : item.value;
+
+  // Stack: if same item+state already exists, increment qty
+  const existing = SIDES[side].find(e => e.item.name === item.name && e.state === initState);
+  if (existing) {
+    existing.qty++;
+  } else {
+    SIDES[side].push({ uid: uid(), item, state: initState, value: initValue, qty: 1 });
+  }
+  refreshSelected(side);
+  refreshTotal(side);
+  refreshSummary();
+}
+
+function removeItem(side, id) {
+  SIDES[side] = SIDES[side].filter(e => e.uid !== id);
+  refreshSelected(side);
+  refreshTotal(side);
+  refreshSummary();
+}
+
+function adjustQty(side, id, delta) {
+  const e = SIDES[side].find(x => x.uid === id);
+  if (!e) return;
+  const next = e.qty + delta;
+  if (next <= 0) {
+    removeItem(side, id);
+    return;
+  }
+  e.qty = next;
+  refreshSelected(side);
+  refreshTotal(side);
+  refreshSummary();
+}
+
+function toggleCondition(side, id) {
+  const e = SIDES[side].find(x => x.uid === id);
+  if (!e) return;
+  const isLimited = isObtainableLimited(e.item);
+  const altState  = isLimited ? 'limited' : 'duped';
+
+  if (e.state === 'clean' && e.item.duped !== null) {
+    e.state = altState;
+    e.value = e.item.duped;
+  } else {
+    e.state = 'clean';
+    e.value = e.item.value;
+  }
+  refreshSelected(side);
+  refreshTotal(side);
+  refreshSummary();
+}
+
+// ── MIRROR / CLEAR ─────────────────────────────────────────────
+
+function mirrorSide(from, to) {
+  // Deep copy entries to the other side with new UIDs
+  SIDES[to] = SIDES[from].map(e => ({ ...e, uid: uid() }));
+  refreshSelected(to);
+  refreshTotal(to);
+  refreshSummary();
+}
+
+function clearSide(side) {
+  SIDES[side] = [];
+  refreshSelected(side);
+  refreshTotal(side);
+  refreshSummary();
+}
+
+// ── DROPDOWN ───────────────────────────────────────────────────
+
 function renderDropdown(side, results, q) {
   const dd = document.getElementById(`${side}-dropdown`);
   if (!q.trim()) { dd.classList.remove('open'); return; }
   dd.classList.add('open');
+
   if (!results.length) {
     dd.innerHTML = `<div class="srd-empty">No items found for "<strong>${escHtml(q)}</strong>"</div>`;
     return;
   }
+
   dd.innerHTML = `
-    <div class="srd-header">${results.length} result${results.length !== 1 ? 's' : ''}</div>
+    <div class="srd-header">${results.length} result${results.length !== 1 ? 's' : ''} — click Add multiple times to stack</div>
     <div class="srd-scroll" id="${side}-srd-scroll"></div>`;
+
   const scroll = dd.querySelector('.srd-scroll');
   results.forEach(item => {
     const imgBlock = item.image
@@ -873,6 +1102,7 @@ function renderDropdown(side, results, q) {
            onerror="this.style.display='none';this.nextElementSibling.style.removeProperty('display')">
          <span class="srd-thumb-fb" style="display:none">${abbr(item.name)}</span>`
       : `<span class="srd-thumb-fb">${abbr(item.name)}</span>`;
+
     const row = document.createElement('div');
     row.className = 'srd-row';
     row.innerHTML = `
@@ -889,53 +1119,35 @@ function renderDropdown(side, results, q) {
           <path d="M12 5v14M5 12h14"/>
         </svg>Add
       </button>`;
-    row.querySelector('.srd-add').addEventListener('click', () => {
+
+    // Keep dropdown open after add so user can click multiple times
+    row.querySelector('.srd-add').addEventListener('click', (ev) => {
+      ev.stopPropagation();
       addItem(side, item);
-      const inp = document.getElementById(`${side}-search`);
-      inp.value = '';
-      dd.classList.remove('open');
-      inp.focus();
+      // Brief flash on add button to confirm
+      const btn = ev.currentTarget;
+      btn.textContent = '✓';
+      btn.style.background = '#39e07a';
+      btn.style.color = '#000';
+      setTimeout(() => {
+        btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round" width="10" height="10">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>Add`;
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 600);
     });
     scroll.appendChild(row);
   });
 }
 
-function addItem(side, item) {
-  SIDES[side].push({ uid: uid(), item, state: 'clean', value: item.value });
-  refreshSelected(side);
-  refreshTotal(side);
-  refreshSummary();
-}
-
-function removeItem(side, id) {
-  SIDES[side] = SIDES[side].filter(e => e.uid !== id);
-  refreshSelected(side);
-  refreshTotal(side);
-  refreshSummary();
-}
-
-function toggleCondition(side, id) {
-  const e = SIDES[side].find(x => x.uid === id);
-  if (!e) return;
-  if (e.state === 'clean' && e.item.duped !== null) {
-    e.state = 'duped'; e.value = e.item.duped;
-  } else {
-    e.state = 'clean'; e.value = e.item.value;
-  }
-  const row = document.querySelector(`[data-uid="${id}"]`);
-  if (row) {
-    row.querySelector('.sel-value').textContent = fmtValue(e.value);
-    row.classList.toggle('is-duped', e.state === 'duped');
-    row.querySelector('[data-cd="clean"]').classList.toggle('active-clean', e.state === 'clean');
-    row.querySelector('[data-cd="duped"]').classList.toggle('active-duped', e.state === 'duped');
-  }
-  refreshTotal(side);
-  refreshSummary();
-}
+// ── SELECTED ITEMS LIST ─────────────────────────────────────────
 
 function refreshSelected(side) {
   const wrap    = document.getElementById(`${side}-selected`);
   const entries = SIDES[side];
+
   if (!entries.length) {
     wrap.innerHTML = `
       <div class="panel-empty-state">
@@ -949,60 +1161,93 @@ function refreshSelected(side) {
       </div>`;
     return;
   }
+
   const list = document.createElement('div');
   list.className = 'selected-list';
+
   entries.forEach(e => {
-    const { uid: id, item, state, value } = e;
-    const hasDuped = item.duped !== null;
+    const { uid: id, item, state, value, qty } = e;
+    const totalVal  = value * qty;
+    const hasDuped  = item.duped !== null;
+    const isLimited = isObtainableLimited(item);
+    const altLabel  = isLimited ? 'Limited' : 'Duped';
+    const altState  = isLimited ? 'limited' : 'duped';
+    const isAlt     = state === 'duped' || state === 'limited';
+
     const imgBlock = item.image
       ? `<img src="${item.image}" alt="" loading="lazy"
            onerror="this.style.display='none';this.nextElementSibling.style.removeProperty('display')">
          <span class="sel-thumb-fb" style="display:none">${abbr(item.name)}</span>`
       : `<span class="sel-thumb-fb">${abbr(item.name)}</span>`;
+
     const row = document.createElement('div');
-    row.className = `sel-row${state === 'duped' ? ' is-duped' : ''}`;
+    row.className = `sel-row${isAlt ? ' is-duped' : ''}`;
     row.dataset.uid = id;
+
     row.innerHTML = `
       <div class="sel-thumb-wrap">
         ${imgBlock}
-        <div class="sel-duped-strip">DUPED</div>
+        <div class="sel-duped-strip">${isLimited ? 'LTD' : 'DUP'}</div>
       </div>
       <div class="sel-info">
-        <div class="sel-name">${escHtml(item.name)}</div>
-        <div class="sel-value">${fmtValue(value)}</div>
+        <div class="sel-name-row">
+          <span class="sel-name">${escHtml(item.name)}</span>
+          ${qty > 1 ? `<span class="sel-qty-badge">×${qty}</span>` : ''}
+        </div>
+        <div class="sel-value-row">
+          <span class="sel-value">${fmtValue(totalVal)}</span>
+          ${qty > 1 ? `<span class="sel-each">${fmtValue(value)} ea</span>` : ''}
+        </div>
       </div>
       <div class="sel-controls">
         <button class="sel-remove" title="Remove item">✕</button>
         <div class="cd-toggle">
           <button class="cd-btn${state === 'clean' ? ' active-clean' : ''}" data-cd="clean">Clean</button>
-          <button class="cd-btn${state === 'duped' ? ' active-duped' : ''}"
-            data-cd="duped"${!hasDuped ? ' disabled title="No duped value in database"' : ''}>Duped</button>
+          <button class="cd-btn${isAlt ? ' active-duped' : ''}"
+            data-cd="${altState}"${!hasDuped ? ' disabled title="No value in database"' : ''}>${altLabel}</button>
+        </div>
+        <div class="qty-stepper">
+          <button class="qty-btn qty-minus" title="Remove one">−</button>
+          <span class="qty-display">${qty}</span>
+          <button class="qty-btn qty-plus" title="Add one">+</button>
         </div>
       </div>`;
+
     row.querySelector('.sel-remove').addEventListener('click', () => removeItem(side, id));
+
     row.querySelector('[data-cd="clean"]').addEventListener('click', () => {
       if (e.state !== 'clean') toggleCondition(side, id);
     });
     if (hasDuped) {
-      row.querySelector('[data-cd="duped"]').addEventListener('click', () => {
-        if (e.state !== 'duped') toggleCondition(side, id);
+      row.querySelector(`[data-cd="${altState}"]`).addEventListener('click', () => {
+        if (e.state !== altState) toggleCondition(side, id);
       });
     }
+
+    row.querySelector('.qty-minus').addEventListener('click', () => adjustQty(side, id, -1));
+    row.querySelector('.qty-plus').addEventListener('click',  () => adjustQty(side, id,  1));
+
     list.appendChild(row);
   });
+
   wrap.innerHTML = '';
   wrap.appendChild(list);
 }
 
+// ── TOTALS ─────────────────────────────────────────────────────
+
 function refreshTotal(side) {
-  const total = SIDES[side].reduce((s, e) => s + e.value, 0);
+  const total = SIDES[side].reduce((s, e) => s + e.value * e.qty, 0);
   document.getElementById(`${side}-total`).textContent = fmtValue(total);
 }
+
+// ── SUMMARY ────────────────────────────────────────────────────
 
 function refreshSummary() {
   const el      = document.getElementById('trade-summary');
   const offer   = SIDES.offer;
   const request = SIDES.request;
+
   if (!offer.length && !request.length) {
     el.innerHTML = '<div class="summary-placeholder">Add items to both sides to see your trade verdict.</div>';
     return;
@@ -1012,99 +1257,221 @@ function refreshSummary() {
     return;
   }
 
-  const offerTotal   = offer.reduce((s,e) => s + e.value, 0);
-  const requestTotal = request.reduce((s,e) => s + e.value, 0);
+  // Totals (qty-weighted)
+  const offerTotal   = offer.reduce((s,e)   => s + e.value * e.qty, 0);
+  const requestTotal = request.reduce((s,e) => s + e.value * e.qty, 0);
   const rawDiff      = requestTotal - offerTotal;
 
-  const extraOffer   = Math.max(0, offer.length - request.length);
-  const extraRequest = Math.max(0, request.length - offer.length);
+  // Item counts (qty-weighted)
+  const offerCount   = offer.reduce((s,e)   => s + e.qty, 0);
+  const requestCount = request.reduce((s,e) => s + e.qty, 0);
+  const extraOffer   = Math.max(0, offerCount - requestCount);
+  const extraRequest = Math.max(0, requestCount - offerCount);
 
-  const UPGRADE_RATE  = 0.04;
-  const DOWNGRADE_RATE = 0.037;   // slightly softer than upgrade
-
-  let adjDiff = rawDiff;
-  let isUpgrade = extraOffer > 0;
-  let isDowngrade = extraRequest > 0;
+  // Upgrade / downgrade adjustment
+  const UPGRADE_RATE   = 0.04;
+  const DOWNGRADE_RATE = 0.037;
+  let adjDiff   = rawDiff;
   let allowance = 0;
-  let tax = 0;
+  let tax       = 0;
+  const isUpgrade   = extraOffer   > 0;
+  const isDowngrade = extraRequest > 0;
 
   if (isUpgrade) {
     allowance = extraOffer * UPGRADE_RATE * offerTotal;
-    adjDiff = rawDiff + allowance;
+    adjDiff   = rawDiff + allowance;
   } else if (isDowngrade) {
-    tax = extraRequest * DOWNGRADE_RATE * offerTotal;   // tax on the single big item you're offering
+    tax     = extraRequest * DOWNGRADE_RATE * offerTotal;
     adjDiff = rawDiff - tax;
   }
 
-  const pct = offerTotal > 0 ? (adjDiff / offerTotal) * 100 : (requestTotal > 0 ? 100 : 0);
+  // Percentage & verdict
+  const pct = offerTotal > 0
+    ? (adjDiff / offerTotal) * 100
+    : (requestTotal > 0 ? 100 : 0);
   const v = VERDICT.find(x => pct >= x.min);
 
-  // rest of your existing logic (demandWarn, confidence, totalDuped, etc.) stays exactly the same
-  const offerDS = avgDemand(offer);
+  // Demand analysis (qty-weighted averages)
+  const offerDS   = avgDemand(offer);
   const requestDS = avgDemand(request);
   const demandWarn = offerDS !== null && requestDS !== null && adjDiff > 0 && requestDS < offerDS;
+
+  // Confidence
   const ap = Math.abs(pct);
-  const [confLabel, confPct, confColor] = ap >= 15 ? ['High',92,'#39e07a'] : ap >= 6 ? ['Medium',62,'#e07820'] : ap >= 2 ? ['Low',36,'#e03040'] : ['Very Low',14,'#6b7280'];
-  const totalDuped = offer.filter(e => e.state==='duped').length + request.filter(e => e.state==='duped').length;
+  let confLabel, confPct, confColor;
+  if      (ap >= 15) { confLabel = 'High';     confPct = 92; confColor = '#39e07a'; }
+  else if (ap >=  6) { confLabel = 'Medium';   confPct = 62; confColor = '#e07820'; }
+  else if (ap >=  2) { confLabel = 'Low';      confPct = 36; confColor = '#e03040'; }
+  else               { confLabel = 'Very Low'; confPct = 14; confColor = '#6b7280'; }
+
+  // Duped/Limited item count
+  const totalAlt = [...offer, ...request]
+    .filter(e => e.state === 'duped' || e.state === 'limited')
+    .reduce((s,e) => s + e.qty, 0);
+
+  // Diff display
+  const diffSign = adjDiff >= 0 ? '+' : '−';
+  const diffAbs  = fmtValue(Math.abs(Math.round(adjDiff)));
+  const diffCls  = adjDiff >= 0 ? 'up' : 'dn';
+  const pctSign  = pct >= 0 ? '+' : '';
 
   el.innerHTML = `
     <div class="summary-card ${v.cls}">
-      <div class="summary-top">...your existing verdict + metrics strip (unchanged)...</div>
 
-      ${isUpgrade ? `<!-- your existing upgrade alert -->` : ''}
-      ${isDowngrade ? `
-      <div class="demand-alert" style="background:rgba(224,48,64,0.07);border-top:1px solid rgba(224,48,64,0.25);color:#e03040;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-        <span><strong>Downgrade Trade</strong> — ${extraRequest} extra item${extraRequest>1?'s':''} on request side.<br>
-        Downgrade tax of <strong>${fmtValue(Math.round(tax))}</strong> (${(DOWNGRADE_RATE*100).toFixed(1)}% × ${extraRequest}) applied.</span>
+      <!-- Verdict + Metrics -->
+      <div class="summary-top">
+        <div class="verdict-block">
+          <div class="verdict-emoji">${v.emoji}</div>
+          <div>
+            <div class="verdict-status">${v.label}</div>
+            <div class="verdict-sub">Trade Verdict</div>
+          </div>
+        </div>
+        <div class="metrics-strip">
+          <div class="metric-cell">
+            <div class="mc-lbl">You Offer</div>
+            <div class="mc-val">${fmtValue(offerTotal)}</div>
+          </div>
+          <div class="metric-cell">
+            <div class="mc-lbl">You Request</div>
+            <div class="mc-val">${fmtValue(requestTotal)}</div>
+          </div>
+          <div class="metric-cell">
+            <div class="mc-lbl">Adj. Diff</div>
+            <div class="mc-val ${diffCls}">${diffSign}${diffAbs}</div>
+          </div>
+          <div class="metric-cell">
+            <div class="mc-lbl">% Diff</div>
+            <div class="mc-val ${diffCls}">${pctSign}${pct.toFixed(1)}%</div>
+          </div>
+          <div class="metric-cell">
+            <div class="mc-lbl">Confidence</div>
+            <div class="mc-val" style="color:${confColor}">${confLabel}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alert banners -->
+      ${isUpgrade ? `
+      <div class="summary-alert alert-upgrade">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="margin-top:1px"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        <span><strong>Upgrade Trade</strong> — you're offering ${extraOffer} more item${extraOffer>1?'s':''} than you request.
+        An upgrade allowance of <strong>${fmtValue(Math.round(allowance))}</strong> has been applied to your favour.</span>
       </div>` : ''}
 
-      ${demandWarn ? `<!-- your existing demand warning -->` : ''}
+      ${isDowngrade ? `
+      <div class="summary-alert alert-downgrade">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="margin-top:1px"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        <span><strong>Downgrade Trade</strong> — you're requesting ${extraRequest} more item${extraRequest>1?'s':''} than you offer.
+        A downgrade tax of <strong>${fmtValue(Math.round(tax))}</strong> has been applied against you.</span>
+      </div>` : ''}
 
+      ${demandWarn ? `
+      <div class="summary-alert alert-demand">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="margin-top:1px"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span><strong>Demand Warning</strong> — items you're requesting have lower average demand than what you're offering.
+        This trade may be harder to complete in practice.</span>
+      </div>` : ''}
+
+      <!-- Detail grid -->
       <div class="summary-detail-grid">
-        ...existing blocks...
+        <div class="detail-block">
+          <div class="db-lbl">Raw Difference</div>
+          <div class="db-val ${rawDiff >= 0 ? 'up' : 'dn'}">${rawDiff >= 0 ? '+' : '−'}${fmtValue(Math.abs(Math.round(rawDiff)))}</div>
+        </div>
+        <div class="detail-block">
+          <div class="db-lbl">Offer Demand</div>
+          <div class="db-val">${demandName(offerDS)}</div>
+        </div>
+        <div class="detail-block">
+          <div class="db-lbl">Request Demand</div>
+          <div class="db-val">${demandName(requestDS)}</div>
+        </div>
+        <div class="detail-block">
+          <div class="db-lbl">Confidence</div>
+          <div class="db-val" style="color:${confColor}">
+            ${confLabel}
+            <div class="conf-track"><div class="conf-fill" style="width:${confPct}%;background:${confColor}"></div></div>
+          </div>
+        </div>
+        <div class="detail-block">
+          <div class="db-lbl">Items Offered</div>
+          <div class="db-val neu">${offerCount}</div>
+        </div>
+        <div class="detail-block">
+          <div class="db-lbl">Items Requested</div>
+          <div class="db-val neu">${requestCount}</div>
+        </div>
+        ${totalAlt > 0 ? `
+        <div class="detail-block">
+          <div class="db-lbl">Duped / Limited</div>
+          <div class="db-val warn">${totalAlt} item${totalAlt > 1 ? 's' : ''}</div>
+        </div>` : ''}
+        ${isUpgrade ? `
+        <div class="detail-block">
+          <div class="db-lbl">Upgrade Allowance</div>
+          <div class="db-val up">+${fmtValue(Math.round(allowance))}</div>
+        </div>` : ''}
         ${isDowngrade ? `
         <div class="detail-block">
           <div class="db-lbl">Downgrade Tax</div>
-          <div class="db-val dn">-${fmtValue(Math.round(tax))}</div>
+          <div class="db-val dn">−${fmtValue(Math.round(tax))}</div>
         </div>` : ''}
-        ...rest unchanged...
       </div>
+
     </div>`;
 }
 
-function escHtml(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
+// ── SEARCH INPUT WIRING ────────────────────────────────────────
 
 ['offer','request'].forEach(side => {
   const inp = document.getElementById(`${side}-search`);
   const dd  = document.getElementById(`${side}-dropdown`);
+
   inp.addEventListener('input', () => {
     renderDropdown(side, search(inp.value.trim()), inp.value.trim());
   });
   inp.addEventListener('focus', () => {
     if (inp.value.trim()) renderDropdown(side, search(inp.value.trim()), inp.value.trim());
   });
-  document.addEventListener('pointerdown', e => {
+  // Close dropdown when clicking outside
+  document.addEventListener('pointerdown', ev => {
     const wrap = inp.closest('.panel-search-wrap');
-    if (!wrap.contains(e.target)) dd.classList.remove('open');
+    if (!wrap.contains(ev.target)) dd.classList.remove('open');
   }, { capture: true });
 });
 
+// ── BUTTON WIRING ─────────────────────────────────────────────
+
+// Global clear
 document.getElementById('btn-clear').addEventListener('click', () => {
   SIDES.offer = []; SIDES.request = [];
   ['offer','request'].forEach(s => {
     refreshSelected(s);
     refreshTotal(s);
-    const inp = document.getElementById(`${s}-search`);
-    inp.value = '';
+    document.getElementById(`${s}-search`).value = '';
     document.getElementById(`${s}-dropdown`).classList.remove('open');
   });
   refreshSummary();
 });
 
-// Theme toggle
+// Individual clear
+document.getElementById('clear-offer').addEventListener('click', () => {
+  clearSide('offer');
+});
+document.getElementById('clear-request').addEventListener('click', () => {
+  clearSide('request');
+});
+
+// Mirror buttons
+document.getElementById('mirror-offer-to-request').addEventListener('click', () => {
+  mirrorSide('offer', 'request');
+});
+document.getElementById('mirror-request-to-offer').addEventListener('click', () => {
+  mirrorSide('request', 'offer');
+});
+
+// ── THEME TOGGLE ───────────────────────────────────────────────
 const themeBtn = document.getElementById('theme-toggle');
 if (themeBtn) {
   const saved = localStorage.getItem('jblx-theme') || 'dark';
@@ -1119,6 +1486,7 @@ if (themeBtn) {
   });
 }
 
+// ── INIT ───────────────────────────────────────────────────────
 refreshSelected('offer');
 refreshSelected('request');
 refreshSummary();

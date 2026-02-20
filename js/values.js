@@ -41,7 +41,7 @@ const ITEMS = [
   {
     name:"Torpedo",      type:"Vehicle",
     value:49000000,      duped:44000000,
-    demand:"High",       trend:"Stable",
+    demand:"Solid",       trend:"Stable",
     change:"+1,000,000", dupeChange:"+500,000", demandChange:"",     trendChange:"",
     description:"Nicknamed the 'Soapbar,' this vehicle was added during the 2018 Winter event and served as the criminal reward for OG Seasons 1 and 2, requiring a $750,000 purchase. Features one of the highest top speeds at ~395 MPH.",
     tags:"OG S1 · OG S2 · Winter 2018",           updatedAt:_ago(0,4),
@@ -340,7 +340,7 @@ const ITEMS = [
   },
   {
     name:"Concept",      type:"Vehicle",
-    value:2500000,       duped:1250000,
+    value:2500000,       duped:1500000,
     demand:"Medium",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"An obtainable vehicle for $2,500,000 and a common entry point into trading. Features great top speed at ~315 MPH, four seats, and a unique light strip that moves across the vehicle.",
@@ -350,7 +350,7 @@ const ITEMS = [
   },
   {
     name:"Manta",        type:"Vehicle",
-    value:1500000,       duped:750000,
+    value:1500000,       duped:1000000,
     demand:"Minimal",    trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Introduced in Season 23 as part of the Tier 5 Legendary Safe revamp. Currently obtainable.",
@@ -440,7 +440,7 @@ const ITEMS = [
   },
   {
     name:"Venom",        type:"Vehicle",
-    value:500000,        duped:null,
+    value:500000,        duped:500000,
     demand:"Minimal",    trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Obtained from Tier IV Crime safes. Popular with new players for its design and top speed.",
@@ -450,7 +450,7 @@ const ITEMS = [
   },
   {
     name:"Hammerhead",   type:"Vehicle",
-    value:300000,        duped:null,
+    value:300000,        duped:300000,
     demand:"Minimal",    trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Purchasable from Tier III Police safes. Wedge-like shape usable as a ramp.",
@@ -833,7 +833,7 @@ const ITEMS = [
     change:"",           dupeChange:"", demandChange:"",             trendChange:"",
     description:"The rarest HyperShift obtained by collecting all Level 5 hyperchromes. Unique gradient rainbow effect.",
     tags:"Max Tier",     updatedAt:_ago(0,90),
-    obtainable:false,    remarks:"All Hyper L5s required.", pullValue:"",
+    obtainable:true,    remarks:"All Hyper L5s required.", pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg9-__7QNY0CECkeRZfpLTSa1-Lj6ZFdAVXdFRE433E7tHAzFElQ0cXTxBEJ2f-kJ1H4lNiLIbTbfbIAO-rixEDZO2_K69HtbK2llyJ6_cKIC5iFhIQgpVKIPii0IFiWbAv-JpGobahC4woU7nnoHHIw3TJzsDz2sHfM97ZccLJ1p3qUYaHrQNspr2yWn9N/s327/Hyper%20Shift.gif"
   },
   {
@@ -843,7 +843,7 @@ const ITEMS = [
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Rainbow color referencing all Level 4 HyperChromes combined.",
     tags:"L4",           updatedAt:_ago(0,90),
-    obtainable:false,    remarks:"Reference only — not a real in-game item.", pullValue:"",
+    obtainable:true,    remarks:"Reference only — not a real in-game item.", pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg9-__7QNY0CECkeRZfpLTSa1-Lj6ZFdAVXdFRE433E7tHAzFElQ0cXTxBEJ2f-kJ1H4lNiLIbTbfbIAO-rixEDZO2_K69HtbK2llyJ6_cKIC5iFhIQgpVKIPii0IFiWbAv-JpGobahC4woU7nnoHHIw3TJzsDz2sHfM97ZccLJ1p3qUYaHrQNspr2yWn9N/s327/Hyper%20Shift.gif"
   },
   {
@@ -883,7 +883,7 @@ const ITEMS = [
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Mid-tier blue hyperchrome with intense metallic sheen.",
     tags:"L4 · Cargo Plane", updatedAt:_ago(0,7),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlz0KlbsM6alsiS0zPCTSODxpOHKz_pyfJX4hicK9MP6gU6OGr8wlZcnqNUwF4Ae91lRjYG4CqUJog0clUUHe8zD617n0u6ubQU9OD0lasBV7KcnXVFFrFqzsVyPPqkTrhAD0PQI7nKQDtd_VcQ507u5WFW3pP464A4GOiuAXhu_3V4RdT-tckSvBMrMoO/s751/Blue%20Level%20IV.jpg"
   },
   {
@@ -893,7 +893,7 @@ const ITEMS = [
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"A mid-tier stepping stone toward the Level 5 Hyper Diamond, evolved by grinding the Jewelry Store.",
     tags:"L4 · Jewelry Store", updatedAt:_ago(0,14),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:""
   },
   {
@@ -903,7 +903,7 @@ const ITEMS = [
     change:"",           dupeChange:"", demandChange:"",             trendChange:"",
     description:"High-tier red hyperchrome with intense metallic sheen.",
     tags:"L5",           updatedAt:_ago(0,7),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj2I02zlhDLkpxsns6wAfCaIqXdYoCBHMJcVeUyxTeGDYbARYnwOErwD7msKvNys02s7-N6nU00WsPKHsVOoIAg9p6ZwHF4tjMeU3ihbEZEwzor-vMli-ewrR6z5UJIYwqS-dq_-GvkhBDGTKGQk-2BcPdnoNVRkrJTLTxA8OvFkUFx0yVERXF6D5po6B07/s679/Red%20Level%205.jpg"
   },
   {
@@ -913,7 +913,7 @@ const ITEMS = [
     change:"+500,000",   dupeChange:"+300,000", demandChange:"↑ was Solid", trendChange:"was Stable",
     description:"Purple hyperchrome with rich violet shift, gaining popularity.",
     tags:"L5 · Power Plant", updatedAt:_ago(0,30),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvTv3uPw2mg5fERhSYE3RhyphenhypheniNI93drup2q9p7fgFZGGkWIPW5rfcoLfUyGnR8FCI6Rcb0Y74eIV1arn5ONn_hXDJj04eZzcuyb1_UXEqh4fpHERs5IGWHXsjHnc68R5kjP67cHdlVKkLp09TgmUT33JZy1Bh9CPNxjwzaM2TBBkc_w_0zD8y-uaays-hiS/s675/Purple%20Level%205.jpg"
   },
   {
@@ -923,7 +923,7 @@ const ITEMS = [
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Mid-high tier pink hyperchrome, stepping stone to L5.",
     tags:"L4 · Casino",  updatedAt:_ago(0,14),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQMkcoZjFPwd1hW_IKtxhA9mqfn3iaV72rBh84MZ_Cye89efcE6Pjku4BUzdKmRxEEMiDdse_EKmMmTDezKYS_CiJlvb0r1vUVAaodGOA81Lu49NRgRkqbLtJG-rIQlPvcB8qHaDcASYxaPYrfJa4f3RT7WXjUnR6i81YSapAj-rwdNe1amRClA4eGNdbJ/s738/Pink%20Level%204.jpg"
   },
   {
@@ -933,7 +933,7 @@ const ITEMS = [
     change:"",           dupeChange:"", demandChange:"",             trendChange:"",
     description:"High-tier orange hyperchrome with intense metallic sheen.",
     tags:"L5 · Museum",  updatedAt:_ago(0,14),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiL00osIT1uR1OL4JRL2ln3VdInP-6dcna0QLN0jVXcI5K-LvYjjRr7sXgfOL1WCEXi-AF-G7d0gFCFuT9tygLvdT4UxhlBf1o_sWfXvsXkciF1X9og6h_K1Zm1U9GBMOxyAIvadf2P0WpWv1Yjubvo3y4GaxsyzQZGCMbwMthu_CeXWYCMtBCXzUO2dGPR/s656/Orange%20Level%205.jpg"
   },
   {
@@ -943,7 +943,7 @@ const ITEMS = [
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Mid-high tier purple hyperchrome, stepping stone to L5.",
     tags:"L4 · Power Plant", updatedAt:_ago(0,14),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRDRQfpzd9rQDvZ_PHJDHxtKx49fCLwTtOruWGKmoh-wemXdxH75f89b3vsCvCy9Vt2PV7tmhojVJMTcaKaDu72bS3fUkY_TN5-WMnSYBypsT50A33pNt8wYkvFKK1dTerhbDCax1FkjVi08B1jRhru-QCbM98Yc2hcSs3CxVPTF-pB2jU_NZvKdPxD-GX/s759/Purple%20Level%204.jpg"
   },
   {
@@ -953,7 +953,7 @@ const ITEMS = [
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Mid-high tier red hyperchrome, stepping stone to L5.",
     tags:"L4 · Tomb",    updatedAt:_ago(0,14),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjrWH0BLjXL7i24uwFZ8k8bylQ0DLLTJnVyEDznUzlIumGWZTj9sY-tirHUlIR3qw7QTwdjdTXTKrR2tA4D4zxXpQpYaInt2SDEmSwaVWf1vNCwe4Bvq5K_PUtY-HZlli2-EGhBK0qq0_fS3QET36hFW71goChKOL7WWvoxHtraq5JYq5YPEQHSO7NaWNRU/s751/Red%20Level%204.jpg"
   },
   {
@@ -963,7 +963,7 @@ const ITEMS = [
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Obtainable in Season 2 as a Level 5 prize, Vantablack is a darker variation of the standard Black color — notably without any reflections, giving it a uniquely flat, void-like appearance.",
     tags:"S2 · L5 · Pass Exclusive", updatedAt:_ago(0,5),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:""
   },
   {
@@ -973,7 +973,7 @@ const ITEMS = [
     change:"",           dupeChange:"", demandChange:"",             trendChange:"",
     description:"High-tier green hyperchrome with intense metallic sheen.",
     tags:"L5 · Bank",    updatedAt:_ago(0,14),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1FhyphenhyphenNgThBqnPC4YmmHza0vKtlbKrOhbPUeIkVKXcNYF66fh-e84hpHHTBUvgKYc_Yvcwszj-IiD37NuQ3xEzh-4g5_vN55DKCKZyrkxEveV5MfB996FsnXdKAXanaEQeJ8J94mYzKob7lsWVJuPGNMIqPcuCzPXzrXwUWgamSOzacwhbE7fcyPGoSj_KU/s640/Green%20Level%205.jpg"
   },
   {
@@ -983,7 +983,7 @@ const ITEMS = [
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"A lower-tier stepping stone toward Hyper Blue L5, evolved by grinding the Cargo Plane.",
     tags:"L3 · Cargo Plane", updatedAt:_ago(0,16),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:""
   },
   {
@@ -993,7 +993,7 @@ const ITEMS = [
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Evolved by grinding the Cargo or Passenger Train.",
     tags:"L5 · Train Heists", updatedAt:_ago(0,43),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:""
   },
   {
@@ -1003,7 +1003,7 @@ const ITEMS = [
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"A mid-tier stepping stone toward the Level 5 Hyper Orange, evolved by grinding the Museum.",
     tags:"L4 · Museum Heist", updatedAt:_ago(0,16),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:""
   },
   {
@@ -1013,7 +1013,7 @@ const ITEMS = [
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"A mid-tier stepping stone toward the Level 5 Hyper Green, evolved by grinding the Bank.",
     tags:"L4 · Bank Heist", updatedAt:_ago(0,13),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:""
   },
   {
@@ -1023,7 +1023,7 @@ const ITEMS = [
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"A lower-tier stepping stone in the Hyper Diamond chain, evolved by grinding the Jewelry Store.",
     tags:"L3 · Jewelry Store", updatedAt:_ago(0,14),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:""
   },
   {
@@ -1033,7 +1033,7 @@ const ITEMS = [
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"A mid-tier stepping stone toward the Level 5 Hyper Yellow, evolved by grinding the Cargo or Passenger Train.",
     tags:"L4 · Train Heists", updatedAt:_ago(0,26),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:""
   },
   {
@@ -1043,7 +1043,7 @@ const ITEMS = [
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"A lower-tier stepping stone toward Hyper Pink L5, evolved by grinding the Casino.",
     tags:"L3 · Casino",  updatedAt:_ago(0,49),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:""
   },
   {
@@ -1053,7 +1053,7 @@ const ITEMS = [
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"A lower-tier stepping stone toward Hyper Purple L5, evolved by grinding the Power Plant — the most solo-accessible hyperchrome grind.",
     tags:"L3 · Power Plant", updatedAt:_ago(0,41),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:""
   },
   {
@@ -1063,7 +1063,7 @@ const ITEMS = [
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"A lower-tier stepping stone toward Hyper Red L5, evolved by grinding the Tomb. Requires at least three players.",
     tags:"L3 · Tomb Heist", updatedAt:_ago(0,19),
-    obtainable:false,    remarks:"",     pullValue:"",
+    obtainable:true,    remarks:"",     pullValue:"",
     image:""
   },
 
@@ -1234,11 +1234,15 @@ const ITEMS = [
     image:""
   },
 
-  // ════════════ DRIFTS / HORNS (placeholders — add items as data arrives)
-  // { name:"Example Drift", type:"Drift", value:1000000, duped:null,
-  //   demand:"Medium", trend:"Stable", change:"", dupeChange:null,
-  //   demandChange:"", trendChange:"", description:"...", tags:"", updatedAt:_ago(0,30), image:"" },
 ];
+
+// Helper functions (add right after the ITEMS array)
+function isHyperchrome(item) {
+  return item.name && item.name.toLowerCase().includes('hyper');
+}
+function isObtainableLimited(item) {
+  return item.obtainable === true && !isHyperchrome(item);
+}
 
 // ── STATE ─────────────────────────────────────────────────────
 const state = {
@@ -1413,9 +1417,9 @@ function renderCards(items) {
             <span class="stat-val">${fmtValue(item.value)}${changeBadge(item.change)}</span>
           </div>
           <div class="card-stat-row">
-            <span class="stat-lbl">Duped</span>
+            <span class="stat-lbl">${isObtainableLimited(item) ? 'Limited' : 'Duped'}</span>
             ${item.duped!==null
-              ? `<span class="stat-val" style="color:var(--text-dim)">${fmtValue(item.duped)}${changeBadge(item.dupeChange)}</span>`
+              ? `<span class="stat-val" style="color:${isObtainableLimited(item) ? 'var(--c-limited)' : 'var(--text-dim)'}">${fmtValue(item.duped)}${changeBadge(item.dupeChange)}</span>`
               : `<span class="stat-na">N/A</span>`}
           </div>
           <div class="card-stat-row">
@@ -1495,11 +1499,14 @@ function openModal(name) {
   const valEl = document.getElementById('modal-value');
   valEl.innerHTML = fmtValue(item.value) + changeBadge(item.change);
 
-  // Duped + dupeChange
+  // Duped / Limited + dupeChange
   const dupedEl = document.getElementById('modal-duped');
+  const dupedLabelEl = document.getElementById('modal-duped-label');
+  const isLimitedItem = isObtainableLimited(item);
+  dupedLabelEl.textContent = isLimitedItem ? 'Limited Value' : 'Duped / Limited';
   if (item.duped!==null) {
     dupedEl.innerHTML = fmtValue(item.duped) + changeBadge(item.dupeChange);
-    dupedEl.className = 'modal-stat-value';
+    dupedEl.className = isLimitedItem ? 'modal-stat-value limited' : 'modal-stat-value';
   } else {
     dupedEl.textContent = 'N/A';
     dupedEl.className = 'modal-stat-value na';
