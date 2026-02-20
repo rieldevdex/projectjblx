@@ -234,7 +234,7 @@ const ITEMS = [
   {
     name:"Roadster",     type:"Vehicle",
     value:600000,        duped:null,
-    demand:"Minimal",   trend:"Stable",
+    demand:"Nonexistent",   trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Obtainable vehicle. Low demand.",
     tags:"",             updatedAt:_ago(0,90),
