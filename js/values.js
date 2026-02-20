@@ -126,7 +126,7 @@ const ITEMS = [
   {
     name:"Stallion",     type:"Vehicle",
     value:200000,        duped:null,
-    demand:"Solid",     trend:"Stable",
+    demand:"Nonexistent",     trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"A powerful muscle car with classic American styling.",
     tags:"",             updatedAt:_ago(0,7),
@@ -279,7 +279,7 @@ const ITEMS = [
   {
     name:"Concept",      type:"Vehicle",
     value:2500000,       duped:null,
-    demand:"Minimal",   trend:"Stable",
+    demand:"Nonexistent",   trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Futuristic concept vehicle. Moderate collector interest.",
     tags:"",             updatedAt:_ago(0,30),
