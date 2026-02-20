@@ -1369,13 +1369,40 @@ function renderPagination(total) {
   document.getElementById('pg-next').addEventListener('click',()=>{if(state.page<totalPages){state.page++;render();scrollTo({top:0,behavior:'smooth'});}});
 }
 
-// ── RENDER CARDS ──────────────────────────────────────────────
+// ── OPEN MODAL (add badge handling) ───────────────────────────────────────
+function openModal(name) {
+  const item = ITEMS.find(i => i.name === name);
+  if (!item) return;
+
+  const typeEl = document.getElementById('modal-type');
+  typeEl.textContent = item.type;
+  typeEl.className = `modal-type badge-type ${typeClass(item.type)}`;
+
+  // === NEW: Obtainable badge (card + modal) ===
+  const obBadge = document.getElementById('modal-obtainable-badge');
+  const obStrip = document.getElementById('modal-obtainable-strip');
+  if (item.obtainable === true) {
+    const badgeHTML = `<span class="badge-obtainable"><span class="ob-dot"></span>Obtainable</span>`;
+    obBadge.innerHTML = badgeHTML;
+    obStrip.innerHTML = badgeHTML;
+    obStrip.style.display = 'block';
+  } else {
+    obBadge.innerHTML = '';
+    obStrip.style.display = 'none';
+  }
+}
+
+// ── RENDER CARDS ───────────────────────────────────────
 function renderCards(items) {
   const wrap = document.getElementById('card-view');
-  if (!items.length) { wrap.innerHTML=`<div class="empty-state" style="grid-column:1/-1">No items match your filters.</div>`; return; }
+  if (!items.length) { 
+    wrap.innerHTML = `<div class="empty-state" style="grid-column:1/-1">No items match your filters.</div>`; 
+    return; 
+  }
   const page = items.slice((state.page-1)*PAGE_SIZE, state.page*PAGE_SIZE);
+  
   wrap.innerHTML = page.map((item,i) => `
-    <div class="item-card" style="animation-delay:${Math.min(i,15)*0.03}s">
+    <div class="item-card ${item.obtainable === true ? 'is-obtainable' : ''}" style="animation-delay:${Math.min(i,15)*0.03}s">
       <div class="card-img-wrap">${cardImgHTML(item)}</div>
       <div class="card-body">
         <div class="card-name">${item.name}</div>
@@ -1402,8 +1429,9 @@ function renderCards(items) {
         <button class="show-details-btn" data-name="${item.name}">Show Details</button>
       </div>
     </div>`).join('');
-  wrap.querySelectorAll('.show-details-btn').forEach(btn=>
-    btn.addEventListener('click',e=>{e.stopPropagation();openModal(btn.dataset.name);}));
+  
+  wrap.querySelectorAll('.show-details-btn').forEach(btn =>
+    btn.addEventListener('click', e => { e.stopPropagation(); openModal(btn.dataset.name); }));
 }
 
 // ── RENDER LIST ───────────────────────────────────────────────

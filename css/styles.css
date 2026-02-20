@@ -1933,3 +1933,62 @@ tr:hover .row-img-wrap { border-color: var(--border-hi); }
   .hero-logo { width: 240px; }
   .hero-btn .btn-left span { display: none; }
 }
+/* Obtainable badge on cards */
+.item-card.is-obtainable::after {
+  content: "Obtainable";
+  position: absolute;
+  top: 8px; right: 8px;
+  background: var(--c-obtainable-bg);
+  color: var(--c-obtainable);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--c-obtainable-border);
+  box-shadow: 0 0 8px rgba(67,232,176,0.4);
+  animation: pulseGlow 2s infinite;
+  z-index: 2;
+}
+
+/* Force modal sections to show when data exists */
+#modal-remarks-section, #modal-pull-section {
+  display: block !important;   /* override the inline none */
+}
+/* Index page mobile fix – text will NEVER disappear again */
+@media (max-width: 480px) {
+  .hero-btn, .menu-btn {
+    padding: 16px 20px !important;
+    min-height: 72px;
+  }
+  .hero-btn .btn-left span,
+  .menu-btn .menu-label {
+    display: block !important;
+    font-size: 1.02rem !important;
+    white-space: normal !important;
+    line-height: 1.25 !important;
+  }
+}
+
+/* Obtainable Badge – now works on cards + modal */
+.item-card.is-obtainable {
+  position: relative;
+}
+.item-card.is-obtainable::after {
+  content: "OBTAINABLE";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(67,232,176,0.15);
+  color: #43e8b0;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  border: 1px solid rgba(67,232,176,0.4);
+  letter-spacing: 0.06em;
+  box-shadow: 0 0 12px rgba(67,232,176,0.5);
+  z-index: 5;
+  animation: pulseGlow 3s infinite;
+}
