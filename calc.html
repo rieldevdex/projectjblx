@@ -1471,21 +1471,6 @@ document.getElementById('mirror-request-to-offer').addEventListener('click', () 
   mirrorSide('request', 'offer');
 });
 
-// ── THEME TOGGLE ───────────────────────────────────────────────
-const themeBtn = document.getElementById('theme-toggle');
-if (themeBtn) {
-  const saved = localStorage.getItem('jblx-theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', saved);
-  themeBtn.querySelector('.toggle-icon').textContent = saved === 'dark' ? '☀' : '🌙';
-  themeBtn.addEventListener('click', () => {
-    const cur  = document.documentElement.getAttribute('data-theme');
-    const next = cur === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('jblx-theme', next);
-    themeBtn.querySelector('.toggle-icon').textContent = next === 'dark' ? '☀' : '🌙';
-  });
-}
-
 // ── INIT ───────────────────────────────────────────────────────
 refreshSelected('offer');
 refreshSelected('request');

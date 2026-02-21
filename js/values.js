@@ -1276,10 +1276,19 @@ function typeClass(t) {
 
 const TREND_ICON = {Stable:'—', Hyped:'🔥', Rising:'▲', Falling:'▼'};
 
+function fmtChange(c) {
+  if (!c) return c;
+  const sign = c[0];
+  const num = parseInt(c.replace(/[^0-9]/g,''), 10);
+  if (isNaN(num)) return c;
+  if (num >= 1_000_000) return sign + (num/1_000_000) + 'M';
+  if (num >= 1_000)     return sign + (num/1_000) + 'K';
+  return c;
+}
 function changeBadge(c) {
   if (!c) return '';
   const cls = c.startsWith('+') ? 'change-up' : 'change-down';
-  return `<span class="change-badge ${cls}">${c}</span>`;
+  return `<span class="change-badge ${cls}">${fmtChange(c)}</span>`;
 }
 function prevBadge(c) {
   if (!c) return '';
@@ -1485,7 +1494,7 @@ function openModal(name) {
   const modalImg = document.getElementById('modal-img');
   const modalFb  = document.getElementById('modal-img-fallback');
 
-  modalFb.textContent = initials(item.name);
+modalFb.textContent = 'JBLX';
   if (item.image) { modalImg.src=item.image; modalImg.style.display='block'; modalImg.onerror=()=>{modalImg.style.display='none';}; }
   else { modalImg.src=''; modalImg.style.display='none'; }
 
@@ -1529,6 +1538,32 @@ function openModal(name) {
   // Live updated row
   const updEl = document.getElementById('modal-updated-time');
   if (updEl) { updEl.dataset.ts = item.updatedAt; updEl.textContent = relativeTime(item.updatedAt); }
+
+  // Remarks section
+  const remarksSection = document.getElementById('modal-remarks-section');
+  const remarksEl = document.getElementById('modal-remarks');
+  if (item.remarks) {
+    remarksSection.style.display = 'block';
+    remarksEl.innerHTML = `<span class="remark-chip highlight"><span class="remark-icon">💬</span>${item.remarks}</span>`;
+  } else {
+    remarksSection.style.display = 'none';
+  }
+
+  // Pull Value section
+  const pullSection = document.getElementById('modal-pull-section');
+  const pullWrap = document.getElementById('modal-pull-wrap');
+  if (item.pullValue) {
+    pullSection.style.display = 'block';
+    pullWrap.innerHTML = `<div class="pull-value-card">
+      <div class="pull-value-main">
+        <div class="pull-value-amount">${item.pullValue}</div>
+        <div class="pull-value-sub">Estimated Trade Pull</div>
+      </div>
+      <div class="pull-value-note">How much extra value this item pulls in trades vs. its listed price.</div>
+    </div>`;
+  } else {
+    pullSection.style.display = 'none';
+  }
 
   overlay.classList.add('open');
   document.body.style.overflow='hidden';

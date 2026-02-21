@@ -1934,10 +1934,6 @@ tr:hover .row-img-wrap { border-color: var(--border-hi); }
   .hero-btn .btn-left span { display: none; }
 }
 
-/* Force modal sections to show when data exists */
-#modal-remarks-section, #modal-pull-section {
-  display: block !important;   /* override the inline none */
-}
 /* Index page mobile fix – text will NEVER disappear again */
 @media (max-width: 480px) {
   .hero-btn, .menu-btn {
@@ -1954,8 +1950,17 @@ tr:hover .row-img-wrap { border-color: var(--border-hi); }
 }
 
 /* ── OBTAINABLE PILL — BIT TRANSPARENT VERSION ───────────────────────────── */
-.item-card.is-obtainable::after,
-.modal-obtainable-strip {
+@media (max-width: 768px) {
+  .item-card.is-obtainable::after {
+    font-size: 0.48rem;
+    padding: 2px 8px;
+    top: 6px;
+    right: 6px;
+    letter-spacing: 0.04em;
+    border-width: 1px;
+  }
+}
+.item-card.is-obtainable::after {
   content: "OBTAINABLE";
   position: absolute;
   top: 14px;
@@ -1977,12 +1982,15 @@ tr:hover .row-img-wrap { border-color: var(--border-hi); }
   transition: opacity 0.2s ease;
 }
 
-.modal-obtainable-strip {
-  font-size: 0.71rem;
-  padding: 6px 16px;
-}
-
-/* Hide badge on hover so "Show Details" is clean (exactly as in your screenshot) */
 .item-card:hover.is-obtainable::after {
   opacity: 0;
+}
+
+/* Modal strip is a real div — JS injects the badge-obtainable span into it */
+.modal-obtainable-strip {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 20;
+  pointer-events: none;
 }
