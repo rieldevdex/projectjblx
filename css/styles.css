@@ -15,14 +15,14 @@
   --accent-glow-sm: rgba(0, 200, 240, 0.08);
 
   /* Demand colours — 8 tiers */
-  --c-veryhigh:   #ff9f43;   /* new: Very High */
+  --c-veryhigh:   #ff9f43;
   --c-high:       #7b8ff7;
   --c-decent:     #39e07a;
   --c-medium:     #e07820;
-  --c-average:    #c0a030;   /* new: Average */
+  --c-average:    #c0a030;
   --c-low:        #e03040;
   --c-verylow:    #8b0e1e;
-  --c-none:       #4b5263;   /* Nonexistent */
+  --c-none:       #4b5263;
 
   /* Trend colours */
   --c-stable:     #5a6080;
