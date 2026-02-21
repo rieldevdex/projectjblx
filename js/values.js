@@ -1411,7 +1411,7 @@ function renderCards(items) {
   const page = items.slice((state.page-1)*PAGE_SIZE, state.page*PAGE_SIZE);
   
   wrap.innerHTML = page.map((item,i) => `
-    <div class="item-card ${item.obtainable === true ? 'is-obtainable' : ''}" style="animation-delay:${Math.min(i,15)*0.03}s">
+    <div class="item-card ${item.obtainable === true ? 'is-obtainable' : ''}" data-name="${item.name}" style="animation-delay:${Math.min(i,15)*0.03}s">
       <div class="card-img-wrap">${cardImgHTML(item)}</div>
       <div class="card-body">
         <div class="card-name">${item.name}</div>
@@ -1437,15 +1437,12 @@ function renderCards(items) {
             <span class="badge-demand ${demandClass(item.dupedDemand)}">${item.dupedDemand}</span>
           </div>` : ''}
         </div>
-        ${updatedBadge(item.updatedAt)}
-      </div>
-      <div class="card-hover-overlay">
-        <button class="show-details-btn" data-name="${item.name}">Show Details</button>
+      ${updatedBadge(item.updatedAt)}
       </div>
     </div>`).join('');
   
-  wrap.querySelectorAll('.show-details-btn').forEach(btn =>
-    btn.addEventListener('click', e => { e.stopPropagation(); openModal(btn.dataset.name); }));
+  wrap.querySelectorAll('.item-card[data-name]').forEach(card =>
+    card.addEventListener('click', () => openModal(card.dataset.name)));
 }
 
 // ── RENDER LIST ───────────────────────────────────────────────
@@ -1513,7 +1510,7 @@ modalFb.textContent = 'JBLX';
   const dupedEl = document.getElementById('modal-duped');
   const dupedLabelEl = document.getElementById('modal-duped-label');
   const isLimitedItem = isObtainableLimited(item);
-  dupedLabelEl.textContent = isLimitedItem ? 'Limited Value' : 'Duped / Limited';
+  dupedLabelEl.textContent = isLimitedItem ? 'Limited Value' : 'Duped Value';
   if (item.duped!==null) {
     dupedEl.innerHTML = fmtValue(item.duped) + changeBadge(item.dupeChange);
     dupedEl.className = isLimitedItem ? 'modal-stat-value limited' : 'modal-stat-value';
