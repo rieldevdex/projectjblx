@@ -31,7 +31,7 @@ const ITEMS = [
   {
     name:"Javelin",      type:"Vehicle",
     value:50000000,      duped:49500000,
-    demand:"High",       trend:"Stable",
+    demand:"Extraordinary",       trend:"Rising",
     change:"+500,000",   dupeChange:"",  demandChange:"",          trendChange:"",
     description:"The closing vehicle of the 2022 '5 Days of Vehicles' event, available for just 48 hours at $929,929. One of the best-performing vehicles in the game with a top speed of around 390 MPH.",
     tags:"5 Days of Vehicles · 2022 Event",           updatedAt:_ago(0,7),
@@ -301,7 +301,7 @@ const ITEMS = [
   {
     name:"Brulee",       type:"Vehicle",
     value:3000000,       duped:null,
-    demand:"Solid",      trend:"Stable",
+    demand:"Average",      trend:"Stable",
     change:"",           dupeChange:null, demandChange:"",           trendChange:"",
     description:"Purchasable for $500,000 from June 2017 until March 2020, when it was retired and replaced by the Eclaire. Can reach very high speeds (~415 MPH) if given enough distance to accelerate.",
     tags:"",             updatedAt:_ago(0,14),
@@ -1258,9 +1258,13 @@ function fmtValue(n) {
   return n.toLocaleString();
 }
 
-const DEMAND_ORDER = { High:6, Solid:5, Medium:4, Low:3, Minimal:2, Nonexistent:1 };
+const DEMAND_ORDER = { Extraordinary:8, High:7, Solid:6, Average:5, Medium:4, Low:3, Minimal:2, Nonexistent:1 };
 function demandClass(d) {
-  return {High:'d-high',Solid:'d-solid',Medium:'d-medium',Low:'d-low',Minimal:'d-minimal',Nonexistent:'d-nonexistent'}[d]||'';
+  return {
+    Extraordinary:'d-extraordinary', High:'d-high', Solid:'d-solid',
+    Average:'d-average', Medium:'d-medium', Low:'d-low',
+    Minimal:'d-minimal', Nonexistent:'d-nonexistent'
+  }[d] || '';
 }
 function trendClass(t) {
   return {Stable:'t-stable',Hyped:'t-hyped',Rising:'t-rising',Falling:'t-falling'}[t]||'';
