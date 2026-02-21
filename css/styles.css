@@ -715,6 +715,14 @@ img { display: block; }
   color: var(--text-muted);
   font-style: italic;
 }
+.demand-sub {
+  font-size: 0.52rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  text-transform: lowercase;
+  margin-left: 2px;
+}
 
 /* Show Details hover overlay */
 .card-hover-overlay {

@@ -980,11 +980,15 @@ const abbr = name => name.replace(/[^A-Z0-9]/gi,'').slice(0,3).toUpperCase();
 function demandScore(item) { return DEMAND_WEIGHT[item.demand] ?? -1; }
 
 function avgDemand(entries) {
-  // Weighted by qty
-  const rated = entries.filter(e => demandScore(e.item) >= 0);
+  // Weighted by qty — uses dupedDemand when item is toggled to duped state
+  const rated = entries.filter(e => DEMAND_WEIGHT[e.item.demand] !== undefined);
   if (!rated.length) return null;
   const totalQty = rated.reduce((s,e) => s + e.qty, 0);
-  return rated.reduce((s,e) => s + demandScore(e.item) * e.qty, 0) / totalQty;
+  return rated.reduce((s,e) => {
+    const isDuped = e.state === 'duped';
+    const demandKey = (isDuped && e.item.dupedDemand) ? e.item.dupedDemand : e.item.demand;
+    return s + (DEMAND_WEIGHT[demandKey] ?? 0) * e.qty;
+  }, 0) / totalQty;
 }
 
 function demandName(score) {
