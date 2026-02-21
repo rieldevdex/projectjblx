@@ -959,6 +959,29 @@ const DEMAND_NAMES = Object.fromEntries(
   Object.entries(DEMAND_WEIGHT).map(([k,v]) => [v, k])
 );
 
+// ── PULL VALUE HELPERS ────────────────────────────────────────
+function parsePullAmt(str) {
+  if (!str) return 0;
+  str = str.trim();
+  const sign = str[0] === '-' ? -1 : (str[0] === '=' ? 0 : 1);
+  if (str[0] === '=') return 0;
+  const num = parseFloat(str.replace(/[^0-9.]/g, '')) || 0;
+  if (/[Mm]/.test(str)) return sign * num * 1_000_000;
+  if (/[Kk]/.test(str)) return sign * num * 1_000;
+  return sign * num;
+}
+
+function getEntryPull(entry) {
+  const pv = entry.item.pullValue;
+  if (!pv) return 0;
+  const isAlt = entry.state === 'duped' || entry.state === 'limited';
+  if (pv.includes('/')) {
+    const parts = pv.split('/');
+    return parsePullAmt(isAlt ? parts[1] : parts[0]);
+  }
+  return parsePullAmt(pv);
+}
+
 // ── VERDICT THRESHOLDS ────────────────────────────────────────
 const VERDICT = [
   { min:  8,        cls:'s-win',         label:'Win',         emoji:'🏆' },
@@ -1264,6 +1287,11 @@ function refreshSummary() {
   // Totals (qty-weighted)
   const offerTotal   = offer.reduce((s,e)   => s + e.value * e.qty, 0);
   const requestTotal = request.reduce((s,e) => s + e.value * e.qty, 0);
+  const offerPull   = offer.reduce((s,e)   => s + getEntryPull(e) * e.qty, 0);
+  const requestPull = request.reduce((s,e) => s + getEntryPull(e) * e.qty, 0);
+  const offerEffective   = offerTotal   + offerPull;
+  const requestEffective = requestTotal + requestPull;
+  const pullDiff = offerPull - requestPull;
   const rawDiff      = requestTotal - offerTotal;
 
   // Item counts (qty-weighted)
@@ -1422,6 +1450,27 @@ function refreshSummary() {
           <div class="db-val dn">−${fmtValue(Math.round(tax))}</div>
         </div>` : ''}
       </div>
+        <div class="detail-block">
+          <div class="db-lbl">Offer Pull</div>
+          <div class="db-val ${offerPull > 0 ? 'up' : offerPull < 0 ? 'dn' : 'neu'}">${offerPull >= 0 ? '+' : ''}${fmtValue(Math.round(offerPull))}</div>
+        </div>
+        <div class="detail-block">
+          <div class="db-lbl">Request Pull</div>
+          <div class="db-val ${requestPull > 0 ? 'up' : requestPull < 0 ? 'dn' : 'neu'}">${requestPull >= 0 ? '+' : ''}${fmtValue(Math.round(requestPull))}</div>
+        </div>
+        <div class="detail-block">
+          <div class="db-lbl">Pull Advantage</div>
+          <div class="db-val ${pullDiff > 0 ? 'up' : pullDiff < 0 ? 'dn' : 'neu'}">${pullDiff > 0 ? '+' : ''}${fmtValue(Math.round(pullDiff))}</div>
+        </div>
+        ${Math.abs(offerEffective - requestEffective) > Math.abs(offerTotal - requestTotal) * 0.05 ? `
+        <div class="detail-block">
+          <div class="db-lbl">Pull-Adj. Offer</div>
+          <div class="db-val">${fmtValue(Math.round(offerEffective))}</div>
+        </div>
+        <div class="detail-block">
+          <div class="db-lbl">Pull-Adj. Request</div>
+          <div class="db-val">${fmtValue(Math.round(requestEffective))}</div>
+        </div>` : ''}
 
     </div>`;
 }
