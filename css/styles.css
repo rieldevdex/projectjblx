@@ -1246,17 +1246,19 @@ tr:hover .row-img-wrap { border-color: var(--border-hi); }
 
 .remark-chip {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 5px;
   padding: 5px 12px;
   background: var(--bg3);
   border: 1px solid var(--border);
-  border-radius: 99px;
+  border-radius: 14px;
   font-family: var(--font-mono);
   font-size: 0.62rem;
   color: var(--text-dim);
   letter-spacing: 0.04em;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.5;
 }
 .remark-chip .remark-icon { opacity: 0.55; font-size: 0.72rem; }
 .remark-chip.highlight {
