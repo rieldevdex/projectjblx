@@ -1054,12 +1054,12 @@ function renderCards(items) {
               : `<span class="stat-na">N/A</span>`}
           </div>
           <div class="card-stat-row">
-            <span class="stat-lbl">Demand${item.dupedDemand ? ' <span class="demand-sub">(clean)</span>' : ''}</span>
+            <span class="stat-lbl">Demand${item.dupedDemand ? ' <span class="demand-sub clean-sub">(clean)</span>' : ''}</span>
             <span class="badge-demand ${demandClass(item.demand)}">${item.demand}</span>${prevBadge(item.demandChange)}
           </div>
           ${item.dupedDemand ? `
           <div class="card-stat-row">
-            <span class="stat-lbl">Demand <span class="demand-sub">(duped)</span></span>
+            <span class="stat-lbl">Demand <span class="demand-sub duped-sub">(duped)</span></span>
             <span class="badge-demand ${demandClass(item.dupedDemand)}">${item.dupedDemand}</span>
           </div>` : ''}
         </div>

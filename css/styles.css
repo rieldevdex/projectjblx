@@ -722,11 +722,12 @@ img { display: block; }
 .demand-sub {
   font-size: 0.52rem;
   letter-spacing: 0.04em;
-  color: var(--text-muted);
   font-family: var(--font-mono);
   text-transform: lowercase;
   margin-left: 2px;
 }
+.demand-sub.clean-sub { color: #43e8b0; }
+.demand-sub.duped-sub { color: #fc8484; }
 
 /* ── LIST MODE ──────────────────────────────────────────────── */
 #list-view {

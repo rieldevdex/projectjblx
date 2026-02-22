@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dupe Checker — JBLX</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/mobile-nav.css" />
+  <script src="js/theme.js"></script>
+  <style>
+/* ================================================================
+   DUPE CHECKER PAGE
+================================================================ */
+
+.dupe-main {
+  flex: 1;
+  max-width: 860px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 48px 28px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── PAGE HEADER ────────────────────────────────────────────── */
+.dupe-header {
+  text-align: center;
+  animation: fadeUp 0.35s var(--ease) both;
+}
+
+.dupe-header-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.dupe-header-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.dupe-header-title svg {
+  color: #e03040;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px rgba(224,48,64,0.4));
+}
+
+.dupe-header-sub {
+  font-size: 0.84rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* ── STAT BAR ──────────────────────────────────────────────── */
+.dupe-stats-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.35s var(--ease) 0.05s both;
+}
+
+.dupe-stat-chip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.dupe-stat-chip strong {
+  color: var(--text);
+  font-size: 0.72rem;
+}
+
+.dupe-stat-chip .chip-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chip-dot-duped  { background: #e03040; box-shadow: 0 0 5px rgba(224,48,64,0.6); }
+.chip-dot-item   { background: var(--accent); box-shadow: 0 0 5px rgba(0,200,240,0.5); }
+.chip-dot-clean  { background: #39e07a; box-shadow: 0 0 5px rgba(57,224,122,0.5); }
+
+/* ── SEARCH CARD ────────────────────────────────────────────── */
+.dupe-search-card {
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--r-xl);
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fadeUp 0.35s var(--ease) 0.08s both;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.35);
+}
+
+.dupe-search-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.dupe-input-row {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.dupe-search-wrap {
+  position: relative;
+  flex: 1;
+}
+
+.dupe-search-wrap svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: color 0.15s;
+}
+
+.dupe-search-input {
+  width: 100%;
+  padding: 14px 14px 14px 42px;
+  background: var(--bg3);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-lg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  letter-spacing: 0.04em;
+}
+
+.dupe-search-input::placeholder { color: var(--text-muted); font-family: var(--font-body); letter-spacing: 0; font-size: 0.84rem; }
+.dupe-search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+.dupe-search-input:focus + svg,
+.dupe-search-wrap:focus-within svg {
+  color: var(--accent);
+}
+
+.dupe-search-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--surface3);
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  transition: background 0.12s, color 0.12s;
+}
+.dupe-search-clear:hover { background: rgba(224,48,64,0.2); color: #e03040; }
+.dupe-search-clear.visible { display: flex; }
+
+.dupe-search-btn {
+  padding: 14px 26px;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: var(--r-lg);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.dupe-search-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+.dupe-search-btn:active { transform: translateY(0); }
+
+.dupe-hint {
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.dupe-hint strong { color: var(--text-dim); }
+
+/* ── RESULTS AREA ───────────────────────────────────────────── */
+#dupe-results {
+  animation: fadeUp 0.3s var(--ease) both;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── STATUS BANNER ──────────────────────────────────────────── */
+.status-banner {
+  border-radius: var(--r-xl);
+  padding: 26px 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  border: 1px solid;
+  animation: scaleIn 0.22s var(--ease) both;
+}
+
+.status-banner.is-clean {
+  background: rgba(57,224,122,0.06);
+  border-color: rgba(57,224,122,0.28);
+}
+.status-banner.is-duped {
+  background: rgba(224,48,64,0.06);
+  border-color: rgba(224,48,64,0.28);
+}
+.status-banner.is-unknown {
+  background: rgba(90,96,128,0.06);
+  border-color: rgba(90,96,128,0.25);
+}
+
+.status-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+.is-clean  .status-icon { background: rgba(57,224,122,0.12); }
+.is-duped  .status-icon { background: rgba(224,48,64,0.12); }
+.is-unknown .status-icon { background: rgba(90,96,128,0.10); }
+
+.status-body { flex: 1; min-width: 0; }
+
+.status-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+.is-clean   .status-title { color: #39e07a; }
+.is-duped   .status-title { color: #e03040; }
+.is-unknown .status-title { color: var(--text-dim); }
+
+.status-sub {
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+.is-clean   .status-sub { color: rgba(57,224,122,0.7); }
+.is-duped   .status-sub { color: rgba(224,48,64,0.7); }
+.is-unknown .status-sub { color: var(--text-muted); }
+
+/* ── RESULTS TABLE ──────────────────────────────────────────── */
+.dupe-results-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  animation: fadeUp 0.28s var(--ease) 0.06s both;
+}
+
+.dupe-results-header {
+  padding: 13px 20px;
+  background: var(--bg3);
+  border-bottom: 1px solid var(--border-hi);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.dupe-results-title {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.dupe-results-count {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  background: var(--surface2);
+  padding: 2px 8px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+}
+
+.dupe-record-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+  animation: fadeUp 0.18s var(--ease) both;
+}
+.dupe-record-row:last-child { border-bottom: none; }
+.dupe-record-row:hover { background: var(--surface2); }
+
+.record-user {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.record-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(224,48,64,0.12);
+  border: 1px solid rgba(224,48,64,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #e03040;
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+}
+
+.record-username {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.03em;
+}
+
+.record-match {
+  background: rgba(224,48,64,0.15);
+  color: #e03040;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+.record-item-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.record-item-name {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+}
+
+.record-key {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+.record-badge-duped {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #e03040;
+  background: rgba(224,48,64,0.10);
+  border: 1px solid rgba(224,48,64,0.28);
+  white-space: nowrap;
+}
+
+.record-badge-duped::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #e03040;
+  box-shadow: 0 0 5px rgba(224,48,64,0.7);
+}
+
+/* ── ITEM BROWSER ──────────────────────────────────────────── */
+.dupe-browser-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  animation: fadeUp 0.38s var(--ease) 0.12s both;
+}
+
+.dupe-browser-header {
+  padding: 14px 20px;
+  background: var(--bg3);
+  border-bottom: 1px solid var(--border-hi);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dupe-browser-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent);
+}
+
+.dupe-browser-title {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.dupe-item-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.dupe-item-block {
+  flex: 1;
+  min-width: 200px;
+  padding: 16px 20px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.dupe-item-block:hover { background: var(--surface2); }
+.dupe-item-block:nth-child(3n) { border-right: none; }
+
+.dib-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.dib-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dib-count {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: #e03040;
+  background: rgba(224,48,64,0.10);
+  border: 1px solid rgba(224,48,64,0.22);
+  border-radius: 99px;
+  padding: 2px 8px;
+  letter-spacing: 0.05em;
+}
+
+.dib-label {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+/* ── CALLOUT ────────────────────────────────────────────────── */
+.dupe-disclaimer {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid rgba(240,192,64,0.6);
+  border-radius: var(--r-lg);
+  padding: 14px 18px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 0.76rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  animation: fadeUp 0.38s var(--ease) 0.15s both;
+}
+.dupe-disclaimer strong { color: var(--text); }
+.dupe-disclaimer svg { flex-shrink: 0; color: #f0c040; margin-top: 1px; }
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .dupe-main { padding: 28px 16px 56px; }
+  .dupe-search-card { padding: 20px 18px; }
+  .dupe-input-row { flex-direction: column; }
+  .dupe-search-btn { justify-content: center; }
+  .dupe-record-row { grid-template-columns: 1fr 1fr; }
+  .dupe-record-row > :last-child { grid-column: 1 / -1; }
+  .status-banner { flex-direction: column; align-items: flex-start; }
+  .dupe-item-block { min-width: 160px; }
+  .dupe-stats-bar { gap: 6px; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- ── TOP NAV ──────────────────────────────────────────── -->
+  <nav class="top-nav">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/images/jblx-logo.png" alt="JBLX" />
+    </a>
+    <div class="nav-links">
+      <a href="values.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+        <span>Values</span>
+      </a>
+     <a href="dupe.html" class="nav-link active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+          <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+        <span>Dupe</span>
+       </a>
+      <a href="calc.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+        <span>Calculator</span>
+      </a>
+      <a href="info.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>Info</span>
+      </a>
+      <a href="teams.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span>Team</span>
+      </a>
+      <a href="disc.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+        <span>Discord</span>
+      </a>
+      <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+        <span class="toggle-icon">☀</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── MAIN ─────────────────────────────────────────────── -->
+  <main class="dupe-main">
+
+    <!-- Page header -->
+    <div class="dupe-header">
+      <div class="dupe-header-eyebrow">Jailbreak Dupe Registry</div>
+      <h1 class="dupe-header-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+          <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+        Dupe Checker
+      </h1>
+      <p class="dupe-header-sub">
+        Search a Roblox username or item name to instantly check against our tracked dupe registry.
+        No match means the item is <strong style="color:#39e07a">clean</strong> in our records.
+      </p>
+    </div>
+
+    <!-- Stat bar -->
+    <div class="dupe-stats-bar" id="dupe-stats-bar">
+      <!-- populated by JS -->
+    </div>
+
+    <!-- Search card -->
+    <div class="dupe-search-card">
+      <div class="dupe-search-label">Search username or item name</div>
+      <div class="dupe-input-row">
+        <div class="dupe-search-wrap">
+          <input
+            type="text"
+            id="dupe-input"
+            class="dupe-search-input"
+            placeholder="e.g.  POLARCHYR  or  Torpedo"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <button class="dupe-search-clear" id="dupe-clear-btn" title="Clear">✕</button>
+        </div>
+        <button class="dupe-search-btn" id="dupe-search-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          Check
+        </button>
+      </div>
+      <div class="dupe-hint">
+        Enter a <strong>Roblox username</strong> exactly as shown in the trade hub, or an <strong>item name</strong> to see all known dupers. Search is case-insensitive.
+      </div>
+    </div>
+
+    <!-- Results area -->
+    <div id="dupe-results"></div>
+
+    <!-- Item browser -->
+    <div class="dupe-browser-card" id="dupe-browser">
+      <div class="dupe-browser-header">
+        <div class="dupe-browser-dot"></div>
+        <div class="dupe-browser-title">Tracked Items — click to browse dupers</div>
+      </div>
+      <div class="dupe-item-grid" id="dupe-item-grid">
+        <!-- populated by JS -->
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="dupe-disclaimer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+        <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+      </svg>
+      <span>
+        <strong>Database Notice:</strong> This registry only contains <em>tracked and confirmed</em> dupe records submitted to JBLX. A clean result means we have no record of that username in our database — it is not a 100% guarantee the item is unduped. Duping was patched and only occurred in a limited window; new entries are added when evidence is submitted to the team on Discord.
+      </span>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2025 JBLX — Jailbreak Listing Exchange</span>
+    <span>Not affiliated with Badimo or Roblox</span>
+  </footer>
+
+  <script src="js/dupe.js"></script>
+  <script>
+/* ================================================================
+   DUPE CHECKER — UI ENGINE
+================================================================ */
+
+const input   = document.getElementById('dupe-input');
+const clearBtn = document.getElementById('dupe-clear-btn');
+const searchBtn = document.getElementById('dupe-search-btn');
+const resultsEl = document.getElementById('dupe-results');
+
+// ── STAT BAR ────────────────────────────────────────────────────
+
+function renderStatBar() {
+  const el = document.getElementById('dupe-stats-bar');
+  const items = getDupeItems();
+  const totalRecords = DUPE_RECORDS.length;
+  el.innerHTML = `
+    <div class="dupe-stat-chip">
+      <div class="chip-dot chip-dot-duped"></div>
+      <strong>${totalRecords}</strong> tracked dupers
+    </div>
+    <div class="dupe-stat-chip">
+      <div class="chip-dot chip-dot-item"></div>
+      <strong>${items.length}</strong> affected item${items.length !== 1 ? 's' : ''}
+    </div>
+    <div class="dupe-stat-chip">
+      <div class="chip-dot chip-dot-clean"></div>
+      No match = <strong>Clean</strong> in our records
+    </div>`;
+}
+
+// ── ITEM BROWSER ─────────────────────────────────────────────────
+
+function renderItemBrowser() {
+  const grid = document.getElementById('dupe-item-grid');
+  const items = getDupeItems();
+  grid.innerHTML = items.map(({ item, itemKey }) => {
+    const count = DUPE_RECORDS.filter(r => r.itemKey === itemKey).length;
+    return `
+      <div class="dupe-item-block" data-item="${itemKey}">
+        <div class="dib-name">${item}</div>
+        <div class="dib-meta">
+          <span class="dib-count">${count} duper${count !== 1 ? 's' : ''}</span>
+          <span class="dib-label">tracked</span>
+        </div>
+      </div>`;
+  }).join('');
+
+  grid.querySelectorAll('.dupe-item-block').forEach(block => {
+    block.addEventListener('click', () => {
+      const itemKey = block.dataset.item;
+      const record = DUPE_RECORDS.find(r => r.itemKey === itemKey);
+      input.value = record ? record.item : itemKey;
+      clearBtn.classList.add('visible');
+      runSearch();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+}
+
+// ── HIGHLIGHT MATCH ──────────────────────────────────────────────
+
+function highlight(text, query) {
+  if (!query) return escHtml(text);
+  const lo = query.toLowerCase();
+  const idx = text.toLowerCase().indexOf(lo);
+  if (idx === -1) return escHtml(text);
+  return escHtml(text.slice(0, idx))
+    + `<span class="record-match">${escHtml(text.slice(idx, idx + query.length))}</span>`
+    + escHtml(text.slice(idx + query.length));
+}
+
+function escHtml(s) {
+  return String(s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function avatarLetters(username) {
+  return username.replace(/[^a-zA-Z0-9]/g, '').slice(0, 2).toUpperCase() || '??';
+}
+
+// ── RENDER RESULTS ───────────────────────────────────────────────
+
+function renderResults(query, searchResult) {
+  const { type, results } = searchResult;
+  const q = query.trim();
+
+  if (!q) {
+    resultsEl.innerHTML = '';
+    return;
+  }
+
+  let html = '';
+
+  // Status banner
+  if (type === 'clean') {
+    html += `
+      <div class="status-banner is-clean">
+        <div class="status-icon">✅</div>
+        <div class="status-body">
+          <div class="status-title">Clean — Not in Registry</div>
+          <div class="status-sub">No record found for "<strong style="color:rgba(57,224,122,0.9)">${escHtml(q)}</strong>" in our dupe database. This username has no tracked dupe history, or the item is unaffected.</div>
+        </div>
+      </div>`;
+  } else if (type === 'exact-user' || type === 'partial-user') {
+    // Duped by user search
+    const uniqueItems = [...new Set(results.map(r => r.item))].join(', ');
+    html += `
+      <div class="status-banner is-duped">
+        <div class="status-icon">⚠️</div>
+        <div class="status-body">
+          <div class="status-title">Duped — Match Found</div>
+          <div class="status-sub">Username matches <strong style="color:rgba(224,48,64,0.9)">${results.length} record${results.length !== 1 ? 's' : ''}</strong> in our registry. This user has been recorded duping: <strong style="color:rgba(224,48,64,0.9)">${escHtml(uniqueItems)}</strong>. Any item they offer may be a duped copy.</div>
+        </div>
+      </div>`;
+  } else if (type === 'item') {
+    html += `
+      <div class="status-banner is-duped">
+        <div class="status-icon">⚠️</div>
+        <div class="status-body">
+          <div class="status-title">Duped Item Tracked</div>
+          <div class="status-sub">We have <strong style="color:rgba(224,48,64,0.9)">${results.length} known duper${results.length !== 1 ? 's' : ''}</strong> on record for "<strong style="color:rgba(224,48,64,0.9)">${escHtml(q)}</strong>". Cross-reference the seller's username below before accepting.</div>
+        </div>
+      </div>`;
+  }
+
+  // Results table
+  if (results.length) {
+    const label = (type === 'item') ? 'Known Dupers for this Item' : 'Matched Records';
+    html += `
+      <div class="dupe-results-section">
+        <div class="dupe-results-header">
+          <div class="dupe-results-title">${label}</div>
+          <div class="dupe-results-count">${results.length} record${results.length !== 1 ? 's' : ''}</div>
+        </div>
+        ${results.map((r, i) => `
+          <div class="dupe-record-row" style="animation-delay:${i * 0.04}s">
+            <div class="record-user">
+              <div class="record-avatar">${avatarLetters(r.username)}</div>
+              <div class="record-username">${highlight(r.username, type !== 'item' ? q : '')}</div>
+            </div>
+            <div class="record-item-wrap">
+              <span class="record-item-name">${highlight(r.item, type === 'item' ? q : '')}</span>
+              <span class="record-key">${escHtml(r.itemKey)}</span>
+            </div>
+            <span class="record-badge-duped">Duped</span>
+          </div>`).join('')}
+      </div>`;
+  }
+
+  resultsEl.innerHTML = html;
+}
+
+// ── SEARCH LOGIC ─────────────────────────────────────────────────
+
+function runSearch() {
+  const q = input.value.trim();
+  if (!q) {
+    resultsEl.innerHTML = '';
+    return;
+  }
+  const result = dupeSearch(q);
+  renderResults(q, result);
+}
+
+// ── EVENTS ───────────────────────────────────────────────────────
+
+input.addEventListener('input', () => {
+  clearBtn.classList.toggle('visible', input.value.length > 0);
+  // Live search as you type
+  runSearch();
+});
+
+input.addEventListener('keydown', e => {
+  if (e.key === 'Enter') runSearch();
+});
+
+searchBtn.addEventListener('click', runSearch);
+
+clearBtn.addEventListener('click', () => {
+  input.value = '';
+  clearBtn.classList.remove('visible');
+  resultsEl.innerHTML = '';
+  input.focus();
+});
+
+// ── INIT ─────────────────────────────────────────────────────────
+
+renderStatBar();
+renderItemBrowser();
+  </script>
+  <script src="js/mobile-nav.js"></script>
+</body>
+</html>
