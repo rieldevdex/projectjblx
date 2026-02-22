@@ -139,7 +139,7 @@
   flex: 1;
 }
 
-.dupe-search-wrap svg {
+.dupe-search-wrap svg.search-icon {
   position: absolute;
   left: 14px;
   top: 50%;
@@ -170,9 +170,18 @@
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-glow);
 }
-.dupe-search-input:focus + svg,
-.dupe-search-wrap:focus-within svg {
+.dupe-search-input:focus ~ svg.search-icon,
+.dupe-search-wrap:focus-within svg.search-icon {
   color: var(--accent);
+}
+
+/* ID mode: amber border to signal "needs confirmation" */
+.dupe-search-input.is-id-mode {
+  border-color: rgba(240,180,0,0.55);
+}
+.dupe-search-input.is-id-mode:focus {
+  border-color: #f0c040;
+  box-shadow: 0 0 0 3px rgba(240,192,0,0.14);
 }
 
 .dupe-search-clear {
@@ -213,10 +222,58 @@
   gap: 8px;
   white-space: nowrap;
   flex-shrink: 0;
-  transition: opacity 0.15s, transform 0.15s;
+  transition: opacity 0.15s, transform 0.15s, background 0.15s;
 }
-.dupe-search-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+.dupe-search-btn:hover  { opacity: 0.85; transform: translateY(-1px); }
 .dupe-search-btn:active { transform: translateY(0); }
+.dupe-search-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+/* ── ID DETECTION HINT ──────────────────────────────────────── */
+/* Shown below the input row when a numeric ID is detected */
+.dupe-id-hint {
+  display: none;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 14px;
+  background: rgba(240,192,0,0.07);
+  border: 1px solid rgba(240,192,0,0.28);
+  border-radius: var(--r-lg);
+  animation: fadeUp 0.18s var(--ease) both;
+}
+
+.dupe-id-hint.visible { display: flex; }
+
+.dupe-id-hint-icon {
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.dupe-id-hint-text {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  color: #f0c040;
+  line-height: 1.5;
+}
+
+.dupe-id-hint-text strong {
+  color: #f8d96a;
+}
+
+.dupe-id-hint-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 6px;
+  background: rgba(240,192,0,0.12);
+  border: 1px solid rgba(240,192,0,0.35);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: #f0c040;
+  font-weight: 700;
+}
 
 .dupe-hint {
   font-size: 0.73rem;
@@ -245,18 +302,16 @@
   animation: scaleIn 0.22s var(--ease) both;
 }
 
-.status-banner.is-clean {
-  background: rgba(57,224,122,0.06);
-  border-color: rgba(57,224,122,0.28);
+.status-banner.is-attached {
+  border-radius: var(--r-xl) var(--r-xl) 0 0;
+  border-bottom: none;
+  padding-bottom: 18px;
 }
-.status-banner.is-duped {
-  background: rgba(224,48,64,0.06);
-  border-color: rgba(224,48,64,0.28);
-}
-.status-banner.is-unknown {
-  background: rgba(90,96,128,0.06);
-  border-color: rgba(90,96,128,0.25);
-}
+
+.status-banner.is-clean    { background: rgba(57,224,122,0.06);  border-color: rgba(57,224,122,0.28); }
+.status-banner.is-duped    { background: rgba(224,48,64,0.06);   border-color: rgba(224,48,64,0.28); }
+.status-banner.is-unknown  { background: rgba(90,96,128,0.06);   border-color: rgba(90,96,128,0.25); }
+.status-banner.is-resolved { background: rgba(0,200,240,0.05);   border-color: rgba(0,200,240,0.22); }
 
 .status-icon {
   width: 48px;
@@ -268,9 +323,10 @@
   font-size: 1.4rem;
   flex-shrink: 0;
 }
-.is-clean  .status-icon { background: rgba(57,224,122,0.12); }
-.is-duped  .status-icon { background: rgba(224,48,64,0.12); }
-.is-unknown .status-icon { background: rgba(90,96,128,0.10); }
+.is-clean    .status-icon { background: rgba(57,224,122,0.12); }
+.is-duped    .status-icon { background: rgba(224,48,64,0.12); }
+.is-unknown  .status-icon { background: rgba(90,96,128,0.10); }
+.is-resolved .status-icon { background: rgba(0,200,240,0.10); }
 
 .status-body { flex: 1; min-width: 0; }
 
@@ -283,17 +339,19 @@
   margin-bottom: 4px;
   line-height: 1;
 }
-.is-clean   .status-title { color: #39e07a; }
-.is-duped   .status-title { color: #e03040; }
-.is-unknown .status-title { color: var(--text-dim); }
+.is-clean    .status-title { color: #39e07a; }
+.is-duped    .status-title { color: #e03040; }
+.is-unknown  .status-title { color: var(--text-dim); }
+.is-resolved .status-title { color: var(--accent); font-size: 0.9rem; letter-spacing: 0.14em; }
 
 .status-sub {
   font-size: 0.82rem;
   line-height: 1.6;
 }
-.is-clean   .status-sub { color: rgba(57,224,122,0.7); }
-.is-duped   .status-sub { color: rgba(224,48,64,0.7); }
-.is-unknown .status-sub { color: var(--text-muted); }
+.is-clean    .status-sub { color: rgba(57,224,122,0.7); }
+.is-duped    .status-sub { color: rgba(224,48,64,0.7); }
+.is-unknown  .status-sub { color: var(--text-muted); }
+.is-resolved .status-sub { color: var(--text-muted); }
 
 /* ── RESULTS TABLE ──────────────────────────────────────────── */
 .dupe-results-section {
@@ -302,6 +360,11 @@
   border-radius: var(--r-xl);
   overflow: hidden;
   animation: fadeUp 0.28s var(--ease) 0.06s both;
+}
+
+.dupe-results-section.is-attached-below {
+  border-radius: 0 0 var(--r-xl) var(--r-xl);
+  border-top: none;
 }
 
 .dupe-results-header {
@@ -551,6 +614,8 @@
   .dupe-item-block { min-width: 160px; }
   .dupe-stats-bar { gap: 6px; }
 }
+
+@keyframes spin { to { transform: rotate(360deg); } }
   </style>
 </head>
 <body>
@@ -565,14 +630,14 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
         <span>Values</span>
       </a>
-     <a href="dupe.html" class="nav-link active">
+      <a href="dupe.html" class="nav-link active">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
           <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
           <line x1="12" y1="9" x2="12" y2="13"/>
           <line x1="12" y1="17" x2="12.01" y2="17"/>
         </svg>
         <span>Dupe</span>
-       </a>
+      </a>
       <a href="calc.html" class="nav-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
         <span>Calculator</span>
@@ -609,7 +674,7 @@
         Dupe Checker
       </h1>
       <p class="dupe-header-sub">
-        Search a Roblox username or item name to instantly check against our tracked dupe registry.
+        Search a Roblox username, <strong>User ID</strong>, or item name to instantly check against our tracked dupe registry.
         No match means the item is <strong style="color:#39e07a">clean</strong> in our records.
       </p>
     </div>
@@ -621,18 +686,18 @@
 
     <!-- Search card -->
     <div class="dupe-search-card">
-      <div class="dupe-search-label">Search username or item name</div>
+      <div class="dupe-search-label">Search username, user ID, or item name</div>
       <div class="dupe-input-row">
         <div class="dupe-search-wrap">
           <input
             type="text"
             id="dupe-input"
             class="dupe-search-input"
-            placeholder="e.g.  POLARCHYR  or  Torpedo"
+            placeholder="e.g.  POLARCHYR  ·  413043326  ·  Torpedo"
             autocomplete="off"
             spellcheck="false"
           />
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
           </svg>
           <button class="dupe-search-clear" id="dupe-clear-btn" title="Clear">✕</button>
@@ -644,8 +709,17 @@
           Check
         </button>
       </div>
-      <div class="dupe-hint">
-        Enter a <strong>Roblox username</strong> exactly as shown in the trade hub, or an <strong>item name</strong> to see all known dupers. Search is case-insensitive.
+
+      <!-- ID detection hint — shown when user types a numeric ID -->
+      <div class="dupe-id-hint" id="dupe-id-hint">
+        <div class="dupe-id-hint-icon">🔢</div>
+        <div class="dupe-id-hint-text">
+          Looks like a <strong>Roblox User ID</strong> — press <span class="dupe-id-hint-kbd">Enter</span> or click <strong>Check</strong> to resolve it to a username automatically.
+        </div>
+      </div>
+
+      <div class="dupe-hint" id="dupe-hint-default">
+        Enter a <strong>Roblox username</strong>, a numeric <strong>User ID</strong> (resolved automatically via Roblox), or an <strong>item name</strong> to see all known dupers. Search is case-insensitive.
       </div>
     </div>
 
@@ -686,10 +760,12 @@
    DUPE CHECKER — UI ENGINE
 ================================================================ */
 
-const input   = document.getElementById('dupe-input');
-const clearBtn = document.getElementById('dupe-clear-btn');
-const searchBtn = document.getElementById('dupe-search-btn');
-const resultsEl = document.getElementById('dupe-results');
+const input       = document.getElementById('dupe-input');
+const clearBtn    = document.getElementById('dupe-clear-btn');
+const searchBtn   = document.getElementById('dupe-search-btn');
+const resultsEl   = document.getElementById('dupe-results');
+const idHint      = document.getElementById('dupe-id-hint');
+const defaultHint = document.getElementById('dupe-hint-default');
 
 // ── STAT BAR ────────────────────────────────────────────────────
 
@@ -735,13 +811,14 @@ function renderItemBrowser() {
       const record = DUPE_RECORDS.find(r => r.itemKey === itemKey);
       input.value = record ? record.item : itemKey;
       clearBtn.classList.add('visible');
+      updateIdHint();
       runSearch();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
 }
 
-// ── HIGHLIGHT MATCH ──────────────────────────────────────────────
+// ── HELPERS ──────────────────────────────────────────────────────
 
 function highlight(text, query) {
   if (!query) return escHtml(text);
@@ -763,23 +840,56 @@ function avatarLetters(username) {
   return username.replace(/[^a-zA-Z0-9]/g, '').slice(0, 2).toUpperCase() || '??';
 }
 
+function setSearching(active) {
+  searchBtn.disabled = active;
+  searchBtn.innerHTML = active
+    ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" style="animation:spin 0.7s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Resolving…`
+    : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg> Check`;
+}
+
+// ── ID HINT TOGGLE ───────────────────────────────────────────────
+// Shows the amber "looks like a User ID" hint when appropriate
+
+function updateIdHint() {
+  const q = input.value.trim();
+  const isId = looksLikeUserId(q);
+
+  input.classList.toggle('is-id-mode', isId);
+  idHint.classList.toggle('visible', isId);
+  defaultHint.style.display = isId ? 'none' : '';
+}
+
 // ── RENDER RESULTS ───────────────────────────────────────────────
 
-function renderResults(query, searchResult) {
+function renderResults(query, searchResult, resolvedFrom = null) {
   const { type, results } = searchResult;
   const q = query.trim();
-
-  if (!q) {
-    resultsEl.innerHTML = '';
-    return;
-  }
+  if (!q) { resultsEl.innerHTML = ''; return; }
 
   let html = '';
 
-  // Status banner
+  // Resolution info strip (only when a User ID was entered)
+  if (resolvedFrom !== null) {
+    html += `
+      <div class="status-banner is-resolved is-attached">
+        <div class="status-icon">🔗</div>
+        <div class="status-body">
+          <div class="status-title">User ID Resolved</div>
+          <div class="status-sub">
+            ID <strong style="color:var(--text)">${escHtml(resolvedFrom)}</strong>
+            resolved to username
+            <strong style="color:var(--accent)">${escHtml(q)}</strong>
+            — showing results for the resolved username below.
+          </div>
+        </div>
+      </div>`;
+  }
+
+  const attached = resolvedFrom !== null ? ' is-attached' : '';
+
   if (type === 'clean') {
     html += `
-      <div class="status-banner is-clean">
+      <div class="status-banner is-clean${attached}">
         <div class="status-icon">✅</div>
         <div class="status-body">
           <div class="status-title">Clean — Not in Registry</div>
@@ -787,10 +897,9 @@ function renderResults(query, searchResult) {
         </div>
       </div>`;
   } else if (type === 'exact-user' || type === 'partial-user') {
-    // Duped by user search
     const uniqueItems = [...new Set(results.map(r => r.item))].join(', ');
     html += `
-      <div class="status-banner is-duped">
+      <div class="status-banner is-duped${attached}">
         <div class="status-icon">⚠️</div>
         <div class="status-body">
           <div class="status-title">Duped — Match Found</div>
@@ -799,7 +908,7 @@ function renderResults(query, searchResult) {
       </div>`;
   } else if (type === 'item') {
     html += `
-      <div class="status-banner is-duped">
+      <div class="status-banner is-duped${attached}">
         <div class="status-icon">⚠️</div>
         <div class="status-body">
           <div class="status-title">Duped Item Tracked</div>
@@ -808,11 +917,11 @@ function renderResults(query, searchResult) {
       </div>`;
   }
 
-  // Results table
   if (results.length) {
     const label = (type === 'item') ? 'Known Dupers for this Item' : 'Matched Records';
+    const tableClass = resolvedFrom !== null ? ' is-attached-below' : '';
     html += `
-      <div class="dupe-results-section">
+      <div class="dupe-results-section${tableClass}">
         <div class="dupe-results-header">
           <div class="dupe-results-title">${label}</div>
           <div class="dupe-results-count">${results.length} record${results.length !== 1 ? 's' : ''}</div>
@@ -835,14 +944,47 @@ function renderResults(query, searchResult) {
   resultsEl.innerHTML = html;
 }
 
-// ── SEARCH LOGIC ─────────────────────────────────────────────────
+// ── MAIN SEARCH LOGIC (async) ────────────────────────────────────
 
-function runSearch() {
+async function runSearch() {
   const q = input.value.trim();
-  if (!q) {
-    resultsEl.innerHTML = '';
+  if (!q) { resultsEl.innerHTML = ''; return; }
+
+  // ── Numeric → User ID lookup ─────────────────────────────────
+  if (looksLikeUserId(q)) {
+    setSearching(true);
+
+    resultsEl.innerHTML = `
+      <div class="status-banner is-unknown">
+        <div class="status-icon">🔍</div>
+        <div class="status-body">
+          <div class="status-title" style="font-size:1rem;letter-spacing:0.1em;">Resolving ID…</div>
+          <div class="status-sub">Looking up Roblox username for User ID <strong style="color:var(--text)">${escHtml(q)}</strong></div>
+        </div>
+      </div>`;
+
+    const username = await resolveUserId(q);
+    setSearching(false);
+
+    if (!username) {
+      resultsEl.innerHTML = `
+        <div class="status-banner is-unknown">
+          <div class="status-icon">❓</div>
+          <div class="status-body">
+            <div class="status-title" style="font-size:1rem;letter-spacing:0.1em;">ID Not Found</div>
+            <div class="status-sub">Could not resolve User ID <strong style="color:var(--text)">${escHtml(q)}</strong> — the account may be deleted, banned, or Roblox's API is temporarily unavailable. Try entering the username directly instead.</div>
+          </div>
+        </div>`;
+      return;
+    }
+
+    // Pass original ID as resolvedFrom so the UI shows the resolution strip
+    const result = dupeSearch(username);
+    renderResults(username, result, q);
     return;
   }
+
+  // ── Normal username / item search ────────────────────────────
   const result = dupeSearch(q);
   renderResults(q, result);
 }
@@ -851,10 +993,16 @@ function runSearch() {
 
 input.addEventListener('input', () => {
   clearBtn.classList.toggle('visible', input.value.length > 0);
-  // Live search as you type
-  runSearch();
+  updateIdHint();
+
+  // Live-search for username/item queries only.
+  // Numeric IDs require an API call, so we wait for Enter / Check click.
+  if (!looksLikeUserId(input.value.trim())) {
+    runSearch();
+  }
 });
 
+// Enter always triggers a full search, including ID resolution
 input.addEventListener('keydown', e => {
   if (e.key === 'Enter') runSearch();
 });
@@ -865,6 +1013,7 @@ clearBtn.addEventListener('click', () => {
   input.value = '';
   clearBtn.classList.remove('visible');
   resultsEl.innerHTML = '';
+  updateIdHint();
   input.focus();
 });
 
