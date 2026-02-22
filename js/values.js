@@ -903,6 +903,10 @@ function fmtChange(c) {
   if (num >= 1_000)     return sign + (num/1_000) + 'K';
   return c;
 }
+function sentenceCase(s) {
+  if (!s) return s;
+  return s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+}
 function changeBadge(c) {
   if (!c) return '';
   const cls = c.startsWith('+') ? 'change-up' : 'change-down';
@@ -1173,7 +1177,7 @@ modalFb.textContent = 'JBLX';
   const remarksEl = document.getElementById('modal-remarks');
   if (item.remarks) {
     remarksSection.style.display = 'block';
-    remarksEl.innerHTML = `<span class="remark-chip highlight"><span class="remark-icon">💬</span>${item.remarks}</span>`;
+    remarksEl.innerHTML = `<span class="remark-chip highlight"><span class="remark-icon">💬</span>${sentenceCase(item.remarks)}</span>`;
   } else {
     remarksSection.style.display = 'none';
   }
