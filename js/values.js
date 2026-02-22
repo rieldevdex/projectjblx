@@ -1198,11 +1198,14 @@ modalFb.textContent = 'JBLX';
     pullSection.style.display = 'none';
   }
 
+  history.pushState({ item: name }, '', `?item=${encodeURIComponent(name)}`);
+
   overlay.classList.add('open');
   document.body.style.overflow='hidden';
 }
 
 function closeModal() {
+  history.pushState({}, '', window.location.pathname);  // ← add this
   document.getElementById('modal-overlay').classList.remove('open');
   document.body.style.overflow='';
 }
@@ -1233,6 +1236,9 @@ document.addEventListener('DOMContentLoaded',()=>{
       document.querySelectorAll('.mode-btn').forEach(b=>b.classList.toggle('active',b.dataset.mode===state.mode));
       render();
     });
+    const params = new URLSearchParams(window.location.search);
+    const itemParam = params.get('item');
+    if (itemParam) openModal(decodeURIComponent(itemParam));
   });
 
   const searchEl=document.getElementById('search-input');
