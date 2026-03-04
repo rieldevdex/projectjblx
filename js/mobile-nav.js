@@ -25,6 +25,7 @@
     { href: 'teams.html',  label: 'Team',         icon: ICONS.teams  },
     { href: 'disc.html',   label: 'Discord',      icon: ICONS.disc   },
     { href: 'dupe.html',   label: 'Dupe Checker', icon: ICONS.dupe   },
+    { href: 'quiz.html', label: 'Trade Quiz', icon: ICONS.calc },
   ];
 
   function getActivePage() {

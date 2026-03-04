@@ -73,13 +73,11 @@
             </svg>
             Card
           </button>
-          <button class="mode-btn" data-mode="list">
+          <button class="mode-btn" data-mode="changelog">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
-              <line x1="8" y1="18" x2="21" y2="18"/><circle cx="3" cy="6" r="1.5"/>
-              <circle cx="3" cy="12" r="1.5"/><circle cx="3" cy="18" r="1.5"/>
+              <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
             </svg>
-            List
+            Changelog
           </button>
         </div>
 
@@ -93,7 +91,7 @@
         <span class="item-count" id="item-count"></span>
       </div>
 
-      <!-- Row 2: Type + Demand + Trend filters -->
+      <!-- Row 2: Type + Demand + Trend + Tag filters -->
       <div class="toolbar-row">
         <select class="filter-select" id="type-filter">
           <option value="">All Types</option>
@@ -110,17 +108,17 @@
           <option value="Weapon Skin">Weapon Skins</option>
         </select>
 
-      <select class="filter-select" id="demand-filter">
-         <option value="">All Demands</option>
-         <option value="Extraordinary">Extraordinary</option>
-         <option value="High">High</option>
-         <option value="Solid">Solid</option>
-         <option value="Average">Average</option>
-         <option value="Medium">Medium</option>
-         <option value="Low">Low</option>
-         <option value="Minimal">Minimal</option>
-         <option value="Nonexistent">Nonexistent</option>
-      </select>
+        <select class="filter-select" id="demand-filter">
+          <option value="">All Demands</option>
+          <option value="Extraordinary">Extraordinary</option>
+          <option value="High">High</option>
+          <option value="Solid">Solid</option>
+          <option value="Average">Average</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+          <option value="Minimal">Minimal</option>
+          <option value="Nonexistent">Nonexistent</option>
+        </select>
 
         <select class="filter-select" id="trend-filter">
           <option value="">All Trends</option>
@@ -128,6 +126,10 @@
           <option value="Hyped">Hyped</option>
           <option value="Rising">Rising</option>
           <option value="Falling">Falling</option>
+        </select>
+
+        <select class="filter-select" id="tag-filter">
+          <option value="">All Tags</option>
         </select>
       </div>
     </div>
@@ -138,25 +140,9 @@
     <!-- Card view -->
     <div id="card-view"></div>
 
-    <!-- List view -->
-    <div id="list-view" style="display:none;">
-      <table class="values-table">
-        <thead>
-          <tr>
-            <th style="width:68px"></th>
-            <th class="sortable" data-sort="name">Item <span class="sort-arrow">↕</span></th>
-            <th class="sortable" data-sort="type">Type <span class="sort-arrow">↕</span></th>
-            <th class="sortable" data-sort="value">Value <span class="sort-arrow">↕</span></th>
-            <th>Duped / Limited</th>
-            <th class="sortable" data-sort="demand">Demand <span class="sort-arrow">↕</span></th>
-            <th>Trend</th>
-            <th>Tags</th>
-            <th>Updated</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
+    <!-- Changelog view -->
+    <div id="changelog-view" style="display:none;padding:4px 0;"></div>
+
   </main>
 
   <!-- ── MODAL ─────────────────────────────────────────────── -->
@@ -167,17 +153,16 @@
       <div class="modal-img-wrap">
         <img id="modal-img" src="" alt=""/>
         <div class="modal-img-fallback" id="modal-img-fallback"></div>
-        <!-- Obtainable badge overlaid on image -->
         <div class="modal-obtainable-strip" id="modal-obtainable-strip"></div>
         <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
       </div>
 
       <div class="modal-content">
 
-        <!-- Header: name + type + obtainable badge -->
+        <!-- Header: name + type -->
         <div class="modal-header">
           <div class="modal-name" id="modal-name"></div>
-            <div class="modal-badge-group">
+          <div class="modal-badge-group">
             <span class="modal-type" id="modal-type"></span>
           </div>
         </div>
@@ -188,7 +173,6 @@
             <div class="modal-stat-label">Cash Value</div>
             <div class="modal-stat-value" id="modal-value"></div>
           </div>
-          <!-- Duped OR Limited Value — label + class swapped by JS -->
           <div class="modal-stat" id="modal-duped-stat">
             <div class="modal-stat-label" id="modal-duped-label">Duped / Limited</div>
             <div class="modal-stat-value" id="modal-duped"></div>
@@ -209,11 +193,11 @@
         <div class="modal-desc-label">Description</div>
         <p class="modal-desc" id="modal-desc"></p>
 
-        <!-- Tags / Notes -->
+        <!-- Tags -->
         <div class="modal-desc-label" style="margin-top:12px;">Tags</div>
         <p class="modal-notes" id="modal-notes"></p>
 
-        <!-- ── REMARKS section (hidden when empty) ── -->
+        <!-- Remarks (hidden when empty) -->
         <div id="modal-remarks-section" class="modal-section" style="display:none;">
           <div class="modal-section-header">
             <span class="modal-section-icon remarks-icon"></span>
@@ -222,7 +206,7 @@
           <div class="modal-remarks" id="modal-remarks"></div>
         </div>
 
-        <!-- ── PULL VALUE section (hidden when empty) ── -->
+        <!-- Pull Value (hidden when empty) -->
         <div id="modal-pull-section" class="modal-section" style="display:none;">
           <div class="modal-section-header">
             <span class="modal-section-icon pull-icon"></span>

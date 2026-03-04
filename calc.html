@@ -808,9 +808,7 @@
 
   <!-- ── TOP NAV ──────────────────────────────────────────── -->
   <nav class="top-nav">
-    <a href="index.html" class="nav-brand">
-      <img src="assets/images/jblx-logo.png" alt="JBLX" />
-    </a>
+    <a href="index.html" class="nav-brand"><img src="assets/images/jblx-logo.png" alt="JBLX"/></a>
     <div class="nav-links">
       <a href="values.html" class="nav-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
@@ -819,12 +817,11 @@
       <a href="dupe.html" class="nav-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
           <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
-          <line x1="12" y1="9" x2="12" y2="13"/>
-          <line x1="12" y1="17" x2="12.01" y2="17"/>
+          <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
         </svg>
         <span>Dupe</span>
       </a>
-      <a href="calc.html" class="nav-link active">
+      <a href="calc.html" class="nav-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
         <span>Calculator</span>
       </a>
@@ -836,13 +833,15 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         <span>Team</span>
       </a>
+      <a href="quiz.html" class="nav-link active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span>Quiz</span>
+      </a>
       <a href="disc.html" class="nav-link">
         <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
         <span>Discord</span>
       </a>
-      <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
-        <span class="toggle-icon">☀</span>
-      </button>
+      <button class="theme-toggle" id="theme-toggle"><span class="toggle-icon">☀</span></button>
     </div>
   </nav>
 
@@ -959,7 +958,67 @@
   </footer>
 
   <!-- Shared values database -->
-  <script src="js/values.js"></script>
+  <script src="js/values.js">// ── ABBREVIATION MAP ──────────────────────────────────────────
+const ABBR_MAP = {
+  // Vehicles
+  'jav':'Javelin', 'torp':'Torpedo', 'beig':'Beignet', 'beignet':'Beignet',
+  'cel':'Celsior', 'proto':'Proto-08', 'p08':'Proto-08',
+  'ice':'Icebreaker', 'iceborn':'Iceborn', 'orion':'Orion',
+  'scorp':'Scorpion', 'carb':'Carbonara', 'mac':'Macaron',
+  'parisian':'Parisian', 'aper':'Aperture', 'shogun':'Shogun',
+  'power':'Power-1', 'p1':'Power-1', 'arachnid':'Arachnid',
+  'beam':'Beam Hybrid', 'banana':'Banana Car', 'volt4x4':'Volt 4X4',
+  'crew':'Crew Capsule', 'raptor':'Raptor', 'molten':'Molten M12',
+  // Colors
+  'hs5':'HyperShift 5',   'hs4':'HyperShift 4',
+  'hd5':'HyperDiamond 5', 'hd4':'HyperDiamond 4', 'hd3':'HyperDiamond 3',
+  'hb5':'HyperBlue 5',    'hb4':'HyperBlue 4',    'hb3':'HyperBlue 3',
+  'hp5':'HyperPink 5',    'hp4':'HyperPink 4',     'hp3':'HyperPink 3',
+  'hr5':'HyperRed 5',     'hr4':'HyperRed 4',      'hr3':'HyperRed 3',
+  'hpu5':'HyperPurple 5', 'hpu4':'HyperPurple 4',  'hpu3':'HyperPurple 3',
+  'ho5':'HyperOrange 5',  'ho4':'HyperOrange 4',   'ho3':'HyperOrange 3',
+  'hg5':'HyperGreen 5',   'hg4':'HyperGreen 4',    'hg3':'HyperGreen 3',
+  'hy5':'HyperYellow 5',  'hy4':'HyperYellow 4',   'hy3':'HyperYellow 3',
+  'vanta':'Vantablack',
+  // Rims
+  'void':'Void', 'laser':'Laser Cannon', 'planet':'Planetary',
+};
+
+function parseAbbr(input) {
+  // Split on +, &, comma, or "for" — handle "X for Y" naturally
+  const tokens = input.toLowerCase()
+    .replace(/\bfor\b/g, ',')
+    .split(/[+,&]/)
+    .map(s => s.trim())
+    .filter(Boolean);
+
+  return tokens.map(token => {
+    // Detect trailing 'c' (clean) or 'd' (duped)
+    let isClean = false, isDuped = false, core = token;
+    if (/\s+[cd]$/.test(token)) {
+      const suffix = token.slice(-1);
+      core = token.slice(0, -1).trim();
+      if (suffix === 'c') isClean = true;
+      if (suffix === 'd') isDuped = true;
+    }
+
+    // Look up in abbr map first, then fuzzy match ITEMS
+    const mapped = ABBR_MAP[core];
+    const item = ITEMS.find(i =>
+      i.name.toLowerCase() === (mapped || core) ||
+      i.name.toLowerCase().startsWith(core)
+    );
+
+    if (!item) return null;
+    const useAlt = isDuped && item.duped !== null;
+    return {
+      uid: uid(), item,
+      state: useAlt ? (isObtainableLimited(item) ? 'limited' : 'duped') : 'clean',
+      value: useAlt ? item.duped : item.value,
+      qty: 1
+    };
+  }).filter(Boolean);
+}</script>
   <script>
 /* ================================================================
    JBLX TRADE CALCULATOR ENGINE
@@ -1480,17 +1539,43 @@ function refreshSummary() {
   const inp = document.getElementById(`${side}-search`);
   const dd  = document.getElementById(`${side}-dropdown`);
 
-  inp.addEventListener('input', () => {
-    renderDropdown(side, search(inp.value.trim()), inp.value.trim());
-  });
-  inp.addEventListener('focus', () => {
-    if (inp.value.trim()) renderDropdown(side, search(inp.value.trim()), inp.value.trim());
-  });
-  // Close dropdown when clicking outside
-  document.addEventListener('pointerdown', ev => {
-    const wrap = inp.closest('.panel-search-wrap');
-    if (!wrap.contains(ev.target)) dd.classList.remove('open');
-  }, { capture: true });
+inp.addEventListener('input', () => {
+  const val = inp.value.trim();
+  // If the input contains + or "for", treat as abbreviation trade string
+  if (val.includes('+') || /\bfor\b/i.test(val)) {
+    const parsed = parseAbbr(val);
+    if (parsed.length > 0) {
+      const dd = document.getElementById(`${side}-dropdown`);
+      dd.classList.add('open');
+      dd.innerHTML = `<div class="srd-header">Parsed trade — click to load onto this panel</div>
+        <div class="srd-scroll">${parsed.map(e => `
+          <div class="srd-row" style="cursor:pointer;" data-parsed-idx="${parsed.indexOf(e)}">
+            <div class="srd-thumb"><span class="srd-thumb-fb">${abbr(e.item.name)}</span></div>
+            <div><div class="srd-name">${e.item.name}</div><div class="srd-type">${e.state}</div></div>
+            <span class="srd-val">${fmtValue(e.value)}</span>
+            <span></span>
+            <button class="srd-add">Add</button>
+          </div>`).join('')}
+          <div style="padding:8px 14px;">
+            <button class="srd-add" style="width:100%;justify-content:center;" id="add-all-${side}">Add All</button>
+          </div>
+        </div>`;
+      dd.querySelectorAll('.srd-add').forEach((btn, i) => {
+        btn.addEventListener('click', ev => {
+          ev.stopPropagation();
+          if (btn.id === `add-all-${side}`) {
+            parsed.forEach(e => SIDES[side].push({...e, uid: uid()}));
+          } else {
+            SIDES[side].push({...parsed[i], uid: uid()});
+          }
+          refreshSelected(side); refreshTotal(side); refreshSummary();
+        });
+      });
+      return;
+    }
+  }
+  renderDropdown(side, search(val), val);
+});
 });
 
 // ── BUTTON WIRING ─────────────────────────────────────────────

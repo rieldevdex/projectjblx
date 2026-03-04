@@ -111,17 +111,17 @@ const ITEMS = [
   { name:"Purple", type:"Color", value:1000, duped:500, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"Purple is a standard obtainable color available through in-game progression — a fun, vibrant option for customization that sees virtually no trading activity.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Orange", type:"Color", value:1000, duped:500, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"Orange is a bright, energetic obtainable color freely available through gameplay — a clean cosmetic choice that holds no meaningful trading value.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
   // ════════════ VEHICLES ════════════════════════════════════════
-  { name:"Javelin", type:"Vehicle", value:50000000, duped:50000000, demand:"High", dupedDemand:"Solid", trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Javelin was released as the final vehicle of the 2022 '5 Days of Vehicles' event. It was available for only 48 hours at $929,929", tags:"High Tier, Limited", updatedAt:_ago(0,0), obtainable:false, remarks:"FREQUENTLY GETS OVERPAYS", pullValue:"+2M / +500K", image:"" },
-  { name:"Torpedo", type:"Vehicle", value:49000000, duped:43000000, demand:"Average", dupedDemand:"Low", trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Torpedo, also known as the 'Soapbar', was added during the 2018 Winter event. It was the criminal reward for OG Seasons", tags:"High Tier, Limited, Rare, OG S1-S2", updatedAt:_ago(0,0), obtainable:false, remarks:"CLEAN VARIANT IS RARE TO FIND AND OCCASIONALLY GETS OVERPAYS, DUPED VARIANT IS OCCASIONALLY AVOIDED AND LOWBALLED", pullValue:"+1M / -500K", image:"" },
-  { name:"Beignet", type:"Vehicle", value:40000000, duped:37000000, demand:"High", dupedDemand:"Solid", trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Beignet was obtainable in Season 6: 'Race to the Top' as the Level 10 grand prize. It features good handling and acceleration and can also reach relatively high top speeds.", tags:"High Tier, Limited, S6", updatedAt:_ago(0,0), obtainable:false, remarks:"FREQUENTLY GETS OVERPAYS", pullValue:"+1M / +500K", image:"" },
-  { name:"Celsior", type:"Vehicle", value:33000000, duped:31000000, demand:"Medium", dupedDemand:"Low", trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Celsior was the grand prize of Season 8: 'Looking to the Future.' It's a flying vehicle spawnable anywhere using the Pro Garage pass, offering reasonable performance.", tags:"High Tier, Limited, S8", updatedAt:_ago(0,0), obtainable:false, remarks:"OCCASIONALLY AVOIDED AND PULLS UNDERPAYS", pullValue:"=0M / -1M", image:"" },
-  { name:"Proto-08", type:"Vehicle", value:30000000, duped:30000000, demand:"High", dupedDemand:"Solid", trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Proto-08 was the grand prize in Season 14: 'For the Champions.' This electric race car boasts excellent handling and one of the quickest accelerations in the game.", tags:"High Tier, Limited, S14", updatedAt:_ago(0,0), obtainable:false, remarks:"FREQUENTLY GETS OVERPAYS", pullValue:"+1M / +500K", image:"" },
-  { name:"Power-1", type:"Vehicle", value:23000000, duped:23000000, demand:"High", dupedDemand:"Solid", trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Power-1, grand prize of Season 17: 'Exploring Europe', has butterfly doors and solid stats. It's loved for its flashy look and great customization options.", tags:"High Tier, Limited, S17", updatedAt:_ago(0,0), obtainable:false, remarks:"FREQUENTLY GETS OVERPAYS", pullValue:"+1M", image:"" },
+  { name:"Javelin", type:"Vehicle", value:50000000, duped:50000000, demand:"High", dupedDemand:"Solid", trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Javelin was released as the final vehicle of the 2022 '5 Days of Vehicles' event. It was available for only 48 hours at $929,929", tags:"High Tier, Limited", updatedAt:_ago(0,0), obtainable:false, remarks:"FREQUENTLY GETS OVERPAYS", pullValue:"+2M / +500K", image:"assets/item-images/vehicles/javelin.webp" },
+  { name:"Torpedo", type:"Vehicle", value:49000000, duped:43000000, demand:"Average", dupedDemand:"Low", trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Torpedo, also known as the 'Soapbar', was added during the 2018 Winter event. It was the criminal reward for OG Seasons", tags:"High Tier, Limited, Rare, OG S1-S2", updatedAt:_ago(0,0), obtainable:false, remarks:"CLEAN VARIANT IS RARE TO FIND AND OCCASIONALLY GETS OVERPAYS, DUPED VARIANT IS OCCASIONALLY AVOIDED AND LOWBALLED", pullValue:"+1M / -500K", image:"assets/item-images/vehicles/torpedo.webp" },
+  { name:"Beignet", type:"Vehicle", value:40000000, duped:37000000, demand:"High", dupedDemand:"Solid", trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Beignet was obtainable in Season 6: 'Race to the Top' as the Level 10 grand prize. It features good handling and acceleration and can also reach relatively high top speeds.", tags:"High Tier, Limited, S6", updatedAt:_ago(0,0), obtainable:false, remarks:"FREQUENTLY GETS OVERPAYS", pullValue:"+1M / +500K", image:"assets/item-images/vehicles/beignet.webp" },
+  { name:"Celsior", type:"Vehicle", value:33000000, duped:31000000, demand:"Medium", dupedDemand:"Low", trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Celsior was the grand prize of Season 8: 'Looking to the Future.' It's a flying vehicle spawnable anywhere using the Pro Garage pass, offering reasonable performance.", tags:"High Tier, Limited, S8", updatedAt:_ago(0,0), obtainable:false, remarks:"OCCASIONALLY AVOIDED AND PULLS UNDERPAYS", pullValue:"=0M / -1M", image:"assets/item-images/vehicles/celsior.webp" },
+  { name:"Proto-08", type:"Vehicle", value:30000000, duped:30000000, demand:"High", dupedDemand:"Solid", trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Proto-08 was the grand prize in Season 14: 'For the Champions.' This electric race car boasts excellent handling and one of the quickest accelerations in the game.", tags:"High Tier, Limited, S14", updatedAt:_ago(0,0), obtainable:false, remarks:"FREQUENTLY GETS OVERPAYS", pullValue:"+1M / +500K", image:"assets/item-images/vehicles/proto08.png" },
+  { name:"Power-1", type:"Vehicle", value:23000000, duped:23000000, demand:"High", dupedDemand:"Solid", trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Power-1, grand prize of Season 17: 'Exploring Europe', has butterfly doors and solid stats. It's loved for its flashy look and great customization options.", tags:"High Tier, Limited, S17", updatedAt:_ago(0,0), obtainable:false, remarks:"FREQUENTLY GETS OVERPAYS", pullValue:"+1M", image:"assets/item-images/vehicles/power1.webp" },
   { name:"Arachnid", type:"Vehicle", value:20000000, duped:18000000, demand:"Medium", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Arachnid, based on the 'Batmobile', has quick acceleration for its size. It was a police reward in OG Seasons 1 and 2, but required to be purchased for $750,000 to obtain.", tags:"High Tier, Limited, Rare, OG S1-S2", updatedAt:_ago(0,0), obtainable:false, remarks:"CLEAN VARIANT IS RARE TO FIND, BOTH VARIANTS ARE OCCASIONALLY AVOIDED AND PULLS UNDERPAYS", pullValue:"-1M", image:"" },
-  { name:"Icebreaker", type:"Vehicle", value:20000000, duped:17000000, demand:"Average", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Icebreaker, an electric car from Season 7: 'Ice Cold', has solid performance all around. It demanded more XP to unlock than other seasonal vehicles, making it tough to get.", tags:"High Tier, Limited, S7, Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"CLEAN VARIANT IS RARE TO FIND, BOTH VARIANTS OCCASIONALLY PULLS OVERPAYS", pullValue:"+1M / +500K", image:"" },
-  { name:"Beam Hybrid", type:"Vehicle", value:19000000, duped:16000000, demand:"Average", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Beam Hybrid, Season 1: 'New Beginning's prize, came from a short, tough season. Its rarity makes it the most sought-after vehicle among collectors in the game.", tags:"High Tier, Limited, Rare, S1", updatedAt:_ago(0,0), obtainable:false, remarks:"CLEAN VARIANT IS RARE TO FIND AND OCCASIONALLY GETS OVERPAYS", pullValue:"+1M / =0M", image:"" },
+  { name:"Icebreaker", type:"Vehicle", value:20000000, duped:17000000, demand:"Average", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Icebreaker, an electric car from Season 7: 'Ice Cold', has solid performance all around. It demanded more XP to unlock than other seasonal vehicles, making it tough to get.", tags:"High Tier, Limited, S7, Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"CLEAN VARIANT IS RARE TO FIND, BOTH VARIANTS OCCASIONALLY PULLS OVERPAYS", pullValue:"+1M / +500K", image:"assets/item-images/vehicles/icebreaker.webp" },
+  { name:"Beam Hybrid", type:"Vehicle", value:19000000, duped:16000000, demand:"Average", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Beam Hybrid, Season 1: 'New Beginning's prize, came from a short, tough season. Its rarity makes it the most sought-after vehicle among collectors in the game.", tags:"High Tier, Limited, Rare, S1", updatedAt:_ago(0,0), obtainable:false, remarks:"CLEAN VARIANT IS RARE TO FIND AND OCCASIONALLY GETS OVERPAYS", pullValue:"+1M / =0M", image:"assets/item-images/vehicles/beamhybrid.png" },
   { name:"Banana Car", type:"Vehicle", value:16000000, duped:16500000, demand:"Medium", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Banana Car, grand prize of Season 5: 'Let the Memes Begin', leaves a banana trail as it drives. It boasts a high top speed but its demand remains subjective among players.", tags:"Mid Tier, Limited, S6", updatedAt:_ago(0,0), obtainable:false, remarks:"PEAKING, LOSING DEMAND, OCCASIONALLY AVOIDED AND GETS UNDERPAYS", pullValue:"-1M", image:"" },
-  { name:"Molten M12", type:"Vehicle", value:15000000, duped:15000000, demand:"Average", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Molten M12 was purchasable for $599,000 for 10 days, from October 4th to the 14th in 2020, and was also the first community-created car added to the game. It has excellent performance.", tags:"Mid Tier, Limited", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
+  { name:"Molten M12", type:"Vehicle", value:15000000, duped:15000000, demand:"Average", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Molten M12 was purchasable for $599,000 for 10 days, from October 4th to the 14th in 2020, and was also the first community-created car added to the game. It has excellent performance.", tags:"Mid Tier, Limited", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"assets/item-images/vehicles/moltenm12.webp" },
   { name:"Raptor", type:"Vehicle", value:11000000, duped:null, demand:"Medium", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Raptor, a pickup truck, was OG Season 3's police prize. Though slow, it holds steady demand, prized by many for their collections despite its pace.", tags:"Mid Tier, Limited, OG S3", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Volt 4X4", type:"Vehicle", value:10000000, duped:null, demand:"Solid", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Volt 4x4 was the grand prize for Season 3: 'Looking Back' and can traverse virtually any terrain with ease. The Volt 4x4 also has the largest spoiler in the game but is rather slow in acceleration.", tags:"Mid Tier, Limited, S3", updatedAt:_ago(0,0), obtainable:false, remarks:"FREQUENTLY GETS OVERPAYS IN DOWNGRADES", pullValue:"+1M", image:"" },
   { name:"Crew Capsule", type:"Vehicle", value:10000000, duped:null, demand:"Decent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Crew Capsule was the first flying seasonal vehicle offered as the grand prize for Season 2: 'Out of this World' and can be spawned with the Pro Garage. It features an 'Among Us' reference.", tags:"Mid Tier, Limited, Rare, S2", updatedAt:_ago(0,0), obtainable:false, remarks:"FREQUENTLY AVOIDED AND LOWBALLED", pullValue:"+500K", image:"" },
@@ -850,6 +850,149 @@ const ITEMS = [
   { name:"Rumble Siren", type:"Horn", value:10000, duped:5000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
 ];
 
+const VALUE_CHANGELOG = [
+  {
+    ts: _ago(0, 0),
+    item: 'HyperShift 5',
+    field: 'value',
+    oldVal: 350000000,
+    newVal: 356000000,
+    contributor: 'Dev',
+    note: 'Consistent overpays observed across multiple trade servers over several days. Clean copies are extremely scarce and regularly pull 2–3M above list. Market activity justifies a bump.'
+  },
+  {
+    ts: _ago(2, 0),
+    item: 'Javelin',
+    field: 'value',
+    oldVal: 48000000,
+    newVal: 50000000,
+    contributor: 'MiK',
+    note: 'High activity in trading servers.'
+  },
+  {
+    ts: _ago(6, 0),
+    item: 'Void',
+    field: 'value',
+    oldVal: 45000000,
+    newVal: 47000000,
+    contributor: 'zey',
+    note: 'Rising demand trend — fewer clean copies surfacing in trades.'
+  },
+  {
+    ts: _ago(0, 1),
+    item: 'Torpedo',
+    field: 'demand',
+    oldVal: 'Solid',
+    newVal: 'Average',
+    contributor: 'MiK',
+    note: 'Slowing trade activity. Still moves but no longer at the pace to justify Solid.'
+  },
+  {
+    ts: _ago(0, 2),
+    item: 'HyperOrange 5',
+    field: 'dupedDemand',
+    oldVal: 'Average',
+    newVal: 'Solid',
+    contributor: 'Dev',
+    note: 'Duped copies are being accepted more readily in multi-item trades.'
+  },
+];
+
+// ── FIELD LABELS + FORMATTERS ─────────────────────────────
+function formatChangeField(entry) {
+  const { field, oldVal, newVal } = entry;
+  const isNumeric = typeof oldVal === 'number';
+  const labels = {
+    value:       'Value',
+    duped:       'Duped Value',
+    demand:      'Demand',
+    dupedDemand: 'Duped Demand',
+    trend:       'Trend',
+  };
+  const label = labels[field] || field;
+  const fmt   = v => isNumeric ? fmtValue(v) : v;
+  return { label, oldFmt: fmt(oldVal), newFmt: fmt(newVal), isNumeric };
+}
+
+function renderChangelog() {
+  const el = document.getElementById('changelog-view');
+  if (!VALUE_CHANGELOG.length) {
+    el.innerHTML = '<div class="empty-state">No changelog entries yet.</div>';
+    return;
+  }
+
+  el.innerHTML = VALUE_CHANGELOG.map(e => {
+    const { label, oldFmt, newFmt, isNumeric } = formatChangeField(e);
+    const diff    = isNumeric ? (e.newVal - e.oldVal) : null;
+    const sign    = diff !== null ? (diff >= 0 ? '+' : '') : '';
+    const badgeCls = diff !== null
+      ? (diff >= 0 ? 'change-up' : 'change-down')
+      : (e.field === 'demand' || e.field === 'dupedDemand')
+        ? (getDemandDir(e.oldVal, e.newVal) >= 0 ? 'change-up' : 'change-down')
+        : '';
+
+    // For demand/trend, show arrow badge
+    const badge = diff !== null
+      ? `<span class="change-badge ${badgeCls}">${sign}${fmtValue(Math.abs(diff))}</span>`
+      : badgeCls
+        ? `<span class="change-badge ${badgeCls}">${getDemandDir(e.oldVal, e.newVal) >= 0 ? '▲' : '▼'}</span>`
+        : '';
+
+    return `
+      <div style="
+        background:var(--surface);
+        border:1px solid var(--border);
+        border-radius:var(--r-lg);
+        padding:16px 20px;
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        margin-bottom:10px;
+        animation:fadeUp 0.2s var(--ease) both;
+      ">
+        <!-- Top row: item name + field change + badge -->
+        <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;justify-content:space-between;">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+            <span style="font-family:var(--font-display);font-weight:700;font-size:1rem;color:var(--text)">${e.item}</span>
+            <span style="
+              font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.06em;
+              color:var(--text-muted);background:var(--bg3);
+              border:1px solid var(--border);border-radius:4px;padding:2px 7px;
+            ">${label}</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+            ${badge}
+            <span style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-dim)">
+              <span style="opacity:0.5;text-decoration:line-through">${oldFmt}</span>
+              <span style="margin:0 4px;color:var(--text-muted)">→</span>
+              <span style="color:#ffd166;font-weight:700">${newFmt}</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Note (supports long text) -->
+        ${e.note ? `<p style="font-size:0.8rem;color:var(--text-dim);line-height:1.65;margin:0;">${e.note}</p>` : ''}
+
+        <!-- Footer: contributor + timestamp -->
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          ${e.contributor ? `
+            <span style="font-family:var(--font-mono);font-size:0.6rem;color:var(--accent);background:var(--accent-glow);border:1px solid var(--border-hi);border-radius:4px;padding:2px 8px;">
+              @${e.contributor}
+            </span>` : ''}
+          <span style="font-family:var(--font-mono);font-size:0.6rem;color:var(--text-muted);display:flex;align-items:center;gap:4px;">
+            🕐 <span data-ts="${e.ts}">${relativeTime(e.ts)}</span>
+          </span>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+// Helper: determine if demand tier went up or down
+function getDemandDir(oldD, newD) {
+  const order = { Extraordinary:8, High:7, Solid:6, Average:5, Medium:4, Low:3, Minimal:2, Nonexistent:1 };
+  return (order[newD] || 0) - (order[oldD] || 0);
+}
+
 // Helper functions (add right after the ITEMS array)
 function isHyperchrome(item) {
   return item.name && item.name.toLowerCase().includes('hyper');
@@ -860,7 +1003,7 @@ function isObtainableLimited(item) {
 
 // ── STATE ─────────────────────────────────────────────────────
 const state = {
-  mode:'card', search:'', type:'', demand:'', trend:'',
+  mode:'card', search:'', type:'', demand:'', trend:'', tag:'',
   sortKey:'value', sortDir:'desc', page:1
 };
 
@@ -938,7 +1081,7 @@ function relativeTime(ts) {
 }
 
 function updatedBadge(ts) {
-  return `<span class="updated-time"><span class="upd-icon">🕐</span>${relativeTime(ts)}</span>`;
+  return `<span class="updated-time"><span class="upd-icon">🕐</span><span data-ts="${ts}">${relativeTime(ts)}</span></span>`;
 }
 
 // Refresh all live timestamps every 60s
@@ -947,7 +1090,7 @@ function refreshTimestamps() {
     el.textContent = relativeTime(+el.dataset.ts);
   });
 }
-setInterval(refreshTimestamps, 60000);
+setInterval(refreshTimestamps, 10000);
 
 // ── IMAGES ────────────────────────────────────────────────────
 function cardImgHTML(item) {
@@ -972,6 +1115,7 @@ function getFiltered() {
   if (state.type)   list = list.filter(i=>i.type===state.type);
   if (state.demand) list = list.filter(i=>i.demand===state.demand);
   if (state.trend)  list = list.filter(i=>i.trend===state.trend);
+  if (state.tag) list = list.filter(i => i.tags && i.tags.toLowerCase().includes(state.tag.toLowerCase()));
   list.sort((a,b)=>{
     let av,bv;
     if      (state.sortKey==='name')   {av=a.name.toLowerCase();      bv=b.name.toLowerCase();}
@@ -1002,29 +1146,6 @@ function renderPagination(total) {
     </button>`;
   document.getElementById('pg-prev').addEventListener('click',()=>{if(state.page>1){state.page--;render();scrollTo({top:0,behavior:'smooth'});}});
   document.getElementById('pg-next').addEventListener('click',()=>{if(state.page<totalPages){state.page++;render();scrollTo({top:0,behavior:'smooth'});}});
-}
-
-// ── OPEN MODAL (add badge handling) ───────────────────────────────────────
-function openModal(name) {
-  const item = ITEMS.find(i => i.name === name);
-  if (!item) return;
-
-  const typeEl = document.getElementById('modal-type');
-  typeEl.textContent = item.type;
-  typeEl.className = `modal-type badge-type ${typeClass(item.type)}`;
-
-  // === NEW: Obtainable badge (card + modal) ===
-  const obBadge = document.getElementById('modal-obtainable-badge');
-  const obStrip = document.getElementById('modal-obtainable-strip');
-  if (item.obtainable === true) {
-    const badgeHTML = `<span class="badge-obtainable"><span class="ob-dot"></span>Obtainable</span>`;
-    obBadge.innerHTML = badgeHTML;
-    obStrip.innerHTML = badgeHTML;
-    obStrip.style.display = 'block';
-  } else {
-    obBadge.innerHTML = '';
-    obStrip.style.display = 'none';
-  }
 }
 
 // ── RENDER CARDS ───────────────────────────────────────
@@ -1098,15 +1219,16 @@ function render() {
   const items = getFiltered();
   const countEl = document.getElementById('item-count');
   if (countEl) countEl.textContent = `${items.length} / ${ITEMS.length} items`;
-  if (state.mode==='card') {
-    document.getElementById('card-view').style.display='grid';
-    document.getElementById('list-view').style.display='none';
-    renderCards(items);
-  } else {
-    document.getElementById('card-view').style.display='none';
-    document.getElementById('list-view').style.display='block';
-    renderList(items);
-  }
+
+  const cardEl   = document.getElementById('card-view');
+  const changeEl = document.getElementById('changelog-view');
+
+  cardEl.style.display   = state.mode === 'card'      ? 'grid'  : 'none';
+  changeEl.style.display = state.mode === 'changelog' ? 'block' : 'none';
+
+  if (state.mode === 'card') renderCards(items);
+  else                       renderChangelog();
+
   renderPagination(items.length);
 }
 
@@ -1229,17 +1351,11 @@ function initSortHeaders() {
 }
 
 // ── INIT ──────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded',()=>{
-  document.querySelectorAll('.mode-btn').forEach(btn=>{
-    btn.addEventListener('click',()=>{
+document.addEventListener('DOMContentLoaded', () => {
       state.mode=btn.dataset.mode; state.page=1;
       document.querySelectorAll('.mode-btn').forEach(b=>b.classList.toggle('active',b.dataset.mode===state.mode));
       render();
     });
-    const params = new URLSearchParams(window.location.search);
-    const itemParam = params.get('item');
-    if (itemParam) openModal(decodeURIComponent(itemParam));
-  });
 
   const searchEl=document.getElementById('search-input');
   if(searchEl) searchEl.addEventListener('input',e=>{state.search=e.target.value.trim();state.page=1;render();});
@@ -1248,7 +1364,22 @@ document.addEventListener('DOMContentLoaded',()=>{
     const el=document.getElementById(`${id}-filter`);
     if(el) el.addEventListener('change',e=>{state[id]=e.target.value;state.page=1;render();});
   });
+  // Auto-populate tag filter from ITEMS data
+  const tagSet = new Set();
+  ITEMS.forEach(item => {
+     if (item.tags) item.tags.split(',').forEach(t => {
+      const clean = t.trim();
+      if (clean) tagSet.add(clean);
+    });
+  });
+const tagEl = document.getElementById('tag-filter');
+[...tagSet].sort().forEach(tag => {
+  const opt = document.createElement('option');
+  opt.value = tag; opt.textContent = tag;
+  tagEl.appendChild(opt);
+});
 
+tagEl.addEventListener('change', e => { state.tag = e.target.value; state.page = 1; render(); });
   const overlay=document.getElementById('modal-overlay');
   if(overlay){
     document.getElementById('modal-close').addEventListener('click',closeModal);
@@ -1258,4 +1389,6 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   initSortHeaders();
   render();
-});
+ const params = new URLSearchParams(window.location.search);
+  const itemParam = params.get('item');
+  if (itemParam) openModal(decodeURIComponent(itemParam));
