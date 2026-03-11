@@ -15,6 +15,29 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#00C8F0" />
+  <style>
+    .team-roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 8px;
+    }
+    .role-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 9px;
+      border-radius: 99px;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-glow);
+      border: 1px solid var(--border-hi);
+      white-space: nowrap;
+    }
+  </style>
 </head>
 <body>
 
@@ -44,7 +67,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         <span>Team</span>
       </a>
-      <a href="quiz.html" class="nav-link ">
+      <a href="quiz.html" class="nav-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         <span>Quiz</span>
       </a>
@@ -61,121 +84,174 @@
     <h1 class="teams-title">The JBLX Team</h1>
     <p class="teams-subtitle">The people who build, maintain and power the Jailbreak Listing Exchange.</p>
 
-    <!-- ── DEVELOPMENT TEAM ──────────────────────────────────── -->
-    <section class="team-section" style="animation-delay:0.1s">
+    <!-- ── FOUNDERS ───────────────────────────────────────────── -->
+    <section class="team-section" style="animation-delay:0.08s">
       <div class="team-section-header">
         <div class="team-section-icon"></div>
-        <h2 class="team-section-title">Development Team</h2>
+        <h2 class="team-section-title">Founders</h2>
       </div>
       <div class="team-grid">
 
-        <div class="team-card" style="animation-delay:0.12s">
+        <div class="team-card" style="animation-delay:0.10s">
           <div class="team-avatar">
             <img src="assets/team-photo/dev-photo.png" alt="Dev">
           </div>
           <div class="team-info">
             <div class="team-name">Dev</div>
-            <div class="team-role">Lead Developer &amp; System Architect</div>
-            <p class="team-desc">Trade Expert. Lead developer and system architect of JBLX. Designs the website, implements features, maintains performance, and ensures accurate value updates through structured data handling and continuous improvements.</p>
+            <div class="team-roles">
+              <span class="role-pill">Web Owner</span>
+              <span class="role-pill">Web Developer</span>
+              <span class="role-pill">Trade Advisor</span>
+            </div>
+            <p class="team-desc">Lead developer and system architect of JBLX. Designs the website, implements features, maintains performance, and ensures accurate value updates through structured data handling and continuous improvements.</p>
           </div>
         </div>
 
-        <div class="team-card" style="animation-delay:0.18s">
+        <div class="team-card" style="animation-delay:0.14s">
           <div class="team-avatar">
-            <img src="assets/team-photo/zai-photo.webp" alt="zai" style="background-color: black;">
+            <img src="assets/team-photo/zai-photo.webp" alt="zai" style="background-color:black;">
           </div>
           <div class="team-info">
             <div class="team-name">zai</div>
-            <div class="team-role">Discord Infrastructure Specialist</div>
-            <p class="team-desc">Trade Expert. Discord infrastructure specialist and community systems manager. Built and maintains the JBLX server, oversees moderation structure, automation, and ensures smooth communication between traders and staff.</p>
+            <div class="team-roles">
+              <span class="role-pill">Server Builder</span>
+              <span class="role-pill">Discord Staff</span>
+              <span class="role-pill">Trade Advisor</span>
+            </div>
+            <p class="team-desc">Discord infrastructure specialist and community systems manager. Built and maintains the JBLX server, oversees moderation structure, automation, and ensures smooth communication between traders and staff.</p>
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- ── EVENTS TEAM ──────────────────────────────────── -->
-    <section class="team-section" style="animation-delay:0.22s">
-      <div class="team-section-header">
-        <div class="team-section-icon" style="background:#e07820;box-shadow:0 0 10px #e07820;"></div>
-        <h2 class="team-section-title" style="color:#e07820;">Events Team</h2>
-      </div>
-      <div class="team-grid">
-
-        <div class="team-card" style="animation-delay:0.26s">
-          <div class="team-avatar">
-            <img src="assets/team-photo/vex-photo.webp" alt="vex">
-          </div>
-          <div class="team-info">
-            <div class="team-name">vex</div>
-            <div class="team-role">Community Engagement Coordinator</div>
-            <p class="team-desc">Trade Expert. Community engagement coordinator responsible for organizing Discord events, giveaways, and interactive activities that strengthen trader participation and maintain an active, competitive JBLX environment.</p>
-          </div>
-        </div>
-
-        <div class="team-card" style="animation-delay:0.26s">
-          <div class="team-avatar">
-            <img src="assets/team-photo/angelus-photo.webp" alt="angelus">
-          </div>
-          <div class="team-info">
-            <div class="team-name">Angelus</div>
-            <div class="team-role">Server Engagement Coordinator</div>
-            <p class="team-desc">Server engagement coordinator responsible for managing Discord events, giveaways, and interactive activities that strengthen trader participation and maintain an active, competitive JBLX environment.</p>
-          </div>
-        </div>
-
-        <div class="team-card" style="animation-delay:0.48s">
-          <div class="team-avatar">
-            <img src="assets/team-photo/ace213-photo.webp" alt="ace213">
-          </div>
-          <div class="team-info">
-            <div class="team-name">Ace213</div>
-            <div class="team-role">Events Team</div>
-            <p class="team-desc">Community engagement coordinator responsible for organizing Discord events, giveaways, and interactive activities that strengthen trader participation and maintain an active, competitive JBLX environment</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── VALUE TEAM ───────────────────────────────────── -->
-    <section class="team-section" style="animation-delay:0.3s">
-      <div class="team-section-header">
-        <div class="team-section-icon" style="background:#ffd166;box-shadow:0 0 10px #ffd166;"></div>
-        <h2 class="team-section-title" style="color:#ffd166;">Value Team</h2>
-      </div>
-      <div class="team-grid">
-
-        <div class="team-card" style="animation-delay:0.33s">
-          <div class="team-avatar">
-            <img src="assets/team-photo/some1-photo.webp" alt="some1">
-          </div>
-          <div class="team-info">
-            <div class="team-name">some1_217654321</div>
-            <div class="team-role">Trusted Expert</div>
-            <p class="team-desc">Provides high-level valuation insight, market interpretation, and guidance on long-term item stability and rarity analysis.</p>
-          </div>
-        </div>
-
-        <div class="team-card" style="animation-delay:0.38s">
+        <div class="team-card" style="animation-delay:0.30s">
           <div class="team-avatar">
             <img src="assets/team-photo/mik-photo.webp" alt="mik">
           </div>
           <div class="team-info">
             <div class="team-name">MiK</div>
-            <div class="team-role">Trade Expert</div>
+            <div class="team-roles">
+              <span class="role-pill">Server Owner</span>
+              <span class="role-pill">Events Team</span>
+              <span class="role-pill">Value Team</span>
+            </div>
             <p class="team-desc">Specializes in demand tracking, cross-server trade comparison, and short-term market movement evaluation.</p>
           </div>
         </div>
 
-        <div class="team-card" style="animation-delay:0.43s">
+        <div class="team-card" style="animation-delay:0.22s">
+          <div class="team-avatar">
+            <img src="assets/team-photo/vex-photo.webp" alt="vex">
+          </div>
+          <div class="team-info">
+            <div class="team-name">vex</div>
+            <div class="team-roles">
+              <span class="role-pill">Staff Manager</span>
+              <span class="role-pill">Trade Advisor</span>
+            </div>
+            <p class="team-desc">Community engagement coordinator responsible for organizing Discord events, giveaways, and interactive activities that strengthen trader participation and maintain an active, competitive JBLX environment.</p>
+          </div>
+        </div>
+
+        <div class="team-card" style="animation-delay:0.26s">
+          <div class="team-avatar">
+            <img src="assets/team-photo/some1-photo.webp" alt="some1">
+          </div>
+          <div class="team-info">
+            <div class="team-name">some1_217654321</div>
+            <div class="team-roles">
+              <span class="role-pill">Value Team</span>
+              <span class="role-pill">Administrator</span>
+              <span class="role-pill">Events Team</span>
+            </div>
+            <p class="team-desc">Provides high-level valuation insight, market interpretation, and guidance on long-term item stability and rarity analysis.</p>
+          </div>
+        </div>
+
+        <div class="team-card" style="animation-delay:0.44s">
           <div class="team-avatar">
             <img src="assets/team-photo/ellen-photo.webp" alt="zey">
           </div>
           <div class="team-info">
             <div class="team-name">zey / ellen</div>
-            <div class="team-role">Trade Expert</div>
+            <div class="team-roles">
+              <span class="role-pill">Value Team</span>
+            </div>
             <p class="team-desc">Focuses on seasonal item valuation, duplication impact analysis, and fair trade benchmarking.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── STAFF ──────────────────────────────────────────────── -->
+    <section class="team-section" style="animation-delay:0.20s">
+      <div class="team-section-header">
+        <div class="team-section-icon" style="background:#e07820;box-shadow:0 0 10px #e07820;"></div>
+        <h2 class="team-section-title" style="color:#e07820;">Staff</h2>
+      </div>
+      <div class="team-grid">
+
+        <div class="team-card" style="animation-delay:0.36s">
+          <div class="team-avatar">
+            <img src="assets/team-photo/angelus-photo.webp" alt="angelus">
+          </div>
+          <div class="team-info">
+            <div class="team-name">Angelus</div>
+            <div class="team-roles">
+              <span class="role-pill">Events Team</span>
+              <span class="role-pill">Administrator</span>
+            </div>
+            <p class="team-desc">Manages Discord events and giveaways, keeping the JBLX community active and engaged.</p>
+          </div>
+        </div>
+
+        <div class="team-card" style="animation-delay:0.26s">
+          <div class="team-avatar">
+            <img src="assets/team-photo/jan-photo.webp" alt="some1">
+          </div>
+          <div class="team-info">
+            <div class="team-name">jan</div>
+            <div class="team-roles">
+              <span class="role-pill">Value Team</span>
+            </div>
+            <p class="team-desc">Provides high-level valuation insight, market interpretation, and guidance on long-term item stability and rarity analysis.</p>
+          </div>
+        </div>
+
+        <div class="team-card" style="animation-delay:0.26s">
+          <div class="team-avatar">
+            <img src="assets/team-photo/illusion-photo.webp" alt="some1">
+          </div>
+          <div class="team-info">
+            <div class="team-name">Illusions</div>
+            <div class="team-roles">
+              <span class="role-pill">Value Team</span>
+            </div>
+            <p class="team-desc">Provides high-level valuation insight, market interpretation, and guidance on long-term item stability and rarity analysis.</p>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- ── COMMUNITY ──────────────────────────────────────────── -->
+    <section class="team-section" style="animation-delay:0.34s">
+      <div class="team-section-header">
+        <div class="team-section-icon" style="background:#ffd166;box-shadow:0 0 10px #ffd166;"></div>
+        <h2 class="team-section-title" style="color:#ffd166;">Community</h2>
+      </div>
+      <div class="team-grid">
+
+        <div class="team-card" style="animation-delay:0.40s">
+          <div class="team-avatar">
+            <img src="assets/team-photo/ace213-photo.webp" alt="ace213">
+          </div>
+          <div class="team-info">
+            <div class="team-name">Ace213</div>
+            <div class="team-roles">
+              <span class="role-pill">Events Team</span>
+            </div>
+            <p class="team-desc">Helps organise community events and giveaways, contributing to a lively trading environment.</p>
           </div>
         </div>
 
@@ -188,6 +264,7 @@
     <span>© 2025 JBLX — Jailbreak Listing Exchange</span>
     <span>Not affiliated with Badimo or Roblox</span>
   </footer>
+
   <script src="js/mobile-nav.js"></script>
 </body>
 </html>
