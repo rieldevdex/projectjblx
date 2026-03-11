@@ -53,7 +53,7 @@ const ITEMS = [
   { name:"HyperRed 3", type:"Color", value:6000000, duped:null, demand:"Low", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"Hyper Red can be progressively evolved by grinding the Tomb, considered to be not only challenging but also time-consuming, with three players each also required to start the Tomb robbery.", tags:"L3, Low Tier", updatedAt:_ago(0,0), obtainable:true, remarks:"OCCASIONALLY AVOIDED AND GETS UNDERPAYS", pullValue:"=0M", image:"" },
   { name:"HyperBlue 2", type:"Color", value:4000000, duped:null, demand:"Low", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"Hyper Blue can be progressively evolved by grinding the Cargo Plane; many consider it to be the most time-consuming hyperchrome to be unlocked due to the plane's infrequent departures.", tags:"L2, Low Tier", updatedAt:_ago(0,0), obtainable:true, remarks:"DEMAND IS MAINLY FROM GRINDERS, OCCASIONALLY AVOIDED", pullValue:"=0M", image:"" },
   { name:"HyperOrange 3", type:"Color", value:4000000, duped:null, demand:"Low", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"Hyper Orange can be evolved by grinding the Museum, with the major challenge of this hyperchrome being that you need the help of another player to be able to complete the Museum puzzles.", tags:"L3, Low Tier", updatedAt:_ago(0,0), obtainable:true, remarks:"DEMAND IS MAINLY FROM GRINDERS, OCCASIONALLY AVOIDED", pullValue:"=0M", image:"" },
-  { name:"HyperGreen 3", type:"Color", value:4000000, duped:null, demand:"Low", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"Hyper Green can be progressively evolved by grinding the Bank, considered to be one of the rarer hyperchromes to unlock since the Bank often has many cops camping the robbery in public servers.", tags:"L3. Low Tier", updatedAt:_ago(0,0), obtainable:true, remarks:"DEMAND IS MAINLY FROM GRINDERS, OCCASIONALLY AVOIDED", pullValue:"=0M", image:"" },
+  { name:"HyperGreen 3", type:"Color", value:4000000, duped:null, demand:"Low", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"Hyper Green can be progressively evolved by grinding the Bank, considered to be one of the rarer hyperchromes to unlock since the Bank often has many cops camping the robbery in public servers.", tags:"L3, Low Tier", updatedAt:_ago(0,0), obtainable:true, remarks:"DEMAND IS MAINLY FROM GRINDERS, OCCASIONALLY AVOIDED", pullValue:"=0M", image:"" },
   { name:"HyperDiamond 2", type:"Color", value:3500000, duped:null, demand:"Low", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"Hyper Diamond is progressively evolved by grinding the Jewelry Store; it is one of the most popular hyperchrome colors to obtain, and often has grinding shortcuts available to game the system.", tags:"L2, Low Tier", updatedAt:_ago(0,0), obtainable:true, remarks:"DEMAND IS MAINLY FROM GRINDERS", pullValue:"=0M", image:"" },
   { name:"HyperYellow 3", type:"Color", value:3000000, duped:null, demand:"Low", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"Hyper Yellow can be progressively evolved by grinding either the Cargo or the Passenger Train, and it is considered to be an easier hyperchrome to obtain, known for being very solo-friendly to unlock.", tags:"Low Tier, L3", updatedAt:_ago(0,0), obtainable:true, remarks:"DEMAND IS MAINLY FROM GRINDERS, OCCASIONALLY AVOIDED", pullValue:"=0M", image:"" },
   { name:"HyperPink 2", type:"Color", value:1250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"Hyper Pink can be progressively evolved by grinding the Casino, being straightforward to obtain but considered mostly time-consuming to unlock due to the steps required to rob the Casino.", tags:"Very Low Tier, L2", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M", image:"" },
@@ -157,7 +157,7 @@ const ITEMS = [
   { name:"Jackrabbit", type:"Vehicle", value:2000000, duped:null, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Jackrabbit was the Level 8 for Season 9: 'A New Journey' and has exceptional offroad capability. However, the car has underwhelming launch, acceleration, looks, and top speed and was not well-received by players.", tags:"Low Tier, Limited, S9, Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND, FREQUENTLY AVOIDED AND LOWBALLED, UNUSUAL BALANCING THAN NORMAL", pullValue:"-250K", image:"assets/item-images/vehicles/jackrabbit.webp" },
   { name:"Revox", type:"Vehicle", value:1500000, duped:null, demand:"Medium", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Revox was the grand prize for Season 25: 'Pixel Arcade', featuring a unique voxel-like design resembling the Bloxy, being an effectively superior version of it.", tags:"Low Tier, Limited, S24", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"assets/item-images/vehicles/revox.webp" },
   { name:"Longhorn", type:"Vehicle", value:1500000, duped:null, demand:"Low", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Longhorn was the grand prize for Season 18: 'Wild West' and has a convertible rooftop feature. However, the car has underwhelming performance and was not well-received by players.", tags:"Low Tier, Limited, S18", updatedAt:_ago(0,0), obtainable:false, remarks:"OCCASIONALLY AVOIDED", pullValue:"=0M", image:"assets/item-images/vehicles/longhorn.webp" },
-  { name:"Bluebird", type:"Vehicle", value:1500000, duped:1250000, demand:"Low", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Blue Bird was the new vehicle for the Tier 5 Safes. It features the best acceleration and launch comparable to the Roadster in low-accel and the Scorpion high-accel, however with the drawback of having the worst handling, reverse speed and braking in any vehicle in Jailbreak.", tags:"Low Tier, Obtainable, Hyped", updatedAt:_ago(0,0), obtainable:true, remarks:"HYPED, SLOWLY LOSING DEMAND", pullValue:"+500K / =0M", image:"assets/item-images/vehicles/bluebird.webp" },
+  { name:"Bluebird", type:"Vehicle", value:1500000, duped:1250000, demand:"Low", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Blue Bird was the new vehicle for the Tier 5 Safes. It features the best acceleration and launch comparable to the Roadster in low-accel and the Scorpion high-accel, however with the drawback of having the worst handling, reverse speed and braking in any vehicle in Jailbreak.", tags:"Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"HYPED, SLOWLY LOSING DEMAND", pullValue:"+500K / =0M", image:"assets/item-images/vehicles/bluebird.webp" },
   { name:"Blackbeard", type:"Vehicle", value:1500000, duped:null, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Blackbeard is the grand prize for Season 27, 'A Pirate's Treasure.' Its design is essentially a boat with wheels, featuring one of the exclusive abilities to float on water.", tags:"Low Tier, Limited, S27", updatedAt:_ago(0,0), obtainable:false, remarks:"FREQUENTLY AVOIDED", pullValue:"=0M", image:"assets/item-images/vehicles/blackbeard.webp" },
   { name:"Frost Crawler", type:"Vehicle", value:1250000, duped:null, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Frost Crawler was the grand prize for Season 19: 'Northern Winter', having decent seating capacity and the tow hitch ability. Despite this, the vehicle is slow, and the season was 3 months long.", tags:"Very Low Tier, Limited, S19", updatedAt:_ago(0,0), obtainable:false, remarks:"FREQUENTLY AVOIDED", pullValue:"=0M", image:"assets/item-images/vehicles/frostcrawler.webp" },
   { name:"OG Monster", type:"Vehicle", value:1250000, duped:null, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The OG Monster Truck was the grand prize for Season 21: 'Rewind' and is based on the Monster Truck before its revamp. The vehicle has decent characteristics but underwhelming demand.", tags:"Very Low Tier, Limited, S21", updatedAt:_ago(0,0), obtainable:false, remarks:"FREQUENTLY AVOIDED", pullValue:"=0M", image:"assets/item-images/vehicles/ogmonster.webp" },
@@ -173,7 +173,7 @@ const ITEMS = [
   { name:"Sloop", type:"Vehicle", value:1000000, duped:500000, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Sloop is the largest boat in the game, but it comes at the cost of abysmal speed and performance. The Sloop has a'Flying Dutchman' easter egg if sailed to Bounty Island during rain.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"GETS MORE IN OBTAINABLES, FREQUENTLY AVOIDED, OCCASIONALLY GETS OP FROM COLLECTORS", pullValue:"+200K / =0M", image:"assets/item-images/vehicles/sloop.webp" },
   { name:"Jet", type:"Vehicle", value:1000000, duped:500000, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Jet is a 1M vehicle that typically spawns in both Rising City and Crater City Airports, as well as the Military Base. It features the best top speed, air clearance for any aerial vehicle and heat seeking missiles. However, it's considered hard to maneuver for starter players.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"GETS MORE IN OBTAINABLES, FREQUENTLY AVOIDED", pullValue:"+200K / =0M", image:"assets/item-images/vehicles/jet.webp" },
   { name:"Monster", type:"Vehicle", value:1000000, duped:500000, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Monster Truck is a modified pickup truck with absurd suspension, gigantic wheels, and several seats. The Monster Truck has acceptable performance for its size, but extremely low demand.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"GETS MORE IN OBTAINABLES, FREQUENTLY AVOIDED", pullValue:"+200K / =0M", image:"assets/item-images/vehicles/monster.webp" },
-  { name:"Tank", type:"Vehicle", value:1000000, duped:500000, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Tank has a strong main gun and one of the highest hitpoints in the game. Despite this, the Tank is rather impractical in PVP due to its size and ends up having extremely low demand.", tags:"Very Low Tier, Obtainble", updatedAt:_ago(0,0), obtainable:false, remarks:"GETS MORE IN OBTAINABLES, FREQUENTLY AVOIDED", pullValue:"+200K / =0M", image:"assets/item-images/vehicles/tank.webp" },
+  { name:"Tank", type:"Vehicle", value:1000000, duped:500000, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Tank has a strong main gun and one of the highest hitpoints in the game. Despite this, the Tank is rather impractical in PVP due to its size and ends up having extremely low demand.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:false, remarks:"GETS MORE IN OBTAINABLES, FREQUENTLY AVOIDED", pullValue:"+200K / =0M", image:"assets/item-images/vehicles/tank.webp" },
   { name:"Crown", type:"Vehicle", value:666000, duped:333000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Crown is the CEOs personal vehicle, based off of a 1925 Rolls Royce Phantom. The Crown has good top speed and can be found at the Mansion, being currently obtainable for $666,000.", tags:"Very Low Tier, Obtainable, Rare", updatedAt:_ago(0,0), obtainable:true, remarks:"RARE TO FIND", pullValue:"-66K / -33K", image:"assets/item-images/vehicles/crown.webp" },
   { name:"Successor", type:"Vehicle", value:649000, duped:324500, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Successor is a supercar that can be found at the Mansion and is purchasable for $649,000. The Successor is an overall great performing vehicle, with good acceleration as well as top speed.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"-49K / 24.5K", image:"assets/item-images/vehicles/successor.webp" },
   { name:"NASCAR 75th", type:"Vehicle", value:600000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The NASCAR 75th car is the only branded, free-to-play, tradable vehicle. However, due to lackluster top speed and acceleration it doesn't have much demand.", tags:"Very Low Tier, Limited", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"assets/item-images/vehicles/nascar75th.webp" },
@@ -186,7 +186,7 @@ const ITEMS = [
   { name:"Posh", type:"Vehicle", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Posh is an open-top sports car that was purchasable for $70,000 between May 13th, 2017, to November 8th,", tags:"Very Low Tier, Limited", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"assets/item-images/vehicles/posh.webp" },
   { name:"SUV", type:"Vehicle", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The SUV is a sports utility vehicle that could be purchased for $40,000 from March 3rd, 2018, to July 12th, 2020, before being retired. The SUV is a decent vehicle with acceptable performance.", tags:"Very Low Tier, Limited", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"assets/item-images/vehicles/suv.webp" },
   { name:"UFO", type:"Vehicle", value:500000, duped:250000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The UFO is an obtainable aerial vehicle, replicating the typical UFO seen in movies. It has great acceleration, launch, and maneuverability and a decent top speed, and considered to be a great vehicle for mid-tier players. However, it can only be spawned at Heli Pads or the Military Base, making it fairly hard to access.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M", image:"assets/item-images/vehicles/ufo.webp" },
-  { name:"Pizza Delivery", type:"Vehicle", value:500000, duped:250000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Pizza Delivery is the grand vehicle of the Epic Safes. It is known for the fastest turning vehicle in the game, replicating the uncontrollability of the pizza car in 'Work At a Pizza Place'. Although fun to play, it is not suitable for grinding and occasional use for starter players.", tags:"Very Low Tier Limited, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / -50K", image:"assets/item-images/vehicles/pizza.webp" },
+  { name:"Pizza Delivery", type:"Vehicle", value:500000, duped:250000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Pizza Delivery is the grand vehicle of the Epic Safes. It is known for the fastest turning vehicle in the game, replicating the uncontrollability of the pizza car in 'Work At a Pizza Place'. Although fun to play, it is not suitable for grinding and occasional use for starter players.", tags:"Very Low Tier, Limited, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / -50K", image:"assets/item-images/vehicles/pizza.webp" },
   { name:"Hammerhead", type:"Vehicle", value:350000, duped:200000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Hammerhead is the Epic vehicle for the Tier 3 Safes, featuring a ramp design, allowing it to slide over vehicles. It also features turrets that resembles those on the Cobra and Trailblazer, making it ideal for cops. It only has acceptable stats, and has long since lose demand because of how pervasive it is on the market.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"+150K / =0M", image:"assets/item-images/vehicles/hammerhead.webp" },
   { name:"Stunt", type:"Vehicle", value:300000, duped:150000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Stunt is an obtainable aerial vehicle, obtainable for $300,000. It has a great top speed for an aerial vehicle, although inferior compared to the Jet, as it has slower acceleration and requires more runway. It is not recommended for new players, due to maneuvering diffeculties and a relatively hefty price tag. It has turrets, but that's about it.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / +100K", image:"assets/item-images/vehicles/stunt.webp" },
   { name:"XRK", type:"Vehicle", value:299000, duped:150000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The XRK has good top speed and handling, and can be purchased for $299,000, making it a very versatile vehicle for new players. The XRK also has right-hand drive, but low demand in trading.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"+1K / +100K", image:"assets/item-images/xrk.webp" },
@@ -227,7 +227,7 @@ const ITEMS = [
   { name:"Laser Cannon", type:"Rim", value:28000000, duped:null, demand:"Average", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"High Tier, Limited, S13", updatedAt:_ago(0,0), obtainable:false, remarks:"OCCASIONALLY GETS OVERPAYS", pullValue:"+500K", image:"" },
   { name:"Rtx", type:"Rim", value:15000000, duped:null, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Mid Tier, Limited, S6, Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND, FREQUENTLY AVOIDED AND LOWBALLED", pullValue:"-1M", image:"" },
   { name:"Spinner", type:"Rim", value:15000000, duped:13500000, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable from an in-game event and can now only be earned through trading. Many collectors may seek out this rim due to its unique rarity and exclusivity.", tags:"Mid Tier, Limited, Rare, Retired", updatedAt:_ago(0,0), obtainable:false, remarks:"CLEAN VARIANT IS RARE TO FIND, BOTH VARIANTS FREQUENTLY AVOIDED AND LOWBALLED", pullValue:"-1M / -1M", image:"" },
-  { name:"Planetary", type:"Rim", value:8000000, duped:null, demand:"Solid", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Manipulated, Limited, Mid Tier", updatedAt:_ago(0,0), obtainable:false, remarks:"FREQUENTLY GETS OVERPAYS FROM HOARDERS", pullValue:"+1M", image:"" },
+  { name:"Planetary", type:"Rim", value:8000000, duped:null, demand:"Solid", dupedDemand:null, trend:"Manipulated", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Limited, Mid Tier", updatedAt:_ago(0,0), obtainable:false, remarks:"FREQUENTLY GETS OVERPAYS FROM HOARDERS", pullValue:"+1M", image:"" },
   { name:"Snowface", type:"Rim", value:6500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Mid Tier, Limited, Very Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"VERY RARE TO FIND, FREQUENTLY AVOIDED AND LOWBALLED", pullValue:"-1M", image:"" },
   { name:"Snowflake", type:"Rim", value:4500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable from an in-game event and can now only be earned through trading. Many collectors may seek out this rim due to its unique rarity and exclusivity.", tags:"Low Tier, Limited, Retired, Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND, FREQUENTLY AVOIDED AND LOWBALLED", pullValue:"-500K", image:"" },
   { name:"Ionize", type:"Rim", value:4500000, duped:null, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Low Tier, Limited, S8, Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND, FREQUENTLY AVOIDED", pullValue:"=0M", image:"" },
@@ -283,10 +283,10 @@ const ITEMS = [
   { name:"Sawblade", type:"Rim", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, S13", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Unknown Signal", type:"Rim", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, S13", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Glacier", type:"Rim", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This tire was obtainable during a season and can now only be traded for. The value of this tire is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, S24", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
-  { name:"Spixel", type:"Rim", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier Limited, S25, Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND", pullValue:"=0M", image:"" },
-  { name:"Kraken", type:"Rim", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier Limited, S27", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
-  { name:"Neo-Runner", type:"Rim", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier Limited, S28", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
-  { name:"Speed Coil", type:"Rim", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier Limited, S29", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
+  { name:"Spixel", type:"Rim", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, S25, Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND", pullValue:"=0M", image:"" },
+  { name:"Kraken", type:"Rim", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, S27", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
+  { name:"Neo-Runner", type:"Rim", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, S28", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
+  { name:"Speed Coil", type:"Rim", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, S29", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Forged", type:"Rim", value:300000, duped:150000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim is currently obtainable and can be purchased in the garage for in-game money. Due to this, it has little value in trading, but has been listed here as a reference guide.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Belgian Waffle", type:"Rim", value:250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, S17", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Boominspeaker", type:"Rim", value:250000, duped:100000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
@@ -329,9 +329,9 @@ const ITEMS = [
   { name:"Theory", type:"Rim", value:50000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S31", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Hold E", type:"Rim", value:50000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Retired", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Roulette", type:"Rim", value:50000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim is currently obtainable and can be purchased in the garage for in-game money. Due to this, it has little value in trading, but has been listed here as a reference guide.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M", image:"" },
-  { name:"Python", type:"Rim", value:50000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier. Limited, S27", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M / =0M", image:"" },
-  { name:"P-100i", type:"Rim", value:50000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier. Limited, S28", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M / =0M", image:"" },
-  { name:"Bad Omen", type:"Rim", value:50000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier. Limited, S30", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M / =0M", image:"" },
+  { name:"Python", type:"Rim", value:50000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, S27", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M / =0M", image:"" },
+  { name:"P-100i", type:"Rim", value:50000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S28", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M / =0M", image:"" },
+  { name:"Bad Omen", type:"Rim", value:50000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, S30", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Bamboo", type:"Rim", value:50000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, Retired", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Mystic", type:"Rim", value:50000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, Retired", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Unified", type:"Rim", value:40000, duped:20000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim is currently obtainable and can be purchased in the garage for in-game money. Due to this, it has little value in trading, but has been listed here as a reference guide.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
@@ -363,12 +363,12 @@ const ITEMS = [
   { name:"Drip", type:"Texture", value:20000000, duped:null, demand:"Solid", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"High Tier, Limited, S6", updatedAt:_ago(0,0), obtainable:false, remarks:"FREQUENTLY GETS OVERPAYS IN DOWNGRADES", pullValue:"+1M", image:"" },
   { name:"Snowstorm", type:"Texture", value:8000000, duped:null, demand:"Low", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Mid Tier, Limited, Rare, S1", updatedAt:_ago(0,0), obtainable:false, remarks:"STACKED ITEM, OCCASIONALLY AVOIDED AND PULLS UNDERPAYS", pullValue:"-500K", image:"" },
   { name:"Galactic Carbon", type:"Texture", value:4000000, duped:null, demand:"Low", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Galactic Carbon texture was obtainable in Season 2 as the level 8 prize, and uses a galaxy theme. This unique HD texture has many stars that can stand out on high-resolution displays.", tags:"Low Tier, Limited, S2", updatedAt:_ago(0,0), obtainable:false, remarks:"OCCASIONALLY AVOIDED", pullValue:"=0M", image:"" },
-  { name:"Earthquake", type:"Texture", value:3500000, duped:null, demand:"Low", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This texture was obtainable from a season and can be unlocked through trading, but its overall price depends on rarity and can also potentially vary due to subjective player preference for cosmetics.", tags:"Low Tier, Limited, S4, Stacked", updatedAt:_ago(0,0), obtainable:false, remarks:"STACKED ITEM, OCCASIONALLY AVOIDED", pullValue:"=0M", image:"" },
+  { name:"Earthquake", type:"Texture", value:3500000, duped:null, demand:"Low", dupedDemand:null, trend:"Stacked", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This texture was obtainable from a season and can be unlocked through trading, but its overall price depends on rarity and can also potentially vary due to subjective player preference for cosmetics.", tags:"Low Tier, Limited, S4", updatedAt:_ago(0,0), obtainable:false, remarks:"STACKED ITEM, OCCASIONALLY AVOIDED", pullValue:"=0M", image:"" },
   { name:"Fire", type:"Texture", value:3000000, duped:null, demand:"Low", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Fire Texture was obtainable in Season 1 as part of the level 8 prize. It is one vibrant texture with various stripes as well as specks that give it its unique identity and okay-ish demand in trading.", tags:"Low Tier, Limited, S1", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Black Ice", type:"Texture", value:2500000, duped:null, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This texture was obtainable from a season and can be unlocked through trading, but its overall price depends on rarity and can also potentially vary due to subjective player preference for cosmetics.", tags:"Low Tier, Rare, S8, Limited", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND, OCCASIONALLY AVOIDED", pullValue:"=0M", image:"" },
   { name:"Blue Pixel", type:"Texture", value:2500000, duped:null, demand:"Low", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Blue Pixel Texture was one of the textures you were able to get from OG Season 2, being the level 50 prize. It is a reskinned Pixel Texture, just blue, as you obtained it from the police team.", tags:"Low Tier, Rare, OG S3, Limited", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND", pullValue:"=0M", image:"" },
   { name:"Winter Camo", type:"Texture", value:2500000, duped:null, demand:"Medium", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Winter Camo Texture was obtainable in Season 7 as the bonus prize for having the top 1% of experience, and is styled as camouflage featuring multiple colors that fit a winter theme well.", tags:"Low Tier, Rare, S7, Limited", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND, OCCASIONALLY GETS OVERPAYS FROM COLLECTORS", pullValue:"=0M", image:"" },
-  { name:"Old Town Road", type:"Texture", value:2000000, duped:null, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This texture was obtainable from a season and can be unlocked through trading, but its overall price depends on rarity and can also potentially vary due to subjective player preference for cosmetics.", tags:"Low Tier, Limited, S9, Very Rare, Stacked", updatedAt:_ago(0,0), obtainable:false, remarks:"VERY RARE TO FIND, STACKED ITEM", pullValue:"=0M", image:"" },
+  { name:"Old Town Road", type:"Texture", value:2000000, duped:null, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This texture was obtainable from a season and can be unlocked through trading, but its overall price depends on rarity and can also potentially vary due to subjective player preference for cosmetics.", tags:"Low Tier, Limited, S9, Very Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"VERY RARE TO FIND, STACKED ITEM", pullValue:"=0M", image:"" },
   { name:"Armor", type:"Texture", value:1500000, duped:null, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Armor Texture was available for a limited time around April of 2019, where players had to solve a unique community puzzle in order to unlock a code for it, which could then be redeemed.", tags:"Very Low Tier, Limited, Retired, Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND", pullValue:"=0M", image:"" },
   { name:"Manga", type:"Texture", value:1500000, duped:null, demand:"Medium", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This texture was obtainable from a season and can be unlocked through trading, but its overall price depends on rarity and can also potentially vary due to subjective player preference for cosmetics.", tags:"Low Tier, Limited, S15", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Orange Pixel", type:"Texture", value:1500000, duped:null, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This texture was obtainable from a season and can be unlocked through trading, but its overall price depends on rarity and can also potentially vary due to subjective player preference for cosmetics.", tags:"Very Low Tier, OG S1-S2, Limited, Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND, FREQUENTLY AVOIDED", pullValue:"=0M", image:"" },
@@ -439,8 +439,8 @@ const ITEMS = [
   { name:"Corp Cr1", type:"Texture", value:25000, duped:12500, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Confetti Cannon", type:"Texture", value:25000, duped:12500, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"LeEclaire", type:"Texture", value:21000, duped:10500, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
-  { name:"Leclerc", type:"F1 Driver", value:16, duped:null, demand:"Easter Egg", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"I am stupid", updatedAt:_ago(0,0), obtainable:true, remarks:"Congratulations, you found an Easter Egg! This item doesn't exist in Jailbreak and only a few people know about it.", pullValue:"", image:"assets/item-images/easter-egg/leclerc.webp" },
-  { name:"Verstappen", type:"F1 Driver", value:3, duped:null, demand:"Easter Egg", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"DU DU DU DU", updatedAt:_ago(0,0), obtainable:true, remarks:"Congratulations, you found an Easter Egg! This item doesn't exist in Jailbreak and only a few people know about it.", pullValue:"", image:"assets/item-images/easter-egg/verstappen.webp" },
+  { name:"Leclerc", type:"F1 Driver", value:16, duped:null, demand:"Easter Egg", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"", updatedAt:_ago(0,0), obtainable:true, remarks:"Congratulations, you found an Easter Egg! This item doesn't exist in Jailbreak and only a few people know about it.", pullValue:"I am stupid", image:"assets/item-images/easter-egg/leclerc.webp" },
+  { name:"Verstappen", type:"F1 Driver", value:3, duped:null, demand:"Easter Egg", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"", updatedAt:_ago(0,0), obtainable:true, remarks:"Congratulations, you found an Easter Egg! This item doesn't exist in Jailbreak and only a few people know about it.", pullValue:"DU DU DU DU", image:"assets/item-images/easter-egg/verstappen.webp" },
   { name:"Ball", type:"Texture", value:20000, duped:10000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This texture is obtainable and can be purchased in the garage, and it goes for very little to no value in trading. It's not recommended to trade for this texture; instead, this item is listed for reference.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Frit", type:"Texture", value:20000, duped:10000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This texture is obtainable and can be purchased in the garage, and it goes for very little to no value in trading. It's not recommended to trade for this texture; instead, this item is listed for reference.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Swirl", type:"Texture", value:20000, duped:10000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This texture is obtainable and can be purchased in the garage, and it goes for very little to no value in trading. It's not recommended to trade for this texture; instead, this item is listed for reference.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
@@ -509,21 +509,21 @@ const ITEMS = [
   { name:"6 Billion", type:"Spoiler", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The 6 Billion spoiler was able to be obtained during the 6 billion visits event in Jailbreak. It could be purchased in the garage for $10,000 before it became unobtainable, making this a limited spoiler.", tags:"Very Low Tier, Limited", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Death Trap", type:"Spoiler", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S4", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Doyoulift", type:"Spoiler", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S14", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
-  { name:"Leaning Wing Of Pisa", type:"Spoiler", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited . S17", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
+  { name:"Leaning Wing Of Pisa", type:"Spoiler", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S17", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Live Glider", type:"Spoiler", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Live Glider was obtainable by participating in the 2022 Jailbreak Meteor Event. It was not purchasable like other spoilers in the past; instead, you had to complete the live event from start to finish.", tags:"Very Low Tier, Limited", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"OG Rocket Thrusters", type:"Spoiler", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable during a season and can now only be traded for. The value of this spoiler is subjective and might vary, as this item will likely only receive offers from serious collectors.", tags:"Very Low Tier, Limited, S21", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Overdrive", type:"Spoiler", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable during a season and can now only be traded for. The value of this spoiler is subjective and might vary, as this item will likely only receive offers from serious collectors.", tags:"Very Low Tier, Limited, S8", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Snow Log", type:"Spoiler", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable during a season and can now only be traded for. The value of this spoiler is subjective and might vary, as this item will likely only receive offers from serious collectors.", tags:"Very Low Tier, Limited, S7", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Trade Sail", type:"Spoiler", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Sail spoiler was available for a limited time on the trading island under the dome. It could be acquired by walking up to it, but it was then retired a week later and became a limited spoiler.", tags:"Very Low Tier, Limited", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"OG Snow Machine", type:"Spoiler", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S21", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
-  { name:"Kraken Attack", type:"Spoiler", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable during a season and can now only be traded for. The value of this spoiler is subjective and might vary, as this item will likely only receive offers from serious collectors.", tags:"Very Low Tier Limited, S27", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
-  { name:"Cyberpunk", type:"Spoiler", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable during a season and can now only be traded for. The value of this spoiler is subjective and might vary, as this item will likely only receive offers from serious collectors.", tags:"Very Low Tier Limited, S28", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
-  { name:"Stacked Cyberwing", type:"Spoiler", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable during a season and can now only be traded for. The value of this spoiler is subjective and might vary, as this item will likely only receive offers from serious collectors.", tags:"Very Low Tier Limited, S28", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
+  { name:"Kraken Attack", type:"Spoiler", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable during a season and can now only be traded for. The value of this spoiler is subjective and might vary, as this item will likely only receive offers from serious collectors.", tags:"Very Low Tier, Limited, S27", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
+  { name:"Cyberpunk", type:"Spoiler", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable during a season and can now only be traded for. The value of this spoiler is subjective and might vary, as this item will likely only receive offers from serious collectors.", tags:"Very Low Tier, Limited, S28", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
+  { name:"Stacked Cyberwing", type:"Spoiler", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable during a season and can now only be traded for. The value of this spoiler is subjective and might vary, as this item will likely only receive offers from serious collectors.", tags:"Very Low Tier, Limited, S28", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Turning Key", type:"Spoiler", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable during a season and can now only be traded for. The value of this spoiler is subjective and might vary, as this item will likely only receive offers from serious collectors.", tags:"Very Low Tier, Limited, S11", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Aerial Support", type:"Spoiler", value:250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable using safes. The value of this spoiler is subjective: players do not usually trade for obtainable items; therefore, this spoiler is only listed for reference and has low interest.", tags:"Very Low Tier, Limited, Retired", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Gtr", type:"Spoiler", value:250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable using safes. The value of this spoiler is subjective: players do not usually trade for obtainable items; therefore, this spoiler is only listed for reference and has low interest.", tags:"Very Low Tier, Limited, Retired", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Rc Antenna", type:"Spoiler", value:250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable during a season and can now only be traded for. The value of this spoiler is subjective and might vary, as this item will likely only receive offers from serious collectors.", tags:"Very Low Tier, Limited, S11", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
-  { name:"Scythe", type:"Spoiler", value:250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited. S20", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
+  { name:"Scythe", type:"Spoiler", value:250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S20", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Ski Wing", type:"Spoiler", value:250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable during a season and can now only be traded for. The value of this spoiler is subjective and might vary, as this item will likely only receive offers from serious collectors.", tags:"Very Low Tier, Limited, S19", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"T Rex Bone", type:"Spoiler", value:250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, Retired", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Tank Wing", type:"Spoiler", value:250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable during a season and can now only be traded for. The value of this spoiler is subjective and might vary, as this item will likely only receive offers from serious collectors.", tags:"Very Low Tier, Limited, S12", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
@@ -560,8 +560,8 @@ const ITEMS = [
   { name:"Terminator", type:"Spoiler", value:50000, duped:25000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Catchme", type:"Spoiler", value:50000, duped:25000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Voxel", type:"Spoiler", value:50000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable during a season and can now only be traded for. The value of this spoiler is subjective and might vary, as this item will likely only receive offers from serious collectors.", tags:"Very Low Tier, Limited, Retired", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M / =0M", image:"" },
-  { name:"Roblox R", type:"Spoiler", value:50000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable during a season and can now only be traded for. The value of this spoiler is subjective and might vary, as this item will likely only receive offers from serious collectors.", tags:"Very Low Tier. Limited, S29", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M / =0M", image:"" },
-  { name:"Batwings", type:"Spoiler", value:50000, duped:25000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier. Limited, S29", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M / =0M", image:"" },
+  { name:"Roblox R", type:"Spoiler", value:50000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable during a season and can now only be traded for. The value of this spoiler is subjective and might vary, as this item will likely only receive offers from serious collectors.", tags:"Very Low Tier, Limited, S29", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M / =0M", image:"" },
+  { name:"Batwings", type:"Spoiler", value:50000, duped:25000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S29", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Wingo", type:"Spoiler", value:39000, duped:19500, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Mark-5", type:"Spoiler", value:29900, duped:15000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Dragster", type:"Spoiler", value:25000, duped:12500, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler is currently obtainable and can be purchased in the garage for money. Due to this, it will have little value in trading, but it is listed as a reference tool if you want to purchase it for your cars.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
@@ -595,8 +595,8 @@ const ITEMS = [
   { name:"Bloxxer", type:"Drift", value:750000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This drift particle was obtainable during a season, but it often receives subjective offers due to varied player preferences for cosmetics. We can only recommend trading for it if you like the effect.", tags:"Very Low Tier, Limited, S29", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"OG Fuel", type:"Drift", value:750000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This drift particle was obtainable during a season, but it often receives subjective offers due to varied player preferences for cosmetics. We can only recommend trading for it if you like the effect.", tags:"Very Low Tier, Limited, S21", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Shooting Star", type:"Drift", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S22", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
-  { name:"Pixelcoin", type:"Drift", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier Limited, S25", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
-  { name:"Jungle Vine", type:"Drift", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This drift particle was obtainable during a season, but it often receives subjective offers due to varied player preferences for cosmetics. We can only recommend trading for it if you like the effect.", tags:"Very Low Tier Limited, S26", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
+  { name:"Pixelcoin", type:"Drift", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S25", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
+  { name:"Jungle Vine", type:"Drift", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This drift particle was obtainable during a season, but it often receives subjective offers due to varied player preferences for cosmetics. We can only recommend trading for it if you like the effect.", tags:"Very Low Tier, Limited, S26", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Lightning", type:"Drift", value:400000, duped:200000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This texture was obtainable from a season and can be unlocked through trading, but its overall price depends on rarity and can also potentially vary due to subjective player preference for cosmetics.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"+100K / -100K", image:"" },
   { name:"Flamethrower", type:"Drift", value:300000, duped:150000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable during a season and can now only be traded for. The value of this spoiler is subjective and might vary, as this item will likely only receive offers from serious collectors.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Synth", type:"Drift", value:250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This drift particle was obtainable during a season, but it often receives subjective offers due to varied player preferences for cosmetics. We can only recommend trading for it if you like the effect.", tags:"Very Low Tier, Limited, S23", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
@@ -619,7 +619,7 @@ const ITEMS = [
   { name:"Circuitboard", type:"Weapon Skin", value:1250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S8, Very Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"VERY RARE TO FIND", pullValue:"=0M", image:"" },
   { name:"Fire", type:"Weapon Skin", value:1000000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Fire Texture was obtainable in Season 1 as part of the level 8 prize. It is one vibrant texture with various stripes as well as specks that give it its unique identity and okay-ish demand in trading.", tags:"Very Low Tier, Limited, S1, Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND", pullValue:"=0M", image:"" },
   { name:"Galactic Carbon", type:"Weapon Skin", value:1000000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"The Galactic Carbon texture was obtainable in Season 2 as the level 8 prize, and uses a galaxy theme. This unique HD texture has many stars that can stand out on high-resolution displays.", tags:"Very Low Tier, Limited, S2, Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND", pullValue:"=0M", image:"" },
-  { name:"Black Ice", type:"Weapon Skin", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This texture was obtainable from a season and can be unlocked through trading, but its overall price depends on rarity and can also potentially vary due to subjective player preference for cosmetics.", tags:"Very Low Tier Limited, S7", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
+  { name:"Black Ice", type:"Weapon Skin", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This texture was obtainable from a season and can be unlocked through trading, but its overall price depends on rarity and can also potentially vary due to subjective player preference for cosmetics.", tags:"Very Low Tier, Limited, S7", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Earthquake", type:"Weapon Skin", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This texture was obtainable from a season and can be unlocked through trading, but its overall price depends on rarity and can also potentially vary due to subjective player preference for cosmetics.", tags:"Very Low Tier, Limited, S4", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Tiger", type:"Weapon Skin", value:15000, duped:7500, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This texture was obtainable from a season and can be unlocked through trading, but its overall price depends on rarity and can also potentially vary due to subjective player preference for cosmetics.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Wooden Toy", type:"Weapon Skin", value:15000, duped:7500, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This texture was obtainable from a season and can be unlocked through trading, but its overall price depends on rarity and can also potentially vary due to subjective player preference for cosmetics.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
@@ -659,10 +659,10 @@ const ITEMS = [
   { name:"Nukamo Fridge", type:"Furniture", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S12", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"80S Cassette Table", type:"Furniture", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S23", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Car Pool Table", type:"Furniture", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S6", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
-  { name:"Banana Chandelier", type:"Furniture", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This furniture item was obtainable during a season and can now only be traded for. The value of this item is subjective and might vary, as it will likely only receive offers from collectors due to its wall placement and below", tags:"Very Low Tier Limited, S26", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
-  { name:"Pirate Figurehead", type:"Furniture", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This furniture item was obtainable during a season and can now only be traded for. The value of this item is subjective and might vary, as it will likely only receive offers from collectors due to its wall placement and below", tags:"Very Low Tier Limited, S27", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
-  { name:"Avatar Wardrobe", type:"Furniture", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier Limited, S29", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
-  { name:"Haunting Door", type:"Furniture", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier Limited, S30", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
+  { name:"Banana Chandelier", type:"Furniture", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This furniture item was obtainable during a season and can now only be traded for. The value of this item is subjective and might vary, as it will likely only receive offers from collectors due to its wall placement and below", tags:"Very Low Tier, Limited, S26", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
+  { name:"Pirate Figurehead", type:"Furniture", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This furniture item was obtainable during a season and can now only be traded for. The value of this item is subjective and might vary, as it will likely only receive offers from collectors due to its wall placement and below", tags:"Very Low Tier, Limited, S27", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
+  { name:"Avatar Wardrobe", type:"Furniture", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S29", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
+  { name:"Haunting Door", type:"Furniture", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S30", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Aurora Chandelier", type:"Furniture", value:250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S19", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"French Croissant Sofa", type:"Furniture", value:250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S17", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Giant OG Snowman", type:"Furniture", value:250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S21", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
@@ -777,7 +777,7 @@ const ITEMS = [
   // ════════════ TIRE STICKERS ════════════════════════════════════════
   { name:"Blue50", type:"Tire Sticker", value:8000000, duped:null, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Mid Tier, Limited, Rare, OG S3", updatedAt:_ago(0,0), obtainable:false, remarks:"COLLECTORS ITEM, FREQUENTLY AVOIDED AND LOWBALLED BY REGULAR TRADERS", pullValue:"-1M", image:"" },
   { name:"Red50", type:"Tire Sticker", value:3000000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Low Tier, Limited, OG S3, Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"FREQUENTLY AVOIDED AND LOWBALLED", pullValue:"=0M", image:"" },
-  { name:"Japanese", type:"Tire Sticker", value:2500000, duped:null, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This tire is obtainable through various safes, and its trading value is subjective based on the tier of safes it can be earned from. The higher-tier safe tires will have more value.", tags:"Low Tier, Retired. Rare, Limited", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND, FREQUENTLY AVOIDED", pullValue:"=0M", image:"" },
+  { name:"Japanese", type:"Tire Sticker", value:2500000, duped:null, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This tire is obtainable through various safes, and its trading value is subjective based on the tier of safes it can be earned from. The higher-tier safe tires will have more value.", tags:"Low Tier, Retired, Rare, Limited", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND, FREQUENTLY AVOIDED", pullValue:"=0M", image:"" },
   { name:"Jailbreak Army", type:"Tire Sticker", value:2000000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This tire was obtainable during a season and can now only be traded for. The value of this tire is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Low Tier, Limited, S12, Rare To Find", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND, FREQUENTLY AVOIDED", pullValue:"=0M", image:"" },
   { name:"Colors Of Italy", type:"Tire Sticker", value:1500000, duped:null, demand:"Minimal", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This spoiler was obtainable during a season and can now only be traded for. The value of this spoiler is subjective and might vary, as this item will likely only receive offers from serious collectors.", tags:"Very Low Tier, Limited, S19", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Blue S3", type:"Tire Sticker", value:1000000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This tire was obtainable during a season and can now only be traded for. The value of this tire is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, OG S3, Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND", pullValue:"=0M", image:"" },
@@ -786,7 +786,7 @@ const ITEMS = [
   { name:"80S Style", type:"Tire Sticker", value:750000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This tire was obtainable during a season and can now only be traded for. The value of this tire is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, Retired", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND", pullValue:"=0M", image:"" },
   { name:"Kanagawa", type:"Tire Sticker", value:750000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This tire was obtainable during a season and can now only be traded for. The value of this tire is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, S15", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Red S3", type:"Tire Sticker", value:750000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This tire was obtainable during a season and can now only be traded for. The value of this tire is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, OG S3, Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND", pullValue:"=0M", image:"" },
-  { name:"Arch9000 Glow", type:"Tire Sticker", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This tire was obtainable during a season and can now only be traded for. The value of this tire is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier Limited, S28", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
+  { name:"Arch9000 Glow", type:"Tire Sticker", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This tire was obtainable during a season and can now only be traded for. The value of this tire is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, S28", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Buoy", type:"Tire Sticker", value:250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This tire was obtainable during a season and can now only be traded for. The value of this tire is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, S16", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Champion", type:"Tire Sticker", value:250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This tire was obtainable during a season and can now only be traded for. The value of this tire is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, S14", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Flags Of Europe", type:"Tire Sticker", value:250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This tire was obtainable during a season and can now only be traded for. The value of this tire is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, S17", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
@@ -794,7 +794,7 @@ const ITEMS = [
   { name:"Lightning", type:"Tire Sticker", value:190000, duped:200000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This texture was obtainable from a season and can be unlocked through trading, but its overall price depends on rarity and can also potentially vary due to subjective player preference for cosmetics.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"+10K / +90K", image:"" },
   { name:"Speed", type:"Tire Sticker", value:50000, duped:25000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This tire is obtainable through various safes, and its trading value is subjective based on the tier of safes it can be earned from. The higher-tier safe tires will have more value.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Usa", type:"Tire Sticker", value:50000, duped:25000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This tire is currently obtainable and can be purchased in the garage for in-game money. Due to this, it has little value in trading, but has been listed here as a reference guide.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
-  { name:"Skull And Sails", type:"Tire Sticker", value:50000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This tire was obtainable during a season and can now only be traded for. The value of this tire is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier. Limited, S27", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M / =0M", image:"" },
+  { name:"Skull And Sails", type:"Tire Sticker", value:50000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This tire was obtainable during a season and can now only be traded for. The value of this tire is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Limited, S27", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Badonuts", type:"Tire Sticker", value:35000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Tracer", type:"Tire Sticker", value:35000, duped:17500, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This tire is obtainable through various safes, and its trading value is subjective based on the tier of safes it can be earned from. The higher-tier safe tires will have more value.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Radar", type:"Tire Sticker", value:30000, duped:15000, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This rim was obtainable during a season and can now only be traded for. The value of this rim is subjective and might vary, as this item will likely only receive offers from collectors.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
@@ -840,7 +840,7 @@ const ITEMS = [
   // ════════════ HORNS ════════════════════════════════════════
   { name:"Cucaracha", type:"Horn", value:1250000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This vehicle horn was obtainable during a season, but it often receives frequent lowball offers and has extremely low demand. The only time you should trade for this horn is if you're collecting it.", tags:"Very Low Tier, Limited, S9, Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND, FREQUENTLY AVOIDED", pullValue:"=0M", image:"" },
   { name:"Winner", type:"Horn", value:750000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This vehicle horn was obtainable during a season, but it often receives frequent lowball offers and has extremely low demand. The only time you should trade for this horn is if you're collecting it.", tags:"Very Low Tier, Limited, S12, Rare", updatedAt:_ago(0,0), obtainable:false, remarks:"RARE TO FIND", pullValue:"=0M", image:"" },
-  { name:"Champions Trumpet", type:"Horn", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier Limited, S14", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
+  { name:"Champions Trumpet", type:"Horn", value:500000, duped:null, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Limited, S14", updatedAt:_ago(0,0), obtainable:false, remarks:"", pullValue:"=0M", image:"" },
   { name:"Sendoff", type:"Horn", value:35000, duped:17500, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Quack", type:"Horn", value:35000, duped:17500, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This vehicle horn can currently be purchased and obtained from the garage. It won't get anything in trading and is solely listed as a reference; we only recommend buying it if you like the sound.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
   { name:"Airhorn", type:"Horn", value:35000, duped:17500, demand:"Nonexistent", dupedDemand:null, trend:"", change:"", dupeChange:null, demandChange:"", trendChange:"", description:"This vehicle horn can currently be purchased and obtained from the garage. It won't get anything in trading and is solely listed as a reference; we only recommend buying it if you like the sound.", tags:"Very Low Tier, Obtainable", updatedAt:_ago(0,0), obtainable:true, remarks:"", pullValue:"=0M / =0M", image:"" },
@@ -1006,8 +1006,10 @@ function isObtainableLimited(item) {
 
 // ── STATE ─────────────────────────────────────────────────────
 const state = {
-  mode:'card', search:'', type:'', demand:'', trend:'', tag:'',
-  sortKey:'value', sortDir:'desc', page:1
+  mode: 'card', search: '', type: '', demand: '', trend: '', tag: '',
+  sortKey: 'value', sortDir: 'desc', page: 1,
+  season: '', obtainableOnly: false, priceMin: '', priceMax: '',
+  tier: '',
 };
 
 // ── HELPERS ───────────────────────────────────────────────────
@@ -1027,7 +1029,7 @@ function demandClass(d) {
   }[d] || '';
 }
 function trendClass(t) {
-  return {Stable:'t-stable',Hyped:'t-hyped',Rising:'t-rising',Falling:'t-falling'}[t]||'';
+  return {Stable:'t-stable',Hyped:'t-hyped',Rising:'t-rising',Falling:'t-falling', Manipulated:'t-manipulated', Stacked:'t-stacked'}[t]||'';
 }
 function typeClass(t) {
   return {
@@ -1038,7 +1040,7 @@ function typeClass(t) {
   }[t]||'';
 }
 
-const TREND_ICON = {Stable:'—', Hyped:'🔥', Rising:'▲', Falling:'▼'};
+const TREND_ICON = {Stable:'—', Hyped:'🔥', Rising:'▲', Falling:'▼', Stacked:'📦', Manipulated:'⚠️'};
 
 function fmtChange(c) {
   if (!c) return c;
@@ -1112,22 +1114,48 @@ function rowImgHTML(item) {
 }
 
 // ── FILTER + SORT ─────────────────────────────────────────────
+// ── PRICE PARSER — supports "1M", "50K", raw numbers ─────────
+function parsePrice(str) {
+  if (!str || str.trim() === '') return null;
+  const s = str.trim().toUpperCase();
+  if (s.endsWith('M')) return parseFloat(s) * 1_000_000;
+  if (s.endsWith('K')) return parseFloat(s) * 1_000;
+  return parseFloat(s) || null;
+}
+
+// ── SEASON MATCHER ─────────────────────────────────────────────
+function matchesSeason(tags, season) {
+  if (!tags) return false;
+  const parts = tags.split(',').map(t => t.trim());
+  if (season === 'OG') return parts.some(t => t.toUpperCase().startsWith('OG'));
+  return parts.some(t => t.toUpperCase() === season.toUpperCase());
+}
+
+// ── FILTER + SORT ─────────────────────────────────────────────
 function getFiltered() {
   let list = [...ITEMS];
-  if (state.search) { const q=state.search.toLowerCase(); list=list.filter(i=>i.name.toLowerCase().includes(q)); }
-  if (state.type)   list = list.filter(i=>i.type===state.type);
-  if (state.demand) list = list.filter(i=>i.demand===state.demand);
-  if (state.trend)  list = list.filter(i=>i.trend===state.trend);
-  if (state.tag) list = list.filter(i => i.tags && i.tags.toLowerCase().includes(state.tag.toLowerCase()));
+  if (state.search)        { const q=state.search.toLowerCase(); list=list.filter(i=>i.name.toLowerCase().includes(q)); }
+  if (state.type)            list = list.filter(i => i.type === state.type);
+  if (state.demand)          list = list.filter(i => i.demand === state.demand);
+  if (state.trend)           list = list.filter(i => i.trend === state.trend);
+  if (state.tag)             list = list.filter(i => i.tags && i.tags.toLowerCase().includes(state.tag.toLowerCase()));
+  if (state.tier)            list = list.filter(i => i.tags && i.tags.toLowerCase().includes(state.tier.toLowerCase()));
+  if (state.season)          list = list.filter(i => matchesSeason(i.tags, state.season));
+  if (state.obtainableOnly)  list = list.filter(i => i.obtainable === true);
+  const pMin = parsePrice(state.priceMin);
+  const pMax = parsePrice(state.priceMax);
+  if (pMin !== null) list = list.filter(i => i.value >= pMin);
+  if (pMax !== null) list = list.filter(i => i.value <= pMax);
+
   list.sort((a,b)=>{
-    let av,bv;
-    if      (state.sortKey==='name')   {av=a.name.toLowerCase();      bv=b.name.toLowerCase();}
-    else if (state.sortKey==='value')  {av=a.value;                   bv=b.value;}
-    else if (state.sortKey==='demand') {av=DEMAND_ORDER[a.demand]||0; bv=DEMAND_ORDER[b.demand]||0;}
-    else if (state.sortKey==='type')   {av=a.type.toLowerCase();      bv=b.type.toLowerCase();}
+    let av, bv;
+    if      (state.sortKey==='name')   { av=a.name.toLowerCase();      bv=b.name.toLowerCase(); }
+    else if (state.sortKey==='value')  { av=a.value;                   bv=b.value; }
+    else if (state.sortKey==='demand') { av=DEMAND_ORDER[a.demand]||0; bv=DEMAND_ORDER[b.demand]||0; }
+    else if (state.sortKey==='type')   { av=a.type.toLowerCase();      bv=b.type.toLowerCase(); }
     else return 0;
-    if (av<bv) return state.sortDir==='asc'?-1:1;
-    if (av>bv) return state.sortDir==='asc'?1:-1;
+    if (av<bv) return state.sortDir==='asc' ? -1 : 1;
+    if (av>bv) return state.sortDir==='asc' ?  1 : -1;
     return 0;
   });
   return list;
@@ -1229,10 +1257,14 @@ function render() {
   cardEl.style.display   = state.mode === 'card'      ? 'grid'  : 'none';
   changeEl.style.display = state.mode === 'changelog' ? 'block' : 'none';
 
-  if (state.mode === 'card') renderCards(items);
-  else                       renderChangelog();
-
-  renderPagination(items.length);
+  if (state.mode === 'card') {
+    renderCards(items);
+    renderPagination(items.length);
+  } else {
+    renderChangelog();
+    const pgEl = document.getElementById('pagination');
+    if (pgEl) pgEl.innerHTML = '';
+  }
 }
 
 // ── MODAL ─────────────────────────────────────────────────────
@@ -1353,47 +1385,241 @@ function initSortHeaders() {
   });
 }
 
-// ── INIT ──────────────────────────────────────────────────────
-document.querySelectorAll('.mode-btn').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      state.mode=btn.dataset.mode; state.page=1;
-      document.querySelectorAll('.mode-btn').forEach(b=>b.classList.toggle('active',b.dataset.mode===state.mode));
-      render();
-    });
-  });
+// ── FILTER BADGE UPDATE ───────────────────────────────────────
+function updateFilterBadge() {
+  let count = 0;
+  if (state.type)         count++;
+  if (state.demand)       count++;
+  if (state.trend)        count++;
+  if (state.season)       count++;
+  if (state.tag)          count++;
+  if (state.tier)         count++;
+  if (state.obtainableOnly) count++;
+  if (parsePrice(state.priceMin) !== null) count++;
+  if (parsePrice(state.priceMax) !== null) count++;
 
-  const searchEl=document.getElementById('search-input');
-  if(searchEl) searchEl.addEventListener('input',e=>{state.search=e.target.value.trim();state.page=1;render();});
+  const badge   = document.getElementById('filter-active-count');
+  const summary = document.getElementById('active-filter-summary');
+  const btn     = document.getElementById('filter-toggle-btn');
+  if (badge)   { badge.textContent = count; badge.style.display = count > 0 ? 'inline-flex' : 'none'; }
+  if (btn)     btn.classList.toggle('has-active', count > 0);
+if (summary) summary.textContent = count === 0 ? 'No active filters' : `${count} filter${count !== 1 ? 's' : ''} active`;
+  updateGroupDots();
+}
 
-  ['type','demand','trend'].forEach(id=>{
-    const el=document.getElementById(`${id}-filter`);
-    if(el) el.addEventListener('change',e=>{state[id]=e.target.value;state.page=1;render();});
+// ── MODE BUTTONS ──────────────────────────────────────────────
+document.querySelectorAll('.mode-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    state.mode = btn.dataset.mode; state.page = 1;
+    document.querySelectorAll('.mode-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === state.mode));
+    render();
   });
-  // Auto-populate tag filter from ITEMS data
-  const tagSet = new Set();
-  ITEMS.forEach(item => {
-     if (item.tags) item.tags.split(',').forEach(t => {
-      const clean = t.trim();
-      if (clean) tagSet.add(clean);
-    });
-  });
-const tagEl = document.getElementById('tag-filter');
-[...tagSet].sort().forEach(tag => {
-  const opt = document.createElement('option');
-  opt.value = tag; opt.textContent = tag;
-  tagEl.appendChild(opt);
 });
 
-tagEl.addEventListener('change', e => { state.tag = e.target.value; state.page = 1; render(); });
-  const overlay=document.getElementById('modal-overlay');
-  if(overlay){
-    document.getElementById('modal-close').addEventListener('click',closeModal);
-    overlay.addEventListener('click',e=>{if(e.target===overlay)closeModal();});
-    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.classList.contains('open'))closeModal();});
-  }
+// ── SEARCH ────────────────────────────────────────────────────
+const searchEl = document.getElementById('search-input');
+if (searchEl) searchEl.addEventListener('input', e => { state.search = e.target.value.trim(); state.page = 1; render(); });
 
-  initSortHeaders();
-  render();
- const params = new URLSearchParams(window.location.search);
-  const itemParam = params.get('item');
-  if (itemParam) openModal(decodeURIComponent(itemParam));
+// ── FILTER PANEL TOGGLE ───────────────────────────────────────
+const filterToggleBtn = document.getElementById('filter-toggle-btn');
+const filterPanel     = document.getElementById('filter-panel');
+if (filterToggleBtn && filterPanel) {
+  filterToggleBtn.addEventListener('click', () => {
+    const open = filterPanel.style.display === 'none';
+    filterPanel.style.display = open ? 'flex' : 'none';
+    filterToggleBtn.classList.toggle('has-active', open || document.getElementById('filter-active-count').style.display !== 'none');
+  });
+}
+
+// ── CHIP FILTERS (type / demand / trend / season / tag) ───────
+document.querySelectorAll('.filter-chip[data-filter]').forEach(chip => {
+  chip.addEventListener('click', () => {
+    const filter = chip.dataset.filter;
+    const val    = chip.dataset.val;
+    // Deactivate siblings, activate this
+    document.querySelectorAll(`.filter-chip[data-filter="${filter}"]`).forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    state[filter] = val;
+    state.page = 1;
+    updateFilterBadge();
+    render();
+  });
+});
+
+// ── PRICE RANGE ───────────────────────────────────────────────
+['price-min','price-max'].forEach(id => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.addEventListener('input', e => {
+    state[id === 'price-min' ? 'priceMin' : 'priceMax'] = e.target.value;
+    state.page = 1;
+    updateFilterBadge();
+    render();
+  });
+});
+
+// ── OBTAINABLE TOGGLE ─────────────────────────────────────────
+const obToggle = document.getElementById('obtainable-toggle');
+const obWrap   = document.getElementById('obtainable-toggle-wrap');
+if (obWrap && obToggle) {
+  obWrap.addEventListener('click', () => {
+    state.obtainableOnly = !state.obtainableOnly;
+    obToggle.classList.toggle('on', state.obtainableOnly);
+    state.page = 1;
+    updateFilterBadge();
+    render();
+  });
+}
+
+// ── SORT CHIPS ────────────────────────────────────────────────
+document.querySelectorAll('.sort-chip[data-sort]').forEach(chip => {
+  chip.addEventListener('click', () => {
+    const key = chip.dataset.sort;
+    if (state.sortKey === key) {
+      state.sortDir = state.sortDir === 'asc' ? 'desc' : 'asc';
+    } else {
+      state.sortKey = key;
+      state.sortDir = (key === 'name' || key === 'type') ? 'asc' : 'desc';
+    }
+    // Update sort chip UI
+    document.querySelectorAll('.sort-chip').forEach(c => {
+      c.classList.remove('active');
+      const arrow = c.querySelector('.sort-arrow-icon');
+      if (arrow) arrow.textContent = '↕';
+    });
+    chip.classList.add('active');
+    const activeArrow = chip.querySelector('.sort-arrow-icon');
+    if (activeArrow) activeArrow.textContent = state.sortDir === 'asc' ? '↑' : '↓';
+    state.page = 1;
+    render();
+  });
+});
+
+// ── CLEAR ALL ─────────────────────────────────────────────────
+const clearBtn = document.getElementById('clear-filters-btn');
+if (clearBtn) {
+  clearBtn.addEventListener('click', () => {
+    state.type = ''; state.demand = ''; state.trend = '';
+    state.season = ''; state.tag = ''; state.tier = '';
+    state.obtainableOnly = false; state.priceMin = ''; state.priceMax = '';
+    state.page = 1;
+    // Reset chip UI
+    document.querySelectorAll('.filter-chip[data-filter]').forEach(c => {
+      c.classList.toggle('active', c.dataset.val === '');
+    });
+    // Reset toggles + inputs
+    if (obToggle) obToggle.classList.remove('on');
+    const pmEl = document.getElementById('price-min'); if (pmEl) pmEl.value = '';
+    const pxEl = document.getElementById('price-max'); if (pxEl) pxEl.value = '';
+    updateFilterBadge();
+    render();
+  });
+}
+
+// ── AUTO-POPULATE SEASON CHIPS ────────────────────────────────
+(function populateSeasons() {
+  const seasonSet = new Set();
+  let hasOG = false;
+  ITEMS.forEach(item => {
+    if (!item.tags) return;
+    item.tags.split(',').forEach(t => {
+      const trimmed = t.trim();
+      if (/^S\d+$/i.test(trimmed)) seasonSet.add(trimmed.toUpperCase());
+      if (trimmed.toUpperCase().startsWith('OG')) hasOG = true;
+    });
+  });
+  const sorted = [...seasonSet].sort((a, b) => parseInt(a.slice(1)) - parseInt(b.slice(1)));
+  if (hasOG) sorted.push('OG');
+
+  const container = document.getElementById('fc-season');
+  if (!container) return;
+  sorted.forEach(s => {
+    const btn = document.createElement('button');
+    btn.className = `filter-chip ${s === 'OG' ? 'og-chip' : 'season-chip'}`;
+    btn.dataset.filter = 'season';
+    btn.dataset.val    = s;
+    btn.textContent    = s;
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-chip[data-filter="season"]').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      state.season = s; state.page = 1;
+      updateFilterBadge(); render();
+    });
+    container.appendChild(btn);
+  });
+})();
+
+// ── AUTO-POPULATE TAG CHIPS ───────────────────────────────────
+(function populateTags() {
+const skipPattern = /^(S\d+|OG.*|L\d+\..*|DU.*|Max Tier|High Tier|Mid Tier|Low Tier|Very Low Tier)$/i;
+  // Normalize: lowercase for dedup key, display original casing of first seen
+  const tagMap = new Map(); // normalizedKey -> display label
+  ITEMS.forEach(item => {
+    if (!item.tags) return;
+    item.tags.split(',').forEach(t => {
+      const clean = t.trim().replace(/\.$/, ''); // strip trailing period
+      if (!clean || skipPattern.test(clean)) return;
+      const key = clean.toLowerCase();
+      if (!tagMap.has(key)) tagMap.set(key, clean);
+    });
+  });
+  // Replace tagSet usage below with tagMap
+  const tagSet = { [Symbol.iterator]: () => tagMap.values() };
+  const container = document.getElementById('fc-tag');
+  if (!container) return;
+  [...tagSet].sort().forEach(tag => {
+    const btn = document.createElement('button');
+    btn.className      = 'filter-chip';
+    btn.dataset.filter = 'tag';
+    btn.dataset.val    = tag;
+    btn.textContent    = tag;
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-chip[data-filter="tag"]').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      state.tag = tag; state.page = 1;
+      updateFilterBadge(); render();
+    });
+    container.appendChild(btn);
+  });
+})();
+
+// ── COLLAPSIBLE FILTER GROUPS ─────────────────────────────────
+document.querySelectorAll('.filter-group-header[data-group]').forEach(header => {
+  header.addEventListener('click', () => {
+    const group = document.getElementById(header.dataset.group);
+    if (group) group.classList.toggle('collapsed');
+  });
+});
+
+// Mark group as having an active filter (for the dot indicator)
+function updateGroupDots() {
+  const groupFilterMap = {
+    'fg-type':   'type',
+    'fg-demand': 'demand',
+    'fg-trend':  'trend',
+    'fg-season': 'season',
+    'fg-tag':    'tag',
+  };
+  Object.entries(groupFilterMap).forEach(([groupId, stateKey]) => {
+    const group = document.getElementById(groupId);
+    if (group) group.classList.toggle('has-active-filter', !!state[stateKey]);
+  });
+}
+
+// ── MODAL ─────────────────────────────────────────────────────
+const overlay = document.getElementById('modal-overlay');
+if (overlay) {
+  document.getElementById('modal-close').addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal(); });
+}
+
+// ── SORT HEADERS (table) + INITIAL RENDER ─────────────────────
+initSortHeaders();
+render();
+updateFilterBadge();
+
+// ── URL DEEP LINK ─────────────────────────────────────────────
+const params = new URLSearchParams(window.location.search);
+const itemParam = params.get('item');
+if (itemParam) openModal(decodeURIComponent(itemParam));

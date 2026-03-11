@@ -44,6 +44,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
         <span>Info</span>
       </a>
+      <a href="quiz.html" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span>Quiz</span>
+      </a>
       <a href="teams.html" class="nav-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         <span>Team</span>
@@ -61,78 +65,160 @@
   <!-- ── MAIN ─────────────────────────────────────────────── -->
   <main class="values-main">
 
-    <div class="values-toolbar">
+<div class="values-toolbar" id="values-toolbar">
 
-      <!-- Row 1: Mode toggle + search + item count -->
-      <div class="toolbar-row">
-        <div class="mode-toggle" role="group" aria-label="View mode">
-          <button class="mode-btn active" data-mode="card">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
-              <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
-            </svg>
-            Card
-          </button>
-          <button class="mode-btn" data-mode="changelog">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
-            </svg>
-            Changelog
-          </button>
-        </div>
+  <!-- ── Always-visible top bar ── -->
+  <div class="toolbar-top">
+    <div class="mode-toggle" role="group" aria-label="View mode">
+      <button class="mode-btn active" data-mode="card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+          <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+        </svg>Card
+      </button>
+      <button class="mode-btn" data-mode="changelog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+        </svg>Changelog
+      </button>
+    </div>
 
-        <div class="search-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-          </svg>
-          <input type="text" id="search-input" class="search-input" placeholder="Search items…" autocomplete="off" />
-        </div>
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input type="text" id="search-input" class="search-input" placeholder="Search items…" autocomplete="off" />
+    </div>
 
-        <span class="item-count" id="item-count"></span>
-      </div>
+    <button class="filter-toggle-btn" id="filter-toggle-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/>
+      </svg>
+      Filters
+      <span class="filter-active-count" id="filter-active-count" style="display:none"></span>
+    </button>
 
-      <!-- Row 2: Type + Demand + Trend + Tag filters -->
-      <div class="toolbar-row">
-        <select class="filter-select" id="type-filter">
-          <option value="">All Types</option>
-          <option value="Vehicle">Vehicles</option>
-          <option value="Spoiler">Spoilers</option>
-          <option value="Texture">Textures</option>
-          <option value="Color">Colors</option>
-          <option value="Rim">Rims</option>
-          <option value="Drift">Drifts</option>
-          <option value="Horn">Horns</option>
-          <option value="Furniture">Furnitures</option>
-          <option value="Tyre Style">Tyre Styles</option>
-          <option value="Tyre Sticker">Tyre Stickers</option>
-          <option value="Weapon Skin">Weapon Skins</option>
-        </select>
+    <span class="item-count" id="item-count"></span>
+  </div>
 
-        <select class="filter-select" id="demand-filter">
-          <option value="">All Demands</option>
-          <option value="Extraordinary">Extraordinary</option>
-          <option value="High">High</option>
-          <option value="Solid">Solid</option>
-          <option value="Average">Average</option>
-          <option value="Medium">Medium</option>
-          <option value="Low">Low</option>
-          <option value="Minimal">Minimal</option>
-          <option value="Nonexistent">Nonexistent</option>
-        </select>
+  <!-- ── Expandable filter panel ── -->
+  <div class="filter-panel" id="filter-panel" style="display:none;">
 
-        <select class="filter-select" id="trend-filter">
-          <option value="">All Trends</option>
-          <option value="Stable">Stable</option>
-          <option value="Hyped">Hyped</option>
-          <option value="Rising">Rising</option>
-          <option value="Falling">Falling</option>
-        </select>
-
-        <select class="filter-select" id="tag-filter">
-          <option value="">All Tags</option>
-        </select>
+    <!-- Type -->
+    <div class="filter-group">
+      <div class="filter-group-label">Type</div>
+      <div class="filter-chips" id="fc-type">
+        <button class="filter-chip active" data-filter="type" data-val="">All</button>
+        <button class="filter-chip" data-filter="type" data-val="Vehicle">Vehicle</button>
+        <button class="filter-chip" data-filter="type" data-val="Spoiler">Spoiler</button>
+        <button class="filter-chip" data-filter="type" data-val="Texture">Texture</button>
+        <button class="filter-chip" data-filter="type" data-val="Color">Color</button>
+        <button class="filter-chip" data-filter="type" data-val="Rim">Rim</button>
+        <button class="filter-chip" data-filter="type" data-val="Drift">Drift</button>
+        <button class="filter-chip" data-filter="type" data-val="Horn">Horn</button>
+        <button class="filter-chip" data-filter="type" data-val="Furniture">Furniture</button>
+        <button class="filter-chip" data-filter="type" data-val="Tyre Style">Tyre Style</button>
+        <button class="filter-chip" data-filter="type" data-val="Tyre Sticker">Tyre Sticker</button>
+        <button class="filter-chip" data-filter="type" data-val="Weapon Skin">Weapon Skin</button>
       </div>
     </div>
+
+    <!-- Demand -->
+    <div class="filter-group">
+      <div class="filter-group-label">Demand</div>
+      <div class="filter-chips" id="fc-demand">
+        <button class="filter-chip active" data-filter="demand" data-val="">All</button>
+        <button class="filter-chip fcd-Extraordinary" data-filter="demand" data-val="Extraordinary">Extraordinary</button>
+        <button class="filter-chip fcd-High"          data-filter="demand" data-val="High">High</button>
+        <button class="filter-chip fcd-Solid"         data-filter="demand" data-val="Solid">Solid</button>
+        <button class="filter-chip fcd-Average"       data-filter="demand" data-val="Average">Average</button>
+        <button class="filter-chip fcd-Medium"        data-filter="demand" data-val="Medium">Medium</button>
+        <button class="filter-chip fcd-Low"           data-filter="demand" data-val="Low">Low</button>
+        <button class="filter-chip fcd-Minimal"       data-filter="demand" data-val="Minimal">Minimal</button>
+        <button class="filter-chip fcd-Nonexistent"   data-filter="demand" data-val="Nonexistent">Nonexistent</button>
+      </div>
+    </div>
+
+    <!-- Trend -->
+    <div class="filter-group">
+      <div class="filter-group-label">Trend</div>
+      <div class="filter-chips" id="fc-trend">
+        <button class="filter-chip active" data-filter="trend" data-val="">All</button>
+        <button class="filter-chip fct-Stable"  data-filter="trend" data-val="Stable">— Stable</button>
+        <button class="filter-chip fct-Hyped"   data-filter="trend" data-val="Hyped">🔥 Hyped</button>
+        <button class="filter-chip fct-Rising"  data-filter="trend" data-val="Rising">▲ Rising</button>
+        <button class="filter-chip fct-Falling" data-filter="trend" data-val="Falling">▼ Falling</button>
+        <button class="filter-chip fct-Stacked"     data-filter="trend" data-val="Stacked">📦 Stacked</button>
+        <button class="filter-chip fct-Manipulated" data-filter="trend" data-val="Manipulated">⚠️ Manipulated</button>
+      </div>
+    </div>
+
+    <!-- Season — auto-populated by JS -->
+    <div class="filter-group">
+      <div class="filter-group-label">Season</div>
+<div class="filter-chips" id="fc-season">
+        <button class="filter-chip active" data-filter="season" data-val="">All</button>
+      </div>
+    </div>
+
+    <!-- Tags — auto-populated by JS -->
+    <div class="filter-group">
+      <div class="filter-group-label">Tags</div>
+      <div class="filter-chips" id="fc-tag">
+        <button class="filter-chip active" data-filter="tag" data-val="">All</button>
+      </div>
+    </div>
+
+
+<!-- Tiers -->
+<div class="filter-group">
+  <div class="filter-group-label">Tier</div>
+  <div class="filter-chips" id="fc-tier">
+    <button class="filter-chip active" data-filter="tier" data-val="">All</button>
+    <button class="filter-chip" data-filter="tier" data-val="Max Tier">Max Tier</button>
+    <button class="filter-chip" data-filter="tier" data-val="High Tier">High Tier</button>
+    <button class="filter-chip" data-filter="tier" data-val="Mid Tier">Mid Tier</button>
+    <button class="filter-chip" data-filter="tier" data-val="Low Tier">Low Tier</button>
+    <button class="filter-chip" data-filter="tier" data-val="Very Low Tier">Very Low Tier</button>
+  </div>
+</div>
+
+    <!-- Price Range + Obtainable toggle -->
+    <div class="filter-bottom-row">
+      <div class="filter-group" style="flex-direction:row;align-items:center;gap:10px;">
+        <div class="filter-group-label" style="margin-bottom:0;white-space:nowrap;">Price Range</div>
+        <div class="price-range-wrap">
+          <input type="text" class="price-input" id="price-min" placeholder="Min e.g. 1M" autocomplete="off" />
+          <span class="price-sep">—</span>
+          <input type="text" class="price-input" id="price-max" placeholder="Max e.g. 50M" autocomplete="off" />
+        </div>
+      </div>
+
+      <label class="obtainable-toggle-wrap" id="obtainable-toggle-wrap">
+        <div class="toggle-switch" id="obtainable-toggle"></div>
+        <span class="obtainable-toggle-label">Obtainable Only</span>
+      </label>
+    </div>
+
+    <!-- Sort -->
+    <div class="filter-group">
+      <div class="filter-group-label">Sort By</div>
+      <div class="sort-row" id="sort-chips">
+        <button class="sort-chip active" data-sort="value">Value <span class="sort-arrow-icon" id="sa-value">↓</span></button>
+        <button class="sort-chip" data-sort="name">Name <span class="sort-arrow-icon" id="sa-name">↕</span></button>
+        <button class="sort-chip" data-sort="demand">Demand <span class="sort-arrow-icon" id="sa-demand">↕</span></button>
+        <button class="sort-chip" data-sort="type">Type <span class="sort-arrow-icon" id="sa-type">↕</span></button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="filter-footer">
+      <span class="active-filter-summary" id="active-filter-summary">No active filters</span>
+      <button class="clear-filters-btn" id="clear-filters-btn">✕ Clear All</button>
+    </div>
+
+  </div><!-- /filter-panel -->
+</div><!-- /values-toolbar -->
 
     <!-- Pagination (top) -->
     <div class="pagination" id="pagination" style="margin-bottom:16px;margin-top:4px;justify-content:flex-start;"></div>
