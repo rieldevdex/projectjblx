@@ -792,19 +792,37 @@ function fmt(n) {
 // ── GENERATE DAILY TRADES (seeded) ───────────────────────────
 function genTrades() {
   const pool = (typeof ITEMS !== 'undefined' ? ITEMS : [])
-    .filter(i => i.value >= 500000 && i.value <= 80000000);
-  if (pool.length < 4) return [];
+    .filter(i => i.value >= 1000000 && i.value <= 30000000);
+  if (pool.length < 8) return [];
   const rng = mulberry32(dateSeed());
-  return Array.from({ length: Q_COUNT }, () => {
+
+  const trades = [];
+  let attempts = 0;
+
+  while (trades.length < Q_COUNT && attempts < 600) {
+    attempts++;
     const gc = Math.floor(rng() * 2) + 1;
     const rc = Math.floor(rng() * 2) + 1;
     const give = Array.from({ length: gc }, () => pool[Math.floor(rng() * pool.length)]);
     const get  = Array.from({ length: rc }, () => pool[Math.floor(rng() * pool.length)]);
+
+    // No duplicate item names across both sides
+    const allNames = [...give, ...get].map(i => i.name);
+    if (new Set(allNames).size !== allNames.length) continue;
+
     const offer = give.reduce((s, i) => s + i.value, 0);
     const req   = get.reduce((s, i)  => s + i.value, 0);
-    const pct   = offer > 0 ? ((req - offer) / offer) * 100 : 0;
-    return { give, get, offer, req, pct, ...verdict(pct) };
-  });
+    if (offer === 0) continue;
+
+    const pct = ((req - offer) / offer) * 100;
+
+    // Keep value gap tight enough to make demand matter
+    if (Math.abs(pct) > 14) continue;
+
+    trades.push({ give, get, offer, req, pct, ...verdict(pct) });
+  }
+
+  return trades;
 }
 
 const TRADES = genTrades();
@@ -1049,7 +1067,7 @@ function renderDone(data) {
   if (pct === 100)    { grade = '🏆 Perfect Score';       gradeColor = '#ffd166'; }
   else if (pct >= 80) { grade = '📈 Expert Trader';       gradeColor = '#39e07a'; }
   else if (pct >= 60) { grade = '⚖️ Skilled Trader';      gradeColor = 'var(--accent)'; }
-  else if (pct >= 40) { grade = '📉 Needs More Practice'; gradeColor = '#e07820'; }
+  else if (pct >= 40) { grade = '📉 Rookie Trader'; gradeColor = '#e07820'; }
   else                { grade = '❌ Keep Studying';        gradeColor = '#e03040'; }
 
   const squares = corr.map((c, i) => `<div class="wq ${c?'correct':'wrong'}" style="animation-delay:${i*0.08}s">${c?'✓':'✗'}</div>`).join('');

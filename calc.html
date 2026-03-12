@@ -783,6 +783,60 @@
   transition: width 0.55s var(--ease), background 0.3s;
 }
 
+/* Score breakdown pill */
+.score-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.score-component {
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+.score-component.sc-up { color: #39e07a; background: rgba(57,224,122,0.08); border-color: rgba(57,224,122,0.2); }
+.score-component.sc-dn { color: #e03040; background: rgba(224,48,64,0.08); border-color: rgba(224,48,64,0.2); }
+.score-component.sc-neu { color: var(--text-muted); }
+.score-sep { color: var(--text-muted); font-size: 0.55rem; }
+
+/* Score total badge in verdict */
+.verdict-score-badge {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  color: var(--text-muted);
+  margin-top: 4px;
+  display: inline-block;
+}
+
+/* Disclaimer */
+.summary-disclaimer {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 20px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  background: var(--bg3);
+}
+.summary-disclaimer svg { flex-shrink: 0; opacity: 0.5; }
+.summary-disclaimer a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
 /* ── RESPONSIVE ──────────────────────────────────────────────── */
 @media (max-width: 860px) {
   .trade-arena { grid-template-columns: 1fr; }
@@ -958,70 +1012,11 @@
   </footer>
 
   <!-- Shared values database -->
-  <script src="js/values.js">// ── ABBREVIATION MAP ──────────────────────────────────────────
-const ABBR_MAP = {
-  // Vehicles
-  'jav':'Javelin', 'torp':'Torpedo', 'beig':'Beignet', 'beignet':'Beignet',
-  'cel':'Celsior', 'proto':'Proto-08', 'p08':'Proto-08',
-  'ice':'Icebreaker', 'iceborn':'Iceborn', 'orion':'Orion',
-  'scorp':'Scorpion', 'carb':'Carbonara', 'mac':'Macaron',
-  'parisian':'Parisian', 'aper':'Aperture', 'shogun':'Shogun',
-  'power':'Power-1', 'p1':'Power-1', 'arachnid':'Arachnid',
-  'beam':'Beam Hybrid', 'banana':'Banana Car', 'volt4x4':'Volt 4X4',
-  'crew':'Crew Capsule', 'raptor':'Raptor', 'molten':'Molten M12',
-  // Colors
-  'hs5':'HyperShift 5',   'hs4':'HyperShift 4',
-  'hd5':'HyperDiamond 5', 'hd4':'HyperDiamond 4', 'hd3':'HyperDiamond 3',
-  'hb5':'HyperBlue 5',    'hb4':'HyperBlue 4',    'hb3':'HyperBlue 3',
-  'hp5':'HyperPink 5',    'hp4':'HyperPink 4',     'hp3':'HyperPink 3',
-  'hr5':'HyperRed 5',     'hr4':'HyperRed 4',      'hr3':'HyperRed 3',
-  'hpu5':'HyperPurple 5', 'hpu4':'HyperPurple 4',  'hpu3':'HyperPurple 3',
-  'ho5':'HyperOrange 5',  'ho4':'HyperOrange 4',   'ho3':'HyperOrange 3',
-  'hg5':'HyperGreen 5',   'hg4':'HyperGreen 4',    'hg3':'HyperGreen 3',
-  'hy5':'HyperYellow 5',  'hy4':'HyperYellow 4',   'hy3':'HyperYellow 3',
-  'vanta':'Vantablack',
-  // Rims
-  'void':'Void', 'laser':'Laser Cannon', 'planet':'Planetary',
-};
-
-function parseAbbr(input) {
-  // Split on +, &, comma, or "for" — handle "X for Y" naturally
-  const tokens = input.toLowerCase()
-    .replace(/\bfor\b/g, ',')
-    .split(/[+,&]/)
-    .map(s => s.trim())
-    .filter(Boolean);
-
-  return tokens.map(token => {
-    // Detect trailing 'c' (clean) or 'd' (duped)
-    let isClean = false, isDuped = false, core = token;
-    if (/\s+[cd]$/.test(token)) {
-      const suffix = token.slice(-1);
-      core = token.slice(0, -1).trim();
-      if (suffix === 'c') isClean = true;
-      if (suffix === 'd') isDuped = true;
-    }
-
-    // Look up in abbr map first, then fuzzy match ITEMS
-    const mapped = ABBR_MAP[core];
-    const item = ITEMS.find(i =>
-      i.name.toLowerCase() === (mapped || core) ||
-      i.name.toLowerCase().startsWith(core)
-    );
-
-    if (!item) return null;
-    const useAlt = isDuped && item.duped !== null;
-    return {
-      uid: uid(), item,
-      state: useAlt ? (isObtainableLimited(item) ? 'limited' : 'duped') : 'clean',
-      value: useAlt ? item.duped : item.value,
-      qty: 1
-    };
-  }).filter(Boolean);
-}</script>
+  <script src="js/values.js"></script>
   <script>
 /* ================================================================
-   JBLX TRADE CALCULATOR ENGINE
+   JBLX TRADE CALCULATOR ENGINE  v2
+   Verdict System: Weighted Score (Value ×3 · Demand ×2 · Items ×1)
    Features: quantity stacking · clean/duped/limited toggle ·
              mirror sides · individual/global clear · full summary
 ================================================================ */
@@ -1057,17 +1052,7 @@ function getEntryPull(entry) {
   return parsePullAmt(pv);
 }
 
-// ── VERDICT THRESHOLDS ────────────────────────────────────────
-const VERDICT = [
-  { min:  8,        cls:'s-win',         label:'Win',         emoji:'🏆' },
-  { min:  2,        cls:'s-slight-win',  label:'Slight Win',  emoji:'📈' },
-  { min: -2,        cls:'s-fair',        label:'Fair',        emoji:'⚖️'  },
-  { min: -8,        cls:'s-slight-lose', label:'Slight Lose', emoji:'📉' },
-  { min: -Infinity, cls:'s-lose',        label:'Lose',        emoji:'❌' },
-];
-
 // ── STATE ─────────────────────────────────────────────────────
-// Each entry: { uid, item, state ('clean'|'duped'|'limited'), value (per-item), qty }
 const SIDES = { offer: [], request: [] };
 let _nextUID = 1;
 const uid = () => _nextUID++;
@@ -1078,7 +1063,6 @@ const abbr = name => name.replace(/[^A-Z0-9]/gi,'').slice(0,3).toUpperCase();
 function demandScore(item) { return DEMAND_WEIGHT[item.demand] ?? -1; }
 
 function avgDemand(entries) {
-  // Weighted by qty — uses dupedDemand when item is toggled to duped state
   const rated = entries.filter(e => DEMAND_WEIGHT[e.item.demand] !== undefined);
   if (!rated.length) return null;
   const totalQty = rated.reduce((s,e) => s + e.qty, 0);
@@ -1113,7 +1097,6 @@ function addItem(side, item) {
   const initState = (isLimited && item.duped !== null) ? 'limited' : 'clean';
   const initValue = (isLimited && item.duped !== null) ? item.duped : item.value;
 
-  // Stack: if same item+state already exists, increment qty
   const existing = SIDES[side].find(e => e.item.name === item.name && e.state === initState);
   if (existing) {
     existing.qty++;
@@ -1136,10 +1119,7 @@ function adjustQty(side, id, delta) {
   const e = SIDES[side].find(x => x.uid === id);
   if (!e) return;
   const next = e.qty + delta;
-  if (next <= 0) {
-    removeItem(side, id);
-    return;
-  }
+  if (next <= 0) { removeItem(side, id); return; }
   e.qty = next;
   refreshSelected(side);
   refreshTotal(side);
@@ -1167,7 +1147,6 @@ function toggleCondition(side, id) {
 // ── MIRROR / CLEAR ─────────────────────────────────────────────
 
 function mirrorSide(from, to) {
-  // Deep copy entries to the other side with new UIDs
   SIDES[to] = SIDES[from].map(e => ({ ...e, uid: uid() }));
   refreshSelected(to);
   refreshTotal(to);
@@ -1222,11 +1201,9 @@ function renderDropdown(side, results, q) {
         </svg>Add
       </button>`;
 
-    // Keep dropdown open after add so user can click multiple times
     row.querySelector('.srd-add').addEventListener('click', (ev) => {
       ev.stopPropagation();
       addItem(side, item);
-      // Brief flash on add button to confirm
       const btn = ev.currentTarget;
       btn.textContent = '✓';
       btn.style.background = '#39e07a';
@@ -1343,6 +1320,74 @@ function refreshTotal(side) {
   document.getElementById(`${side}-total`).textContent = fmtValue(total);
 }
 
+// ── TRADE VERDICT ENGINE v2 ────────────────────────────────────
+/*
+  Score formula: tradeScore = (valueScore × 3) + (demandScore × 2) + (itemCountScore × 1)
+
+  VALUE SCORE  — based on how much more you request vs. offer (positive = winning on value)
+  DEMAND SCORE — based on avg demand of your offer vs. request (positive = your offer has higher demand)
+  ITEM COUNT   — penalty when offering more items than requesting (downgrade tax)
+
+  Thresholds: ≥14=Win, 8–13=Slight Win, -7–7=Fair, -13– -8=Slight Lose, ≤-14=Lose
+*/
+
+function calcValueScore(valueAdv) {
+  // valueAdv = requestTotal - offerTotal (positive = you get more than you give = good for you)
+  if      (valueAdv >= 3_000_000)  return +8;
+  else if (valueAdv >= 2_000_000)  return +6;
+  else if (valueAdv >= 1_000_000)  return +4;
+  else if (valueAdv >= 500_000)    return +2;
+  else if (valueAdv > -500_000)    return  0;
+  else if (valueAdv > -1_000_000)  return -2;
+  else if (valueAdv > -2_000_000)  return -4;
+  else if (valueAdv > -3_000_000)  return -6;
+  else                             return -8;
+}
+
+function calcDemandScore(offerDS, requestDS) {
+  if (offerDS === null || requestDS === null) return 0;
+  // Positive = your offer has higher demand = trading leverage
+  const diff = offerDS - requestDS;
+  if      (diff >= 2)  return +2;
+  else if (diff >= 1)  return +1;
+  else if (diff > -1)  return  0;
+  else if (diff > -2)  return -1;
+  else                 return -2;
+}
+
+function calcItemCountScore(offerCount, requestCount, offerTotal, requestTotal) {
+  // Penalty when REQUESTING more items than you offer = downgrade trade (splitting value)
+  // Offering MORE items than you request = consolidation/upgrade = no penalty
+  const extra = requestCount - offerCount;
+  if (extra <= 0) return 0;
+  // Waive penalty if you're getting substantially more value back (≥3M gain)
+  if (requestTotal - offerTotal >= 3_000_000) return 0;
+  if      (extra >= 3) return -3;
+  else if (extra === 2) return -2;
+  else                  return -1;
+}
+
+function getVerdict(score) {
+  if      (score >= 14)  return { cls: 's-win',         label: 'Win',         emoji: '🏆' };
+  else if (score >= 8)   return { cls: 's-slight-win',  label: 'Slight Win',  emoji: '📈' };
+  else if (score >= -7)  return { cls: 's-fair',        label: 'Fair',        emoji: '⚖️'  };
+  else if (score >= -13) return { cls: 's-slight-lose', label: 'Slight Lose', emoji: '📉' };
+  else                   return { cls: 's-lose',        label: 'Lose',        emoji: '❌' };
+}
+
+function calcConfidence(offerDS, requestDS, valueAdv, offerCount, requestCount, extraRequestItems, valueAdj) {
+  let pts = 0;
+  if (offerDS !== null && requestDS !== null && offerDS !== requestDS) pts += 10;
+  if (Math.abs(valueAdv) > 1_000_000) pts += 10;
+  if (offerCount >= 2 && requestCount >= 2) pts += 10;
+  if (extraRequestItems > 0 && Math.abs(valueAdj) < 1_000_000) pts += 10;
+  const pct = Math.min(90, 50 + pts);
+  if (pct >= 80) return { pct, label: 'High',     color: '#39e07a' };
+  if (pct >= 65) return { pct, label: 'Medium',   color: '#e07820' };
+  if (pct >= 50) return { pct, label: 'Low',      color: '#e03040' };
+               return { pct, label: 'Very Low', color: '#6b7280' };
+}
+
 // ── SUMMARY ────────────────────────────────────────────────────
 
 function refreshSummary() {
@@ -1359,79 +1404,65 @@ function refreshSummary() {
     return;
   }
 
-  // Totals (qty-weighted)
+  // ── Totals ──
   const offerTotal   = offer.reduce((s,e)   => s + e.value * e.qty, 0);
   const requestTotal = request.reduce((s,e) => s + e.value * e.qty, 0);
-  const offerPull   = offer.reduce((s,e)   => s + getEntryPull(e) * e.qty, 0);
-  const requestPull = request.reduce((s,e) => s + getEntryPull(e) * e.qty, 0);
-  const offerEffective   = offerTotal   + offerPull;
-  const requestEffective = requestTotal + requestPull;
-  const pullDiff = offerPull - requestPull;
-  const rawDiff      = requestTotal - offerTotal;
-
-  // Item counts (qty-weighted)
   const offerCount   = offer.reduce((s,e)   => s + e.qty, 0);
   const requestCount = request.reduce((s,e) => s + e.qty, 0);
-  const extraOffer   = Math.max(0, offerCount - requestCount);
-  const extraRequest = Math.max(0, requestCount - offerCount);
 
-  // Upgrade / downgrade adjustment
-  const UPGRADE_RATE   = 0.04;
-  const DOWNGRADE_RATE = 0.037;
-  let adjDiff   = rawDiff;
-  let allowance = 0;
-  let tax       = 0;
-  const isUpgrade   = extraOffer   > 0;
-  const isDowngrade = extraRequest > 0;
+  // valueAdv: positive = you request more than you give = value advantage for you
+  const valueAdv = requestTotal - offerTotal;
 
-  if (isUpgrade) {
-    allowance = extraOffer * UPGRADE_RATE * offerTotal;
-    adjDiff   = rawDiff + allowance;
-  } else if (isDowngrade) {
-    tax     = extraRequest * DOWNGRADE_RATE * offerTotal;
-    adjDiff = rawDiff - tax;
-  }
-
-  // Percentage & verdict
-  const pct = offerTotal > 0
-    ? (adjDiff / offerTotal) * 100
-    : (requestTotal > 0 ? 100 : 0);
-  const v = VERDICT.find(x => pct >= x.min);
-
-  // Demand analysis (qty-weighted averages)
-  const offerDS   = avgDemand(offer);
+  // ── Score Components ──
+  const offerDS  = avgDemand(offer);
   const requestDS = avgDemand(request);
-  const demandWarn = offerDS !== null && requestDS !== null && adjDiff > 0 && requestDS < offerDS;
+  const vScore = calcValueScore(valueAdv);
+  const dScore = calcDemandScore(offerDS, requestDS);
+  const extraOfferItems   = Math.max(0, offerCount - requestCount);   // consolidation
+  const extraRequestItems = Math.max(0, requestCount - offerCount);   // downgrade
+  const iScore = calcItemCountScore(offerCount, requestCount, offerTotal, requestTotal);
 
-  // Confidence
-  const ap = Math.abs(pct);
-  let confLabel, confPct, confColor;
-  if      (ap >= 15) { confLabel = 'High';     confPct = 92; confColor = '#39e07a'; }
-  else if (ap >=  6) { confLabel = 'Medium';   confPct = 62; confColor = '#e07820'; }
-  else if (ap >=  2) { confLabel = 'Low';      confPct = 36; confColor = '#e03040'; }
-  else               { confLabel = 'Very Low'; confPct = 14; confColor = '#6b7280'; }
+  const tradeScore = (vScore * 3) + (dScore * 2) + (iScore * 1);
+  const verdict    = getVerdict(tradeScore);
+  const conf       = calcConfidence(offerDS, requestDS, valueAdv, offerCount, requestCount, extraRequestItems, valueAdv);
 
-  // Duped/Limited item count
+  // ── Pull values ──
+  const offerPull   = offer.reduce((s,e)   => s + getEntryPull(e) * e.qty, 0);
+  const requestPull = request.reduce((s,e) => s + getEntryPull(e) * e.qty, 0);
+  const pullDiff    = offerPull - requestPull;
+
+  // ── Alert conditions ──
+  // Downgrade warning: requesting more items without getting enough extra value
+  const showDowngradeWarn = extraRequestItems > 0 && (requestTotal - offerTotal) < 1_000_000;
+  // Demand warning: your offer has lower demand than what you're requesting (hard to get accepted)
+  const demandWarn = offerDS !== null && requestDS !== null && offerDS < requestDS;
+
+  // ── Duped/Limited item count ──
   const totalAlt = [...offer, ...request]
     .filter(e => e.state === 'duped' || e.state === 'limited')
     .reduce((s,e) => s + e.qty, 0);
 
-  // Diff display
-  const diffSign = adjDiff >= 0 ? '+' : '−';
-  const diffAbs  = fmtValue(Math.abs(Math.round(adjDiff)));
-  const diffCls  = adjDiff >= 0 ? 'up' : 'dn';
-  const pctSign  = pct >= 0 ? '+' : '';
+  // ── Score component display helpers ──
+  const vContrib  = vScore * 3;
+  const dContrib  = dScore * 2;
+  const iContrib  = iScore;
+  const signStr   = (n) => n > 0 ? `+${n}` : `${n}`;
+  const scClass   = (n) => n > 0 ? 'sc-up' : n < 0 ? 'sc-dn' : 'sc-neu';
+  const valDiffSign = valueAdv >= 0 ? '+' : '−';
+  const valDiffAbs  = fmtValue(Math.abs(Math.round(valueAdv)));
+  const valDiffCls  = valueAdv >= 0 ? 'up' : 'dn';
 
   el.innerHTML = `
-    <div class="summary-card ${v.cls}">
+    <div class="summary-card ${verdict.cls}">
 
-      <!-- Verdict + Metrics -->
+      <!-- ── Verdict + Metrics ── -->
       <div class="summary-top">
         <div class="verdict-block">
-          <div class="verdict-emoji">${v.emoji}</div>
+          <div class="verdict-emoji">${verdict.emoji}</div>
           <div>
-            <div class="verdict-status">${v.label}</div>
+            <div class="verdict-status">${verdict.label}</div>
             <div class="verdict-sub">Trade Verdict</div>
+            <div class="verdict-score-badge">Score: ${signStr(tradeScore)}</div>
           </div>
         </div>
         <div class="metrics-strip">
@@ -1444,47 +1475,50 @@ function refreshSummary() {
             <div class="mc-val">${fmtValue(requestTotal)}</div>
           </div>
           <div class="metric-cell">
-            <div class="mc-lbl">Adj. Diff</div>
-            <div class="mc-val ${diffCls}">${diffSign}${diffAbs}</div>
+            <div class="mc-lbl">Value Diff</div>
+            <div class="mc-val ${valDiffCls}">${valDiffSign}${valDiffAbs}</div>
           </div>
           <div class="metric-cell">
-            <div class="mc-lbl">% Diff</div>
-            <div class="mc-val ${diffCls}">${pctSign}${pct.toFixed(1)}%</div>
+            <div class="mc-lbl">Score Breakdown</div>
+            <div style="display:flex;gap:3px;flex-wrap:wrap;margin-top:2px;">
+              <span class="score-component ${scClass(vContrib)}" title="Value Score ×3">${signStr(vContrib)}V</span>
+              <span class="score-component ${scClass(dContrib)}" title="Demand Score ×2">${signStr(dContrib)}D</span>
+              <span class="score-component ${scClass(iContrib)}" title="Item Count Score">${signStr(iContrib)}I</span>
+            </div>
           </div>
           <div class="metric-cell">
             <div class="mc-lbl">Confidence</div>
-            <div class="mc-val" style="color:${confColor}">${confLabel}</div>
+            <div class="mc-val" style="color:${conf.color}">${conf.label}</div>
           </div>
         </div>
       </div>
 
-      <!-- Alert banners -->
-      ${isUpgrade ? `
-      <div class="summary-alert alert-upgrade">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="margin-top:1px"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-        <span><strong>Upgrade Trade</strong> — you're offering ${extraOffer} more item${extraOffer>1?'s':''} than you request.
-        An upgrade allowance of <strong>${fmtValue(Math.round(allowance))}</strong> has been applied to your favour.</span>
-      </div>` : ''}
-
-      ${isDowngrade ? `
+      <!-- ── Alert banners ── -->
+      ${showDowngradeWarn ? `
       <div class="summary-alert alert-downgrade">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="margin-top:1px"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-        <span><strong>Downgrade Trade</strong> — you're requesting ${extraRequest} more item${extraRequest>1?'s':''} than you offer.
-        A downgrade tax of <strong>${fmtValue(Math.round(tax))}</strong> has been applied against you.</span>
+        <span><strong>Downgrade Trade</strong> — you're requesting ${extraRequestItems} more item${extraRequestItems > 1 ? 's' : ''} than you offer without enough extra value to justify it. Downgrade penalty applied to score.</span>
       </div>` : ''}
 
       ${demandWarn ? `
       <div class="summary-alert alert-demand">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="margin-top:1px"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        <span><strong>Demand Warning</strong> — items you're requesting have lower average demand than what you're offering.
-        This trade may be harder to complete in practice.</span>
+        <span><strong>Demand Warning</strong> — items you're offering have lower average demand than what you're requesting. Others may be less willing to accept this trade in practice.</span>
       </div>` : ''}
 
-      <!-- Detail grid -->
+      <!-- ── Detail grid ── -->
       <div class="summary-detail-grid">
         <div class="detail-block">
-          <div class="db-lbl">Raw Difference</div>
-          <div class="db-val ${rawDiff >= 0 ? 'up' : 'dn'}">${rawDiff >= 0 ? '+' : '−'}${fmtValue(Math.abs(Math.round(rawDiff)))}</div>
+          <div class="db-lbl">Value Score (×3)</div>
+          <div class="db-val ${vContrib >= 0 ? 'up' : 'dn'}">${signStr(vContrib)}</div>
+        </div>
+        <div class="detail-block">
+          <div class="db-lbl">Demand Score (×2)</div>
+          <div class="db-val ${dContrib >= 0 ? 'up' : 'dn'}">${signStr(dContrib)}</div>
+        </div>
+        <div class="detail-block">
+          <div class="db-lbl">Item Count Score</div>
+          <div class="db-val ${iContrib < 0 ? 'dn' : 'neu'}">${signStr(iContrib)}</div>
         </div>
         <div class="detail-block">
           <div class="db-lbl">Offer Demand</div>
@@ -1496,9 +1530,9 @@ function refreshSummary() {
         </div>
         <div class="detail-block">
           <div class="db-lbl">Confidence</div>
-          <div class="db-val" style="color:${confColor}">
-            ${confLabel}
-            <div class="conf-track"><div class="conf-fill" style="width:${confPct}%;background:${confColor}"></div></div>
+          <div class="db-val" style="color:${conf.color}">
+            ${conf.label}
+            <div class="conf-track"><div class="conf-fill" style="width:${conf.pct}%;background:${conf.color}"></div></div>
           </div>
         </div>
         <div class="detail-block">
@@ -1514,20 +1548,17 @@ function refreshSummary() {
           <div class="db-lbl">Duped / Limited</div>
           <div class="db-val warn">${totalAlt} item${totalAlt > 1 ? 's' : ''}</div>
         </div>` : ''}
-        ${isUpgrade ? `
-        <div class="detail-block">
-          <div class="db-lbl">Upgrade Allowance</div>
-          <div class="db-val up">+${fmtValue(Math.round(allowance))}</div>
-        </div>` : ''}
-        ${isDowngrade ? `
-        <div class="detail-block">
-          <div class="db-lbl">Downgrade Tax</div>
-          <div class="db-val dn">−${fmtValue(Math.round(tax))}</div>
-        </div>` : ''}
         <div class="detail-block">
           <div class="db-lbl">Pull Advantage</div>
           <div class="db-val ${pullDiff > 0 ? 'up' : pullDiff < 0 ? 'dn' : 'neu'}">${pullDiff === 0 ? '—' : (pullDiff > 0 ? '+' : '') + fmtValue(Math.round(pullDiff))}</div>
         </div>
+      </div>
+
+      <!-- ── Disclaimer ── -->
+      <div class="summary-disclaimer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <strong>Trade Verdict is an automated estimate and may not reflect real trading behavior.
+        For accurate evaluations, ask the Trade Advisor in the <a href="disc.html">JBLX Discord server</a></strong>.
       </div>
 
     </div>`;
@@ -1539,48 +1570,46 @@ function refreshSummary() {
   const inp = document.getElementById(`${side}-search`);
   const dd  = document.getElementById(`${side}-dropdown`);
 
-inp.addEventListener('input', () => {
-  const val = inp.value.trim();
-  // If the input contains + or "for", treat as abbreviation trade string
-  if (val.includes('+') || /\bfor\b/i.test(val)) {
-    const parsed = parseAbbr(val);
-    if (parsed.length > 0) {
-      const dd = document.getElementById(`${side}-dropdown`);
-      dd.classList.add('open');
-      dd.innerHTML = `<div class="srd-header">Parsed trade — click to load onto this panel</div>
-        <div class="srd-scroll">${parsed.map(e => `
-          <div class="srd-row" style="cursor:pointer;" data-parsed-idx="${parsed.indexOf(e)}">
-            <div class="srd-thumb"><span class="srd-thumb-fb">${abbr(e.item.name)}</span></div>
-            <div><div class="srd-name">${e.item.name}</div><div class="srd-type">${e.state}</div></div>
-            <span class="srd-val">${fmtValue(e.value)}</span>
-            <span></span>
-            <button class="srd-add">Add</button>
-          </div>`).join('')}
-          <div style="padding:8px 14px;">
-            <button class="srd-add" style="width:100%;justify-content:center;" id="add-all-${side}">Add All</button>
-          </div>
-        </div>`;
-      dd.querySelectorAll('.srd-add').forEach((btn, i) => {
-        btn.addEventListener('click', ev => {
-          ev.stopPropagation();
-          if (btn.id === `add-all-${side}`) {
-            parsed.forEach(e => SIDES[side].push({...e, uid: uid()}));
-          } else {
-            SIDES[side].push({...parsed[i], uid: uid()});
-          }
-          refreshSelected(side); refreshTotal(side); refreshSummary();
+  inp.addEventListener('input', () => {
+    const val = inp.value.trim();
+    if (val.includes('+') || /\bfor\b/i.test(val)) {
+      const parsed = parseAbbr(val);
+      if (parsed.length > 0) {
+        const dd = document.getElementById(`${side}-dropdown`);
+        dd.classList.add('open');
+        dd.innerHTML = `<div class="srd-header">Parsed trade — click to load onto this panel</div>
+          <div class="srd-scroll">${parsed.map(e => `
+            <div class="srd-row" style="cursor:pointer;" data-parsed-idx="${parsed.indexOf(e)}">
+              <div class="srd-thumb"><span class="srd-thumb-fb">${abbr(e.item.name)}</span></div>
+              <div><div class="srd-name">${e.item.name}</div><div class="srd-type">${e.state}</div></div>
+              <span class="srd-val">${fmtValue(e.value)}</span>
+              <span></span>
+              <button class="srd-add">Add</button>
+            </div>`).join('')}
+            <div style="padding:8px 14px;">
+              <button class="srd-add" style="width:100%;justify-content:center;" id="add-all-${side}">Add All</button>
+            </div>
+          </div>`;
+        dd.querySelectorAll('.srd-add').forEach((btn, i) => {
+          btn.addEventListener('click', ev => {
+            ev.stopPropagation();
+            if (btn.id === `add-all-${side}`) {
+              parsed.forEach(e => SIDES[side].push({...e, uid: uid()}));
+            } else {
+              SIDES[side].push({...parsed[i], uid: uid()});
+            }
+            refreshSelected(side); refreshTotal(side); refreshSummary();
+          });
         });
-      });
-      return;
+        return;
+      }
     }
-  }
-  renderDropdown(side, search(val), val);
-});
+    renderDropdown(side, search(val), val);
+  });
 });
 
 // ── BUTTON WIRING ─────────────────────────────────────────────
 
-// Global clear
 document.getElementById('btn-clear').addEventListener('click', () => {
   SIDES.offer = []; SIDES.request = [];
   ['offer','request'].forEach(s => {
@@ -1592,21 +1621,11 @@ document.getElementById('btn-clear').addEventListener('click', () => {
   refreshSummary();
 });
 
-// Individual clear
-document.getElementById('clear-offer').addEventListener('click', () => {
-  clearSide('offer');
-});
-document.getElementById('clear-request').addEventListener('click', () => {
-  clearSide('request');
-});
+document.getElementById('clear-offer').addEventListener('click', () => clearSide('offer'));
+document.getElementById('clear-request').addEventListener('click', () => clearSide('request'));
 
-// Mirror buttons
-document.getElementById('mirror-offer-to-request').addEventListener('click', () => {
-  mirrorSide('offer', 'request');
-});
-document.getElementById('mirror-request-to-offer').addEventListener('click', () => {
-  mirrorSide('request', 'offer');
-});
+document.getElementById('mirror-offer-to-request').addEventListener('click', () => mirrorSide('offer', 'request'));
+document.getElementById('mirror-request-to-offer').addEventListener('click', () => mirrorSide('request', 'offer'));
 
 // ── INIT ───────────────────────────────────────────────────────
 refreshSelected('offer');
