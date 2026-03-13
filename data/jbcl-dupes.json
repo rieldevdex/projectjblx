@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "generated": "2026-03-13T12:05:45.486Z",
+    "totalRecords": 17,
+    "source": "jailbreakchangelogs.xyz (scraped with owner permission)",
+    "credit": "Data sourced from JBCL — https://jailbreakchangelogs.xyz"
+  },
+  "records": [
+    {
+      "username": "POLARCHYR",
+      "item": "Torpedo",
+      "itemKey": "TORPEDO",
+      "type": "vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JOSUEESTEBAN27",
+      "item": "Torpedo",
+      "itemKey": "TORPEDO",
+      "type": "vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SPAYE",
+      "item": "Torpedo",
+      "itemKey": "TORPEDO",
+      "type": "vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "YT_ITSWITHER",
+      "item": "Torpedo",
+      "itemKey": "TORPEDO",
+      "type": "vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "VUXSTEALSBRAWDS",
+      "item": "Torpedo",
+      "itemKey": "TORPEDO",
+      "type": "vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SEANTHESUPERBOY123",
+      "item": "Torpedo",
+      "itemKey": "TORPEDO",
+      "type": "vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FASTARDRAGOS",
+      "item": "Torpedo",
+      "itemKey": "TORPEDO",
+      "type": "vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KINGPOOKIE12",
+      "item": "Torpedo",
+      "itemKey": "TORPEDO",
+      "type": "vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "THEBULLIED_GUEST",
+      "item": "Torpedo",
+      "itemKey": "TORPEDO",
+      "type": "vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DAVID12BANANA",
+      "item": "Beignet",
+      "itemKey": "BEIGNET",
+      "type": "vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DETEKTIVROURA",
+      "item": "Icebreaker",
+      "itemKey": "ICEBREAKER",
+      "type": "vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DETEKTIVROURA",
+      "item": "Beignet",
+      "itemKey": "BEIGNET",
+      "type": "vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ABRAHANBAS23",
+      "item": "Beignet",
+      "itemKey": "BEIGNET",
+      "type": "vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KRAOFANN1",
+      "item": "Beignet",
+      "itemKey": "BEIGNET",
+      "type": "vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KINGVAIBHAVKR",
+      "item": "Beignet",
+      "itemKey": "BEIGNET",
+      "type": "vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "EMIREX111XD",
+      "item": "Beignet",
+      "itemKey": "BEIGNET",
+      "type": "vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FFERAKMF2",
+      "item": "Beignet",
+      "itemKey": "BEIGNET",
+      "type": "vehicle",
+      "source": "jbcl"
+    }
+  ],
+  "dupeItems": [
+    {
+      "name": "Torpedo",
+      "type": "vehicle"
+    },
+    {
+      "name": "Beignet",
+      "type": "vehicle"
+    },
+    {
+      "name": "Molten%20M12",
+      "type": "vehicle"
+    },
+    {
+      "name": "Brulee",
+      "type": "vehicle"
+    },
+    {
+      "name": "Beam%20Hybrid",
+      "type": "vehicle"
+    },
+    {
+      "name": "Power%201",
+      "type": "vehicle"
+    },
+    {
+      "name": "Icebreaker",
+      "type": "vehicle"
+    },
+    {
+      "name": "Javelin",
+      "type": "vehicle"
+    },
+    {
+      "name": "Celsior",
+      "type": "vehicle"
+    },
+    {
+      "name": "Arachnid",
+      "type": "vehicle"
+    }
+  ]
+}
