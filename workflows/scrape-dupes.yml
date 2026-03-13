@@ -1,0 +1,31 @@
+name: Scrape JBCL Dupes
+
+on:
+  schedule:
+    - cron: '0 4 * * *'   # every day at 04:00 UTC
+  workflow_dispatch:        # lets you trigger it manually from GitHub UI
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install node-fetch@2 cheerio
+
+      - name: Run scraper
+        run: node jbcl-scraper.js
+
+      - name: Commit updated dupe bundle
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: auto-update JBCL dupe data'
+          file_pattern: 'js/jbcl-dupes-bundle.js data/jbcl-dupes.json'
+          commit_user_name: 'jblx-bot'
+          commit_user_email: 'bot@jblx.net'
