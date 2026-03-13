@@ -2,8 +2,8 @@ name: Scrape JBCL Dupes
 
 on:
   schedule:
-    - cron: '0 4 * * *'   # every day at 04:00 UTC
-  workflow_dispatch:        # lets you trigger it manually from GitHub UI
+    - cron: '0 4 * * *'
+  workflow_dispatch:
 
 jobs:
   scrape:
