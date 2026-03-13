@@ -89,11 +89,15 @@ async function fetchPage(url) {
 /** Resolve a username → Roblox user ID via their own proxy endpoint. */
 async function resolveUsername(username) {
   try {
-    const url = `${BASE_URL}/api/proxy/users/username/${encodeURIComponent(username)}`;
-    const res = await fetch(url, { timeout: 10000 });
+    const res = await fetch('https://users.roblox.com/v1/usernames/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ usernames: [username], excludeBannedUsers: false }),
+      timeout: 10000,
+    });
     if (!res.ok) return null;
     const data = await res.json();
-    return data?.id ?? null;
+    return data?.data?.[0]?.id ?? null;
   } catch {
     return null;
   }
