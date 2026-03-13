@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/mobile-nav.css" />
   <script src="js/theme.js"></script>
   <meta property="og:title" content="JBLX — Jailbreak Listing Exchange Calculator" />
-  <meta property="og:description" content="Calculate trade values, item worth, and unique Trade Verdict with JBLX's trade calculator." />
+  <meta property="og:description" content="Calculate trade values, item worth, and trade analysis with JBLX's trade calculator." />
   <meta property="og:image" content="https://jblx.net/assets/images/preview.png" />
   <meta property="og:url" content="https://jblx.net" />
   <meta property="og:type" content="website" />
@@ -1149,7 +1149,7 @@
           </svg>
           Trade Value Calculator
         </div>
-        <div class="calc-page-sub">Search items · toggle Clean / Duped / Limited · stack quantities · get an instant trade verdict. <a href="info.html" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">How does this work?</a></div>
+        <div class="calc-page-sub">Search items · toggle Clean / Duped / Limited · stack quantities · get an instant trade analysis. <a href="info.html" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">How does this work?</a></div>
       </div>
       <div class="header-actions">
         <button class="btn-action" id="btn-clear">
@@ -1650,17 +1650,6 @@ function refreshTotal(side) {
   const total = SIDES[side].reduce((s, e) => s + e.value * e.qty, 0);
   document.getElementById(`${side}-total`).textContent = fmtValue(total);
 }
-
-// ── TRADE VERDICT ENGINE v2 ────────────────────────────────────
-/*
-  Score formula: tradeScore = (valueScore × 3) + (demandScore × 2) + (itemCountScore × 1)
-
-  VALUE SCORE  — based on how much more you request vs. offer (positive = winning on value)
-  DEMAND SCORE — based on avg demand of your offer vs. request (positive = your offer has higher demand)
-  ITEM COUNT   — penalty when offering more items than requesting (downgrade tax)
-
-  Thresholds: ≥14=Win, 8–13=Slight Win, -7–7=Fair, -13– -8=Slight Lose, ≤-14=Lose
-*/
 
 // ── SUMMARY ────────────────────────────────────────────────────
 

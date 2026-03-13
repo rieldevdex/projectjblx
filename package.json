@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "node-fetch": "^2.7.0"
+  },
+  "name": "main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rieldevdex/files.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rieldevdex/files/issues"
+  },
+  "homepage": "https://github.com/rieldevdex/files#readme"
+}
