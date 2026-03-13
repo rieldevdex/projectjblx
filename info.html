@@ -66,7 +66,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
         JBLX Information Hub
       </h1>
-      <p class="info-page-sub">Everything you need to know about trading in Jailbreak — how values work, how to read trade verdicts, and what every demand tier actually means.</p>
+      <p class="info-page-sub">Everything you need to know about trading in Jailbreak — how values work, how to read trade analysis, what every demand tier means, and how cross-trading rates are calculated.</p>
     </div>
 
     <!-- Tab bar -->
@@ -122,7 +122,7 @@
         <div class="info-section-body">
           <p><strong>Values Page</strong> — The full item database. Every vehicle, colour, spoiler, rim, drift, horn, and furniture item tracked by JBLX lives here. You can filter by type, demand, or trend, search by name, and click any item to view detailed stats, remarks, and trade pull estimates.</p>
           <p><strong>Dupe Checker Page</strong> — Enter the username, or the item that you want to dupe check. It will search in our database and return the result.</p>
-          <p><strong>Calculator Page</strong> — Build a trade offer and request side-by-side, toggle each item between Clean and Duped, and get an instant verdict: Win, Slight Win, Fair, Slight Lose, or Lose. The calculator also accounts for upgrade trades automatically and flags demand imbalances.</p>
+          <p><strong>Calculator Page</strong> — Build a trade offer and request side-by-side, toggle each item between Clean and Duped, and get a full Trade Analysis: value difference, average demand on each side, item count comparison, and pull value advantage. Also includes a <strong>Cross-Trade Calculator</strong> for estimating JB ↔ USD conversions using live demand-adjusted rates.</p>
           <p><strong>Info Page</strong> — You're here. A full breakdown of how everything works, what each field means, and how to use the tools effectively.</p>
           <p><strong>Quiz Page</strong> — Do daily w/f/l quizzes every day! Share your experience in the JBLX discord for an exclusive reward.</p>
           <p><strong>Team Page</strong> — Meet the people behind the values: the coders, events team, and expert valuers who keep JBLX accurate and active.</p>
@@ -187,14 +187,15 @@
     </div>
 
     <!-- ═══════════════════════════════════════════════════════
-         TAB 3 — CALCULATOR
+         TAB 3 — CALCULATOR (Trade Analysis + Cross-Trade)
     ═══════════════════════════════════════════════════════ -->
     <div class="info-panel" data-panel="calculator">
 
+      <!-- ── TRADE CALCULATOR ── -->
       <div class="info-section">
         <div class="info-section-header">
           <div class="info-section-dot"></div>
-          <div class="info-section-title">How to Use the Calculator</div>
+          <div class="info-section-title">How to Use the Trade Calculator</div>
         </div>
         <div class="info-section-body">
           <div class="info-steps">
@@ -208,15 +209,15 @@
             </div>
             <div class="info-step">
               <div class="step-num"></div>
-              <div class="step-body">Each added item shows a <strong>Clean / Duped</strong> (or Limited/Clean for obtainables) toggle. If the item being traded is a known duped copy, click <strong>Duped</strong> — the value will update to the item's duped price automatically. Items with no duped value in the database have the Duped button disabled.</div>
+              <div class="step-body">Each added item shows a <strong>Clean / Duped</strong> (or Limited / Clean for obtainables) toggle. If the item being traded is a known duped copy, click <strong>Duped</strong> — the value will update to the item's duped price automatically. Items with no duped value in the database have the Duped button disabled.</div>
             </div>
             <div class="info-step">
               <div class="step-num"></div>
-              <div class="step-body">Add all items to both sides. The <strong>Total Value</strong> in each panel header updates live. Once both sides have at least one item, the <strong>Trade Verdict</strong> appears below automatically.</div>
+              <div class="step-body">Add all items to both sides. The <strong>Total Value</strong> in each panel header updates live. Once both sides have at least one item, the <strong>Trade Analysis</strong> appears below automatically.</div>
             </div>
             <div class="info-step">
               <div class="step-num"></div>
-              <div class="step-body">Read the verdict card. It tells you whether the trade is a Win, Slight Win, Fair, Slight Lose, or Lose — plus the adjusted difference, net percentage, and confidence rating.</div>
+              <div class="step-body">Read the <strong>Trade Analysis</strong> panel. It shows the value difference, average demand on each side, item count comparison, and pull value advantage — giving you the raw facts to judge the trade yourself.</div>
             </div>
             <div class="info-step">
               <div class="step-num"></div>
@@ -228,66 +229,16 @@
 
       <div class="info-section">
         <div class="info-section-header">
-          <div class="info-section-dot" style="background:#ffd166;box-shadow:0 0 8px #ffd166;"></div>
-          <div class="info-section-title" style="color:#ffd166;">Trade Verdicts Explained</div>
-        </div>
-        <div class="info-section-body">
-          <p>The verdict is based on the <strong>adjusted difference</strong> between what you offer and what you receive. A positive difference means you receive more value; negative means you give more. Here's how the thresholds map to verdicts:</p>
-          <table class="verdict-table">
-            <thead>
-              <tr>
-                <th>Verdict</th>
-                <th>Net % Range</th>
-                <th>What it means</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="verdict-label" style="color:#39e07a">🏆 Win</span></td>
-                <td>+8% or more</td>
-                <td>You receive significantly more value than you give. A clear profit trade.</td>
-              </tr>
-              <tr>
-                <td><span class="verdict-label" style="color:#7de8a6">📈 Slight Win</span></td>
-                <td>+2% to +8%</td>
-                <td>You come out slightly ahead. A good trade but not a landslide.</td>
-              </tr>
-              <tr>
-                <td><span class="verdict-label" style="color:var(--text-dim)">⚖️ Fair</span></td>
-                <td>-2% to +2%</td>
-                <td>Both sides are approximately equal in value. An even trade.</td>
-              </tr>
-              <tr>
-                <td><span class="verdict-label" style="color:#e07820">📉 Slight Lose</span></td>
-                <td>-2% to -8%</td>
-                <td>You give slightly more than you receive. Still acceptable in many situations.</td>
-              </tr>
-              <tr>
-                <td><span class="verdict-label" style="color:#e03040">❌ Lose</span></td>
-                <td>-8% or worse</td>
-                <td>You give significantly more than you receive. A clear value loss.</td>
-              </tr>
-            </tbody>
-          </table>
-            <div class="info-callout warn">
-            <div class="info-callout-icon">⚠️</div>
-            <div class="info-callout-body">PLEASE NOTE: The Trade Verdicts system can be inaccurate and should be used as a guideline, not a definitive measure of trade value. Optimally, join the RBLX Discord server and ask the Trade Advisors for the most accurrate analysis.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="info-section">
-        <div class="info-section-header">
           <div class="info-section-dot" style="background:#a29bfe;box-shadow:0 0 8px #a29bfe;"></div>
           <div class="info-section-title" style="color:#a29bfe;">Upgrade Allowance</div>
         </div>
         <div class="info-section-body">
           <p>When you offer <strong>more items than you request</strong> — for example, trading 3 items for 1 — the calculator recognises this as an <strong>Upgrade Trade</strong> and applies an Upgrade Allowance.</p>
-          <p>The allowance is <strong>4% of your offer total per extra item</strong>. So if you offer 3 items (2 extra) worth 10M total, the allowance is <strong>800K</strong> (2 × 4% × 10M). This is credited to your side of the trade before the verdict is calculated.</p>
+          <p>The allowance is <strong>4% of your offer total per extra item</strong>. So if you offer 3 items (2 extra) worth 10M total, the allowance is <strong>800K</strong> (2 × 4% × 10M). This is credited to your side of the trade before the analysis is calculated.</p>
           <p>This adjustment exists because consolidating multiple items into one almost always requires overpaying slightly — the person receiving multiple items has to manage, store, and trade each one separately. The upgrade tax is a real and expected cost in the Jailbreak trading economy.</p>
           <div class="info-callout tip">
             <div class="info-callout-icon">💡</div>
-            <div class="info-callout-body">The <strong>Raw Diff</strong> shown in an upgrade trade is the unadjusted gap before the allowance. The <strong>Adj. Diff</strong> is what your verdict is actually based on.</div>
+            <div class="info-callout-body">The <strong>Raw Diff</strong> shown in an upgrade trade is the unadjusted gap before the allowance. The <strong>Adj. Diff</strong> is what the Trade Analysis is actually based on.</div>
           </div>
         </div>
       </div>
@@ -299,7 +250,7 @@
         </div>
         <div class="info-section-body">
           <p>Even when a trade shows a positive value difference, the calculator may display a <strong>Demand Warning</strong>. This appears when the items you're offering have <em>higher demand</em> than what you're receiving in return.</p>
-          <p>For example: trading a High demand item for a Solid demand item of similar value looks like a Fair trade on paper — but in practice, you're giving up something that's easy to re-trade for something that might sit in your inventory for weeks. <strong>Liquidity matters</strong>, and this warning flags when you might be losing it.</p>
+          <p>For example: trading a High demand item for a Solid demand item of similar value looks like a fair trade on paper — but in practice, you're giving up something that's easy to re-trade for something that might sit in your inventory for weeks. <strong>Liquidity matters</strong>, and this warning flags when you might be losing it.</p>
           <div class="info-callout warn">
             <div class="info-callout-icon">⚠️</div>
             <div class="info-callout-body">A demand warning doesn't make a trade bad — it's a flag to think carefully. If you genuinely want the item you're requesting, the liquidity trade-off may be worth it.</div>
@@ -307,25 +258,121 @@
         </div>
       </div>
 
-      <div class="info-section">
+      <!-- ── CROSS-TRADE CALCULATOR ── -->
+      <div class="info-section" style="margin-top:32px;">
         <div class="info-section-header">
-          <div class="info-section-dot" style="background:#7b8ff7;box-shadow:0 0 8px #7b8ff7;"></div>
-          <div class="info-section-title" style="color:#7b8ff7;">Confidence Rating</div>
+          <div class="info-section-dot" style="background:#00C8F0;box-shadow:0 0 8px #00C8F0;"></div>
+          <div class="info-section-title" style="color:#00C8F0;">Cross-Trade Calculator</div>
         </div>
         <div class="info-section-body">
-          <p>The Confidence rating reflects how certain the verdict is. It's calculated from the absolute size of the net percentage — the bigger the gap, the more confident the result:</p>
-          <table class="verdict-table">
-            <thead><tr><th>Confidence</th><th>Absolute Net %</th><th>Meaning</th></tr></thead>
-            <tbody>
-              <tr><td><strong>High</strong></td><td>≥ 15%</td><td>The difference is clear. The verdict is almost certainly correct.</td></tr>
-              <tr><td><strong>Medium</strong></td><td>6% – 15%</td><td>A meaningful gap exists. Verdict is likely right but worth double-checking.</td></tr>
-              <tr><td><strong>Low</strong></td><td>2% – 6%</td><td>The trade is close. Small errors in value estimation could flip the verdict.</td></tr>
-              <tr><td><strong>Very Low</strong></td><td>Below 2%</td><td>Essentially even. The verdict label is more of a coin flip than a real finding.</td></tr>
-            </tbody>
-          </table>
+          <p>The <strong>Cross-Trade Calculator</strong> is built into the bottom of the Calculator page. It estimates fair JB ↔ USD conversion values using community-established base rates and demand-tier adjustments — helping you understand what a deal is worth before you enter it.</p>
+          <p>Two base rates govern all cross-trade transactions:</p>
           <div class="info-callout tip">
             <div class="info-callout-icon">💡</div>
-            <div class="info-callout-body">Low confidence verdicts — especially near the Fair threshold — should be treated as effectively even trades. Don't overthink a result that's within 1–2% either way.</div>
+            <div class="info-callout-body">
+              <strong>Sell Rate — 4,600,000 JB per $1.00</strong><br/>
+              When you are offering JB cash and requesting real money. You give 4.6M JB and receive $1 at the base rate.
+            </div>
+          </div>
+          <div class="info-callout good">
+            <div class="info-callout-icon">💰</div>
+            <div class="info-callout-body">
+              <strong>Buy Rate — 2,500,000 JB per $1.00</strong><br/>
+              When you are offering real money and requesting JB cash. You pay $1 and receive 2.5M JB at the base rate.
+            </div>
+          </div>
+          <p>The spread between the buy and sell rate (4.6M vs 2.5M) reflects the market premium that middlemen and direct dealers factor into their pricing — similar to how a currency exchange desk operates.</p>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <div class="info-section-header">
+          <div class="info-section-dot" style="background:#ffd166;box-shadow:0 0 8px #ffd166;"></div>
+          <div class="info-section-title" style="color:#ffd166;">Demand Tier Adjustments (±25%)</div>
+        </div>
+        <div class="info-section-body">
+          <p>The base rates are adjusted up or down by up to <strong>25%</strong> depending on the demand tier of the item(s) being used in the cross-trade. High-demand items give you more negotiating power — you can command a better rate. Low-demand items reduce your leverage.</p>
+          <table class="demand-table">
+            <thead>
+              <tr>
+                <th class="d-col">Demand Tier</th>
+                <th>Adjustment</th>
+                <th class="d-liquid">Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge-demand d-extraordinary">Extraordinary</span></td>
+                <td style="font-family:var(--font-mono);font-size:0.8rem;color:#39e07a;font-weight:700">+25%</td>
+                <td class="d-desc">You receive 25% more than the base rate. Extremely sought-after items give maximum leverage.</td>
+              </tr>
+              <tr>
+                <td><span class="badge-demand d-high">High</span></td>
+                <td style="font-family:var(--font-mono);font-size:0.8rem;color:#39e07a;font-weight:700">+15%</td>
+                <td class="d-desc">Strong negotiating position. Deals close quickly at above-base rates.</td>
+              </tr>
+              <tr>
+                <td><span class="badge-demand d-solid">Solid</span></td>
+                <td style="font-family:var(--font-mono);font-size:0.8rem;color:#7de8a6;font-weight:700">+8%</td>
+                <td class="d-desc">Slightly above-base rate. Reliable items that attract multiple buyers.</td>
+              </tr>
+              <tr>
+                <td><span class="badge-demand d-average">Average</span></td>
+                <td style="font-family:var(--font-mono);font-size:0.8rem;color:var(--text-dim);font-weight:700">±0%</td>
+                <td class="d-desc">Base rate applies with no adjustment. The reference point for all calculations.</td>
+              </tr>
+              <tr>
+                <td><span class="badge-demand d-medium">Below Average</span></td>
+                <td style="font-family:var(--font-mono);font-size:0.8rem;color:#e07820;font-weight:700">−8%</td>
+                <td class="d-desc">Slight downward pressure. You may need to accept slightly less than base to find a buyer.</td>
+              </tr>
+              <tr>
+                <td><span class="badge-demand d-low">Low</span></td>
+                <td style="font-family:var(--font-mono);font-size:0.8rem;color:#e03040;font-weight:700">−15%</td>
+                <td class="d-desc">Reduced leverage. Buyers are scarce and will push for below-base deals.</td>
+              </tr>
+              <tr>
+                <td><span class="badge-demand d-minimal">Minimal</span></td>
+                <td style="font-family:var(--font-mono);font-size:0.8rem;color:#e03040;font-weight:700">−20%</td>
+                <td class="d-desc">Very low leverage. Finding a cross-trade buyer at any reasonable rate is uncommon.</td>
+              </tr>
+              <tr>
+                <td><span class="badge-demand d-nonexistent">Nonexistent</span></td>
+                <td style="font-family:var(--font-mono);font-size:0.8rem;color:#8b1a2a;font-weight:700">−25%</td>
+                <td class="d-desc">Worst rate. Cross-trading at this tier is rarely practical.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <div class="info-section-header">
+          <div class="info-section-dot" style="background:#43e8b0;box-shadow:0 0 8px #43e8b0;"></div>
+          <div class="info-section-title" style="color:#43e8b0;">How to Use the Cross-Trade Calculator</div>
+        </div>
+        <div class="info-section-body">
+          <div class="info-steps">
+            <div class="info-step">
+              <div class="step-num"></div>
+              <div class="step-body">Open the <a href="calc.html" style="color:var(--accent)">Calculator page</a> and scroll below the main trade panels to find the <strong>Cross-Trade Calculator</strong> section. Click the header bar to expand it.</div>
+            </div>
+            <div class="info-step">
+              <div class="step-num"></div>
+              <div class="step-body">Select your <strong>Transaction Mode</strong>: <em>Selling JB → USD</em> if you have JB cash and want real money, or <em>Buying JB ← USD</em> if you are paying real money to receive JB cash.</div>
+            </div>
+            <div class="info-step">
+              <div class="step-num"></div>
+              <div class="step-body">Select the <strong>Demand Tier</strong> that best matches the items involved in your cross-trade. Higher demand means you can negotiate a better rate in your favour.</div>
+            </div>
+            <div class="info-step">
+              <div class="step-num"></div>
+              <div class="step-body">Enter either the <strong>JB Cash amount</strong> or the <strong>USD amount</strong> — the other field will calculate automatically. The result card shows your adjusted value, the base rate comparison, and the effective rate per dollar.</div>
+            </div>
+          </div>
+          <div class="info-callout warn">
+            <div class="info-callout-icon">⚠️</div>
+            <div class="info-callout-body">Cross-trade rates fluctuate based on market activity. Always verify current rates with an experienced trader in the <strong>JBLX Discord</strong> before completing any real-money transaction. The calculator provides estimates only.</div>
           </div>
         </div>
       </div>
@@ -377,22 +424,22 @@
                 <td><span class="badge-demand d-medium">Medium</span></td>
                 <td class="d-desc">Moderate interest. Some traders want it, many don't. Expect to wait a few days. Not ideal for quick flips, but still moveable with patience.</td>
                 <td class="d-liquid">2–4 Days</td>
-               </tr>
-               <tr>
+              </tr>
+              <tr>
                 <td><span class="badge-demand d-low">Low</span></td>
                 <td class="d-desc">Few traders are actively seeking this item. Finding a buyer at listed value takes significant effort. May need to go slightly below value to close a deal.</td>
                 <td class="d-liquid">1–2 Weeks</td>
-               </tr>
-               <tr>
-               <td><span class="badge-demand d-minimal">Minimal</span></td>
+              </tr>
+              <tr>
+                <td><span class="badge-demand d-minimal">Minimal</span></td>
                 <td class="d-desc">Almost no one is looking for this item right now. It may have been popular once but has since faded. Trading it at value is rare — patience is essential.</td>
                 <td class="d-liquid">Weeks – Months</td>
-               </tr>
-               <tr>
+              </tr>
+              <tr>
                 <td><span class="badge-demand d-nonexistent">Nonexistent</span></td>
                 <td class="d-desc">No meaningful demand exists. The item is essentially untradeable at listed value. It may still carry theoretical value, but finding a willing buyer is extremely unlikely.</td>
                 <td class="d-liquid">Indefinite</td>
-               </tr>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -430,7 +477,7 @@
               </tr>
               <tr>
                 <td><span class="badge-trend t-rising">▲ Rising</span></td>
-                <td>Value is climbing. Could be due to reduced supply, new interest, or a related item spiking. Good time to buy before the next update.</td>
+                <td>Value is climbing. Could be due to reduced supply, new interest, or a related item spiking. Good time to acquire before the next update.</td>
               </tr>
               <tr>
                 <td><span class="badge-trend t-falling">▼ Falling</span></td>
@@ -502,7 +549,7 @@
 
             <div class="glossary-card">
               <div class="glossary-term">Overcut</div>
-              <div class="glossary-def">When another trader beats your offer for a desirable item. Common on Very High and High demand items where competition is intense.</div>
+              <div class="glossary-def">When another trader beats your offer for a desirable item. Common on Extraordinary and High demand items where competition is intense.</div>
             </div>
 
             <div class="glossary-card">
@@ -540,6 +587,11 @@
               <div class="glossary-def">Buying low-demand items at a discount and selling them when demand recovers, or trading into items likely to rise in value. A speculative strategy.</div>
             </div>
 
+            <div class="glossary-card">
+              <div class="glossary-term">Cross-Trade</div>
+              <div class="glossary-def">Exchanging Jailbreak in-game cash or items for real-world currency (USD). Rates are based on community-established benchmarks and vary by demand tier. See the Calculator tab for the full rate breakdown.</div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -553,8 +605,9 @@
           <p><strong>Why doesn't my item match the listed value when I try to trade?</strong><br/>Values reflect what traders have actually agreed to in completed trades — not asking prices. Some traders undervalue or overvalue items. If you're consistently getting far below listed value, it may be a demand issue rather than a value issue.</p>
           <p><strong>Can I request a value update?</strong><br/>Yes — join the JBLX Discord and post in the appropriate channel. Include trade screenshots and evidence. The value team reviews all submissions.</p>
           <p><strong>Why is the calculator showing a different result than expected?</strong><br/>The calculator uses strict database values with no manual overrides. If an item seems off, the underlying value may need an update. Report it on Discord.</p>
-          <p><strong>What does it mean if an item has no duped value?</strong><br/>Either the item has never been confirmed as duplicated, or it's an obtainable vehicle (which shows Limited Value instead). In the calculator, duped toggle is disabled for these items.</p>
+          <p><strong>What does it mean if an item has no duped value?</strong><br/>Either the item has never been confirmed as duplicated, or it's an obtainable vehicle (which shows Limited Value instead). In the calculator, the duped toggle is disabled for these items.</p>
           <p><strong>Why are some HyperChrome copies counted in Remarks?</strong><br/>Copy counts come from trade server logs and server activity tracking. They're estimates to help gauge true rarity, not official Roblox data. More copies = more supply = typically lower value per copy.</p>
+          <p><strong>Are cross-trade rates guaranteed?</strong><br/>No — the Cross-Trade Calculator provides estimates based on community-established base rates. Actual rates vary by market conditions and individual deals. Always verify with a trusted trader in the JBLX Discord before any real-money transaction.</p>
         </div>
       </div>
 
@@ -568,7 +621,6 @@
   </footer>
 
   <script>
-    // ── Tab switching ─────────────────────────────────────────
     document.querySelectorAll('.info-tab').forEach(tab => {
       tab.addEventListener('click', () => {
         const target = tab.dataset.tab;

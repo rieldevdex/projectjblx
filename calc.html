@@ -406,7 +406,7 @@
 .panel-empty-state svg { opacity: 0.12; }
 .panel-empty-state-title {
   font-family: var(--font-display);
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   color: var(--text-dim);
@@ -418,10 +418,10 @@
 
 .sel-row {
   display: grid;
-  grid-template-columns: 44px 1fr auto;
+  grid-template-columns: 52px 1fr auto;
   align-items: center;
-  gap: 10px;
-  padding: 9px 14px;
+  gap: 12px;
+  padding: 12px 16px;
   border-bottom: 1px solid var(--border);
   transition: background 0.09s;
   animation: fadeUp 0.16s var(--ease) both;
@@ -431,7 +431,7 @@
 
 .sel-thumb-wrap {
   position: relative;
-  width: 40px; height: 34px;
+  width: 48px; height: 42px;
   border-radius: 6px;
   background: var(--bg3);
   border: 1px solid var(--border);
@@ -501,7 +501,7 @@
 }
 .sel-value {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: #ffd166;
   transition: color 0.2s;
@@ -626,55 +626,12 @@
   overflow: hidden;
   transition: border-color 0.3s;
 }
-.summary-card.s-win         { border-color: rgba(57,224,122,0.45); }
-.summary-card.s-slight-win  { border-color: rgba(57,224,122,0.22); }
-.summary-card.s-fair        { border-color: rgba(90,96,128,0.35); }
-.summary-card.s-slight-lose { border-color: rgba(224,120,32,0.35); }
-.summary-card.s-lose        { border-color: rgba(224,48,64,0.45); }
 
 .summary-top {
   display: flex;
   align-items: stretch;
   flex-wrap: wrap;
   border-bottom: 1px solid var(--border);
-}
-
-.verdict-block {
-  padding: 22px 26px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-shrink: 0;
-  border-right: 1px solid var(--border);
-  min-width: 185px;
-}
-.s-win        .verdict-block { background: linear-gradient(120deg, rgba(57,224,122,0.09) 0%, transparent 100%); }
-.s-slight-win .verdict-block { background: linear-gradient(120deg, rgba(57,224,122,0.05) 0%, transparent 100%); }
-.s-fair       .verdict-block { background: transparent; }
-.s-slight-lose .verdict-block { background: linear-gradient(120deg, rgba(224,120,32,0.06) 0%, transparent 100%); }
-.s-lose       .verdict-block { background: linear-gradient(120deg, rgba(224,48,64,0.08) 0%, transparent 100%); }
-
-.verdict-emoji { font-size: 1.8rem; line-height: 1; flex-shrink: 0; }
-.verdict-status {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  line-height: 1;
-  margin-bottom: 3px;
-}
-.s-win         .verdict-status { color: #39e07a; }
-.s-slight-win  .verdict-status { color: #7de8a6; }
-.s-fair        .verdict-status { color: var(--text-dim); }
-.s-slight-lose .verdict-status { color: #e07820; }
-.s-lose        .verdict-status { color: #e03040; }
-.verdict-sub {
-  font-family: var(--font-mono);
-  font-size: 0.5rem;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  color: var(--text-muted);
 }
 
 .metrics-strip {
@@ -770,57 +727,6 @@
 .db-val.warn { color: #e07820; }
 .db-val.neu { color: var(--text-dim); }
 
-.conf-track {
-  height: 3px;
-  background: var(--border);
-  border-radius: 99px;
-  overflow: hidden;
-  margin-top: 6px;
-}
-.conf-fill {
-  height: 100%;
-  border-radius: 99px;
-  transition: width 0.55s var(--ease), background 0.3s;
-}
-
-/* Score breakdown pill */
-.score-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-}
-.score-component {
-  padding: 2px 6px;
-  border-radius: 4px;
-  border: 1px solid var(--border);
-  background: var(--bg3);
-  color: var(--text-dim);
-  white-space: nowrap;
-}
-.score-component.sc-up { color: #39e07a; background: rgba(57,224,122,0.08); border-color: rgba(57,224,122,0.2); }
-.score-component.sc-dn { color: #e03040; background: rgba(224,48,64,0.08); border-color: rgba(224,48,64,0.2); }
-.score-component.sc-neu { color: var(--text-muted); }
-.score-sep { color: var(--text-muted); font-size: 0.55rem; }
-
-/* Score total badge in verdict */
-.verdict-score-badge {
-  font-family: var(--font-mono);
-  font-size: 0.58rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  padding: 2px 7px;
-  border-radius: 4px;
-  border: 1px solid var(--border);
-  background: var(--bg3);
-  color: var(--text-muted);
-  margin-top: 4px;
-  display: inline-block;
-}
-
 /* Disclaimer */
 .summary-disclaimer {
   display: flex;
@@ -836,6 +742,338 @@
 }
 .summary-disclaimer svg { flex-shrink: 0; opacity: 0.5; }
 .summary-disclaimer a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ── ANALYSIS SUMMARY (no verdict) ────────────────────────── */
+.analysis-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 16px 22px 12px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.analysis-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.analysis-sub {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  border-bottom: 1px solid var(--border);
+}
+.analysis-block {
+  padding: 16px 20px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.analysis-block:last-child { border-right: none; }
+
+.ab-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.ab-header svg { opacity: 0.5; flex-shrink: 0; }
+
+.ab-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.ab-side-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.offer-lbl   { color: var(--accent); }
+.request-lbl { color: #ff7eb3; }
+.ab-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+.ab-val {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.ab-val.up   { color: #39e07a; }
+.ab-val.dn   { color: #e03040; }
+.ab-val.warn { color: #e07820; }
+.ab-val.neu  { color: var(--text-dim); }
+
+.ab-diff {
+  margin-top: 4px;
+  padding: 5px 10px;
+  border-radius: var(--r);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.ab-diff.up   { background: rgba(57,224,122,0.08);  color: #39e07a; border: 1px solid rgba(57,224,122,0.18); }
+.ab-diff.dn   { background: rgba(224,48,64,0.08);   color: #e03040; border: 1px solid rgba(224,48,64,0.18); }
+.ab-diff.warn { background: rgba(224,120,32,0.08);  color: #e07820; border: 1px solid rgba(224,120,32,0.18); }
+.ab-diff.neu  { background: var(--bg3); color: var(--text-dim); border: 1px solid var(--border); }
+.ab-diff-sub  { font-size: 0.56rem; font-weight: 400; letter-spacing: 0.04em; opacity: 0.75; }
+
+.analysis-alerts { border-bottom: 1px solid var(--border); }
+
+/* ── CROSS-TRADE CALCULATOR ─────────────────────────────────── */
+.cross-calc-section {
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  margin-top: 4px;
+}
+.cross-calc-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: background 0.15s;
+  user-select: none;
+}
+.cross-calc-toggle-row:hover { background: var(--surface2); }
+
+.cross-calc-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.cross-calc-toggle-label svg { color: #ffd166; }
+.cross-calc-toggle-meta {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+.cross-calc-toggle-arrow {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  transition: transform 0.2s;
+}
+.cross-calc-section.open .cross-calc-toggle-arrow { transform: rotate(180deg); }
+
+.cross-calc-body {
+  display: none;
+  border-top: 1px solid var(--border);
+  padding: 22px 22px 24px;
+  flex-direction: column;
+  gap: 18px;
+}
+.cross-calc-section.open .cross-calc-body { display: flex; }
+
+.cross-mode-toggle {
+  display: flex;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  align-self: flex-start;
+}
+.cross-mode-btn {
+  padding: 8px 20px;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+.cross-mode-btn.active-sell { background: #39e07a; color: #000; }
+.cross-mode-btn.active-buy  { background: #ff7eb3; color: #000; }
+
+.cross-rate-info {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.cross-rate-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 99px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border: 1px solid;
+}
+.crp-sell { color: #39e07a; background: rgba(57,224,122,0.08); border-color: rgba(57,224,122,0.25); }
+.crp-buy  { color: #ff7eb3; background: rgba(255,126,179,0.08); border-color: rgba(255,126,179,0.25); }
+
+.cross-inputs-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.cross-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  min-width: 150px;
+}
+.cross-input-label {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.cross-input {
+  padding: 10px 12px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.cross-input::placeholder { color: var(--text-muted); }
+.cross-input:focus { border-color: #ffd166; box-shadow: 0 0 0 3px rgba(255,209,102,0.10); }
+.cross-swap-icon {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  padding-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.cross-demand-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cross-demand-label {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.cross-demand-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.cross-demand-chip {
+  padding: 4px 12px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.12s;
+  white-space: nowrap;
+}
+.cross-demand-chip:hover { border-color: var(--accent); color: var(--accent); }
+.cross-demand-chip.active { background: var(--accent); border-color: var(--accent); color: #000; }
+
+.cross-result-card {
+  background: var(--bg3);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--r-lg);
+  padding: 18px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 14px;
+}
+.cross-result-block { display: flex; flex-direction: column; gap: 3px; }
+.crb-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.54rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.crb-val {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffd166;
+  white-space: nowrap;
+}
+.crb-val.green  { color: #39e07a; }
+.crb-val.pink   { color: #ff7eb3; }
+.crb-adj {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+.crb-adj.up   { color: #39e07a; }
+.crb-adj.dn   { color: #e03040; }
+
+.cross-disclaimer {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding: 10px 14px;
+  background: rgba(255,209,102,0.04);
+  border: 1px solid rgba(255,209,102,0.12);
+  border-radius: var(--r);
+}
+
+@media (max-width: 860px) {
+  .analysis-grid { grid-template-columns: 1fr 1fr; }
+  .analysis-block { border-bottom: 1px solid var(--border); }
+}
+@media (max-width: 560px) {
+  .analysis-grid { grid-template-columns: 1fr; }
+  .cross-inputs-row { flex-direction: column; }
+  .cross-swap-icon { transform: rotate(90deg); padding-bottom: 0; }
+}
 
 /* ── RESPONSIVE ──────────────────────────────────────────────── */
 @media (max-width: 860px) {
@@ -1004,7 +1242,96 @@
     <!-- Trade Summary -->
     <div class="trade-summary" id="trade-summary"></div>
 
-  </main>
+</main>
+
+  <!-- ── CROSS-TRADE CALCULATOR ───────────────────────────── -->
+  <div style="max-width:1320px;width:100%;margin:0 auto;padding:0 24px 60px;">
+    <div class="cross-calc-section" id="cross-calc-section" style="animation:fadeUp 0.42s var(--ease) 0.15s both;">
+      <div class="cross-calc-toggle-row" id="cross-calc-toggle">
+        <div class="cross-calc-toggle-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          Cross-Trade Calculator
+          <span style="font-family:var(--font-mono);font-size:0.58rem;color:var(--text-muted);font-weight:400;text-transform:none;letter-spacing:0.04em;">JB Cash ↔ USD</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="cross-calc-toggle-meta">4.6M / $ sell · 2.5M / $ buy · ±25% demand adj.</div>
+          <div class="cross-calc-toggle-arrow">▼</div>
+        </div>
+      </div>
+
+      <div class="cross-calc-body" id="cross-calc-body">
+
+        <!-- Rates info -->
+        <div class="cross-rate-info">
+          <span class="cross-rate-pill crp-sell">▲ Sell JB: 4,600,000 JB = $1.00</span>
+          <span class="cross-rate-pill crp-buy">▼ Buy JB: 2,500,000 JB = $1.00</span>
+        </div>
+
+        <!-- Mode toggle -->
+        <div>
+          <div class="cross-demand-label" style="margin-bottom:8px;">Transaction Mode</div>
+          <div class="cross-mode-toggle">
+            <button class="cross-mode-btn active-sell" id="cmb-sell">▲ Selling JB → USD</button>
+            <button class="cross-mode-btn" id="cmb-buy">▼ Buying JB ← USD</button>
+          </div>
+        </div>
+
+        <!-- Input row -->
+        <div class="cross-inputs-row">
+          <div class="cross-input-group">
+            <label class="cross-input-label" id="cross-lbl-left">JB Cash Amount</label>
+            <input class="cross-input" type="number" id="cross-jb" placeholder="e.g. 46000000" min="0" step="1000000"/>
+          </div>
+          <div class="cross-swap-icon">⇔</div>
+          <div class="cross-input-group">
+            <label class="cross-input-label" id="cross-lbl-right">USD Equivalent</label>
+            <input class="cross-input" type="number" id="cross-usd" placeholder="e.g. 10.00" min="0" step="0.01"/>
+          </div>
+        </div>
+
+        <!-- Demand tier -->
+        <div class="cross-demand-row">
+          <div class="cross-demand-label">Item Demand Tier — adjusts rate ±25%</div>
+          <div class="cross-demand-chips" id="cross-demand-chips">
+            <button class="cross-demand-chip" data-tier="Extraordinary" data-adj="0.25">Extraordinary +25%</button>
+            <button class="cross-demand-chip" data-tier="High" data-adj="0.15">High +15%</button>
+            <button class="cross-demand-chip" data-tier="Solid" data-adj="0.08">Solid +8%</button>
+            <button class="cross-demand-chip active" data-tier="Average" data-adj="0">Average ±0%</button>
+            <button class="cross-demand-chip" data-tier="Below Average" data-adj="-0.08">Below Average −8%</button>
+            <button class="cross-demand-chip" data-tier="Low" data-adj="-0.15">Low −15%</button>
+            <button class="cross-demand-chip" data-tier="Minimal" data-adj="-0.20">Minimal −20%</button>
+            <button class="cross-demand-chip" data-tier="Nonexistent" data-adj="-0.25">Nonexistent −25%</button>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div class="cross-result-card" id="cross-result-card">
+          <div class="cross-result-block">
+            <div class="crb-lbl">Result</div>
+            <div class="crb-val" id="crb-main">—</div>
+            <div class="crb-adj" id="crb-adj-note"></div>
+          </div>
+          <div class="cross-result-block">
+            <div class="crb-lbl">Base Rate (no adj.)</div>
+            <div class="crb-val" style="color:var(--text-dim)" id="crb-base">—</div>
+          </div>
+          <div class="cross-result-block">
+            <div class="crb-lbl">Effective Rate</div>
+            <div class="crb-val" style="color:var(--text-dim);font-size:0.84rem" id="crb-rate">—</div>
+          </div>
+          <div class="cross-result-block">
+            <div class="crb-lbl">Demand Adjustment</div>
+            <div class="crb-val" style="font-size:0.84rem" id="crb-adjpct">±0%</div>
+          </div>
+        </div>
+
+        <div class="cross-disclaimer">
+          ⚠ Cross-trade rates are community estimates based on recent market activity and fluctuate. The demand adjustment (±25%) reflects how item desirability affects negotiating power. Always verify current rates in the JBLX Discord before completing a trade.
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <span>© 2025 JBLX — Jailbreak Listing Exchange</span>
@@ -1273,9 +1600,13 @@ function refreshSelected(side) {
           <span class="sel-name">${escHtml(item.name)}</span>
           ${qty > 1 ? `<span class="sel-qty-badge">×${qty}</span>` : ''}
         </div>
-        <div class="sel-value-row">
+<div class="sel-value-row">
           <span class="sel-value">${fmtValue(totalVal)}</span>
           ${qty > 1 ? `<span class="sel-each">${fmtValue(value)} ea</span>` : ''}
+        </div>
+        <div style="margin-top:4px;display:flex;align-items:center;gap:5px;flex-wrap:wrap;">
+          <span class="badge-demand ${demandClass(item.demand)}" style="font-size:0.58rem;padding:2px 8px;">${item.demand}</span>
+          ${item.dupedDemand && isAlt ? `<span class="badge-demand ${demandClass(item.dupedDemand)}" style="font-size:0.56rem;padding:2px 7px;opacity:0.8;">${item.dupedDemand} <span style="font-size:0.48rem;opacity:0.6">(duped)</span></span>` : ''}
         </div>
       </div>
       <div class="sel-controls">
@@ -1331,63 +1662,6 @@ function refreshTotal(side) {
   Thresholds: ≥14=Win, 8–13=Slight Win, -7–7=Fair, -13– -8=Slight Lose, ≤-14=Lose
 */
 
-function calcValueScore(valueAdv) {
-  // valueAdv = requestTotal - offerTotal (positive = you get more than you give = good for you)
-  if      (valueAdv >= 3_000_000)  return +8;
-  else if (valueAdv >= 2_000_000)  return +6;
-  else if (valueAdv >= 1_000_000)  return +4;
-  else if (valueAdv >= 500_000)    return +2;
-  else if (valueAdv > -500_000)    return  0;
-  else if (valueAdv > -1_000_000)  return -2;
-  else if (valueAdv > -2_000_000)  return -4;
-  else if (valueAdv > -3_000_000)  return -6;
-  else                             return -8;
-}
-
-function calcDemandScore(offerDS, requestDS) {
-  if (offerDS === null || requestDS === null) return 0;
-  // Positive = your offer has higher demand = trading leverage
-  const diff = offerDS - requestDS;
-  if      (diff >= 2)  return +2;
-  else if (diff >= 1)  return +1;
-  else if (diff > -1)  return  0;
-  else if (diff > -2)  return -1;
-  else                 return -2;
-}
-
-function calcItemCountScore(offerCount, requestCount, offerTotal, requestTotal) {
-  // Penalty when REQUESTING more items than you offer = downgrade trade (splitting value)
-  // Offering MORE items than you request = consolidation/upgrade = no penalty
-  const extra = requestCount - offerCount;
-  if (extra <= 0) return 0;
-  // Waive penalty if you're getting substantially more value back (≥3M gain)
-  if (requestTotal - offerTotal >= 3_000_000) return 0;
-  if      (extra >= 3) return -3;
-  else if (extra === 2) return -2;
-  else                  return -1;
-}
-
-function getVerdict(score) {
-  if      (score >= 14)  return { cls: 's-win',         label: 'Win',         emoji: '🏆' };
-  else if (score >= 8)   return { cls: 's-slight-win',  label: 'Slight Win',  emoji: '📈' };
-  else if (score >= -7)  return { cls: 's-fair',        label: 'Fair',        emoji: '⚖️'  };
-  else if (score >= -13) return { cls: 's-slight-lose', label: 'Slight Lose', emoji: '📉' };
-  else                   return { cls: 's-lose',        label: 'Lose',        emoji: '❌' };
-}
-
-function calcConfidence(offerDS, requestDS, valueAdv, offerCount, requestCount, extraRequestItems, valueAdj) {
-  let pts = 0;
-  if (offerDS !== null && requestDS !== null && offerDS !== requestDS) pts += 10;
-  if (Math.abs(valueAdv) > 1_000_000) pts += 10;
-  if (offerCount >= 2 && requestCount >= 2) pts += 10;
-  if (extraRequestItems > 0 && Math.abs(valueAdj) < 1_000_000) pts += 10;
-  const pct = Math.min(90, 50 + pts);
-  if (pct >= 80) return { pct, label: 'High',     color: '#39e07a' };
-  if (pct >= 65) return { pct, label: 'Medium',   color: '#e07820' };
-  if (pct >= 50) return { pct, label: 'Low',      color: '#e03040' };
-               return { pct, label: 'Very Low', color: '#6b7280' };
-}
-
 // ── SUMMARY ────────────────────────────────────────────────────
 
 function refreshSummary() {
@@ -1396,7 +1670,7 @@ function refreshSummary() {
   const request = SIDES.request;
 
   if (!offer.length && !request.length) {
-    el.innerHTML = '<div class="summary-placeholder">Add items to both sides to see your trade verdict.</div>';
+    el.innerHTML = '<div class="summary-placeholder">Add items to both sides to see trade analysis.</div>';
     return;
   }
   if (!offer.length || !request.length) {
@@ -1409,156 +1683,166 @@ function refreshSummary() {
   const requestTotal = request.reduce((s,e) => s + e.value * e.qty, 0);
   const offerCount   = offer.reduce((s,e)   => s + e.qty, 0);
   const requestCount = request.reduce((s,e) => s + e.qty, 0);
+  const valueDiff    = requestTotal - offerTotal; // positive = you receive more
 
-  // valueAdv: positive = you request more than you give = value advantage for you
-  const valueAdv = requestTotal - offerTotal;
-
-  // ── Score Components ──
-  const offerDS  = avgDemand(offer);
+  // ── Demand ──
+  const offerDS   = avgDemand(offer);
   const requestDS = avgDemand(request);
-  const vScore = calcValueScore(valueAdv);
-  const dScore = calcDemandScore(offerDS, requestDS);
-  const extraOfferItems   = Math.max(0, offerCount - requestCount);   // consolidation
-  const extraRequestItems = Math.max(0, requestCount - offerCount);   // downgrade
-  const iScore = calcItemCountScore(offerCount, requestCount, offerTotal, requestTotal);
+  const demandDiff = (offerDS !== null && requestDS !== null) ? offerDS - requestDS : null;
 
-  const tradeScore = (vScore * 3) + (dScore * 2) + (iScore * 1);
-  const verdict    = getVerdict(tradeScore);
-  const conf       = calcConfidence(offerDS, requestDS, valueAdv, offerCount, requestCount, extraRequestItems, valueAdv);
-
-  // ── Pull values ──
+  // ── Pull ──
   const offerPull   = offer.reduce((s,e)   => s + getEntryPull(e) * e.qty, 0);
   const requestPull = request.reduce((s,e) => s + getEntryPull(e) * e.qty, 0);
-  const pullDiff    = offerPull - requestPull;
+  const pullDiff    = offerPull - requestPull; // positive = your offer pulls more
 
-  // ── Alert conditions ──
-  // Downgrade warning: requesting more items without getting enough extra value
-  const showDowngradeWarn = extraRequestItems > 0 && (requestTotal - offerTotal) < 1_000_000;
-  // Demand warning: your offer has lower demand than what you're requesting (hard to get accepted)
-  const demandWarn = offerDS !== null && requestDS !== null && offerDS < requestDS;
-
-  // ── Duped/Limited item count ──
-  const totalAlt = [...offer, ...request]
+  // ── Duped/Limited count ──
+  const totalAlt = [...offer,...request]
     .filter(e => e.state === 'duped' || e.state === 'limited')
     .reduce((s,e) => s + e.qty, 0);
 
-  // ── Score component display helpers ──
-  const vContrib  = vScore * 3;
-  const dContrib  = dScore * 2;
-  const iContrib  = iScore;
-  const signStr   = (n) => n > 0 ? `+${n}` : `${n}`;
-  const scClass   = (n) => n > 0 ? 'sc-up' : n < 0 ? 'sc-dn' : 'sc-neu';
-  const valDiffSign = valueAdv >= 0 ? '+' : '−';
-  const valDiffAbs  = fmtValue(Math.abs(Math.round(valueAdv)));
-  const valDiffCls  = valueAdv >= 0 ? 'up' : 'dn';
+  // ── Item count imbalance ──
+  const extraOfferItems   = Math.max(0, offerCount - requestCount);
+  const extraRequestItems = Math.max(0, requestCount - offerCount);
+
+  // ── Alert conditions ──
+  const showDowngradeWarn = extraRequestItems > 0 && valueDiff < 1_000_000;
+  const demandWarn = offerDS !== null && requestDS !== null && offerDS < requestDS;
+
+  // ── Formatters ──
+  const valDiffCls  = valueDiff > 0 ? 'up' : valueDiff < 0 ? 'dn' : 'neu';
+  const valDiffSign = valueDiff >= 0 ? '+' : '−';
+  const valDiffAbs  = fmtValue(Math.abs(Math.round(valueDiff)));
+
+  const demandDiffCls  = demandDiff === null ? 'neu'
+    : demandDiff > 0 ? 'up' : demandDiff < 0 ? 'dn' : 'neu';
+  const demandDiffText = demandDiff === null ? 'N/A'
+    : demandDiff > 0 ? 'Offer has higher demand'
+    : demandDiff < 0 ? 'Request has higher demand'
+    : 'Equal demand';
+
+  const itemsCls = extraOfferItems > 0 ? 'neu'
+    : extraRequestItems > 0 ? 'warn' : 'neu';
+  const itemsText = extraOfferItems > 0
+    ? `+${extraOfferItems} extra on offer (upgrade trade)`
+    : extraRequestItems > 0
+    ? `+${extraRequestItems} extra on request (downgrade trade)`
+    : 'Even item count';
 
   el.innerHTML = `
-    <div class="summary-card ${verdict.cls}">
+    <div class="summary-card">
 
-      <!-- ── Verdict + Metrics ── -->
-      <div class="summary-top">
-        <div class="verdict-block">
-          <div class="verdict-emoji">${verdict.emoji}</div>
-          <div>
-            <div class="verdict-status">${verdict.label}</div>
-            <div class="verdict-sub">Trade Verdict</div>
-            <div class="verdict-score-badge">Score: ${signStr(tradeScore)}</div>
-          </div>
-        </div>
-        <div class="metrics-strip">
-          <div class="metric-cell">
-            <div class="mc-lbl">You Offer</div>
-            <div class="mc-val">${fmtValue(offerTotal)}</div>
-          </div>
-          <div class="metric-cell">
-            <div class="mc-lbl">You Request</div>
-            <div class="mc-val">${fmtValue(requestTotal)}</div>
-          </div>
-          <div class="metric-cell">
-            <div class="mc-lbl">Value Diff</div>
-            <div class="mc-val ${valDiffCls}">${valDiffSign}${valDiffAbs}</div>
-          </div>
-          <div class="metric-cell">
-            <div class="mc-lbl">Score Breakdown</div>
-            <div style="display:flex;gap:3px;flex-wrap:wrap;margin-top:2px;">
-              <span class="score-component ${scClass(vContrib)}" title="Value Score ×3">${signStr(vContrib)}V</span>
-              <span class="score-component ${scClass(dContrib)}" title="Demand Score ×2">${signStr(dContrib)}D</span>
-              <span class="score-component ${scClass(iContrib)}" title="Item Count Score">${signStr(iContrib)}I</span>
-            </div>
-          </div>
-          <div class="metric-cell">
-            <div class="mc-lbl">Confidence</div>
-            <div class="mc-val" style="color:${conf.color}">${conf.label}</div>
-          </div>
-        </div>
+      <div class="analysis-header">
+        <span class="analysis-title">Trade Analysis</span>
+        <span class="analysis-sub">${offerCount} item${offerCount!==1?'s':''} offered · ${requestCount} item${requestCount!==1?'s':''} requested</span>
       </div>
 
-      <!-- ── Alert banners ── -->
-      ${showDowngradeWarn ? `
-      <div class="summary-alert alert-downgrade">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="margin-top:1px"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-        <span><strong>Downgrade Trade</strong> — you're requesting ${extraRequestItems} more item${extraRequestItems > 1 ? 's' : ''} than you offer without enough extra value to justify it. Downgrade penalty applied to score.</span>
-      </div>` : ''}
+      <div class="analysis-grid">
 
-      ${demandWarn ? `
-      <div class="summary-alert alert-demand">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="margin-top:1px"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        <span><strong>Demand Warning</strong> — items you're offering have lower average demand than what you're requesting. Others may be less willing to accept this trade in practice.</span>
-      </div>` : ''}
-
-      <!-- ── Detail grid ── -->
-      <div class="summary-detail-grid">
-        <div class="detail-block">
-          <div class="db-lbl">Value Score (×3)</div>
-          <div class="db-val ${vContrib >= 0 ? 'up' : 'dn'}">${signStr(vContrib)}</div>
-        </div>
-        <div class="detail-block">
-          <div class="db-lbl">Demand Score (×2)</div>
-          <div class="db-val ${dContrib >= 0 ? 'up' : 'dn'}">${signStr(dContrib)}</div>
-        </div>
-        <div class="detail-block">
-          <div class="db-lbl">Item Count Score</div>
-          <div class="db-val ${iContrib < 0 ? 'dn' : 'neu'}">${signStr(iContrib)}</div>
-        </div>
-        <div class="detail-block">
-          <div class="db-lbl">Offer Demand</div>
-          <div class="db-val">${demandName(offerDS)}</div>
-        </div>
-        <div class="detail-block">
-          <div class="db-lbl">Request Demand</div>
-          <div class="db-val">${demandName(requestDS)}</div>
-        </div>
-        <div class="detail-block">
-          <div class="db-lbl">Confidence</div>
-          <div class="db-val" style="color:${conf.color}">
-            ${conf.label}
-            <div class="conf-track"><div class="conf-fill" style="width:${conf.pct}%;background:${conf.color}"></div></div>
+        <!-- VALUE -->
+        <div class="analysis-block">
+          <div class="ab-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            Value
+          </div>
+          <div class="ab-row">
+            <span class="ab-side-lbl offer-lbl">Offer</span>
+            <span class="ab-val">${fmtValue(offerTotal)}</span>
+          </div>
+          <div class="ab-row">
+            <span class="ab-side-lbl request-lbl">Request</span>
+            <span class="ab-val">${fmtValue(requestTotal)}</span>
+          </div>
+          <div class="ab-diff ${valDiffCls}">
+            ${valDiffSign}${valDiffAbs}
+            <span class="ab-diff-sub">${valueDiff > 0 ? 'you receive more' : valueDiff < 0 ? 'you give more' : 'even value'}</span>
           </div>
         </div>
-        <div class="detail-block">
-          <div class="db-lbl">Items Offered</div>
-          <div class="db-val neu">${offerCount}</div>
+
+        <!-- DEMAND -->
+        <div class="analysis-block">
+          <div class="ab-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            Demand
+          </div>
+          <div class="ab-row">
+            <span class="ab-side-lbl offer-lbl">Offer avg</span>
+            ${offerDS !== null
+              ? `<span class="badge-demand ${demandClass(demandName(offerDS))}" style="font-size:0.62rem;padding:2px 9px;">${demandName(offerDS)}</span>`
+              : `<span class="ab-val neu">N/A</span>`}
+          </div>
+          <div class="ab-row">
+            <span class="ab-side-lbl request-lbl">Request avg</span>
+            ${requestDS !== null
+              ? `<span class="badge-demand ${demandClass(demandName(requestDS))}" style="font-size:0.62rem;padding:2px 9px;">${demandName(requestDS)}</span>`
+              : `<span class="ab-val neu">N/A</span>`}
+          </div>
+          <div class="ab-diff ${demandDiffCls}">
+            ${demandDiffText}
+          </div>
         </div>
-        <div class="detail-block">
-          <div class="db-lbl">Items Requested</div>
-          <div class="db-val neu">${requestCount}</div>
+
+        <!-- ITEMS -->
+        <div class="analysis-block">
+          <div class="ab-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            Items
+          </div>
+          <div class="ab-row">
+            <span class="ab-side-lbl offer-lbl">Offered</span>
+            <span class="ab-val">${offerCount}</span>
+          </div>
+          <div class="ab-row">
+            <span class="ab-side-lbl request-lbl">Requested</span>
+            <span class="ab-val">${requestCount}</span>
+          </div>
+          <div class="ab-diff ${itemsCls}">
+            ${itemsText}
+          </div>
         </div>
-        ${totalAlt > 0 ? `
-        <div class="detail-block">
-          <div class="db-lbl">Duped / Limited</div>
-          <div class="db-val warn">${totalAlt} item${totalAlt > 1 ? 's' : ''}</div>
+
+        <!-- EXTRA INFO -->
+        <div class="analysis-block">
+          <div class="ab-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Additional
+          </div>
+          <div class="ab-row">
+            <span class="ab-lbl">Pull Advantage</span>
+            <span class="ab-val ${pullDiff > 0 ? 'up' : pullDiff < 0 ? 'dn' : 'neu'}">
+              ${pullDiff === 0 ? '—' : (pullDiff > 0 ? '+' : '') + fmtValue(Math.round(pullDiff))}
+            </span>
+          </div>
+          ${totalAlt > 0 ? `
+          <div class="ab-row">
+            <span class="ab-lbl">Duped / Limited</span>
+            <span class="ab-val warn">${totalAlt} item${totalAlt>1?'s':''}</span>
+          </div>` : ''}
+          <div class="ab-row" style="margin-top:2px;">
+            <span class="ab-lbl">Unique items</span>
+            <span class="ab-val neu">${offer.length}:${request.length}</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Alerts -->
+      ${(showDowngradeWarn || demandWarn) ? `
+      <div class="analysis-alerts">
+        ${showDowngradeWarn ? `
+        <div class="summary-alert alert-downgrade">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          <span><strong>Downgrade Trade</strong> — you're requesting ${extraRequestItems} more item${extraRequestItems>1?'s':''} than you offer. This typically requires you to receive significantly more value to make up for liquidity loss.</span>
         </div>` : ''}
-        <div class="detail-block">
-          <div class="db-lbl">Pull Advantage</div>
-          <div class="db-val ${pullDiff > 0 ? 'up' : pullDiff < 0 ? 'dn' : 'neu'}">${pullDiff === 0 ? '—' : (pullDiff > 0 ? '+' : '') + fmtValue(Math.round(pullDiff))}</div>
-        </div>
-      </div>
+        ${demandWarn ? `
+        <div class="summary-alert alert-demand">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span><strong>Demand Difference</strong> — items you are offering have lower average demand than what you are requesting. The person you're trading with may be less likely to accept.</span>
+        </div>` : ''}
+      </div>` : ''}
 
-      <!-- ── Disclaimer ── -->
       <div class="summary-disclaimer">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-        <strong>Trade Verdict is an automated estimate and may not reflect real trading behavior.
-        For accurate evaluations, ask the Trade Advisor in the <a href="disc.html">JBLX Discord server</a></strong>.
+        This is an automated analysis using listed values only. For accurate trade feedback, ask a Trade Advisor in the <a href="disc.html">JBLX Discord</a>.
       </div>
 
     </div>`;
@@ -1631,6 +1915,130 @@ document.getElementById('mirror-request-to-offer').addEventListener('click', () 
 refreshSelected('offer');
 refreshSelected('request');
 refreshSummary();
+/* ================================================================
+   CROSS-TRADE CALCULATOR
+================================================================ */
+
+const CROSS_SELL_RATE = 4_600_000; // JB per $1 when selling JB
+const CROSS_BUY_RATE  = 2_500_000; // JB per $1 when buying JB
+
+const CROSS_DEMAND_ADJ = {
+  'Extraordinary':  0.25,
+  'High':           0.15,
+  'Solid':          0.08,
+  'Average':        0,
+  'Below Average': -0.08,
+  'Low':           -0.15,
+  'Minimal':       -0.20,
+  'Nonexistent':   -0.25,
+};
+
+let crossMode   = 'sell';   // 'sell' | 'buy'
+let crossAdj    = 0;        // demand adjustment factor
+let crossLastEdit = 'jb';   // which input was last edited
+
+function crossUpdate() {
+  const jbEl  = document.getElementById('cross-jb');
+  const usdEl = document.getElementById('cross-usd');
+  const mainEl    = document.getElementById('crb-main');
+  const baseEl    = document.getElementById('crb-base');
+  const rateEl    = document.getElementById('crb-rate');
+  const adjPctEl  = document.getElementById('crb-adjpct');
+  const adjNoteEl = document.getElementById('crb-adj-note');
+  if (!mainEl) return;
+
+  const baseRate = crossMode === 'sell' ? CROSS_SELL_RATE : CROSS_BUY_RATE;
+  // Adjustment direction:
+  // When selling JB (you give JB, get $): higher demand → you get more $ → effective JB/$ rate is lower (favors seller)
+  // When buying JB (you give $, get JB): higher demand → less JB per $ → effective JB/$ rate is higher (favors buyer less)
+  // We apply adj to what you RECEIVE.
+  const adjFactor = 1 + crossAdj; // > 1 = you receive more
+  const effRate = crossMode === 'sell'
+    ? baseRate / adjFactor     // JB per $1: less JB per $ needed = better for seller
+    : baseRate * adjFactor;    // JB per $1: more JB received = better for buyer
+
+  const jbVal  = parseFloat(jbEl.value)  || 0;
+  const usdVal = parseFloat(usdEl.value) || 0;
+
+  if (crossLastEdit === 'jb' && jbVal > 0) {
+    const usdResult = jbVal / effRate;
+    const usdBase   = jbVal / baseRate;
+    usdEl.value = usdResult.toFixed(2);
+    mainEl.textContent = `$${usdResult.toFixed(2)}`;
+    mainEl.className   = `crb-val ${crossMode === 'sell' ? 'green' : 'pink'}`;
+    baseEl.textContent = `$${usdBase.toFixed(2)}`;
+    const diffPct = ((usdResult - usdBase) / usdBase * 100);
+    adjNoteEl.textContent = crossAdj !== 0 ? `${diffPct >= 0 ? '+' : ''}${diffPct.toFixed(1)}% vs base` : '';
+    adjNoteEl.className   = `crb-adj ${diffPct > 0 ? 'up' : diffPct < 0 ? 'dn' : ''}`;
+  } else if (crossLastEdit === 'usd' && usdVal > 0) {
+    const jbResult = usdVal * effRate;
+    const jbBase   = usdVal * baseRate;
+    jbEl.value = Math.round(jbResult);
+    mainEl.textContent = fmtValue(Math.round(jbResult)) + ' JB';
+    mainEl.className   = `crb-val ${crossMode === 'sell' ? 'green' : 'pink'}`;
+    baseEl.textContent = fmtValue(Math.round(jbBase)) + ' JB';
+    const diffPct = ((jbResult - jbBase) / jbBase * 100);
+    adjNoteEl.textContent = crossAdj !== 0 ? `${diffPct >= 0 ? '+' : ''}${diffPct.toFixed(1)}% vs base` : '';
+    adjNoteEl.className   = `crb-adj ${diffPct > 0 ? 'up' : diffPct < 0 ? 'dn' : ''}`;
+  } else {
+    mainEl.textContent = '—';
+    baseEl.textContent = '—';
+    adjNoteEl.textContent = '';
+  }
+
+  rateEl.textContent  = fmtValue(Math.round(effRate)) + ' JB / $1';
+  const adjPct = (crossAdj * 100);
+  adjPctEl.textContent  = `${adjPct >= 0 ? '+' : ''}${adjPct.toFixed(0)}%`;
+  adjPctEl.className    = `crb-val ${adjPct > 0 ? 'green' : adjPct < 0 ? 'pink' : ''}`;
+}
+
+// Toggle open/close
+const crossToggleRow = document.getElementById('cross-calc-toggle');
+if (crossToggleRow) {
+  crossToggleRow.addEventListener('click', () => {
+    document.getElementById('cross-calc-section').classList.toggle('open');
+  });
+}
+
+// Mode buttons
+const cmbSell = document.getElementById('cmb-sell');
+const cmbBuy  = document.getElementById('cmb-buy');
+if (cmbSell) {
+  cmbSell.addEventListener('click', () => {
+    crossMode = 'sell';
+    cmbSell.className = 'cross-mode-btn active-sell';
+    cmbBuy.className  = 'cross-mode-btn';
+    document.getElementById('cross-lbl-left').textContent  = 'JB Cash Amount';
+    document.getElementById('cross-lbl-right').textContent = 'USD Equivalent';
+    crossUpdate();
+  });
+  cmbBuy.addEventListener('click', () => {
+    crossMode = 'buy';
+    cmbBuy.className  = 'cross-mode-btn active-buy';
+    cmbSell.className = 'cross-mode-btn';
+    document.getElementById('cross-lbl-left').textContent  = 'JB Cash Amount';
+    document.getElementById('cross-lbl-right').textContent = 'USD You Pay';
+    crossUpdate();
+  });
+}
+
+// Demand chips
+document.querySelectorAll('.cross-demand-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.cross-demand-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    crossAdj = parseFloat(chip.dataset.adj);
+    crossUpdate();
+  });
+});
+
+// Inputs
+const crossJbEl  = document.getElementById('cross-jb');
+const crossUsdEl = document.getElementById('cross-usd');
+if (crossJbEl) {
+  crossJbEl.addEventListener('input',  () => { crossLastEdit = 'jb';  crossUpdate(); });
+  crossUsdEl.addEventListener('input', () => { crossLastEdit = 'usd'; crossUpdate(); });
+}
   </script>
   <script src="js/mobile-nav.js"></script>
 </body>

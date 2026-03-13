@@ -29,7 +29,7 @@
   --c-hyped:      #4a90e2;
   --c-rising:     #39e07a;
   --c-falling:    #e03040;
-  --c-stacked:       #f9ca24;
+  --c-hoarded:       #f9ca24;
   --c-manipulated:   #e84393;
 
   /* Obtainable tag */
@@ -981,7 +981,7 @@ tr:hover .row-img-wrap { border-color: var(--border-hi); }
 .t-hyped   { color: var(--c-hyped); }
 .t-rising  { color: var(--c-rising); }
 .t-falling { color: var(--c-falling); }
-.t-stacked     { color: var(--c-stacked); }
+.t-hoarded     { color: var(--c-hoarded); }
 .t-manipulated { color: var(--c-manipulated); }
 
 /* Empty state */
@@ -2207,7 +2207,7 @@ tr:hover .row-img-wrap { border-color: var(--border-hi); }
 .filter-chip.fct-Rising.active  { background: var(--c-rising);  border-color: var(--c-rising);  color: #000; }
 .filter-chip.fct-Falling.active { background: var(--c-falling); border-color: var(--c-falling); color: #fff; }
 .filter-chip.fct-Stable.active  { background: var(--c-stable);  border-color: var(--c-stable);  color: #fff; }
-.filter-chip.fct-Stacked.active     { background: var(--c-stacked);     border-color: var(--c-stacked);     color: #000; }
+.filter-chip.fct-Hoarded.active     { background: var(--c-hoarded);     border-color: var(--c-hoarded);     color: #000; }
 .filter-chip.fct-Manipulated.active { background: var(--c-manipulated); border-color: var(--c-manipulated); color: #fff; }
 
 /* Season chips */
