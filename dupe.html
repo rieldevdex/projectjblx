@@ -992,6 +992,19 @@ async function runSearch() {
 
   // ── Normal username / item search ────────────────────────────
   const result = dupeSearch(q);
+
+  // If clean in local DB, check JBCL live fallback
+  if (result.type === 'clean' && result.jbclLive) {
+    renderResults(q, result); // show "clean" immediately
+
+    const liveRecords = await result.jbclLive;
+    if (liveRecords && liveRecords.length) {
+      // Re-render as duped with the live results
+      renderResults(q, { type: 'exact-user', results: liveRecords });
+    }
+    return;
+  }
+
   renderResults(q, result);
 }
 
