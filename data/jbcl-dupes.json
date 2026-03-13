@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-03-13T12:11:45.838Z",
+    "generated": "2026-03-13T12:18:43.739Z",
     "totalRecords": 57,
     "source": "jailbreakchangelogs.xyz (scraped with owner permission)",
     "credit": "Data sourced from JBCL — https://jailbreakchangelogs.xyz"
@@ -410,62 +410,52 @@
     {
       "name": "Torpedo",
       "type": "vehicle",
-      "slug": "Torpedo",
-      "href": "/item/vehicle/Torpedo"
+      "slug": "Torpedo"
     },
     {
       "name": "Beignet",
       "type": "vehicle",
-      "slug": "Beignet",
-      "href": "/item/vehicle/Beignet"
+      "slug": "Beignet"
     },
     {
       "name": "Molten M12",
       "type": "vehicle",
-      "slug": "Molten%20M12",
-      "href": "/item/vehicle/Molten%20M12"
+      "slug": "Molten%20M12"
     },
     {
       "name": "Brulee",
       "type": "vehicle",
-      "slug": "Brulee",
-      "href": "/item/vehicle/Brulee"
+      "slug": "Brulee"
     },
     {
       "name": "Beam Hybrid",
       "type": "vehicle",
-      "slug": "Beam%20Hybrid",
-      "href": "/item/vehicle/Beam%20Hybrid"
+      "slug": "Beam%20Hybrid"
     },
     {
       "name": "Power 1",
       "type": "vehicle",
-      "slug": "Power%201",
-      "href": "/item/vehicle/Power%201"
+      "slug": "Power%201"
     },
     {
       "name": "Icebreaker",
       "type": "vehicle",
-      "slug": "Icebreaker",
-      "href": "/item/vehicle/Icebreaker"
+      "slug": "Icebreaker"
     },
     {
       "name": "Javelin",
       "type": "vehicle",
-      "slug": "Javelin",
-      "href": "/item/vehicle/Javelin"
+      "slug": "Javelin"
     },
     {
       "name": "Celsior",
       "type": "vehicle",
-      "slug": "Celsior",
-      "href": "/item/vehicle/Celsior"
+      "slug": "Celsior"
     },
     {
       "name": "Arachnid",
       "type": "vehicle",
-      "slug": "Arachnid",
-      "href": "/item/vehicle/Arachnid"
+      "slug": "Arachnid"
     }
   ]
 }
