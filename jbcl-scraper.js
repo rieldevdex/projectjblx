@@ -2,183 +2,211 @@
 
 /**
  * ================================================================
- *  JBLX — JBCL Dupe Scraper v5 (Direct API — no browser needed)
+ *  JBLX — JBCL Dupe Scraper v6
  *
- *  Puppeteer intercepted JBCL's real API endpoint:
- *    GET /api/items/dupes?id={itemId}
- *
- *  This scraper:
- *   1. Fetches ALL items from JBCL's items list API
- *   2. For each item, calls /api/items/dupes?id={id} directly
- *   3. Extracts Roblox usernames from the JSON response
- *   4. Merges with existing records (never deletes, only adds)
- *   5. Writes js/jbcl-dupes-bundle.js + data/jbcl-dupes.json
- *
- *  No Puppeteer, no Chrome, no headless browser — just fast API
- *  calls. Covers ALL items: HyperChrome, Void Rims, Checkers, etc.
+ *  Strategy:
+ *   1. Use Puppeteer to load JBCL's trading/items page ONCE
+ *      and intercept the full items list API call to get ALL
+ *      item IDs and names (HyperChrome, Void Rims, Checkers, etc.)
+ *   2. For each item ID, call /api/items/dupes?id=X directly
+ *      with plain node-fetch (fast, no browser needed per item)
+ *   3. Merge with existing records, write bundle
  * ================================================================
  */
 
-const fetch = require('node-fetch');
-const fs    = require('fs');
-const path  = require('path');
+const puppeteer = require('puppeteer-core');
+const fetch     = require('node-fetch');
+const fs        = require('fs');
+const path      = require('path');
 
 // ── config ────────────────────────────────────────────────────
 
-const BASE_API        = 'https://jailbreakchangelogs.xyz/api';
-const REQUEST_DELAY   = 300;   // ms between requests — be polite
-const MAX_CONCURRENCY = 3;     // parallel requests at a time
+const BASE          = 'https://jailbreakchangelogs.xyz';
+const REQUEST_DELAY = 200;   // ms between dupes API calls
+const CONCURRENCY   = 5;     // parallel dupes requests
 
 const OUT_JSON = path.join(__dirname, 'data', 'jbcl-dupes.json');
 const OUT_JS   = path.join(__dirname, 'js',   'jbcl-dupes-bundle.js');
+
+// Pages to try for intercepting the items list
+const ITEM_LIST_PAGES = [
+  `${BASE}/trading`,
+  `${BASE}/items`,
+  `${BASE}/values`,
+  `${BASE}/dupes`,
+];
 
 // ── helpers ───────────────────────────────────────────────────
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const log   = (...a) => console.log(`[${new Date().toISOString()}]`, ...a);
 
-const HEADERS = {
-  'User-Agent': 'JBLX-DupeScraper/5.0 (+https://jblx.net; permitted by JBCL owner)',
+const FETCH_HEADERS = {
+  'User-Agent': 'JBLX-DupeScraper/6.0 (+https://jblx.net; permitted by JBCL owner)',
   'Accept': 'application/json',
 };
 
 async function apiFetch(url, retries = 3) {
   for (let i = 0; i < retries; i++) {
     try {
-      const res = await fetch(url, { headers: HEADERS, timeout: 15000 });
-      if (res.status === 429) {
-        log(`  Rate limited — waiting 5s…`);
-        await sleep(5000);
-        continue;
-      }
+      const res = await fetch(url, { headers: FETCH_HEADERS, timeout: 15000 });
+      if (res.status === 429) { await sleep(5000); continue; }
+      if (res.status === 404) return null;
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const ct = res.headers.get('content-type') || '';
+      if (!ct.includes('json')) return null;
       return await res.json();
     } catch (err) {
-      if (i === retries - 1) throw err;
-      await sleep(1000 * (i + 1));
+      if (i === retries - 1) return null;
+      await sleep(800 * (i + 1));
     }
   }
+  return null;
 }
 
-// ── fetch all items ───────────────────────────────────────────
-// JBCL exposes a list of all items. We try a few known endpoints.
+// ── extract all items from intercepted JSON ───────────────────
+// JBCL items list can have many shapes — handle them all
 
-async function fetchAllItems() {
-  const endpoints = [
-    `${BASE_API}/items/list`,
-    `${BASE_API}/items/all`,
-    `${BASE_API}/items`,
-    `${BASE_API}/item/list`,
-  ];
-
-  for (const url of endpoints) {
-    try {
-      log(`Trying items list: ${url}`);
-      const data = await apiFetch(url);
-      const items = Array.isArray(data) ? data : (data.items || data.data || []);
-      if (items.length > 0) {
-        log(`  ✓ Got ${items.length} items from ${url}`);
-        return items;
-      }
-    } catch (err) {
-      log(`  ✗ ${url}: ${err.message}`);
-    }
-  }
-
-  // Fallback: probe item IDs 1–500 to discover all valid IDs
-  // We know from interception: Torpedo=222, Beignet=138, etc. — IDs go to ~250+
-  log('Items list API not found — probing IDs 1–500…');
-  return await probeItemIds(1, 500);
-}
-
-// Probe sequential IDs to find all valid items
-async function probeItemIds(start, end) {
+function extractItemsFromJson(data) {
   const items = [];
-  const batchSize = 10;
+  const seen  = new Set();
 
-  for (let id = start; id <= end; id += batchSize) {
-    const batch = [];
-    for (let j = id; j < Math.min(id + batchSize, end + 1); j++) {
-      batch.push(j);
-    }
-
-    const results = await Promise.allSettled(
-      batch.map(async itemId => {
-        try {
-          const data = await apiFetch(`${BASE_API}/items/get?id=${itemId}`);
-          if (data && (data.name || data.item_name)) {
-            return { id: itemId, name: data.name || data.item_name, type: data.type || 'vehicle' };
-          }
-        } catch {}
-        return null;
-      })
-    );
-
-    for (const r of results) {
-      if (r.status === 'fulfilled' && r.value) {
-        items.push(r.value);
-        log(`  Found item ${r.value.id}: ${r.value.name}`);
+  function tryArray(arr) {
+    if (!Array.isArray(arr)) return;
+    for (const obj of arr) {
+      if (!obj || typeof obj !== 'object') continue;
+      // Must have an id and a name
+      const id   = obj.id   ?? obj.item_id ?? obj.itemId;
+      const name = obj.name ?? obj.item_name ?? obj.itemName ?? obj.title;
+      const type = obj.type ?? obj.category ?? 'vehicle';
+      if (id && name && !seen.has(id)) {
+        seen.add(id);
+        items.push({ id: Number(id), name: String(name), type: String(type) });
       }
     }
+  }
 
-    await sleep(REQUEST_DELAY);
+  if (Array.isArray(data)) {
+    tryArray(data);
+  } else if (data && typeof data === 'object') {
+    // Try common wrapper keys
+    for (const key of ['items', 'data', 'results', 'vehicles', 'list']) {
+      if (Array.isArray(data[key])) { tryArray(data[key]); }
+    }
+    // If it's a single item, add it
+    const id   = data.id ?? data.item_id;
+    const name = data.name ?? data.item_name;
+    if (id && name && !seen.has(id)) {
+      seen.add(id);
+      items.push({ id: Number(id), name: String(name), type: String(data.type || 'vehicle') });
+    }
   }
 
   return items;
 }
 
-// ── fetch dupers for one item ─────────────────────────────────
+// ── Puppeteer: load a page and intercept all JSON API calls ───
 
-async function fetchDupersForItem(item) {
-  try {
-    const data = await apiFetch(`${BASE_API}/items/dupes?id=${item.id}`);
+async function interceptItemsFromPage(browser, pageUrl) {
+  const page      = await browser.newPage();
+  const allItems  = new Map(); // id → item
+  let   resolved  = false;
+  let   resolveP;
+  const waitP = new Promise(r => { resolveP = r; });
 
-    // The API response could be an array of duper objects or a wrapper
-    const entries = Array.isArray(data) ? data : (data.dupes || data.users || data.data || []);
+  await page.setRequestInterception(true);
+  page.on('request', req => req.continue());
 
-    if (!entries.length) return [];
+  page.on('response', async response => {
+    const url = response.url();
+    if (!url.includes('jailbreakchangelogs.xyz')) return;
+    try {
+      const ct = response.headers()['content-type'] || '';
+      if (!ct.includes('json')) return;
+      const json = await response.json().catch(() => null);
+      if (!json) return;
 
-    // Extract usernames — the API returns objects with various field names
-    // From interception we know it returns DisplayName@Username format somewhere,
-    // or structured objects with owner/username fields
-    const usernames = new Set();
-
-    for (const entry of entries) {
-      if (typeof entry === 'string') {
-        // Could be "DisplayName@Username" format
-        if (entry.includes('@')) {
-          const parts = entry.split('@');
-          const username = parts[parts.length - 1].replace(/[^A-Za-z0-9_]/g, '');
-          if (username.length >= 3) usernames.add(username);
-        } else if (/^[A-Za-z0-9_]{3,30}$/.test(entry)) {
-          usernames.add(entry);
+      const found = extractItemsFromJson(json);
+      if (found.length > 0) {
+        log(`  [intercept] ${url} → ${found.length} item(s)`);
+        for (const item of found) allItems.set(item.id, item);
+        // If we've got a large batch, we're done
+        if (allItems.size > 20 && !resolved) {
+          resolved = true;
+          resolveP();
         }
-      } else if (typeof entry === 'object' && entry !== null) {
-        // Look for username fields
-        const fields = ['username', 'user_name', 'roblox_username', 'owner', 'name',
-                        'Username', 'Owner', 'Name', 'user', 'User'];
-        for (const f of fields) {
-          if (entry[f] && typeof entry[f] === 'string') {
-            const val = entry[f].trim();
-            // Handle "DisplayName@Username" in field values too
-            if (val.includes('@')) {
-              const parts = val.split('@');
-              const u = parts[parts.length - 1].replace(/[^A-Za-z0-9_]/g, '');
-              if (u.length >= 3) { usernames.add(u); break; }
-            } else if (/^[A-Za-z0-9_]{3,30}$/.test(val)) {
-              usernames.add(val);
-              break;
-            }
-          }
+      }
+    } catch {}
+  });
+
+  try {
+    await page.goto(pageUrl, { waitUntil: 'networkidle2', timeout: 25000 });
+  } catch {}
+
+  // Wait up to 5s for a large item batch to arrive
+  await Promise.race([waitP, sleep(5000)]);
+  await page.close();
+
+  return [...allItems.values()];
+}
+
+// ── fetch dupers for one item via API ─────────────────────────
+
+function extractUsernames(data) {
+  const usernames = new Set();
+  const entries = Array.isArray(data) ? data : (data?.dupes ?? data?.users ?? data?.data ?? []);
+
+  for (const entry of entries) {
+    if (typeof entry === 'string') {
+      if (entry.includes('@')) {
+        const u = entry.split('@').pop().replace(/[^A-Za-z0-9_]/g, '');
+        if (u.length >= 3 && u.length <= 30) usernames.add(u);
+      } else if (/^[A-Za-z0-9_]{3,30}$/.test(entry.trim())) {
+        usernames.add(entry.trim());
+      }
+    } else if (entry && typeof entry === 'object') {
+      // Try all plausible username fields
+      for (const f of ['username','user_name','roblox_username','owner','name','user','Username','Owner']) {
+        const val = entry[f];
+        if (typeof val !== 'string') continue;
+        const trimmed = val.trim();
+        if (trimmed.includes('@')) {
+          const u = trimmed.split('@').pop().replace(/[^A-Za-z0-9_]/g, '');
+          if (u.length >= 3) { usernames.add(u); break; }
+        } else if (/^[A-Za-z0-9_]{3,30}$/.test(trimmed)) {
+          usernames.add(trimmed); break;
         }
       }
     }
-
-    return [...usernames];
-  } catch (err) {
-    log(`  ERROR fetching dupes for ${item.name} (id=${item.id}): ${err.message}`);
-    return [];
   }
+
+  return [...usernames];
+}
+
+async function fetchDupersForItem(item) {
+  const data = await apiFetch(`${BASE}/api/items/dupes?id=${item.id}`);
+  if (!data) return [];
+  const usernames = extractUsernames(data);
+  if (usernames.length > 0) log(`  ${item.name} (id=${item.id}): ${usernames.length} duper(s)`);
+  return usernames;
+}
+
+// ── run N tasks with limited concurrency ─────────────────────
+
+async function pooled(items, fn, concurrency) {
+  const results = new Array(items.length);
+  let   idx = 0;
+
+  async function worker() {
+    while (idx < items.length) {
+      const i = idx++;
+      results[i] = await fn(items[i]);
+      await sleep(REQUEST_DELAY);
+    }
+  }
+
+  await Promise.all(Array.from({ length: concurrency }, worker));
+  return results;
 }
 
 // ── load / save ───────────────────────────────────────────────
@@ -186,14 +214,12 @@ async function fetchDupersForItem(item) {
 function loadExistingRecords() {
   try {
     if (fs.existsSync(OUT_JSON)) {
-      const data = JSON.parse(fs.readFileSync(OUT_JSON, 'utf8'));
+      const data    = JSON.parse(fs.readFileSync(OUT_JSON, 'utf8'));
       const records = data.records || [];
       log(`Loaded ${records.length} existing records`);
       return records;
     }
-  } catch (e) {
-    log('WARNING: could not load existing records:', e.message);
-  }
+  } catch (e) { log('WARNING: could not load existing records:', e.message); }
   return [];
 }
 
@@ -202,17 +228,15 @@ function dedup(records) {
   return records.filter(r => {
     const key = `${(r.username || '').toUpperCase()}|${r.itemKey}`;
     if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
+    seen.add(key); return true;
   });
 }
 
 function writeOutputs(records, dupeItems) {
-  for (const dir of ['data', 'js']) {
-    if (!fs.existsSync(path.join(__dirname, dir))) {
-      fs.mkdirSync(path.join(__dirname, dir), { recursive: true });
-    }
-  }
+  ['data', 'js'].forEach(d => {
+    const p = path.join(__dirname, d);
+    if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true });
+  });
 
   const meta = {
     generated:    new Date().toISOString(),
@@ -224,77 +248,94 @@ function writeOutputs(records, dupeItems) {
   fs.writeFileSync(OUT_JSON, JSON.stringify({ meta, records, dupeItems }, null, 2));
   log(`Wrote ${OUT_JSON} (${records.length} records)`);
 
-  const bundle = `/**
- * AUTO-GENERATED by jbcl-scraper.js
- * Generated: ${meta.generated}
- * Source: ${meta.source}
- * ${meta.credit}
- * DO NOT EDIT — re-run jbcl-scraper.js to update.
- */
-
-const JBCL_RECORDS = ${JSON.stringify(records, null, 2)};
-
-const JBCL_DUPE_ITEMS = ${JSON.stringify(dupeItems, null, 2)};
-
-const JBCL_META = ${JSON.stringify(meta, null, 2)};`;
-
-  fs.writeFileSync(OUT_JS, bundle);
+  fs.writeFileSync(OUT_JS,
+    `/**\n * AUTO-GENERATED by jbcl-scraper.js\n` +
+    ` * Generated: ${meta.generated}\n` +
+    ` * ${meta.credit}\n * DO NOT EDIT\n */\n\n` +
+    `const JBCL_RECORDS = ${JSON.stringify(records, null, 2)};\n\n` +
+    `const JBCL_DUPE_ITEMS = ${JSON.stringify(dupeItems, null, 2)};\n\n` +
+    `const JBCL_META = ${JSON.stringify(meta, null, 2)};\n`
+  );
   log(`Wrote ${OUT_JS}`);
-}
-
-// ── run with limited concurrency ─────────────────────────────
-
-async function processWithConcurrency(items, fn, concurrency) {
-  const results = [];
-  for (let i = 0; i < items.length; i += concurrency) {
-    const batch = items.slice(i, i + concurrency);
-    const batchResults = await Promise.all(batch.map(fn));
-    results.push(...batchResults);
-    if (i + concurrency < items.length) await sleep(REQUEST_DELAY);
-  }
-  return results;
 }
 
 // ── main ──────────────────────────────────────────────────────
 
 async function main() {
-  log('=== JBLX Dupe Scraper v5 (direct API) starting ===');
+  log('=== JBLX Dupe Scraper v6 starting ===');
 
   const existingRecords = loadExistingRecords();
-  const newRecords = [];
 
-  // 1. Get all items
-  const allItems = await fetchAllItems();
-  if (!allItems.length) {
-    log('FATAL: Could not retrieve item list');
-    process.exit(1);
-  }
-  log(`\nFound ${allItems.length} total items — checking each for dupes…\n`);
+  // ── Step 1: get all items by loading JBCL pages with Puppeteer ──
+  const executablePath = process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/chromium-browser';
+  log('Launching headless Chrome…');
+  const browser = await puppeteer.launch({
+    headless: 'new', executablePath,
+    args: ['--no-sandbox','--disable-setuid-sandbox','--disable-dev-shm-usage','--disable-gpu','--no-zygote'],
+  });
 
-  // 2. For each item, fetch its dupers
-  const dupeItems = [];
+  let allItems = [];
+  try {
+    for (const pageUrl of ITEM_LIST_PAGES) {
+      log(`\nLoading ${pageUrl} to intercept items list…`);
+      const found = await interceptItemsFromPage(browser, pageUrl);
+      log(`  → ${found.length} items found`);
 
-  await processWithConcurrency(allItems, async (item) => {
-    const usernames = await fetchDupersForItem(item);
-
-    if (usernames.length > 0) {
-      log(`  ${item.name}: ${usernames.length} duper(s)`);
-      const itemKey = (item.name || item.id.toString()).replace(/\s+/g, '_').toUpperCase();
-      dupeItems.push({ item: item.name, itemKey, type: item.type, id: item.id });
-
-      for (const username of usernames) {
-        newRecords.push({
-          username: username.toUpperCase(),
-          item:    item.name,
-          itemKey,
-          type:    item.type || 'Unknown',
-          source:  'jbcl',
-        });
+      // Merge new items
+      const before = allItems.length;
+      const ids = new Set(allItems.map(i => i.id));
+      for (const item of found) {
+        if (!ids.has(item.id)) { ids.add(item.id); allItems.push(item); }
       }
-    }
-  }, MAX_CONCURRENCY);
+      const added = allItems.length - before;
+      if (added > 0) log(`  (+${added} new, ${allItems.length} total)`);
 
-  // 3. Merge + dedup
+      // If we have a substantial list, stop loading more pages
+      if (allItems.length > 50) break;
+    }
+  } finally {
+    await browser.close();
+  }
+
+  if (allItems.length === 0) {
+    // Hard fallback: use known IDs from previous Puppeteer run + probe
+    log('\nWARNING: Could not intercept items list — using known IDs + probe 1-300');
+    const knownIds = [133,137,138,146,166,170,183,195,222]; // from prior run
+    allItems = knownIds.map(id => ({ id, name: `Item_${id}`, type: 'vehicle' }));
+    // Also probe for unknown IDs
+    for (let id = 1; id <= 300; id++) {
+      if (!knownIds.includes(id)) allItems.push({ id, name: `Item_${id}`, type: 'vehicle' });
+    }
+  }
+
+  log(`\n${allItems.length} items to check. Fetching dupes via API…\n`);
+
+  // ── Step 2: fetch dupers for every item via direct API ──────
+  const newRecords = [];
+  const dupeItems  = [];
+
+  const usernamesList = await pooled(allItems, fetchDupersForItem, CONCURRENCY);
+
+  for (let i = 0; i < allItems.length; i++) {
+    const item      = allItems[i];
+    const usernames = usernamesList[i];
+    if (!usernames || usernames.length === 0) continue;
+
+    const itemKey = item.name.replace(/\s+/g, '_').toUpperCase();
+    dupeItems.push({ item: item.name, itemKey, type: item.type, id: item.id });
+
+    for (const username of usernames) {
+      newRecords.push({
+        username: username.toUpperCase(),
+        item:    item.name,
+        itemKey,
+        type:    item.type || 'Unknown',
+        source:  'jbcl',
+      });
+    }
+  }
+
+  // ── Step 3: merge + write ────────────────────────────────────
   const existingDeduped = dedup(existingRecords);
   const merged          = dedup([...existingDeduped, ...newRecords]);
   const added           = merged.length - existingDeduped.length;
@@ -304,7 +345,4 @@ async function main() {
   log('=== Done ===');
 }
 
-main().catch(err => {
-  console.error('Fatal error:', err);
-  process.exit(1);
-});
+main().catch(err => { console.error('Fatal:', err); process.exit(1); });
