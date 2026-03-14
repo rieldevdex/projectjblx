@@ -22,17 +22,10 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install Chrome (for Puppeteer)
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y chromium-browser
-
       - name: Install dependencies
-        run: npm install node-fetch@2 cheerio puppeteer-core
+        run: npm install node-fetch@2
 
       - name: Run scraper
-        env:
-          PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium-browser
         run: node jbcl-scraper.js
 
       - name: Commit updated dupe bundle

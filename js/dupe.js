@@ -16,17 +16,17 @@
 const JBLX_MANUAL_RECORDS = [
 
   // ════════ TORPEDO ════════════════════════════════════════════
-  { username: "POLARCHYR",               item: "Torpedo", itemKey: "TORP", notes: "" },
-  { username: "JOSUEESTEBAN27",          item: "Torpedo", itemKey: "TORP", notes: "" },
-  { username: "SPAYE",                   item: "Torpedo", itemKey: "TORP", notes: "" },
-  { username: "COCOTHECUTEGAMERO",       item: "Torpedo", itemKey: "TORP", notes: "" },
-  { username: "yt_itswither",            item: "Torpedo", itemKey: "TORP", notes: "" },
-  { username: "VUXSTEALSBRAWDS",         item: "Torpedo", itemKey: "TORP", notes: "" },
-  { username: "SEANTHESUPERBOY123",      item: "Torpedo", itemKey: "TORP", notes: "" },
-  { username: "FASTARDRAGOS",            item: "Torpedo", itemKey: "TORP", notes: "" },
-  { username: "KINGPOOKIE12",            item: "Torpedo", itemKey: "TORP", notes: "" },
-  { username: "XXJUMIOSXXTORPCRAVEMEOW", item: "Torpedo", itemKey: "TORP", notes: "" },
-  { username: "THEBULLIED_GUEST",        item: "Torpedo", itemKey: "TORP", notes: "" },
+  { username: "POLARCHYR",               item: "Torpedo", itemKey: "TORPEDO", notes: "" },
+  { username: "JOSUEESTEBAN27",          item: "Torpedo", itemKey: "TORPEDO", notes: "" },
+  { username: "SPAYE",                   item: "Torpedo", itemKey: "TORPEDO", notes: "" },
+  { username: "COCOTHECUTEGAMERO",       item: "Torpedo", itemKey: "TORPEDO", notes: "" },
+  { username: "yt_itswither",            item: "Torpedo", itemKey: "TORPEDO", notes: "" },
+  { username: "VUXSTEALSBRAWDS",         item: "Torpedo", itemKey: "TORPEDO", notes: "" },
+  { username: "SEANTHESUPERBOY123",      item: "Torpedo", itemKey: "TORPEDO", notes: "" },
+  { username: "FASTARDRAGOS",            item: "Torpedo", itemKey: "TORPEDO", notes: "" },
+  { username: "KINGPOOKIE12",            item: "Torpedo", itemKey: "TORPEDO", notes: "" },
+  { username: "XXJUMIOSXXTORPCRAVEMEOW", item: "Torpedo", itemKey: "TORPEDO", notes: "" },
+  { username: "THEBULLIED_GUEST",        item: "Torpedo", itemKey: "TORPEDO", notes: "" },
 
   // ════════ BEIGNET ════════════════════════════════════════════
   { username: "david12banana",           item: "Beignet", itemKey: "BEIGNET", notes: "" },
