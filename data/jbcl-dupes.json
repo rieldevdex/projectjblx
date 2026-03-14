@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated": "2026-03-14T15:25:10.386Z",
-    "totalRecords": 3746,
-    "source": "jailbreakchangelogs.xyz (scraped with owner permission)",
+    "generated": "2026-03-14T15:54:59.779Z",
+    "totalRecords": 4919,
+    "source": "jailbreakchangelogs.xyz API (used with owner permission)",
     "credit": "Data sourced from JBCL — https://jailbreakchangelogs.xyz"
   },
   "records": [
@@ -26227,58 +26227,8531 @@
       "itemKey": "ARACHNID",
       "type": "vehicle",
       "source": "jbcl"
+    },
+    {
+      "username": "BACONSTORM_YT",
+      "item": "Snowstorm",
+      "itemKey": "SNOWSTORM",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "SHREWDTROUT",
+      "item": "Snowstorm",
+      "itemKey": "SNOWSTORM",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "H_UTIU",
+      "item": "Snowstorm",
+      "itemKey": "SNOWSTORM",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "HAZEWENTMISTY",
+      "item": "Snowstorm",
+      "itemKey": "SNOWSTORM",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "SPELLBOUNDQR",
+      "item": "Snowstorm",
+      "itemKey": "SNOWSTORM",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "7BLAKE27",
+      "item": "Snowstorm",
+      "itemKey": "SNOWSTORM",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "STARBOYYTYEET",
+      "item": "Snowstorm",
+      "itemKey": "SNOWSTORM",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "DESTINYISCHOICE125",
+      "item": "Snowstorm",
+      "itemKey": "SNOWSTORM",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "ZACHAGAMERX",
+      "item": "Snowstorm",
+      "itemKey": "SNOWSTORM",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "HAROLDH20",
+      "item": "Snowstorm",
+      "itemKey": "SNOWSTORM",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "432RICHARD",
+      "item": "Snowstorm",
+      "itemKey": "SNOWSTORM",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "BILBOSWAGINS_ME101",
+      "item": "Snowstorm",
+      "itemKey": "SNOWSTORM",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "MATTIMKM",
+      "item": "Snowstorm",
+      "itemKey": "SNOWSTORM",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "ESPI123456",
+      "item": "Fire",
+      "itemKey": "FIRE",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "RAPTORETER_1",
+      "item": "Fire",
+      "itemKey": "FIRE",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "4FOPAA",
+      "item": "Fire",
+      "itemKey": "FIRE",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "SEROLY2345",
+      "item": "Fire",
+      "itemKey": "FIRE",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "BILLYBOBJR278",
+      "item": "Fire",
+      "itemKey": "FIRE",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "GUGU_78190",
+      "item": "Fire",
+      "itemKey": "FIRE",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "DASAKA7",
+      "item": "Fire",
+      "itemKey": "FIRE",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "10X_COOL",
+      "item": "Fire",
+      "itemKey": "FIRE",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "ALEKS87567",
+      "item": "Fire",
+      "itemKey": "FIRE",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "ILGENESISLI",
+      "item": "Fire",
+      "itemKey": "FIRE",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "TUDINIS",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "PLAINCORNFLAKE",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "BLOXIAN_WIZZARD",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "ZEBAIMOUMOUL",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "LMGE0RGE",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "SWEETKADDU1238",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "217BAM",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "NB0B0",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "TODEIIO",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "ANTONWERFFDS",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "MICHAELBALLOUT",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "SEBA_THEBEAST",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "DAVID_KEPTENE",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "NOOBPOWER1923",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "CJGUTZMER",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "ASIIMODE",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "ZXE_7EX",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "SAMYVOR",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "REROU00",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "LI_LDRIP33",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "ALENGALER",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "CANO_471",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "AQUIXPX",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "ETERNAREALIS",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "MARTYVIP09",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "RYKOVEN",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "XXKINGIL",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "CRISTIANCRACK_12",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "MAXBANYOLES",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "B76X2",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "1FXLN",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "JUST_NINJAQ",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "GDFUHDGE",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "MOONHAZE1",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "JHANCA328_XD",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "KING_SEBI510",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "THEDUMBLING",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "RASMUS2299",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "HAZEWENTMISTY",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "DATRHT",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "BACONSTORM_YT",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "CRISTHOPER135",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "DAV234563",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "00_DARKSIDE",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROBLOX_USER_1623532435",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "RACER0007",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "BOSSGAMING250",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "KRISH_PLAYZZ",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "CREATORLIEDTOUS",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "ANDRESALEXMX",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "THEBADBOOKGUY5",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "MASTER_MATEO4",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "MIDNIGHT_SLAYX",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "GRYPHUSX",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "STRANGERTHINGSUPERFA",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "CYBER_SNIPER08",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "BLOCKEDCAR46850GTA",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "DALLAS_17101",
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROMM3Y",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "DJJOHNFAME",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "0KAYITSLUKAS",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "KHYSNIK",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "LUMANSOCCER23",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "ITSFASTMAN",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "ILIKEGORP",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "JOPAVANDWARRIOR",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "CREEPYKILL1234",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "891LIGHTNING",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "YOURBADKID4445",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "TREX14JD",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "PIX3LCORE",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "FOOTBALLDUDE1001001",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "TACHYON_YT",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "LASERFIREBEAM1",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "TIMMHE489",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "IAMRAD82",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "ZEN1XGPO",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "CRRONALDOII",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "BALD_MARTIN98765",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "LESL1ECH0W",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "M0NK3_S",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "DENYTHEBEST8262",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "KYLEHIROJAMES",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "CZAREK609",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "SPINEL_MAD",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "COOLGAMER212419",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "CHITACHITA11",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "FRANKIESTEIN813",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "ESSENTIALASCENSION",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "INCHY31",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "BEARSIGB",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "HEROPRIMYYYYYYYYYY",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "ASTROGLYPHX",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "DIEGONINJA399",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "VISUALSTACK",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "GAVINISAWESOME31",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "X_XKAVI1",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "EXPH1PHD",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "POLLOMASTER43",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "LILCLOUT247",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "AJHFLASKGFHASK",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "MOUNTAINAURORA",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "B4P3RR",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "MISTERBUCKSBOY",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "NOAHGOOD25",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "ITZZIRIANN",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "AIDENPOOPYPANTS33",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "CRINGE_AG",
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "source": "jbcl"
+    },
+    {
+      "username": "KINGDRAGONSLAYER5894",
+      "item": "Galactic Carbon",
+      "itemKey": "GALACTIC_CARBON",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "AL1LEWIS1",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "GEOTHERMAL_PENGUIN",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "WAREZIR",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "1VANH",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "MINITENTACTION",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "POPULAR148587",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "BB0307",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "TIGERGRADE3",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "NRG6767",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "SWAG_176",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "SADWYI",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "FRAPPIUS",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "EMR2135K",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "BUNNIESMPD",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "THEOFFICIAL_LORDDOGE",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "OFFERINGELATION",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "RS_PARROW",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "MOUNTAINAURORA",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "NATION_OFICIAL",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "ELLIN_04",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "4KTRAY_WALKER",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "MAX124485",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "MONTI_V12",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "MR_DJ000",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "FXPRISM",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROMM3Y",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "TIDMAI",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "L_IIAAPRO",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "BOSTONREX9",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "M0NKEYG0RILLA_MAN",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "PANNY_05",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "CR7MESS111",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "KERM3TMA5TER",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "ARROW_PLAYSS",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "RAPTORPLAYZ_TWIN",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "THEOLDMANMYSTERY",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "KIL0WATTTT",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "SUPERAGENTT007",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "STEFANAPRIL20",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "HASH854",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "DAVIDBERISH",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "DAUDCH600",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "BENMOON444",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "SOLSTICEBURST",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "KYOGRE7257",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "MICHALSYTLOL",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "ELTONBOBELI",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "TURTLETREVOR123",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "I_DCL",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "URROMZN",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "DATRHT",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "ARGGHHHHHHHHHHHHHHHH",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "VAPORISH_RAVENCLAW",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "SAMUELP1399_2",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "TIMURTURTLE",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "MAGDALENA2510WP",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "XANDER1234432111",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "AEDEN07C",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "INFECTEDTHIEF",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "SKELETONCREEPY",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "WAKASKHAN",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "ARSENCY220",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "XXXRIGHT0NCARSONXXX",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "BEACHRHINO",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "HUDDYBUDDY9978",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "PLEB_0O",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "GIORGIOISPIGEON",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "WILLYLEGO710",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "SAMSGARBAGEATGAMES",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "HUNTERFREEVOELK",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "JOHNYRGAMING2009",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "TEEMAN31112",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "JNICKLOST",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "HENNRYLUVIANO12345",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "CZAREK609",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "BASKETBALLDUDESROCK",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "CHXILZYY",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "STARCODE_WATERWASH",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "CORRUPTEDCOSMIC5",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "SPORTSGUY7771",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "LUMINANTHD",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "PREDALIENSPITTER",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "ALOCH17",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "WHATSOFRESH",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "JACKSON105W",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "WOPPER0967",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "JOKER50687",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "REALCONJA",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "JHFZXX",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "COOLASHU_00",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "JACEIZAIAHSCOUSON2",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "OOOAAL",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "THEBOOMBOXBANDIT1",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "WIESOWESHALBWARUM72",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "TEOTHEPRO521",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "JAVITOPROOMG1320",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "PIKACHU_THUNDERBOL7",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "RAFY156",
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "25XNUXGGET",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROMM3Y",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "UGANAMIOG",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CHXILZYY",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PARRAMOTIVE",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MOUNTAINAURORA",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LUCIFER_DEVIL015",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RICHU22221",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "YANKEESFAN2997",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JAME4028",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MATEORO124",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "OMQ_SOLXEIL",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "EVIIMASKS",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FILIP_5643",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RAFICISWAFFLETIMES",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BALLTHROW2",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RANVEER3234",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ELGUST209",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DORIJAN11DOKI11",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "POUREAYT",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RAVEFORM",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CRAZYAUSIEWITHMEMES",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MIKASKRILLER",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "0NLYPABS",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ABRAARZAID2021",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "X_EXECXTIXN",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PI_DEVV",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ZAHINULAMMAR2315",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ENVIOUSSNAIL66",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FSGSFGFDSF",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MISTERBUCKSBOY",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MUBASHIR5438",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "UTKU_FENOMEN",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "WOLFY_1007D",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AIDENPOOPYPANTS33",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "COLUMBIA456789",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SLEEM2727",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KINGOFGOLDNESS",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DRAGON_62333",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ASADO973",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HICCUPTOWNLEY",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MEANBURRITO34",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "YEET_EEY",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TERMINATORDUPRE",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "EAGERCHANON",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MANGOOFFICIAL_YT",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DIP5AUCE",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GIGAJIGA114",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JUSTDESTROYER8",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TRYMEBROTRYME7",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GJORDONNE23",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "1WALEED1_1",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "THEHOTDOGHOTDOG",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "A_LOAF0FBREAD",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "EXO_DRAGON1",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AHMA1855",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RYANPLAYZ2411",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SLAYERGOZMXLOL",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NATORIVE1",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "VYNCYNZ",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JABUSZKO2525",
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SSXONLZ",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NOAHGOOD25",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JEJENEVIL",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BBALLBRONK",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KINGJOEY0208",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GOKU11777",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PEMRI78",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SRBOOTMITOSO",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CAPO421",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SLIMEOPO",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ONETUEFRIFOUCHEAT",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "POPMAHDI",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RONALFRV",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "WOFLEARMY",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "EOBARDTHAWNEXX",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "STARFRAGMENT78",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LAFERRARI3",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HECTORECZEK",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AZAZ093414",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "6ACKB0Y",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KANE_51",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FREEMONYFORJAILBREAK",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "01IIDEMXNJHON_II16",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROLLING12776",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JUJUJUJJJJJJJJ",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ETHANCAI123",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ADDRIANOFAKE",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TDRPASTA",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NOMANSDEAD5",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BOYWWALKER",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AUROZS",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GLIDER519",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LEONARLY08",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "THEKINGOFROBLOX7WINS",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GUILLE112345",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BARSHALOM",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ALFREDBERYOUTUBER",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BYSTRET",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MASTIZOR",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FUNTAKOBLOX",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PANCAKESFORMYMOM",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SLAYEREPICYT",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "VICTOR12345760",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "EMILS12564",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ASHYPARKER123",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "XN_EON",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HITTER_CLICKGD",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PETR701",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "T0X1C1528",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AMAZINGKRISHGOLD",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "WASTERNAME",
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROMM3Y",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JABAGAMING23",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "VRUSHINPRANSHUSHAH",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FXPRISM",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CHINIJANG123",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "UNICORNOGF",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "0A0XX",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HAUNTEDKALA",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TATKLA2",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FICTYB",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MEHNEON",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DARKMYTH578",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FERRETGODS",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RIPTIDE_LAX7",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "STEVEKERKETTA",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CASTFHHH",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "31DAWGS31",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DABKINGLULU",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RILEYAINTHERE",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "OSMIN890PUU",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TWISTEDMINDCONTROLE",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "XXVOXONNXX",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MAXKOOLKIDZYT",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KARITOS_CARLOS",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SABUKI",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "7AMQQ",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CRISTIOANO54477",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ZAPABRI",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JOJOAZGAMER",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BIONICATOR",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BREN_NAN01",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TIMMIYTHETATMAN",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TS_T5P",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TERROR1447",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RAVEFORM",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "0IXVSX",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "XREBELDEXX",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PROPIEROBN",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CHARGER_WHEEL5",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "STORMGUY560",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SAILBOAT27",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LAVENDERLICIA",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SIEEPYBENJAMIN",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "123LOOI",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HELIFIRE_YT",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BEVVVVVVVVVVF",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ZZZTICKLE",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "XBUGRAKARACA",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROBLOX_USER_869034070",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HUSKYMANVVV",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BILLYBILLSTERBILL",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "I42_0",
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MXST_XR",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROMM3Y",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LP30HD1",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NUFPIE",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "13KJAY00",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GREY5101",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KOLOPL327",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "R3L_101",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CARLOSCRAK2025",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "EVANBOB150613",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TACO04321",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ITXSPOISON",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROSEYTINTS",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GDJXST",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "COOKIES7464",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SDZXFCGV1",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SKRISTENS9",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KALITAO002",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FRIEDCHICKENATCHICK",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PAAULORONALDO7",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DAVESUSH",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FISHFACE_007",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FUERZA_GATUNA",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SR_CATSTONE",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GOLD3NAPPL345",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "IM_JACHERYSS",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SZYMONEX1199",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TANQRRRRRRR123",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GAMERJAN12345667",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SEPULVEDA021",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "M4XCAST1LLA",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PRS_JOSH",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "98YTPLAYZ",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MARIOG9999",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TOXICSHREYANYT",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MLO281GAMER",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "IMABURNTCHICCYNUGGIE",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LOVELU050731",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ITZ_HARSH10000",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CHEESEBURGERS2125",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SESPELIX",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "VINCIAKAOMEGA_19",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FCTHD159",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LOBOECO1",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROBERCIK09091",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MONEYMAN_3636",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DLEXPIRIENC_EXPRESSO",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DRAGON_3337",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "INTROVERTEDPILLOW",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SPEEDMASTER9780",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GURPREETHAPRO",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MICHAELLINY",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ADANC_026",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RAVEFORM",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JACKNIMBLE2010",
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HOANQDO",
+      "item": "Dual Rockets",
+      "itemKey": "DUAL_ROCKETS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "KORIXONYT",
+      "item": "Dual Rockets",
+      "itemKey": "DUAL_ROCKETS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "FLIP_16K",
+      "item": "Dual Rockets",
+      "itemKey": "DUAL_ROCKETS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "LONGBACONVN28",
+      "item": "Dual Rockets",
+      "itemKey": "DUAL_ROCKETS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "PIERDZIOCH0402",
+      "item": "Dual Rockets",
+      "itemKey": "DUAL_ROCKETS",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROMM3Y",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AQUENTESD",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KINGLYKOURT",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RASJEEN",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KUBA_14325",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ACORAM_PROGAMER",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "VLONE381",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CMICHAEL03",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TRAINFANBROSKULL",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DARKMAGO_220",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "WOLFBLOOD_4LIFE2020",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "1JOHNWHIT",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BGSYOUTUBERSUNITE",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "IRONMANROCK10",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MYSTRYGUY2011",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "VIBEWITHJAYZZ",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RMJ1267",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HAMIM2009",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RICKIRICONCON",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LETHALDC11",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PONGAZO",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NIGHTLYSLAYR0",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SASADADUS",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FGKJETRKLGIU",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LEGOBOY1103",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RENATIUX60",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NOTWR3",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ELTIEMPOCORRE",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HAMPD7",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CESARLA10",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ADAMONTOP0_0",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ABCJAWHOSA",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DANJIJACK",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ALISENER2",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DIMMAN2011Z",
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROMM3Y",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "MIKEM4016",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "KNIGHTTRISTAN08",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "WIESOWESHALBWARUM72",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "PONDNIV",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "ALEXANDER14KIL",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "JACKPULER001",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "KURODUVFX",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "THINK4040",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "FIYCHEETOS",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "DCC2356",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "KING_VON10K",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "ENZOSUPERGAMING5609",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "TIBURONTEE12",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "DAWSON32456",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "NOOB94879487",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "MERALCANAYRI",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "LUKERONYX",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "KJF435",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "TTVJAYNJAY",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "HELLO_JOL",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "CONORERO",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "YOITSH2O",
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "MINTE1357",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "218ROPER",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "FLAWLESS_JEFF",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "LXRKEE",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "SNOTNOSE1C",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "TRY2ACE",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "12GUMB",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "RUBIN_ROBLOX3",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "JAKJAK42442",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "XXCHARLI_XXFAN09",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "ENGELELI",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "SHAWAIZSHERI",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "HAMZALENDARY",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "ITSJDR",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "DARKBOY9987",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "NOAHTHEB3WST_2",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "TYSTROYER999",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "DOODLEDESTROYER17",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "RAMSES0621",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "VO1D_BACON",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "SEMIGAME56",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "MR_FLOSSYPANTS",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "BLUESQUAREINC1",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "TGHNMMNBNBGNNHNM",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "OPTIMUS109356",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "TNFBTG",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "CHACAM360",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "AIRJETT6",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "TSUNAMIYT_OFFICIAL",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "NATEYTATERSON",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "T0RVAX",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "LEOCRAFTING1000",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "COCORIDRO",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "YOVXDER",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "GOTIME_123",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "LEGOBATMANLOUIR",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "YEETBOI7748",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "YOSOYDELTA1",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "KURAMA9821",
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "JIONBL",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LUCAG0806",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROMM3Y",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SUPERFLEXAS",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HAIDANGDIE",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ZAKANDMIN101",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NIGHTMARE_2862",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GOLOMAE111",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BESTKELL2009",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KLEBESTIFTLP",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SINDROME435",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "STAR5_SAM",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AATUS67",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "THEROLVE_COMMUNITY",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ZALATORA",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ZABALA20009",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AGWZIY",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NIPPGAMER889",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "XB_UFFALO",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "STARWARS156727",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "D0NUTN999",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "R_SANDWICH",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BAC_DUDE",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "VAAHTERAMAEN",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "XXXXXHYACITHXXXXX",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CHARCK9",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RYPUKI1",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SELECTSHARKSHADOW1",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BMX6006",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DIORSILENT",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SOLEMP333",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MATPRO420",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MRSSR_55",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AJIMMYF",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CJSOCOOLDAB24",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SEMIGAME56",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "WEREWOLF321O",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "THE123FLASH",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SCORPIONKXNQ",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DRIPKINGJ23",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ELIJAHGHYT",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LEGENDIFYYY",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KOMIALEX",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HELLOIMNOTCRAZYZALT",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FELICIA_025",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SUN2952",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ADRIAN_YT25",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RAJVEERBAWEJA",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "YONG14803YT",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "VEGETA_FULLPOWER223",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "K2PHOYO",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JAVIER34513",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "XXHAYDENNN_22XX",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ACEHOTARO",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HYEEDOGEPLAYZ490",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ISMAILFERARI214",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KILLSTREAK_77",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "79LOW",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AFAMDCY",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CRUTTCH",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CYBER_SNIPER08",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MXNKQR",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ADAMADLY_ONLY",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "0XMIGUELX0D",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FANSOFCHERRYSAND_ICE",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DSDPDSDPDSFS",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CDOG_PLAYZ1234",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ALEXTHEAXOLOTL93",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DABDUDEBRO11",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RATAMENDA",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CAPN_15",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CHAPAL456",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "COOLPOOPYBO",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PARRKEY",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GUERSHNAG",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "XXALAMARXX",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROBLOXCASPAR324",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PANTHEONSL",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "QWEE3354",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PROBABLYDEVELOPER",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DEXCAN639",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TANGBROTHAI",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "003_0JHONNIER",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SAHISHNU1056",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "VEERANSHS",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SAAZ231",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JBDJXZSU",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "REYBACONPRO357",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CLOUDRAVAGE",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AIRHEADSILLYNESS5006",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ULTRALEX02",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CELOSO_XD",
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DUDESUPER1323",
+      "item": "Retro Racer",
+      "itemKey": "RETRO_RACER",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "MASTERLEO45612",
+      "item": "Icicle",
+      "itemKey": "ICICLE",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "OCTOBERI1",
+      "item": "Black Ice",
+      "itemKey": "BLACK_ICE",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "ATATPILOT5",
+      "item": "Circuits",
+      "itemKey": "CIRCUITS",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "JLBROSKIDJAIDYN25",
+      "item": "Travel Case",
+      "itemKey": "TRAVEL_CASE",
+      "type": "Spoiler",
+      "source": "jbcl"
+    },
+    {
+      "username": "PESKAY2504",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TRINDIN7",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BARONSKRUDG",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MENOTONFIRE",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LEGOTOYSHOP",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ALOFROMPOGI",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DARKADHESIVE14",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FORTNI2008",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "YUTITUJ",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KULESIMON01",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MRFLIMFLAM1FANS",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "WESLEYETG",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PAKGAMINGZYT",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "OLDUSER54321",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BASICSPIKE",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DANILOCORNAGO",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PHOENIX67425",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "REALGAMER2010GOD",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "UJSJXJ607",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DON_SILLON",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GREGORY5500",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DIARY0999",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "EASTONCHAPPELL123",
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CWCISCOOL6",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JUSTINPLAYZZZ10",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "EMMIRORTI",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HENRY8932",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AMAZEDBOT",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "STRAKKULUS",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BOYMASTER10094O",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CORALBEACHY",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ADMEVANZIFADE",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LEGIT_4007",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TOXXICPAINTALT",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MRICETIXX",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PATRIZIO1212_BOT",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ELBARTOOO422",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DEBTCOLLECTION",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FIN_APE",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TRUECUPCAKE356",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "WILLIBOZ",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TRANG19921",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ELOV302",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JULIAN11527",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GERYON2019",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DRSNOGO11",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DANDAN_2812",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "POLANDPOLARBEAR",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KIDTHECOSMIC",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ZANSURE",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NOOB02938AH",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FAZEOGSAVAGE123",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SAMUOSITOBB",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MINECRAFT_SIAYER1",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KIDCHINE",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TAKITORI_AKARUI",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "IRONMANMOUSE",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PHE3N1X",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FALLEN_KING56",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LILO_ALAN",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AYMANTHEJOKERKING",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HAZED_MIRAGE",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LKONMBG",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ARTIOM77724",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NAMHHAMDO",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HIMYNAMEISDAUD",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ZEDANNYTO",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PAZZTHE_RHYMEZ",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GAMEBROS33333",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ZKAZANI",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "THEEMASTER_HEHEHE",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SKIZGAMERZ",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JOHNIAWESOME",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DU_SUGER911",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CHRISTHEFALBR",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PLA54321",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NOOBPLAYERPLSHELP1",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "STARMARINRW1",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "10_PROXXX",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SUTHUTRLOVE2",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TAPU_GAVER",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NATHANSAMANIEGO159",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NASHAWNWW",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FIAMINGCACTUS",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "1ICHRISS",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PIGGY_MURDERER123",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ELTASER117",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ITZJANEIIE",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ILIA_GEN",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PARZ1VAL15",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ICONIC_NINJA33",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BLOODYDINOSAUR123",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HUNTERMY123",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CREEPERCRITIC07",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TINYFLAPPINGWISH",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "VIGUIANTE",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LEMENS_24H",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TAOTAOTAJ",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KINGALBI12344",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NASHETALC124",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "WEROSKI75",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "POPPANTS9234",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MFIL000",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LIGHTWRXC",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "XNIKIX14",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MAXIMILIANLIMONGI",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "COLMMOLONEY528",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MATEIPOO5",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "634514",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AKS_AXEL",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JUJUJU1260",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ANHKHAHJSHS",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "EUTRRRRRRTT",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "WACE530",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RAFATAURO210109",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "OVDERT123",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MASTERJAYYT2008",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ALEX162922",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LIGHTBULB5X",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GOTINAGALAXY",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KAYABEN198",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PIZZALOVER2608O",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JONHIPHO1",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LIWANAG2587",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "M4TCH8OX",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BLAZESIOL",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NICO205766",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "USESTARC0DE_BACONE",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "THAIS9DIC",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DARKSHARKS192",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "4SAVINO",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GRUNIONTUBES",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ALAN1140XCK",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "COGGODBEYMASTER",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PIXELATEDGOOGLE",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "YOURBOYCHASE123456",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KING_GG41",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DEATH_SKULL06",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DUDE234354",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MINHVUSIEUCAP123",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PAPAPACAN",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TQLIZETH13",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JOHN_G816",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HAXMANG0",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DUYTAN5377",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "VRGUSA",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "XL_1I1",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KVANCIO",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "XXDISTOYXX",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NIK_9E",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SEBASTIAN_FISCHER",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "XXPANDAS124",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "YOSHIEGGWOW",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "THIRDAZTEC",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JAYROBLOX20201",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DR_BEDROCK",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ALECK2011LIAM",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SUPERALSSBETER421",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ILOVESNAKES123425",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "IPLAYMM2ALLNIGHT",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TYPICL_GHOST",
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SIPPINTEAINYOUHOD",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "VLA6DPRO",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "EISENOMG",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PUBGKING13579",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "VEHRTIL",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GOLEMITE123456789",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BOYTAMBLING22",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BLUE123WAMO",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "THEMASTERGOD12000",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JAVDYS2YDV3Y",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AMAZEDBOT",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CORNEL_LAH",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DBFKJR",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HASANKHAN1232",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LIFLOPSYIL",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "REGENTWOLF7786",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GALAX015",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MASIUMILIAN",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SURJ002",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "WORSTAIMERWOLF",
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MONSTERLIFE2341",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PESKAY2504",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TRAVIS_SCOTT857",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MRROBOTAD",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NAITIKASPY",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NOTWAPLE",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "WHITE633",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GLITCHEDHEX1162",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "COOLBOYTERMINATED",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ANOHTAJ123",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "POZZZINOKIYA",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PANTENTAS2000",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BOOSBIN123",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DENVAURAP",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CYANLOVESPUPPYS",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "YAZLVR",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PIXELATEDCHAOSS",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "13SIR704_HAC",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KUBATATE",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KARTELRBX",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "METALOUSTY",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DAIGONOKRAZAMA",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "OFFICIAL_REDLEAFXL",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SKY_OGG",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MATEO175827",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LEVIS_2345",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BRO78625",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AMAZEDBOT",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TINYFLAPPINGWISH",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NAPSTABLOOK_11",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TECHNOWAVESS",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FRENTS29",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MRPABLOSSSS",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SUPERBROJACK0923",
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MLAKOWDMAK",
+      "item": "Scope",
+      "itemKey": "SCOPE",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "SOUBRBRASIL2",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CARTOONMAN136",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROMM3Y",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "VALKARITE",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HAZED_MIRAGE",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "POLICEKING_R",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "COCATV1",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BLJACK9",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JAYDENRD1",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ARLBENGAMER",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DRAGON_SLAYER52521",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JACKSONCHAITAN",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HUNK_P",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SHAMEOWMEOW",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JBM221122",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KARTELRBX",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TTR535",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LAZYDOGGYS05",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KITA_2013",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MASTERCONSTER25",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BRYANRAMO9",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "IMAMRLLYSAD",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "XENIFYLEGACY",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BROGAMER00O",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "THUNDER_RED44",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TACACUTEDYT",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TREYTEN_HYPEBEAST",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CHUPA_CABRAHAHAHA",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DONATER112112",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FISHKKAT",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "V3RYRA1NYDAY",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NAHISWORST",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "X_HAXPLAYZ",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LEGENDARYMASTAPIECE9",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "STIVFEL",
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SGDFSYSFSZF",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DA_TREXBOI",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LILSOLARBEST",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "8F1NN",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ANDREIMOTANULNOIR2",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DAVID_22201",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ANGADTHEGODPRO",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CJCRIS1235",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MIMISWITHJAZ",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GHFTFFYR10",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "APUCCINI2013",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ARSHIAKHAN78",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FUZZYBOYKILLERDEMON4",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "8MONKEY_JR2",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RESET41744173",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KILLEDBYCZMOC",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GERMAN96786",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ICEBEFINE",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LEGENDYT141",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NOPNOP100",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HAZED_MIRAGE",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PROKIS200",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SALIVAN1292",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DEATHSTAREW",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HALO675321",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ISAAKU19",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FIXERBURNERALTACC",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NAHISWORST",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "IDONTKNOWYEAH1231",
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BOSSBOYKID2000",
+      "item": "Touchdown",
+      "itemKey": "TOUCHDOWN",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "THESTUDKINGG",
+      "item": "Fore",
+      "itemKey": "FORE",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "MIMISWITHJAZ",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KENZOKILIER",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GENTEX_66",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "WAKANDANWARRIOR1",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RAAHIMPROGAMER5",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "WOWCHRIS229_2",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ANDREIMOTANULNOIR2",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "OOIZAL",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HUTSANIFFO33",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TBNRHARRY56",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TIMOSYKCACOSYK",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "REALCHECK_ER",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "325KILLER",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MONKET_KNIGHT1",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FALLOUTCHRISTOPHER05",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "APPLECU84",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HONZIK31535",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NITROO_ZEUZ",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ANANASGAMINGTTV",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "VALERIATAMAKIDOM",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AMHAPPYANDSWEET",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GLAVABORD",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AEONIAN01937",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BEARDEDKEVINN",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HYPEKINGTTV123",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ITZQUEEST24SUB",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AMAZEDBOT",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ISCREAM4CREAM",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DOLER157",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NATHANISNOTGAMING1",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SIRTHUMBFACETHE1ST",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MAHDILHU",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "WEX3951",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NEWMARNZ",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ENZITO204354",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SHAF_RG",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DENVAURAP",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DRAGONSBREATHPDX",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ELSANTIAGOPRO101",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LIAN_K1M",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GAMERBOY19938",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SEANTHEMASTER14",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "XXDANIEL55LXX",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HAZED_MIRAGE",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DIMODIMI2213",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AKAY472O8",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NOICEGOPA",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROBOTMEN05",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MRVICTORIOUSPRO",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HSS201001",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DAHOODSAINT",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HAPPYRNIC",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SDASADDSADSADA",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FATALSEEKING",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AJAHGHALE",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CAMVIOL04",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ELICOIN",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JACO8292",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LUNGSHOT1899",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TIMDEPOOR",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KARTELRBX",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "XDGAMERBOY02",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DKDJFGDHDHH",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ICTHYVEER",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "OUOEASO",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FERNANDOISCOOLYEA",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NOT123AARY",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CHQOTICAGONY",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BAT_GIRL4568",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KYLE76389",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "THEQOZZI",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GAMEFORGOODHOSS",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "VIGOROUSGATOR",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SANTIGO_FAKE",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FROST1_RB",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TRUNGDTT",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LLOSTXGH0UL",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ALTACKOUNDS",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TALLARIN52_25",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "THEGAMERWOLF200",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "M4NU3LZZ134",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FIRETHECUTECAT",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ARHANGS29",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BIGBST_33",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AGHADIGER1",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CAR3LE55",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "C0NSULTATION",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TRIPLEFIRE6",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ZEDNAMO12323",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KRFLAHIFF",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CRPALO999",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GOOFYGAMERELEVENTEEN",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JIRENANDTAILUNG",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CRINMAML",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KARLDERALLE",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PPPAPPPGG",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LUKEANDBEN12341",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "IP_MAN45WINGCHUN",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FROTOODLEALT",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LASER13241",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LIVER1311",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ISPECTATEDI",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CRISPYDOGHOT",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RPOPP13",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MALCON741",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DOMCAL12332",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ITSMEDARIB",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NUCLUARNEIL",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BOSS_POLAND",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FILIPER045083",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DISAMPLE",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AYAM_EPEP",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "POKEFAN1999999",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ATHESH34",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FLAMEGG094",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "THEGOODSAIYANS",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CAT_PAT42",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CHILLINGO_CHILL1",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BOZZ_PENTA0",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ANTONIOPRO_4",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TURBOTOPAZ",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AFFISHAHID786",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "IMSOGOODATHOOPZ123",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FLASH155077",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LUCY_MONEY1004",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RANGOOGNAR",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BABOLINK12345",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HAZEWENTMISTY",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DEADLYDOGGOS654",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LOSTINDISMAY",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ANGRY_DEMON654",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KFC153BOSS",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SOY_HETEROX21CA",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SUBZEROOZ9871",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "8F1NN",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BACONMAN137945",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "OLD_HOG034",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BTW_RTX",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RAINBOWMARSHMALLOWS6",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CYKOSTAR_0812",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DAB_CHICKENS",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BOYLIGHTNING807",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROBLOX_SUPERGP",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PSYCHECUPID13",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SUPERIRONGIANT",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CHATTERSCARTORNADO65",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "INCIO_LIU",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FLEEINGCOMBEXTRA",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SUPERBANANADOGE",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROHANTANAV",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MYNAMEISTOM2345",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MASTERTHEMOST",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MARCU_SR",
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CUTIEANNAAAA",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROMM3Y",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "IIILLIILIILIILII",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NIPPON_0311",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NERDBOI31",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BENBENGARMIZA",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "WPRI7174",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KASILAG2010",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "CTINGGI",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "XXSANJOC23",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SHAUNAK_BLOX",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PRINCESS1809_YT",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GODDQ123OURMU",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SN0WYINTHACITY",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SQWUNKI",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "THEONLYGRXNT",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GRANT_75",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MAKS_5673BAN",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TZENTY0",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FLORAL_BUBBLES231",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GRANT_73",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SWIFTEDRONALD",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KM_0027",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TAINHOX00",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ARMY_646",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JEREMYFF174XD",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "POKEDRAGONYOUTUBER",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SQUAREEARTH2687",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TEDAY01",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "THIJSKOLKSX",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "EMONKEY903",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ITSBEARCRAFT12345",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "XCRIMSONV24",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SUPERALISUPER12367",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DODO_TW1204",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HSGFHDVSUA",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BUGINGSTEAM",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SWAGGYS_NASCAR",
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROMM3Y",
+      "item": "Poseidon",
+      "itemKey": "POSEIDON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AZDADFER",
+      "item": "Poseidon",
+      "itemKey": "POSEIDON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SONICFORCESXD911",
+      "item": "Poseidon",
+      "itemKey": "POSEIDON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FLEE_TRO1LER",
+      "item": "Poseidon",
+      "itemKey": "POSEIDON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RKIYEN",
+      "item": "Poseidon",
+      "itemKey": "POSEIDON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "BATMANISME56",
+      "item": "Poseidon",
+      "itemKey": "POSEIDON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HYDDR",
+      "item": "Poseidon",
+      "itemKey": "POSEIDON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HUSSEIN43R",
+      "item": "Poseidon",
+      "itemKey": "POSEIDON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ASIMO3089",
+      "item": "Poseidon",
+      "itemKey": "POSEIDON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "QKUPETO20",
+      "item": "Poseidon",
+      "itemKey": "POSEIDON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "1XOBJ",
+      "item": "Poseidon",
+      "itemKey": "POSEIDON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SETTINGWATERTOFIRE",
+      "item": "Poseidon",
+      "itemKey": "POSEIDON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MYNAMEISELVINOOO",
+      "item": "Poseidon",
+      "itemKey": "POSEIDON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ITSMRMOTH",
+      "item": "Poseidon",
+      "itemKey": "POSEIDON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ZACKKERSTE",
+      "item": "Poseidon",
+      "itemKey": "POSEIDON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RDC_JEREMY",
+      "item": "Poseidon",
+      "itemKey": "POSEIDON",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "AHJJJJJL",
+      "item": "Flags Of Europe",
+      "itemKey": "FLAGS_OF_EUROPE",
+      "type": "Tire Sticker",
+      "source": "jbcl"
+    },
+    {
+      "username": "YOYABEY",
+      "item": "Frost Crawler",
+      "itemKey": "FROST_CRAWLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "PROYOUTUBER992",
+      "item": "Frost Crawler",
+      "itemKey": "FROST_CRAWLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "JORGEEMILIO123567",
+      "item": "Frost Crawler",
+      "itemKey": "FROST_CRAWLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ERICKLOVESDOGS12",
+      "item": "Frost Crawler",
+      "itemKey": "FROST_CRAWLER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "MARSHMALLOWS_172",
+      "item": "Striker",
+      "itemKey": "STRIKER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "SATRANSLATOR",
+      "item": "Striker",
+      "itemKey": "STRIKER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "THEGODVIBEZOFHELL",
+      "item": "Striker",
+      "itemKey": "STRIKER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "KILLERBOB2241",
+      "item": "Striker",
+      "itemKey": "STRIKER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "STORMTROOPERJACOB14",
+      "item": "Striker",
+      "itemKey": "STRIKER",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "HDBARTEX1",
+      "item": "Quarter Dollar",
+      "itemKey": "QUARTER_DOLLAR",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "IONG_DOG",
+      "item": "Star Spangled",
+      "itemKey": "STAR_SPANGLED",
+      "type": "Texture",
+      "source": "jbcl"
+    },
+    {
+      "username": "IIXXDEADLYWOLFXXII",
+      "item": "Maverick",
+      "itemKey": "MAVERICK",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "COSTDIMINDNOOB123",
+      "item": "Maverick",
+      "itemKey": "MAVERICK",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "THEKINGMOONKNIGHT",
+      "item": "Maverick",
+      "itemKey": "MAVERICK",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "WAWA091744",
+      "item": "Maverick",
+      "itemKey": "MAVERICK",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TROYALEXANDER2012",
+      "item": "Maverick",
+      "itemKey": "MAVERICK",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TADRIQSHKUR16",
+      "item": "Maverick",
+      "itemKey": "MAVERICK",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ANDY630979",
+      "item": "Maverick",
+      "itemKey": "MAVERICK",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "GHOSTGOD_8128",
+      "item": "Maverick",
+      "itemKey": "MAVERICK",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ARTEMLOL2011",
+      "item": "Synth",
+      "itemKey": "SYNTH",
+      "type": "Drift",
+      "source": "jbcl"
+    },
+    {
+      "username": "TRUYKHINHTHANG",
+      "item": "Cassette",
+      "itemKey": "CASSETTE",
+      "type": "Rim",
+      "source": "jbcl"
+    },
+    {
+      "username": "TRICKSHOTKILLER2",
+      "item": "Wedge",
+      "itemKey": "WEDGE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "ROLLX9279",
+      "item": "Wedge",
+      "itemKey": "WEDGE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "RIP_ZORO90193",
+      "item": "Wedge",
+      "itemKey": "WEDGE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "NEZERSNIFF",
+      "item": "Wedge",
+      "itemKey": "WEDGE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "TOASTERBOY60006",
+      "item": "Wedge",
+      "itemKey": "WEDGE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LOGIXYT3",
+      "item": "Wedge",
+      "itemKey": "WEDGE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "XIANG8177",
+      "item": "Wedge",
+      "itemKey": "WEDGE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DAFAQBOOM12117766676",
+      "item": "Wedge",
+      "itemKey": "WEDGE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "DOMSIZEDOMINUS",
+      "item": "Wedge",
+      "itemKey": "WEDGE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "FAIZAN222712",
+      "item": "Wedge",
+      "itemKey": "WEDGE",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "THUNDERSHARK130",
+      "item": "Skull And Sails",
+      "itemKey": "SKULL_AND_SAILS",
+      "type": "Tire Sticker",
+      "source": "jbcl"
+    },
+    {
+      "username": "ANTONIX1370",
+      "item": "Blackbeard",
+      "itemKey": "BLACKBEARD",
+      "type": "Vehicle",
+      "source": "jbcl"
+    },
+    {
+      "username": "LOGEYUIP",
+      "item": "Neon Vein Wall-Art",
+      "itemKey": "NEON_VEIN_WALL-ART",
+      "type": "Furniture",
+      "source": "jbcl"
+    },
+    {
+      "username": "TUNDAYA",
+      "item": "Speed Coil",
+      "itemKey": "SPEED_COIL",
+      "type": "Rim",
+      "source": "jbcl"
     }
   ],
   "dupeItems": [
     {
-      "name": "Torpedo",
-      "type": "vehicle",
-      "slug": "Torpedo"
+      "item": "Snowstorm",
+      "itemKey": "SNOWSTORM",
+      "type": "Texture",
+      "id": 339
     },
     {
-      "name": "Beignet",
-      "type": "vehicle",
-      "slug": "Beignet"
+      "item": "Fire",
+      "itemKey": "FIRE",
+      "type": "Texture",
+      "id": 306
     },
     {
-      "name": "Molten M12",
-      "type": "vehicle",
-      "slug": "Molten%20M12"
+      "item": "Void",
+      "itemKey": "VOID",
+      "type": "Rim",
+      "id": 108
     },
     {
-      "name": "Brulee",
-      "type": "vehicle",
-      "slug": "Brulee"
+      "item": "Beam Hybrid",
+      "itemKey": "BEAM_HYBRID",
+      "type": "Vehicle",
+      "id": 137
     },
     {
-      "name": "Beam Hybrid",
-      "type": "vehicle",
-      "slug": "Beam%20Hybrid"
+      "item": "Arachnid",
+      "itemKey": "ARACHNID",
+      "type": "Vehicle",
+      "id": 133
     },
     {
-      "name": "Power 1",
-      "type": "vehicle",
-      "slug": "Power%201"
+      "item": "Torpedo",
+      "itemKey": "TORPEDO",
+      "type": "Vehicle",
+      "id": 222
     },
     {
-      "name": "Icebreaker",
-      "type": "vehicle",
-      "slug": "Icebreaker"
+      "item": "Vantablack",
+      "itemKey": "VANTABLACK",
+      "type": "Body Color",
+      "id": 526
     },
     {
-      "name": "Javelin",
-      "type": "vehicle",
-      "slug": "Javelin"
+      "item": "Galactic Carbon",
+      "itemKey": "GALACTIC_CARBON",
+      "type": "Texture",
+      "id": 310
     },
     {
-      "name": "Celsior",
-      "type": "vehicle",
-      "slug": "Celsior"
+      "item": "Thrusters",
+      "itemKey": "THRUSTERS",
+      "type": "Spoiler",
+      "id": 441
     },
     {
-      "name": "Arachnid",
-      "type": "vehicle",
-      "slug": "Arachnid"
+      "item": "Crew Capsule",
+      "itemKey": "CREW_CAPSULE",
+      "type": "Vehicle",
+      "id": 150
+    },
+    {
+      "item": "JB8",
+      "itemKey": "JB8",
+      "type": "Vehicle",
+      "id": 168
+    },
+    {
+      "item": "Raptor",
+      "itemKey": "RAPTOR",
+      "type": "Vehicle",
+      "id": 198
+    },
+    {
+      "item": "Volt 4x4",
+      "itemKey": "VOLT_4X4",
+      "type": "Vehicle",
+      "id": 227
+    },
+    {
+      "item": "Dual Rockets",
+      "itemKey": "DUAL_ROCKETS",
+      "type": "Spoiler",
+      "id": 387
+    },
+    {
+      "item": "Rattler",
+      "itemKey": "RATTLER",
+      "type": "Vehicle",
+      "id": 199
+    },
+    {
+      "item": "Drip",
+      "itemKey": "DRIP",
+      "type": "Texture",
+      "id": 301
+    },
+    {
+      "item": "RTX",
+      "itemKey": "RTX",
+      "type": "Rim",
+      "id": 62
+    },
+    {
+      "item": "Banana Car",
+      "itemKey": "BANANA_CAR",
+      "type": "Vehicle",
+      "id": 135
+    },
+    {
+      "item": "Retro Racer",
+      "itemKey": "RETRO_RACER",
+      "type": "Rim",
+      "id": 69
+    },
+    {
+      "item": "Beignet",
+      "itemKey": "BEIGNET",
+      "type": "Vehicle",
+      "id": 138
+    },
+    {
+      "item": "Icicle",
+      "itemKey": "ICICLE",
+      "type": "Rim",
+      "id": 44
+    },
+    {
+      "item": "Black Ice",
+      "itemKey": "BLACK_ICE",
+      "type": "Texture",
+      "id": 279
+    },
+    {
+      "item": "Icebreaker",
+      "itemKey": "ICEBREAKER",
+      "type": "Vehicle",
+      "id": 166
+    },
+    {
+      "item": "Circuits",
+      "itemKey": "CIRCUITS",
+      "type": "Texture",
+      "id": 287
+    },
+    {
+      "item": "Celsior",
+      "itemKey": "CELSIOR",
+      "type": "Vehicle",
+      "id": 146
+    },
+    {
+      "item": "Travel Case",
+      "itemKey": "TRAVEL_CASE",
+      "type": "Spoiler",
+      "id": 447
+    },
+    {
+      "item": "Jackrabbit",
+      "itemKey": "JACKRABBIT",
+      "type": "Vehicle",
+      "id": 169
+    },
+    {
+      "item": "Macaron",
+      "itemKey": "MACARON",
+      "type": "Vehicle",
+      "id": 177
+    },
+    {
+      "item": "Tiny Toy",
+      "itemKey": "TINY_TOY",
+      "type": "Vehicle",
+      "id": 220
+    },
+    {
+      "item": "Bloxy",
+      "itemKey": "BLOXY",
+      "type": "Vehicle",
+      "id": 139
+    },
+    {
+      "item": "Scope",
+      "itemKey": "SCOPE",
+      "type": "Rim",
+      "id": 79
+    },
+    {
+      "item": "Goliath",
+      "itemKey": "GOLIATH",
+      "type": "Vehicle",
+      "id": 164
+    },
+    {
+      "item": "Bandit",
+      "itemKey": "BANDIT",
+      "type": "Vehicle",
+      "id": 136
+    },
+    {
+      "item": "Touchdown",
+      "itemKey": "TOUCHDOWN",
+      "type": "Texture",
+      "id": 346
+    },
+    {
+      "item": "Fore",
+      "itemKey": "FORE",
+      "type": "Rim",
+      "id": 35
+    },
+    {
+      "item": "Proto-8",
+      "itemKey": "PROTO-8",
+      "type": "Vehicle",
+      "id": 197
+    },
+    {
+      "item": "Shogun",
+      "itemKey": "SHOGUN",
+      "type": "Vehicle",
+      "id": 210
+    },
+    {
+      "item": "Poseidon",
+      "itemKey": "POSEIDON",
+      "type": "Vehicle",
+      "id": 193
+    },
+    {
+      "item": "Flags Of Europe",
+      "itemKey": "FLAGS_OF_EUROPE",
+      "type": "Tire Sticker",
+      "id": 242
+    },
+    {
+      "item": "Power 1",
+      "itemKey": "POWER_1",
+      "type": "Vehicle",
+      "id": 195
+    },
+    {
+      "item": "Frost Crawler",
+      "itemKey": "FROST_CRAWLER",
+      "type": "Vehicle",
+      "id": 163
+    },
+    {
+      "item": "Striker",
+      "itemKey": "STRIKER",
+      "type": "Vehicle",
+      "id": 216
+    },
+    {
+      "item": "Quarter Dollar",
+      "itemKey": "QUARTER_DOLLAR",
+      "type": "Rim",
+      "id": 60
+    },
+    {
+      "item": "Star Spangled",
+      "itemKey": "STAR_SPANGLED",
+      "type": "Texture",
+      "id": 341
+    },
+    {
+      "item": "Maverick",
+      "itemKey": "MAVERICK",
+      "type": "Vehicle",
+      "id": 179
+    },
+    {
+      "item": "Synth",
+      "itemKey": "SYNTH",
+      "type": "Drift",
+      "id": 127
+    },
+    {
+      "item": "Cassette",
+      "itemKey": "CASSETTE",
+      "type": "Rim",
+      "id": 18
+    },
+    {
+      "item": "Wedge",
+      "itemKey": "WEDGE",
+      "type": "Vehicle",
+      "id": 228
+    },
+    {
+      "item": "Skull And Sails",
+      "itemKey": "SKULL_AND_SAILS",
+      "type": "Tire Sticker",
+      "id": 752
+    },
+    {
+      "item": "Blackbeard",
+      "itemKey": "BLACKBEARD",
+      "type": "Vehicle",
+      "id": 742
+    },
+    {
+      "item": "Neon Vein Wall-Art",
+      "itemKey": "NEON_VEIN_WALL-ART",
+      "type": "Furniture",
+      "id": 760
+    },
+    {
+      "item": "Speed Coil",
+      "itemKey": "SPEED_COIL",
+      "type": "Rim",
+      "id": 796
     }
   ]
 }
