@@ -2,15 +2,23 @@
 
 /**
  * ================================================================
- *  JBLX — JBCL Dupe Scraper v6
+ *  JBLX — JBCL Dupe Scraper v7
  *
- *  Strategy:
- *   1. Use Puppeteer to load JBCL's trading/items page ONCE
- *      and intercept the full items list API call to get ALL
- *      item IDs and names (HyperChrome, Void Rims, Checkers, etc.)
- *   2. For each item ID, call /api/items/dupes?id=X directly
- *      with plain node-fetch (fast, no browser needed per item)
- *   3. Merge with existing records, write bundle
+ *  Item discovery (no Puppeteer needed):
+ *    1. Fetch items_metadata.json directly from JBCL's asset CDN
+ *       → covers all vehicles, weapons, spoilers, rims, etc.
+ *    2. Load one HyperChrome page with Puppeteer to intercept
+ *       the hyperchrome-specific metadata JSON
+ *    3. Merge both lists, deduplicate by ID
+ *
+ *  Dupe fetching:
+ *    - For every discovered item, call /api/items/dupes?id=X
+ *    - Run in parallel batches of CONCURRENCY
+ *    - Merge with existing records (never delete, only add)
+ *
+ *  Output:
+ *    - data/jbcl-dupes.json   (raw data)
+ *    - js/jbcl-dupes-bundle.js (loaded by dupe.html)
  * ================================================================
  */
 
@@ -21,140 +29,159 @@ const path      = require('path');
 
 // ── config ────────────────────────────────────────────────────
 
-const BASE          = 'https://jailbreakchangelogs.xyz';
-const REQUEST_DELAY = 200;   // ms between dupes API calls
-const CONCURRENCY   = 5;     // parallel dupes requests
+const BASE            = 'https://jailbreakchangelogs.xyz';
+const ASSETS_BASE     = 'https://assets.jailbreakchangelogs.xyz';
+const REQUEST_DELAY   = 150;  // ms between API calls
+const CONCURRENCY     = 6;    // parallel requests for dupes fetching
+const PUPPETEER_WAIT  = 8000; // ms to wait for hyperchrome intercept
 
 const OUT_JSON = path.join(__dirname, 'data', 'jbcl-dupes.json');
 const OUT_JS   = path.join(__dirname, 'js',   'jbcl-dupes-bundle.js');
 
-// Pages to try for intercepting the items list
-const ITEM_LIST_PAGES = [
-  `${BASE}/trading`,
-  `${BASE}/items`,
-  `${BASE}/values`,
-  `${BASE}/dupes`,
-];
+// Known HyperChrome page — loading this triggers their hyperchrome metadata API call
+const HYPERCHROME_PAGE = `${BASE}/item/hyperchrome/HyperGreen%20Level%205#dupes`;
 
 // ── helpers ───────────────────────────────────────────────────
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const log   = (...a) => console.log(`[${new Date().toISOString()}]`, ...a);
 
-const FETCH_HEADERS = {
-  'User-Agent': 'JBLX-DupeScraper/6.0 (+https://jblx.net; permitted by JBCL owner)',
+const HEADERS = {
+  'User-Agent': 'JBLX-DupeScraper/7.0 (+https://jblx.net; permitted by JBCL owner)',
   'Accept': 'application/json',
 };
 
 async function apiFetch(url, retries = 3) {
   for (let i = 0; i < retries; i++) {
     try {
-      const res = await fetch(url, { headers: FETCH_HEADERS, timeout: 15000 });
-      if (res.status === 429) { await sleep(5000); continue; }
+      const res = await fetch(url, { headers: HEADERS, timeout: 15000 });
+      if (res.status === 429) { log(`  Rate limited — waiting 5s…`); await sleep(5000); continue; }
       if (res.status === 404) return null;
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const ct = res.headers.get('content-type') || '';
       if (!ct.includes('json')) return null;
       return await res.json();
     } catch (err) {
-      if (i === retries - 1) return null;
+      if (i === retries - 1) { log(`  WARN: ${url} → ${err.message}`); return null; }
       await sleep(800 * (i + 1));
     }
   }
   return null;
 }
 
-// ── extract all items from intercepted JSON ───────────────────
-// JBCL items list can have many shapes — handle them all
+// ── normalise a raw item object from any metadata shape ───────
 
-function extractItemsFromJson(data) {
-  const items = [];
-  const seen  = new Set();
+function normaliseItem(obj) {
+  if (!obj || typeof obj !== 'object') return null;
+  const id   = obj.id ?? obj.item_id ?? obj.itemId;
+  const name = obj.name ?? obj.item_name ?? obj.itemName ?? obj.title;
+  const type = (obj.type ?? obj.category ?? 'vehicle').toString().toLowerCase();
+  if (!id || !name) return null;
+  return { id: Number(id), name: String(name).trim(), type };
+}
+
+// Walk any JSON shape to find arrays of items
+function extractItems(data) {
+  const results = new Map();
 
   function tryArray(arr) {
     if (!Array.isArray(arr)) return;
     for (const obj of arr) {
-      if (!obj || typeof obj !== 'object') continue;
-      // Must have an id and a name
-      const id   = obj.id   ?? obj.item_id ?? obj.itemId;
-      const name = obj.name ?? obj.item_name ?? obj.itemName ?? obj.title;
-      const type = obj.type ?? obj.category ?? 'vehicle';
-      if (id && name && !seen.has(id)) {
-        seen.add(id);
-        items.push({ id: Number(id), name: String(name), type: String(type) });
-      }
+      const item = normaliseItem(obj);
+      if (item && !results.has(item.id)) results.set(item.id, item);
     }
   }
 
   if (Array.isArray(data)) {
     tryArray(data);
   } else if (data && typeof data === 'object') {
-    // Try common wrapper keys
-    for (const key of ['items', 'data', 'results', 'vehicles', 'list']) {
-      if (Array.isArray(data[key])) { tryArray(data[key]); }
+    for (const key of ['items', 'data', 'results', 'vehicles', 'list', 'hyperchromes']) {
+      if (Array.isArray(data[key])) tryArray(data[key]);
     }
-    // If it's a single item, add it
-    const id   = data.id ?? data.item_id;
-    const name = data.name ?? data.item_name;
-    if (id && name && !seen.has(id)) {
-      seen.add(id);
-      items.push({ id: Number(id), name: String(name), type: String(data.type || 'vehicle') });
-    }
+    // Single item shape
+    const item = normaliseItem(data);
+    if (item && !results.has(item.id)) results.set(item.id, item);
   }
 
+  return [...results.values()];
+}
+
+// ── Step 1a: fetch main items metadata directly ───────────────
+
+async function fetchMainItems() {
+  log('Fetching main items metadata from CDN…');
+  const data = await apiFetch(`${ASSETS_BASE}/assets/json/items_metadata.json`);
+  if (!data) {
+    log('  WARN: items_metadata.json not available');
+    return [];
+  }
+  const items = extractItems(data);
+  log(`  ✓ ${items.length} items from items_metadata.json`);
   return items;
 }
 
-// ── Puppeteer: load a page and intercept all JSON API calls ───
+// ── Step 1b: use Puppeteer to intercept HyperChrome metadata ──
 
-async function interceptItemsFromPage(browser, pageUrl) {
-  const page      = await browser.newPage();
-  const allItems  = new Map(); // id → item
-  let   resolved  = false;
-  let   resolveP;
-  const waitP = new Promise(r => { resolveP = r; });
+async function fetchHyperChromeItems() {
+  const executablePath = process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/chromium-browser';
+  log('Launching headless Chrome for HyperChrome discovery…');
 
-  await page.setRequestInterception(true);
-  page.on('request', req => req.continue());
-
-  page.on('response', async response => {
-    const url = response.url();
-    if (!url.includes('jailbreakchangelogs.xyz')) return;
-    try {
-      const ct = response.headers()['content-type'] || '';
-      if (!ct.includes('json')) return;
-      const json = await response.json().catch(() => null);
-      if (!json) return;
-
-      const found = extractItemsFromJson(json);
-      if (found.length > 0) {
-        log(`  [intercept] ${url} → ${found.length} item(s)`);
-        for (const item of found) allItems.set(item.id, item);
-        // If we've got a large batch, we're done
-        if (allItems.size > 20 && !resolved) {
-          resolved = true;
-          resolveP();
-        }
-      }
-    } catch {}
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    executablePath,
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage',
+           '--disable-gpu', '--no-zygote'],
   });
 
+  const found  = new Map();
+  let   done   = false;
+  let   resolveDone;
+  const doneP  = new Promise(r => { resolveDone = r; });
+
   try {
-    await page.goto(pageUrl, { waitUntil: 'networkidle2', timeout: 25000 });
-  } catch {}
+    const page = await browser.newPage();
+    await page.setRequestInterception(true);
+    page.on('request', req => req.continue());
 
-  // Wait up to 5s for a large item batch to arrive
-  await Promise.race([waitP, sleep(5000)]);
-  await page.close();
+    page.on('response', async response => {
+      const url = response.url();
+      // Only care about JBCL or its asset CDN
+      if (!url.includes('jailbreakchangelogs.xyz')) return;
+      try {
+        const ct = response.headers()['content-type'] || '';
+        if (!ct.includes('json')) return;
+        const json = await response.json().catch(() => null);
+        if (!json) return;
 
-  return [...allItems.values()];
+        const items = extractItems(json);
+        const hcItems = items.filter(i => i.type === 'hyperchrome');
+        if (hcItems.length > 0) {
+          log(`  [intercept] ${url} → ${hcItems.length} hyperchrome item(s)`);
+          for (const item of hcItems) found.set(item.id, item);
+          if (!done) { done = true; resolveDone(); }
+        }
+      } catch {}
+    });
+
+    await page.goto(HYPERCHROME_PAGE, { waitUntil: 'networkidle2', timeout: 25000 }).catch(() => {});
+    await Promise.race([doneP, sleep(PUPPETEER_WAIT)]);
+    await page.close();
+  } finally {
+    await browser.close();
+  }
+
+  const items = [...found.values()];
+  log(`  ✓ ${items.length} HyperChrome item(s) discovered`);
+  return items;
 }
 
-// ── fetch dupers for one item via API ─────────────────────────
+// ── Step 2: fetch dupers for one item ─────────────────────────
 
 function extractUsernames(data) {
   const usernames = new Set();
-  const entries = Array.isArray(data) ? data : (data?.dupes ?? data?.users ?? data?.data ?? []);
+  const entries = Array.isArray(data)
+    ? data
+    : (data?.dupes ?? data?.users ?? data?.data ?? []);
 
   for (const entry of entries) {
     if (typeof entry === 'string') {
@@ -165,16 +192,16 @@ function extractUsernames(data) {
         usernames.add(entry.trim());
       }
     } else if (entry && typeof entry === 'object') {
-      // Try all plausible username fields
-      for (const f of ['username','user_name','roblox_username','owner','name','user','Username','Owner']) {
+      for (const f of ['username', 'user_name', 'roblox_username', 'owner',
+                       'name', 'user', 'Username', 'Owner']) {
         const val = entry[f];
         if (typeof val !== 'string') continue;
-        const trimmed = val.trim();
-        if (trimmed.includes('@')) {
-          const u = trimmed.split('@').pop().replace(/[^A-Za-z0-9_]/g, '');
+        const t = val.trim();
+        if (t.includes('@')) {
+          const u = t.split('@').pop().replace(/[^A-Za-z0-9_]/g, '');
           if (u.length >= 3) { usernames.add(u); break; }
-        } else if (/^[A-Za-z0-9_]{3,30}$/.test(trimmed)) {
-          usernames.add(trimmed); break;
+        } else if (/^[A-Za-z0-9_]{3,30}$/.test(t)) {
+          usernames.add(t); break;
         }
       }
     }
@@ -187,16 +214,17 @@ async function fetchDupersForItem(item) {
   const data = await apiFetch(`${BASE}/api/items/dupes?id=${item.id}`);
   if (!data) return [];
   const usernames = extractUsernames(data);
-  if (usernames.length > 0) log(`  ${item.name} (id=${item.id}): ${usernames.length} duper(s)`);
+  if (usernames.length > 0) {
+    log(`  ${item.name} (${item.type}, id=${item.id}): ${usernames.length} duper(s)`);
+  }
   return usernames;
 }
 
-// ── run N tasks with limited concurrency ─────────────────────
+// ── concurrency pool ──────────────────────────────────────────
 
 async function pooled(items, fn, concurrency) {
   const results = new Array(items.length);
-  let   idx = 0;
-
+  let idx = 0;
   async function worker() {
     while (idx < items.length) {
       const i = idx++;
@@ -204,7 +232,6 @@ async function pooled(items, fn, concurrency) {
       await sleep(REQUEST_DELAY);
     }
   }
-
   await Promise.all(Array.from({ length: concurrency }, worker));
   return results;
 }
@@ -228,7 +255,8 @@ function dedup(records) {
   return records.filter(r => {
     const key = `${(r.username || '').toUpperCase()}|${r.itemKey}`;
     if (seen.has(key)) return false;
-    seen.add(key); return true;
+    seen.add(key);
+    return true;
   });
 }
 
@@ -262,55 +290,37 @@ function writeOutputs(records, dupeItems) {
 // ── main ──────────────────────────────────────────────────────
 
 async function main() {
-  log('=== JBLX Dupe Scraper v6 starting ===');
+  log('=== JBLX Dupe Scraper v7 starting ===');
 
   const existingRecords = loadExistingRecords();
 
-  // ── Step 1: get all items by loading JBCL pages with Puppeteer ──
-  const executablePath = process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/chromium-browser';
-  log('Launching headless Chrome…');
-  const browser = await puppeteer.launch({
-    headless: 'new', executablePath,
-    args: ['--no-sandbox','--disable-setuid-sandbox','--disable-dev-shm-usage','--disable-gpu','--no-zygote'],
-  });
+  // ── Step 1: discover all items ───────────────────────────────
+  const [mainItems, hcItems] = await Promise.all([
+    fetchMainItems(),
+    fetchHyperChromeItems(),
+  ]);
 
-  let allItems = [];
-  try {
-    for (const pageUrl of ITEM_LIST_PAGES) {
-      log(`\nLoading ${pageUrl} to intercept items list…`);
-      const found = await interceptItemsFromPage(browser, pageUrl);
-      log(`  → ${found.length} items found`);
-
-      // Merge new items
-      const before = allItems.length;
-      const ids = new Set(allItems.map(i => i.id));
-      for (const item of found) {
-        if (!ids.has(item.id)) { ids.add(item.id); allItems.push(item); }
-      }
-      const added = allItems.length - before;
-      if (added > 0) log(`  (+${added} new, ${allItems.length} total)`);
-
-      // If we have a substantial list, stop loading more pages
-      if (allItems.length > 50) break;
-    }
-  } finally {
-    await browser.close();
+  // Merge, deduplicate by ID, hyperchrome items take type precedence
+  const itemMap = new Map();
+  for (const item of [...mainItems, ...hcItems]) {
+    itemMap.set(item.id, item);
   }
+  const allItems = [...itemMap.values()];
+
+  // Log summary by type
+  const byType = {};
+  for (const item of allItems) {
+    byType[item.type] = (byType[item.type] || 0) + 1;
+  }
+  log(`\nTotal items: ${allItems.length} — ${Object.entries(byType).map(([t,c]) => `${t}:${c}`).join(', ')}`);
 
   if (allItems.length === 0) {
-    // Hard fallback: use known IDs from previous Puppeteer run + probe
-    log('\nWARNING: Could not intercept items list — using known IDs + probe 1-300');
-    const knownIds = [133,137,138,146,166,170,183,195,222]; // from prior run
-    allItems = knownIds.map(id => ({ id, name: `Item_${id}`, type: 'vehicle' }));
-    // Also probe for unknown IDs
-    for (let id = 1; id <= 300; id++) {
-      if (!knownIds.includes(id)) allItems.push({ id, name: `Item_${id}`, type: 'vehicle' });
-    }
+    log('FATAL: No items found — aborting');
+    process.exit(1);
   }
 
-  log(`\n${allItems.length} items to check. Fetching dupes via API…\n`);
-
-  // ── Step 2: fetch dupers for every item via direct API ──────
+  // ── Step 2: fetch dupers for every item ──────────────────────
+  log('\nFetching dupers for all items…\n');
   const newRecords = [];
   const dupeItems  = [];
 
@@ -327,15 +337,15 @@ async function main() {
     for (const username of usernames) {
       newRecords.push({
         username: username.toUpperCase(),
-        item:    item.name,
+        item:     item.name,
         itemKey,
-        type:    item.type || 'Unknown',
-        source:  'jbcl',
+        type:     item.type,
+        source:   'jbcl',
       });
     }
   }
 
-  // ── Step 3: merge + write ────────────────────────────────────
+  // ── Step 3: merge with existing + write ──────────────────────
   const existingDeduped = dedup(existingRecords);
   const merged          = dedup([...existingDeduped, ...newRecords]);
   const added           = merged.length - existingDeduped.length;
