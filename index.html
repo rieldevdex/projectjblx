@@ -583,22 +583,6 @@
 
   <p class="index-footer">© 2025 JBLX — Not affiliated with Badimo or Roblox</p>
 
-  <script>
-    const btn = document.getElementById('theme-toggle');
-    const icon = btn.querySelector('.toggle-icon');
-    function applyTheme(t) {
-      document.documentElement.dataset.theme = t;
-      icon.textContent = t === 'light' ? '☾' : '☀';
-      localStorage.setItem('jblx-theme', t);
-    }
-    // Init from storage
-    const saved = localStorage.getItem('jblx-theme');
-    if (saved) applyTheme(saved);
-    btn.addEventListener('click', () => {
-      applyTheme(document.documentElement.dataset.theme === 'light' ? '' : 'light');
-    });
-  </script>
-
   <script src="js/mobile-nav.js"></script>
 </body>
 </html>
