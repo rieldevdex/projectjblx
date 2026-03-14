@@ -42,3 +42,4 @@ jobs:
           file_pattern: 'js/jbcl-dupes-bundle.js data/jbcl-dupes.json'
           commit_user_name: 'jblx-bot'
           commit_user_email: 'bot@jblx.net'
+          push_options: '--force'
