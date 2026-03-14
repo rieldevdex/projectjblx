@@ -2,213 +2,75 @@
 
 /**
  * ================================================================
- *  JBLX — JBCL Dupe Scraper v3
+ *  JBLX — JBCL Dupe Scraper v4 (Puppeteer / headless Chrome)
  *
- *  JBCL item pages (e.g. /item/vehicle/Power%201#dupes) list
- *  dupers in the format:  DisplayName@RobloxUsername
- *  The part AFTER @ is the actual Roblox username we want.
+ *  JBCL item pages are client-side rendered — plain node-fetch
+ *  only gets an empty HTML shell. We use Puppeteer to:
+ *   1. Launch headless Chrome
+ *   2. Intercept XHR/fetch calls to find the dupers API endpoint
+ *   3. Parse the JSON response directly (most reliable)
+ *   4. Fall back to scraping rendered DOM if interception misses it
  *
  *  Flow:
- *  1. Scrape /dupes landing page → get list of duped items
- *  2. For each item, fetch /item/{type}/{name} and extract all
- *     @Username entries from the HTML (static or JSON-embedded)
+ *  1. Scrape /dupes landing page (static links are fine here)
+ *  2. For each item, open its page in Puppeteer and extract dupers
  *  3. Merge with existing records (never delete, only add)
- *  4. Write updated bundle to js/jbcl-dupes-bundle.js
+ *  4. Write updated bundle + JSON
  * ================================================================
  */
 
-const fetch   = require('node-fetch');
-const cheerio = require('cheerio');
-const fs      = require('fs');
-const path    = require('path');
+const puppeteer = require('puppeteer-core');
+const fs        = require('fs');
+const path      = require('path');
 
 // ── config ────────────────────────────────────────────────────
 
-const BASE_URL         = 'https://jailbreakchangelogs.xyz';
-const DUPES_PAGE       = `${BASE_URL}/dupes`;
-const REQUEST_DELAY_MS = 800;
-
-const OUT_JSON = path.join(__dirname, 'data', 'jbcl-dupes.json');
-const OUT_JS   = path.join(__dirname, 'js',   'jbcl-dupes-bundle.js');
+const BASE_URL   = 'https://jailbreakchangelogs.xyz';
+const OUT_JSON   = path.join(__dirname, 'data', 'jbcl-dupes.json');
+const OUT_JS     = path.join(__dirname, 'js',   'jbcl-dupes-bundle.js');
+const PAGE_TIMEOUT = 30000;
+const NAV_TIMEOUT  = 30000;
 
 // ── helpers ───────────────────────────────────────────────────
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const log   = (...args) => console.log(`[${new Date().toISOString()}]`, ...args);
 
-async function fetchPage(url) {
-  const res = await fetch(url, {
-    headers: {
-      'User-Agent': 'JBLX-DupeScraper/3.0 (+https://jblx.net; permitted by JBCL owner)',
-      'Accept': 'text/html,application/xhtml+xml,*/*;q=0.8',
-      'Accept-Language': 'en-US,en;q=0.5',
-    },
-    timeout: 20000,
-  });
-  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
-  return res.text();
-}
-
-// ── extract all @Username entries from page HTML ──────────────
-// JBCL renders entries as "DisplayName@RobloxUsername"
-// We want everything after the @
-
-function extractUsernames(html, itemName) {
-  const usernames = new Set();
-
-  // ── Strategy 1: search all <script> tags for JSON data ──────
-  // JBCL likely uses Next.js / Nuxt which embeds page data as JSON
-  const scriptContents = [];
-  const scriptRe = /<script[^>]*>([\s\S]*?)<\/script>/gi;
-  let sm;
-  while ((sm = scriptRe.exec(html)) !== null) {
-    scriptContents.push(sm[1]);
-  }
-
-  for (const scriptContent of scriptContents) {
-    // Look for the @Username pattern inside JSON strings
-    const jsonAtRe = /"([A-Za-z0-9 _]{1,40})@([A-Za-z0-9_]{3,30})"/g;
-    let jm;
-    while ((jm = jsonAtRe.exec(scriptContent)) !== null) {
-      const username = jm[2].trim();
-      if (isValidUsername(username)) usernames.add(username);
-    }
-  }
-
-  if (usernames.size > 0) {
-    log(`  [JSON] ${usernames.size} username(s) for ${itemName}`);
-    return [...usernames];
-  }
-
-  // ── Strategy 2: parse HTML text nodes with cheerio ──────────
-  const $ = cheerio.load(html);
-
-  // Look for elements that contain "text@username" pattern
-  $('*').each((_, el) => {
-    // Only look at text-level elements, skip script/style
-    const tag = el.tagName?.toLowerCase();
-    if (['script', 'style', 'head', 'meta', 'link'].includes(tag)) return;
-
-    const text = $(el).clone().children().remove().end().text().trim();
-    if (text.includes('@') && !text.includes('http') && !text.includes('.com')) {
-      // Could be "DisplayName@Username" — split on @
-      const parts = text.split('@');
-      if (parts.length === 2) {
-        const username = parts[1].replace(/[^A-Za-z0-9_]/g, '').trim();
-        if (isValidUsername(username)) usernames.add(username);
-      }
-    }
-  });
-
-  if (usernames.size > 0) {
-    log(`  [HTML nodes] ${usernames.size} username(s) for ${itemName}`);
-    return [...usernames];
-  }
-
-  // ── Strategy 3: raw regex on full HTML ──────────────────────
-  // Last resort — scan the entire raw HTML for the pattern
-  const rawRe = /(?:^|[\s"',>\[{])([A-Za-z0-9 _]{1,40})@([A-Za-z0-9_]{3,30})(?:[\s"',<\]\}]|$)/gm;
-  let rm;
-  while ((rm = rawRe.exec(html)) !== null) {
-    const username = rm[2].trim();
-    if (isValidUsername(username)) usernames.add(username);
-  }
-
-  if (usernames.size > 0) {
-    log(`  [raw-regex] ${usernames.size} username(s) for ${itemName}`);
-  } else {
-    log(`  No usernames found for ${itemName}`);
-  }
-
-  return [...usernames];
-}
-
 function isValidUsername(u) {
-  if (!u || u.length < 3 || u.length > 30) return false;
+  if (!u || typeof u !== 'string') return false;
+  u = u.trim();
+  if (u.length < 3 || u.length > 30) return false;
   if (!/^[A-Za-z0-9_]+$/.test(u)) return false;
-  // Filter obvious false positives
-  const lower = u.toLowerCase();
-  const skip = ['gmail', 'yahoo', 'hotmail', 'outlook', 'roblox', 'jblx',
-                 'jbcl', 'discord', 'twitter', 'youtube', 'com', 'net', 'org'];
-  if (skip.includes(lower)) return false;
+  const skip = ['gmail', 'yahoo', 'hotmail', 'roblox', 'jblx', 'jbcl', 'discord', 'com', 'net'];
+  if (skip.includes(u.toLowerCase())) return false;
   return true;
 }
 
-// ── scrape /dupes landing page for item list ──────────────────
-
-async function scrapeDupesLandingPage() {
-  log('Fetching /dupes landing page…');
-  const html = await fetchPage(DUPES_PAGE);
-  const $    = cheerio.load(html);
-  const items = [];
-  const seen  = new Set();
-
-  $('a[href*="/item/"]').each((_, el) => {
-    const href  = $(el).attr('href') || '';
-    const parts = href.split('/').filter(Boolean);
-    if (parts.length >= 3 && parts[0] === 'item') {
-      const type = parts[1];
-      const slug = parts[2];
-      const name = decodeURIComponent(slug).replace(/-/g, ' ');
-      if (!seen.has(slug)) {
-        seen.add(slug);
-        items.push({ name, type, slug });
-      }
-    }
-  });
-
-  log(`  Found ${items.length} duped item(s) on landing page`);
-  return items;
+// Parse "DisplayName@RobloxUsername" → return the username part
+function parseAtUsername(str) {
+  if (!str || !str.includes('@')) return null;
+  const idx = str.lastIndexOf('@');
+  const username = str.slice(idx + 1).replace(/[^A-Za-z0-9_]/g, '').trim();
+  return isValidUsername(username) ? username : null;
 }
 
-// ── scrape item page for dupers ───────────────────────────────
-
-async function scrapeItemPage(item) {
-  const urlCandidates = [
-    `${BASE_URL}/item/${item.type}/${encodeURIComponent(item.name)}`,
-    `${BASE_URL}/item/${item.type}/${item.slug}`,
-    `${BASE_URL}/item/vehicle/${encodeURIComponent(item.name)}`,
-    `${BASE_URL}/item/${item.type}/${item.name.replace(/\s+/g, '-')}`,
-  ];
-
-  // Remove duplicates
-  const urls = [...new Set(urlCandidates)];
-
-  for (const url of urls) {
-    try {
-      const html      = await fetchPage(url);
-      const usernames = extractUsernames(html, item.name);
-      if (usernames.length > 0) {
-        log(`  ✓ ${item.name}: ${usernames.length} duper(s) from ${url}`);
-        return usernames;
-      }
-    } catch (err) {
-      log(`  ✗ ${url}: ${err.message}`);
-    }
-    await sleep(300);
-  }
-
-  log(`  ✗ ${item.name}: no data found on any URL`);
-  return [];
-}
-
-// ── load / save helpers ───────────────────────────────────────
+// ── load existing records ─────────────────────────────────────
 
 function loadExistingRecords() {
   try {
     if (fs.existsSync(OUT_JSON)) {
-      const data    = JSON.parse(fs.readFileSync(OUT_JSON, 'utf8'));
+      const data = JSON.parse(fs.readFileSync(OUT_JSON, 'utf8'));
       const records = data.records || [];
       log(`Loaded ${records.length} existing records`);
       return records;
     }
-  } catch (err) {
-    log('WARNING: Could not load existing records:', err.message);
+  } catch (e) {
+    log('WARNING: Could not load existing records:', e.message);
   }
   return [];
 }
 
-function deduplicateRecords(records) {
+function dedup(records) {
   const seen = new Set();
   return records.filter(r => {
     const key = `${(r.username || '').toUpperCase()}|${r.itemKey}`;
@@ -217,6 +79,8 @@ function deduplicateRecords(records) {
     return true;
   });
 }
+
+// ── write outputs ─────────────────────────────────────────────
 
 function writeOutputs(records, dupeItems) {
   for (const dir of ['data', 'js']) {
@@ -231,7 +95,7 @@ function writeOutputs(records, dupeItems) {
   };
 
   fs.writeFileSync(OUT_JSON, JSON.stringify({ meta, records, dupeItems }, null, 2));
-  log(`Wrote ${OUT_JSON} (${records.length} total records)`);
+  log(`Wrote ${OUT_JSON} (${records.length} records)`);
 
   const bundle = `/**
  * AUTO-GENERATED by jbcl-scraper.js
@@ -240,6 +104,7 @@ function writeOutputs(records, dupeItems) {
  * ${meta.credit}
  * DO NOT EDIT — re-run jbcl-scraper.js to update.
  */
+/* global JBCL_RECORDS, JBCL_DUPE_ITEMS, JBCL_META */
 
 const JBCL_RECORDS = ${JSON.stringify(records, null, 2)};
 
@@ -251,53 +116,234 @@ const JBCL_META = ${JSON.stringify(meta, null, 2)};`;
   log(`Wrote ${OUT_JS}`);
 }
 
+// ── scrape landing page (can use regular fetch — links are static)
+
+async function getLandingPageItems() {
+  const fetch = require('node-fetch');
+  log('Fetching /dupes landing page…');
+  const res  = await fetch(`${BASE_URL}/dupes`, {
+    headers: { 'User-Agent': 'JBLX-DupeScraper/4.0 (+https://jblx.net)' },
+    timeout: 15000,
+  });
+  const html = await res.text();
+
+  // Extract item links from static HTML or embedded JSON
+  const items = [];
+  const seen  = new Set();
+
+  // Try href pattern
+  const hrefRe = /href="\/item\/([a-z]+)\/([^"#?]+)/gi;
+  let m;
+  while ((m = hrefRe.exec(html)) !== null) {
+    const type = m[1];
+    const slug = m[2];
+    const name = decodeURIComponent(slug).replace(/-/g, ' ');
+    if (!seen.has(slug)) {
+      seen.add(slug);
+      items.push({ name, type, slug });
+    }
+  }
+
+  // Also try to find item names in JSON blobs (Next.js __NEXT_DATA__ etc.)
+  const jsonRe = /"(?:name|title|item)"\s*:\s*"([^"]{2,50})"/g;
+  const typeRe = /"(?:type|category)"\s*:\s*"(vehicle|weapon|spoiler|skin)"/gi;
+  // (these are supplemental — only use if href found nothing)
+
+  log(`  Found ${items.length} item(s) on landing page`);
+  return items;
+}
+
+// ── scrape one item page with Puppeteer ───────────────────────
+
+async function getDupersForItem(browser, item) {
+  const url  = `${BASE_URL}/item/${item.type}/${encodeURIComponent(item.name)}#dupes`;
+  const page = await browser.newPage();
+
+  // Intercept API responses to capture dupers JSON directly
+  const interceptedUsernames = [];
+  let   intercepted = false;
+
+  await page.setRequestInterception(true);
+  page.on('request', req => req.continue());
+
+  page.on('response', async response => {
+    const respUrl = response.url();
+    // JBCL API is at api.jailbreakchangelogs.xyz — look for dupes-related endpoints
+    if (
+      respUrl.includes('jailbreakchangelogs.xyz') &&
+      (respUrl.includes('dupe') || respUrl.includes('user'))
+    ) {
+      try {
+        const ct = response.headers()['content-type'] || '';
+        if (ct.includes('json')) {
+          const json = await response.json();
+          log(`  [API intercept] ${respUrl}`);
+          // Walk the JSON looking for @username patterns or username fields
+          const found = extractFromJson(json);
+          if (found.length) {
+            intercepted = true;
+            found.forEach(u => interceptedUsernames.push(u));
+          }
+        }
+      } catch {}
+    }
+  });
+
+  try {
+    await page.goto(url, { waitUntil: 'networkidle2', timeout: NAV_TIMEOUT });
+    // Give JS frameworks extra time to render
+    await sleep(3000);
+  } catch (e) {
+    log(`  WARN: navigation issue for ${item.name}: ${e.message}`);
+  }
+
+  // Strategy 1: return intercepted API data
+  if (interceptedUsernames.length > 0) {
+    await page.close();
+    log(`  [API] ${item.name}: ${interceptedUsernames.length} username(s)`);
+    return [...new Set(interceptedUsernames)];
+  }
+
+  // Strategy 2: parse rendered DOM for "DisplayName@Username" text nodes
+  const usernames = await page.evaluate(() => {
+    const results = new Set();
+
+    // Walk all text nodes
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    let node;
+    while ((node = walker.nextNode())) {
+      const text = node.textContent.trim();
+      if (text.includes('@') && !text.includes('http') && !text.includes('.com')) {
+        const parts = text.split('@');
+        if (parts.length === 2) {
+          const username = parts[1].replace(/[^A-Za-z0-9_]/g, '');
+          if (username.length >= 3 && username.length <= 30) {
+            results.add(username);
+          }
+        }
+      }
+    }
+
+    // Also check element attributes (aria-label, data-* etc.)
+    document.querySelectorAll('[data-username], [data-user]').forEach(el => {
+      const u = el.dataset.username || el.dataset.user;
+      if (u && /^[A-Za-z0-9_]{3,30}$/.test(u)) results.add(u);
+    });
+
+    return [...results];
+  }).catch(() => []);
+
+  await page.close();
+
+  if (usernames.length > 0) {
+    log(`  [DOM] ${item.name}: ${usernames.length} username(s)`);
+  } else {
+    log(`  [DOM] ${item.name}: no usernames found`);
+  }
+
+  return usernames.filter(isValidUsername);
+}
+
+// Recursively walk JSON to find username patterns
+function extractFromJson(obj, depth = 0) {
+  if (depth > 10) return [];
+  const results = new Set();
+
+  if (typeof obj === 'string') {
+    const u = parseAtUsername(obj);
+    if (u) results.add(u);
+    // Also check for plain username fields
+    if (isValidUsername(obj)) results.add(obj);
+  } else if (Array.isArray(obj)) {
+    for (const item of obj) {
+      extractFromJson(item, depth + 1).forEach(r => results.add(r));
+    }
+  } else if (obj && typeof obj === 'object') {
+    // Specifically look for common username field names
+    const usernameFields = ['username', 'user_name', 'roblox_username', 'user', 'name', 'owner'];
+    for (const field of usernameFields) {
+      if (obj[field] && typeof obj[field] === 'string' && isValidUsername(obj[field])) {
+        results.add(obj[field]);
+      }
+    }
+    // Also look for @ patterns in any string value
+    for (const val of Object.values(obj)) {
+      extractFromJson(val, depth + 1).forEach(r => results.add(r));
+    }
+  }
+
+  return [...results];
+}
+
 // ── main ──────────────────────────────────────────────────────
 
 async function main() {
-  log('=== JBLX Dupe Scraper v3 starting ===');
+  log('=== JBLX Dupe Scraper v4 (Puppeteer) starting ===');
 
   const existingRecords = loadExistingRecords();
   const newRecords      = [];
 
-  // 1. Get all duped items from landing page
+  // Get item list from landing page
   let dupeItems = [];
   try {
-    dupeItems = await scrapeDupesLandingPage();
+    dupeItems = await getLandingPageItems();
   } catch (err) {
-    log('FATAL: Could not fetch landing page:', err.message);
+    log('FATAL: Could not get item list:', err.message);
     process.exit(1);
   }
-  await sleep(REQUEST_DELAY_MS);
 
-  // 2. For each item, scrape its page for the full dupers list
-  for (const item of dupeItems) {
-    log(`\nScraping: ${item.name} (${item.type})`);
-    try {
-      const usernames = await scrapeItemPage(item);
-
-      for (const username of usernames) {
-        newRecords.push({
-          username: username.toUpperCase(),
-          item:     item.name,
-          itemKey:  item.name.replace(/\s+/g, '_').toUpperCase(),
-          type:     item.type || 'Unknown',
-          source:   'jbcl',
-        });
-      }
-    } catch (err) {
-      log(`  ERROR: ${err.message}`);
-    }
-
-    await sleep(REQUEST_DELAY_MS);
+  if (dupeItems.length === 0) {
+    log('FATAL: No items found on landing page — aborting');
+    process.exit(1);
   }
 
-  // 3. Merge new into existing and deduplicate
-  const existingDeduped = deduplicateRecords(existingRecords);
-  const merged          = deduplicateRecords([...existingDeduped, ...newRecords]);
+  // Launch Puppeteer
+  log('Launching headless Chrome…');
+  const executablePath = process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/chromium-browser';
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    executablePath,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--disable-gpu',
+      '--no-zygote',
+    ],
+  });
+
+  try {
+    for (const item of dupeItems) {
+      log(`\nScraping: ${item.name} (${item.type})`);
+      try {
+        const usernames = await getDupersForItem(browser, item);
+        log(`  → ${usernames.length} duper(s) for ${item.name}`);
+
+        for (const username of usernames) {
+          newRecords.push({
+            username: username.toUpperCase(),
+            item:     item.name,
+            itemKey:  item.name.replace(/\s+/g, '_').toUpperCase(),
+            type:     item.type || 'Unknown',
+            source:   'jbcl',
+          });
+        }
+      } catch (err) {
+        log(`  ERROR: ${err.message}`);
+      }
+
+      await sleep(1000); // be polite
+    }
+  } finally {
+    await browser.close();
+  }
+
+  // Merge + dedup
+  const existingDeduped = dedup(existingRecords);
+  const merged          = dedup([...existingDeduped, ...newRecords]);
   const added           = merged.length - existingDeduped.length;
 
-  log(`\nSummary: ${existingDeduped.length} existing + ${newRecords.length} scraped → ${merged.length} total (${added} new unique added)`);
-
+  log(`\nSummary: ${existingDeduped.length} existing + ${newRecords.length} scraped → ${merged.length} total (${added} new unique)`);
   writeOutputs(merged, dupeItems);
   log('=== Done ===');
 }
