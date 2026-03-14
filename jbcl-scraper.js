@@ -47,12 +47,8 @@ const HYPERCHROME_LEVEL5_NAMES = [
   'HyperYellow Level 5',
   'HyperPink Level 5',
   'HyperOrange Level 5',
-  'HyperWhite Level 5',
-  'HyperBlack Level 5',
-  'HyperCyan Level 5',
   'HyperPurple Level 5',
-  'HyperAqua Level 5',
-  'HyperLime Level 5',
+  'HyperDiamond Level 5',
 ];
 
 // ── helpers ───────────────────────────────────────────────────
@@ -188,9 +184,10 @@ async function fetchHyperChromeData(browser) {
     page.on('response', async response => {
       const url = response.url();
       // We want: /api/items/dupes?id=X
-      if (!url.includes('/api/items/dupes')) return;
+      if (!url.includes('jailbreakchangelogs.xyz')) return;
+      if (!url.includes('dupe') && !url.includes('user')) return;
       try {
-        const idMatch = url.match(/[?&]id=(\d+)/);
+        const idMatch = url.match(/[?&]id=(\d+)/) || url.match(/\/(\d+)(?:[?#]|$)/);
         if (!idMatch) return;
         const id   = Number(idMatch[1]);
         const json = await response.json().catch(() => null);
