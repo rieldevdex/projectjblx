@@ -16,26 +16,8 @@
 const JBLX_MANUAL_RECORDS = [
 
   // ════════ TORPEDO ════════════════════════════════════════════
-  { username: "POLARCHYR",               item: "Torpedo", itemKey: "TORPEDO", notes: "" },
-  { username: "JOSUEESTEBAN27",          item: "Torpedo", itemKey: "TORPEDO", notes: "" },
-  { username: "SPAYE",                   item: "Torpedo", itemKey: "TORPEDO", notes: "" },
-  { username: "COCOTHECUTEGAMERO",       item: "Torpedo", itemKey: "TORPEDO", notes: "" },
-  { username: "yt_itswither",            item: "Torpedo", itemKey: "TORPEDO", notes: "" },
-  { username: "VUXSTEALSBRAWDS",         item: "Torpedo", itemKey: "TORPEDO", notes: "" },
-  { username: "SEANTHESUPERBOY123",      item: "Torpedo", itemKey: "TORPEDO", notes: "" },
-  { username: "FASTARDRAGOS",            item: "Torpedo", itemKey: "TORPEDO", notes: "" },
-  { username: "KINGPOOKIE12",            item: "Torpedo", itemKey: "TORPEDO", notes: "" },
-  { username: "XXJUMIOSXXTORPCRAVEMEOW", item: "Torpedo", itemKey: "TORPEDO", notes: "" },
-  { username: "THEBULLIED_GUEST",        item: "Torpedo", itemKey: "TORPEDO", notes: "" },
-
-  // ════════ BEIGNET ════════════════════════════════════════════
-  { username: "david12banana",           item: "Beignet", itemKey: "BEIGNET", notes: "" },
-  { username: "DetektivRoura",           item: "Beignet", itemKey: "BEIGNET", notes: "" },
-  { username: "abrahanbas23",            item: "Beignet", itemKey: "BEIGNET", notes: "" },
-  { username: "kraofann1",               item: "Beignet", itemKey: "BEIGNET", notes: "" },
-  { username: "KingVaibhavkr",           item: "Beignet", itemKey: "BEIGNET", notes: "" },
-  { username: "Emirex111xd",             item: "Beignet", itemKey: "BEIGNET", notes: "" },
-  { username: "FFERAKMF2",               item: "Beignet", itemKey: "BEIGNET", notes: "" },
+  { username: "STABLESTSWORD222",               item: "MAX VERSTAPPEN", itemKey: "DU DU DU DU", notes: "" },
+  { username: "some1",                          item: "CHARLES LECLERC", itemKey: "I AM STUPID", notes: "" },
 
 ];
 
