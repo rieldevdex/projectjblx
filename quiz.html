@@ -23,14 +23,49 @@
   gap: 18px;
 }
 
+/* ── MODE TABS ──────────────────────────────────────────────── */
+.qs-mode-tabs {
+  display: flex;
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--r-xl);
+  padding: 5px;
+  gap: 4px;
+}
+.qs-mode-tab {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: calc(var(--r-xl) - 4px);
+  background: none;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+.qs-mode-tab.active {
+  background: var(--bg3);
+  color: var(--text);
+  border: 1px solid var(--border-hi);
+}
+.qs-mode-tab.endless-tab.active { color: #ff9f43; }
+
 /* ── START SCREEN ───────────────────────────────────────────── */
 .qs-start {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
   text-align: center;
-  padding: 12px 0;
+  padding: 8px 0;
   animation: fadeUp 0.4s var(--ease) both;
 }
 .qs-start-eyebrow {
@@ -42,7 +77,7 @@
 }
 .qs-start-title {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
   font-weight: 700;
   letter-spacing: 0.06em;
   color: var(--text);
@@ -62,18 +97,16 @@
 }
 .qs-streak-block {
   flex: 1;
-  padding: 18px 20px;
+  padding: 16px 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
 }
-.qs-streak-block + .qs-streak-block {
-  border-left: 1px solid var(--border);
-}
+.qs-streak-block + .qs-streak-block { border-left: 1px solid var(--border); }
 .qs-streak-num {
   font-family: var(--font-display);
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 1;
 }
@@ -84,11 +117,121 @@
   text-transform: uppercase;
   color: var(--text-muted);
 }
+
+/* Level card (endless) */
+.qs-level-card {
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--r-xl);
+  padding: 20px 24px;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.qs-level-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.qs-level-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.qs-level-icon { font-size: 2rem; line-height: 1; }
+.qs-level-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.04em;
+}
+.qs-level-num {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.qs-xp-block { text-align: right; }
+.qs-xp-val {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ff9f43;
+}
+.qs-xp-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.qs-xp-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.qs-xp-bar {
+  height: 6px;
+  background: var(--surface2);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.qs-xp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff9f43, #ff6b35);
+  border-radius: 99px;
+  transition: width 0.6s var(--ease);
+  box-shadow: 0 0 8px rgba(255,159,67,0.5);
+}
+.qs-xp-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+/* Endless stats */
+.qs-endless-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+  max-width: 420px;
+}
+.qs-es-cell {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 12px 8px;
+  text-align: center;
+}
+.qs-es-val {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.qs-es-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
 .qs-info-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--r-xl);
-  padding: 20px 24px;
+  padding: 18px 22px;
   width: 100%;
   max-width: 420px;
 }
@@ -126,13 +269,13 @@
   text-align: center;
 }
 .qs-start-btn {
-  padding: 18px 56px;
+  padding: 16px 48px;
   background: var(--accent);
   color: #000;
   border: none;
   border-radius: var(--r-xl);
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -141,13 +284,13 @@
   transition: opacity 0.15s, transform 0.15s;
 }
 .qs-start-btn:hover { opacity: 0.85; transform: translateY(-2px); }
+.qs-start-btn.endless-btn {
+  background: linear-gradient(135deg, #ff9f43, #ff6b35);
+  box-shadow: 0 8px 28px rgba(255,159,67,0.3);
+}
 
 /* ── QUESTION SCREEN ────────────────────────────────────────── */
-.qs-progress-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+.qs-progress-wrap { display: flex; flex-direction: column; gap: 8px; }
 .qs-progress-bar {
   height: 4px;
   background: var(--surface2);
@@ -161,6 +304,7 @@
   transition: width 0.5s var(--ease);
   box-shadow: 0 0 8px var(--accent);
 }
+.qs-progress-fill.endless { background: linear-gradient(90deg, #ff9f43, #ff6b35); box-shadow: 0 0 8px #ff9f43; }
 .qs-progress-meta {
   display: flex;
   justify-content: space-between;
@@ -173,10 +317,7 @@
   color: var(--text-muted);
   text-transform: uppercase;
 }
-.qs-dots {
-  display: flex;
-  gap: 5px;
-}
+.qs-dots { display: flex; gap: 5px; }
 .qs-dot {
   width: 9px; height: 9px;
   border-radius: 50%;
@@ -187,6 +328,38 @@
 .qs-dot.active  { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 6px var(--accent); }
 .qs-dot.correct { background: #39e07a; border-color: #39e07a; }
 .qs-dot.wrong   { background: #e03040; border-color: #e03040; }
+.qs-dot.endless-active { background: #ff9f43; border-color: #ff9f43; box-shadow: 0 0 6px #ff9f43; }
+
+/* XP mini bar (during endless questions) */
+.qs-xp-mini {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+}
+.qs-xp-mini-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--surface2);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.qs-xp-mini-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff9f43, #ff6b35);
+  border-radius: 99px;
+  transition: width 0.4s var(--ease);
+}
+.qs-xp-mini-text {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
+  color: #ff9f43;
+  white-space: nowrap;
+}
 
 /* Trade card */
 .qs-trade-card {
@@ -200,9 +373,7 @@
   display: grid;
   grid-template-columns: 1fr 44px 1fr;
 }
-.qs-side {
-  padding: 18px 16px;
-}
+.qs-side { padding: 18px 16px; }
 .qs-side-lbl {
   font-family: var(--font-mono);
   font-size: 0.54rem;
@@ -247,11 +418,7 @@
   flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
 }
-.qs-item-thumb img {
-  width: 100%; height: 100%;
-  object-fit: contain;
-  padding: 2px;
-}
+.qs-item-thumb img { width: 100%; height: 100%; object-fit: contain; padding: 2px; }
 .qs-item-thumb-fb {
   font-family: var(--font-display);
   font-size: 0.55rem;
@@ -270,17 +437,12 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.qs-item-row2 {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-top: 2px;
-}
-.qs-item-val {
+.qs-item-row2 { display: flex; align-items: center; gap: 5px; margin-top: 2px; }
+.qs-item-val { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: #ffd166; }
+.qs-item-effval {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #ffd166;
+  font-size: 0.58rem;
+  color: var(--text-muted);
 }
 .qs-side-total {
   font-family: var(--font-mono);
@@ -290,10 +452,17 @@
   padding: 5px 10px;
   border-radius: var(--r);
   display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
   border: 1px solid;
 }
 .qs-side-total.give { color: var(--accent); background: rgba(0,200,240,0.06); border-color: rgba(0,200,240,0.18); }
 .qs-side-total.get  { color: #ff7eb3; background: rgba(255,126,179,0.06); border-color: rgba(255,126,179,0.18); }
+.qs-side-total-eff {
+  font-size: 0.5rem;
+  opacity: 0.7;
+  font-weight: 400;
+}
 
 /* Answer buttons */
 .qs-btn-row {
@@ -320,14 +489,7 @@
   transition: transform 0.15s var(--ease), box-shadow 0.15s, opacity 0.15s;
   font-size: 0.95rem;
 }
-.qbtn-hint {
-  font-family: var(--font-mono);
-  font-size: 0.5rem;
-  letter-spacing: 0.06em;
-  text-transform: none;
-  opacity: 0.65;
-  font-weight: 400;
-}
+.qbtn-hint { font-family: var(--font-mono); font-size: 0.5rem; letter-spacing: 0.06em; text-transform: none; opacity: 0.65; font-weight: 400; }
 .qbtn:not(:disabled):hover { transform: translateY(-3px); }
 .qbtn:not(:disabled):active { transform: translateY(0) scale(0.97); }
 .qbtn:disabled { cursor: not-allowed; }
@@ -337,8 +499,7 @@
 .qbtn.win:not(:disabled):hover  { box-shadow: 0 6px 20px rgba(57,224,122,0.25); }
 .qbtn.fair:not(:disabled):hover { box-shadow: 0 6px 20px rgba(90,96,128,0.18); }
 .qbtn.lose:not(:disabled):hover { box-shadow: 0 6px 20px rgba(224,48,64,0.25); }
-/* Post-answer states */
-.qbtn.is-answer     { opacity: 1 !important; box-shadow: 0 0 0 3px currentColor, 0 0 16px rgba(currentColor, 0.3); }
+.qbtn.is-answer   { opacity: 1 !important; }
 .qbtn.is-dim        { opacity: 0.22 !important; }
 .qbtn.is-wrong-pick { opacity: 0.22 !important; filter: grayscale(0.4); }
 
@@ -357,33 +518,10 @@
 }
 .qs-fb-verdict.correct { color: #39e07a; }
 .qs-fb-verdict.wrong   { color: #e03040; }
-.qs-fb-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-bottom: 10px;
-}
-.fb-cell {
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  padding: 8px 10px;
-  text-align: center;
-}
-.fb-cell-val {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 2px;
-}
-.fb-cell-lbl {
-  font-family: var(--font-mono);
-  font-size: 0.5rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
+.qs-fb-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px; }
+.fb-cell { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--r); padding: 8px 10px; text-align: center; }
+.fb-cell-val { font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+.fb-cell-lbl { font-family: var(--font-mono); font-size: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
 .qs-fb-threshold {
   font-size: 0.77rem;
   color: var(--text-dim);
@@ -392,9 +530,42 @@
   border: 1px solid var(--border);
   border-radius: var(--r);
   padding: 8px 12px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .qs-fb-threshold strong { color: var(--text); }
+.qs-fb-demand-note {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  background: rgba(255,159,67,0.06);
+  border: 1px solid rgba(255,159,67,0.2);
+  border-radius: var(--r);
+  padding: 7px 12px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.qs-fb-demand-note strong { color: #ff9f43; }
+
+/* XP gain flash */
+.qs-xp-gain {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ff9f43;
+  background: rgba(255,159,67,0.1);
+  border: 1px solid rgba(255,159,67,0.3);
+  border-radius: 99px;
+  padding: 3px 10px;
+  margin-bottom: 10px;
+  animation: xpPop 0.4s var(--ease) both;
+}
+@keyframes xpPop {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
 .qs-next-btn {
   width: 100%;
   padding: 13px;
@@ -411,32 +582,13 @@
   transition: opacity 0.15s, transform 0.15s;
 }
 .qs-next-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+.qs-next-btn.endless { background: linear-gradient(135deg, #ff9f43, #ff6b35); color: #fff; }
 
 /* ── RESULT SCREEN ──────────────────────────────────────────── */
-.qs-result {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  animation: fadeUp 0.35s var(--ease) both;
-}
-.qs-result-hdr {
-  text-align: center;
-}
-.qs-result-title {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--text);
-}
-.qs-result-date {
-  font-family: var(--font-mono);
-  font-size: 0.64rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-top: 4px;
-}
+.qs-result { display: flex; flex-direction: column; gap: 14px; animation: fadeUp 0.35s var(--ease) both; }
+.qs-result-hdr { text-align: center; }
+.qs-result-title { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; letter-spacing: 0.06em; color: var(--text); }
+.qs-result-date { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); margin-top: 4px; }
 .qs-result-main {
   background: var(--surface);
   border: 1px solid var(--border-hi);
@@ -447,10 +599,7 @@
   align-items: center;
   gap: 16px;
 }
-.qs-wordle-row {
-  display: flex;
-  gap: 8px;
-}
+.qs-wordle-row { display: flex; gap: 8px; }
 .wq {
   width: 54px; height: 54px;
   border-radius: 10px;
@@ -467,28 +616,10 @@
 }
 .wq.correct { background: rgba(57,224,122,0.12); border-color: #39e07a; }
 .wq.wrong   { background: rgba(224,48,64,0.12);  border-color: #e03040; }
-.qs-big-score {
-  font-family: var(--font-display);
-  font-size: 4rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--accent);
-  line-height: 1;
-}
+.qs-big-score { font-family: var(--font-display); font-size: 4rem; font-weight: 700; letter-spacing: 0.04em; color: var(--accent); line-height: 1; }
 .qs-big-score span { font-size: 1.8rem; color: var(--text-muted); }
-.qs-score-lbl {
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-.qs-grade {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-}
+.qs-score-lbl { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); }
+.qs-grade { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; letter-spacing: 0.06em; }
 
 /* Streak result */
 .qs-streak-result {
@@ -502,36 +633,41 @@
 }
 .qs-streak-icon { font-size: 2.4rem; }
 .qs-streak-body { flex: 1; }
-.qs-streak-num {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--accent);
-  line-height: 1;
-}
-.qs-streak-lbl {
-  font-family: var(--font-mono);
-  font-size: 0.56rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin: 2px 0 4px;
-}
+.qs-streak-num { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--accent); line-height: 1; }
+.qs-streak-lbl { font-family: var(--font-mono); font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin: 2px 0 4px; }
 .qs-streak-msg { font-size: 0.76rem; color: var(--text-dim); }
 .qs-best-wrap { text-align: right; }
-.qs-best-num {
+.qs-best-num { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--text-dim); }
+.qs-best-lbl { font-family: var(--font-mono); font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+
+/* Endless session result card */
+.qs-endless-result {
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--r-xl);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.qs-level-up-banner {
+  background: linear-gradient(135deg, rgba(255,159,67,0.12), rgba(255,107,53,0.08));
+  border: 1px solid rgba(255,159,67,0.4);
+  border-radius: var(--r-lg);
+  padding: 14px 18px;
+  text-align: center;
+  width: 100%;
+  animation: scaleIn 0.3s var(--ease) both;
+}
+.qs-level-up-title {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  color: var(--text-dim);
+  color: #ff9f43;
+  letter-spacing: 0.06em;
 }
-.qs-best-lbl {
-  font-family: var(--font-mono);
-  font-size: 0.54rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
+.qs-level-up-sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
 
 /* Countdown */
 .qs-countdown {
@@ -544,31 +680,11 @@
   justify-content: space-between;
   gap: 12px;
 }
-.qs-countdown-lbl {
-  font-family: var(--font-mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 4px;
-}
-.qs-countdown-time {
-  font-family: var(--font-mono);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: 0.1em;
-}
-.qs-countdown-note {
-  font-family: var(--font-mono);
-  font-size: 0.58rem;
-  color: var(--text-muted);
-  text-align: right;
-  line-height: 1.6;
-  letter-spacing: 0.04em;
-}
+.qs-countdown-lbl { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
+.qs-countdown-time { font-family: var(--font-mono); font-size: 1.4rem; font-weight: 700; color: var(--accent); letter-spacing: 0.1em; }
+.qs-countdown-note { font-family: var(--font-mono); font-size: 0.58rem; color: var(--text-muted); text-align: right; line-height: 1.6; letter-spacing: 0.04em; }
 
-/* Share button */
+/* Share / action buttons */
 .qs-share-btn {
   width: 100%;
   padding: 14px;
@@ -590,24 +706,27 @@
 }
 .qs-share-btn:hover { background: var(--accent-glow); border-color: var(--accent); color: var(--accent); }
 .qs-share-btn.copied { color: #39e07a; border-color: #39e07a; background: rgba(57,224,122,0.06); }
+.qs-play-again-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #ff9f43, #ff6b35);
+  border: none;
+  border-radius: var(--r-lg);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+  box-shadow: 0 4px 16px rgba(255,159,67,0.3);
+}
+.qs-play-again-btn:hover { opacity: 0.9; transform: translateY(-1px); }
 
 /* Trade review table */
-.qs-review {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r-xl);
-  overflow: hidden;
-}
-.qs-review-hdr {
-  padding: 12px 18px;
-  background: var(--bg3);
-  border-bottom: 1px solid var(--border-hi);
-  font-family: var(--font-mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
+.qs-review { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-xl); overflow: hidden; }
+.qs-review-hdr { padding: 12px 18px; background: var(--bg3); border-bottom: 1px solid var(--border-hi); font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); }
 .qs-review-row {
   display: flex;
   align-items: center;
@@ -618,57 +737,17 @@
 }
 .qs-review-row:last-child { border-bottom: none; }
 .qs-review-row:hover { background: var(--surface2); }
-.qs-rv-num {
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  color: var(--text-muted);
-  width: 20px;
-  flex-shrink: 0;
-}
+.qs-rv-num { font-family: var(--font-mono); font-size: 0.6rem; color: var(--text-muted); width: 20px; flex-shrink: 0; }
 .qs-rv-icon { font-size: 1rem; flex-shrink: 0; }
-.qs-rv-trade {
-  flex: 1;
-  font-family: var(--font-display);
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--text-dim);
-  min-width: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.qs-rv-verdict {
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
+.qs-rv-trade { flex: 1; font-family: var(--font-display); font-size: 0.82rem; font-weight: 600; color: var(--text-dim); min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.qs-rv-verdict { font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.04em; white-space: nowrap; flex-shrink: 0; }
 .qs-rv-verdict.c { color: #39e07a; }
 .qs-rv-verdict.w { color: #e03040; }
 
 /* Already-played screen */
-.qs-done-banner {
-  background: var(--surface);
-  border: 1px solid var(--border-hi);
-  border-radius: var(--r-xl);
-  padding: 24px;
-  text-align: center;
-  animation: scaleIn 0.3s var(--ease) both;
-}
-.qs-done-title {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--text);
-  margin-bottom: 6px;
-}
-.qs-done-sub {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-}
+.qs-done-banner { background: var(--surface); border: 1px solid var(--border-hi); border-radius: var(--r-xl); padding: 24px; text-align: center; animation: scaleIn 0.3s var(--ease) both; }
+.qs-done-title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; letter-spacing: 0.06em; color: var(--text); margin-bottom: 6px; }
+.qs-done-sub { font-size: 0.78rem; color: var(--text-muted); }
 
 @media (max-width: 540px) {
   .qs-trade-layout { grid-template-columns: 1fr; }
@@ -679,6 +758,8 @@
   .qs-big-score { font-size: 3rem; }
   .qs-streak-result { flex-wrap: wrap; }
 }
+
+@keyframes spin { to { transform: rotate(360deg); } }
   </style>
 </head>
 <body>
@@ -730,12 +811,70 @@
   <script src="js/values.js"></script>
   <script>
 // ================================================================
-//  JBLX DAILY TRADE QUIZ  —  Seeded by date, Wordle-style streak
+//  JBLX DAILY TRADE QUIZ  —  v2: demand-weighted + endless mode
 // ================================================================
 
-const QUIZ_KEY   = 'jblx_dq_v2';
-const Q_COUNT    = 5;
-const PASS_SCORE = 3;
+const QUIZ_KEY    = 'jblx_dq_v2';
+const ENDLESS_KEY = 'jblx_endless_v1';
+const Q_COUNT     = 5;
+const PASS_SCORE  = 3;
+
+// ── DEMAND MULTIPLIERS (1:1 weight with value) ────────────────
+// Demand moves the effective value ±25% at extremes.
+// Verdict is calculated on effectiveValue, not raw value.
+const DEMAND_MULT = {
+  Extraordinary: 1.25,
+  High:          1.14,
+  Solid:         1.06,
+  Average:       1.00,
+  Medium:        0.94,
+  Low:           0.85,
+  Minimal:       0.77,
+  Nonexistent:   0.70,
+};
+
+function effectiveValue(item) {
+  const mult = DEMAND_MULT[item.demand] ?? 1.00;
+  return Math.round(item.value * mult);
+}
+
+// ── LEVEL SYSTEM ──────────────────────────────────────────────
+const LEVELS = [
+  { name: 'Rookie',      icon: '🪙', xp: 0     },
+  { name: 'Apprentice',  icon: '🔰', xp: 200   },
+  { name: 'Trader',      icon: '⚖️', xp: 600   },
+  { name: 'Analyst',     icon: '📊', xp: 1400  },
+  { name: 'Expert',      icon: '💎', xp: 3000  },
+  { name: 'Elite',       icon: '🏅', xp: 6000  },
+  { name: 'Master',      icon: '👑', xp: 12000 },
+  { name: 'Legend',      icon: '🔥', xp: 25000 },
+];
+
+function getLevel(xp) {
+  let lvl = LEVELS[0];
+  for (const l of LEVELS) { if (xp >= l.xp) lvl = l; else break; }
+  return lvl;
+}
+function getNextLevel(xp) {
+  for (const l of LEVELS) { if (xp < l.xp) return l; }
+  return null; // maxed
+}
+function getLevelIndex(xp) {
+  let idx = 0;
+  for (let i = 0; i < LEVELS.length; i++) { if (xp >= LEVELS[i].xp) idx = i; else break; }
+  return idx;
+}
+function xpForCorrect(xp) {
+  // More XP at higher levels for correct answers
+  const idx = getLevelIndex(xp);
+  return [10, 14, 18, 24, 32, 42, 55, 70][idx] || 10;
+}
+
+function loadEndless() {
+  try { return JSON.parse(localStorage.getItem(ENDLESS_KEY)) || { xp: 0, totalCorrect: 0, totalPlayed: 0, bestStreak: 0 }; }
+  catch { return { xp: 0, totalCorrect: 0, totalPlayed: 0, bestStreak: 0 }; }
+}
+function saveEndless(d) { try { localStorage.setItem(ENDLESS_KEY, JSON.stringify(d)); } catch {} }
 
 // ── SEEDED PRNG (Mulberry32) ─────────────────────────────────
 function mulberry32(seed) {
@@ -765,19 +904,19 @@ function msToMidnight() {
   const n = new Date(), m = new Date(n); m.setHours(24, 0, 0, 0); return m - n;
 }
 function fmtCountdown(ms) {
-  const h = Math.floor(ms / 3600000),
-        m = Math.floor((ms % 3600000) / 60000),
-        s = Math.floor((ms % 60000) / 1000);
+  const h = Math.floor(ms / 3600000), m = Math.floor((ms % 3600000) / 60000), s = Math.floor((ms % 60000) / 1000);
   return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 }
 
-// ── VERDICT ──────────────────────────────────────────────────
-function verdict(pct) {
-  if (pct >= 8)  return { btn: 'W', display: 'Win',         detail: 'You gain 8%+ — a clear profit.' };
-  if (pct >= 2)  return { btn: 'W', display: 'Slight Win',  detail: 'You gain 2–8% — marginally ahead.' };
-  if (pct >= -2) return { btn: 'F', display: 'Fair',        detail: 'Within ±2% — essentially equal.' };
-  if (pct >= -8) return { btn: 'L', display: 'Slight Lose', detail: 'You lose 2–8% — slightly unfavourable.' };
-  return         { btn: 'L', display: 'Lose',               detail: 'You lose 8%+ — a clear disadvantage.' };
+// ── VERDICT (demand-weighted) ────────────────────────────────
+// effectivePct = ((effectiveGet - effectiveOffer) / effectiveOffer) * 100
+// Thresholds same as before: ±2% = Fair, +8% = Win, -8% = Lose
+function verdict(effectivePct) {
+  if (effectivePct >= 8)  return { btn: 'W', display: 'Win',         detail: 'You gain 8%+ in demand-weighted value.' };
+  if (effectivePct >= 2)  return { btn: 'W', display: 'Slight Win',  detail: 'You gain 2–8% — slightly ahead after demand.' };
+  if (effectivePct >= -2) return { btn: 'F', display: 'Fair',        detail: 'Within ±2% demand-weighted — essentially equal.' };
+  if (effectivePct >= -8) return { btn: 'L', display: 'Slight Lose', detail: 'You lose 2–8% in demand-weighted value.' };
+  return                         { btn: 'L', display: 'Lose',         detail: 'You lose 8%+ in demand-weighted value.' };
 }
 
 // ── FORMAT ───────────────────────────────────────────────────
@@ -789,43 +928,54 @@ function fmt(n) {
   return String(n);
 }
 
-// ── GENERATE DAILY TRADES (seeded) ───────────────────────────
-function genTrades() {
+// ── GENERATE TRADES ──────────────────────────────────────────
+function buildTrade(give, get) {
+  const offer    = give.reduce((s, i) => s + i.value, 0);
+  const req      = get.reduce((s, i)  => s + i.value, 0);
+  const effOffer = give.reduce((s, i) => s + effectiveValue(i), 0);
+  const effReq   = get.reduce((s, i)  => s + effectiveValue(i), 0);
+  if (offer === 0 || effOffer === 0) return null;
+
+  const rawPct = ((req - offer) / offer) * 100;
+  const effPct = ((effReq - effOffer) / effOffer) * 100;
+
+  // Only include if demand shifts the answer noticeably OR raw is close enough
+  return { give, get, offer, req, effOffer, effReq, rawPct, pct: effPct, ...verdict(effPct) };
+}
+
+function genTradesFromRng(rng, count) {
   const pool = (typeof ITEMS !== 'undefined' ? ITEMS : [])
     .filter(i => i.value >= 1000000 && i.value <= 30000000);
   if (pool.length < 8) return [];
-  const rng = mulberry32(dateSeed());
 
   const trades = [];
   let attempts = 0;
 
-  while (trades.length < Q_COUNT && attempts < 600) {
+  while (trades.length < count && attempts < 800) {
     attempts++;
     const gc = Math.floor(rng() * 2) + 1;
     const rc = Math.floor(rng() * 2) + 1;
     const give = Array.from({ length: gc }, () => pool[Math.floor(rng() * pool.length)]);
     const get  = Array.from({ length: rc }, () => pool[Math.floor(rng() * pool.length)]);
 
-    // No duplicate item names across both sides
     const allNames = [...give, ...get].map(i => i.name);
     if (new Set(allNames).size !== allNames.length) continue;
 
-    const offer = give.reduce((s, i) => s + i.value, 0);
-    const req   = get.reduce((s, i)  => s + i.value, 0);
-    if (offer === 0) continue;
+    const t = buildTrade(give, get);
+    if (!t) continue;
 
-    const pct = ((req - offer) / offer) * 100;
+    // Keep effective pct spread reasonable
+    if (Math.abs(t.pct) > 14) continue;
 
-    // Keep value gap tight enough to make demand matter
-    if (Math.abs(pct) > 14) continue;
-
-    trades.push({ give, get, offer, req, pct, ...verdict(pct) });
+    trades.push(t);
   }
-
   return trades;
 }
 
-const TRADES = genTrades();
+function genDailyTrades() { return genTradesFromRng(mulberry32(dateSeed()), Q_COUNT); }
+function genEndlessTrades() { return genTradesFromRng(() => Math.random(), Q_COUNT); }
+
+const DAILY_TRADES = genDailyTrades();
 
 // ── STORAGE ──────────────────────────────────────────────────
 function load() { try { return JSON.parse(localStorage.getItem(QUIZ_KEY)) || {}; } catch { return {}; } }
@@ -838,15 +988,16 @@ function demBadge(d) {
   return `<span class="badge-demand ${DEM_CLASS[d]||'d-nonexistent'}" style="font-size:0.5rem;padding:1px 6px;">${d}</span>`;
 }
 
-// ── ITEM THUMB ────────────────────────────────────────────────
 function thumb(item) {
   const src = item.img || item.image || '';
   if (src) return `<img src="${src}" alt="" onerror="this.outerHTML='<span class=\\'qs-item-thumb-fb\\'>${(item.name||'').slice(0,2).toUpperCase()}</span>'" />`;
   return `<span class="qs-item-thumb-fb">${(item.name||'').slice(0,2).toUpperCase()}</span>`;
 }
 
-// ── ITEM HTML ─────────────────────────────────────────────────
 function itemHtml(item) {
+  const eff = effectiveValue(item);
+  const mult = DEMAND_MULT[item.demand] ?? 1.00;
+  const shifted = Math.abs(mult - 1.0) >= 0.01;
   return `
     <div class="qs-item">
       <div class="qs-item-thumb">${thumb(item)}</div>
@@ -854,6 +1005,7 @@ function itemHtml(item) {
         <div class="qs-item-name">${item.name}</div>
         <div class="qs-item-row2">
           <span class="qs-item-val">${fmt(item.value)}</span>
+          ${shifted ? `<span class="qs-item-effval">→ ${fmt(eff)} eff.</span>` : ''}
           ${demBadge(item.demand)}
         </div>
       </div>
@@ -861,32 +1013,89 @@ function itemHtml(item) {
 }
 
 // ── SESSION STATE ─────────────────────────────────────────────
-let S = { phase: 'start', qIdx: 0, answers: [], correct: [] };
+let S = {
+  mode: 'daily',         // 'daily' | 'endless'
+  phase: 'start',        // 'start' | 'q' | 'end'
+  qIdx: 0,
+  answers: [],
+  correct: [],
+  trades: DAILY_TRADES,
+  endlessStreak: 0,      // current endless correct streak
+  endlessSession: { correct: 0, played: 0, xpGained: 0, leveledUp: false, newLevel: null },
+};
 
-// ── ROOT RENDER ───────────────────────────────────────────────
+// ── ROOT ──────────────────────────────────────────────────────
 const root = document.getElementById('quiz-root');
 function render() {
-  const data = load();
-  if (data.date === todayKey() && data.done) { renderDone(data); return; }
-  if (S.phase === 'start')    renderStart(data);
-  else if (S.phase === 'q')   renderQ(S.qIdx);
-  else if (S.phase === 'end') renderResult();
+  if (S.phase === 'start') renderStart();
+  else if (S.phase === 'q') renderQ(S.qIdx);
+  else if (S.phase === 'end') renderEnd();
+}
+
+// ── XP BAR HTML ───────────────────────────────────────────────
+function xpBarHtml(xp, compact = false) {
+  const lvl  = getLevel(xp);
+  const next = getNextLevel(xp);
+  const pct  = next
+    ? Math.round(((xp - lvl.xp) / (next.xp - lvl.xp)) * 100)
+    : 100;
+  const idx  = getLevelIndex(xp);
+
+  if (compact) {
+    return `
+      <div class="qs-xp-mini">
+        <span style="font-size:1rem">${lvl.icon}</span>
+        <div class="qs-xp-mini-bar">
+          <div class="qs-xp-mini-fill" style="width:${pct}%"></div>
+        </div>
+        <span class="qs-xp-mini-text">${lvl.name} · ${xp} XP${next ? ` / ${next.xp}` : ' MAX'}</span>
+      </div>`;
+  }
+
+  return `
+    <div class="qs-level-card">
+      <div class="qs-level-header">
+        <div class="qs-level-badge">
+          <div class="qs-level-icon">${lvl.icon}</div>
+          <div>
+            <div class="qs-level-name">${lvl.name}</div>
+            <div class="qs-level-num">Level ${idx + 1} of ${LEVELS.length}</div>
+          </div>
+        </div>
+        <div class="qs-xp-block">
+          <div class="qs-xp-val">${xp.toLocaleString()}</div>
+          <div class="qs-xp-lbl">Total XP</div>
+        </div>
+      </div>
+      <div class="qs-xp-bar-wrap">
+        <div class="qs-xp-bar">
+          <div class="qs-xp-fill" style="width:${pct}%"></div>
+        </div>
+        <div class="qs-xp-meta">
+          <span>${lvl.name}</span>
+          <span>${pct}%${next ? ` · ${(next.xp - xp).toLocaleString()} XP to ${next.name}` : ' · MAX LEVEL'}</span>
+        </div>
+      </div>
+    </div>`;
 }
 
 // ── START SCREEN ──────────────────────────────────────────────
-function renderStart(data) {
-  const streak = data.streak || 0;
-  const best   = data.best || 0;
+function renderStart() {
+  const data = load();
+  const ed   = loadEndless();
+  const isDailyDone = data.date === todayKey() && data.done;
+
+  const streak      = data.streak || 0;
+  const best        = data.best || 0;
   const streakColor = streak >= 3 ? '#ff9f43' : streak > 0 ? 'var(--accent)' : 'var(--text-dim)';
 
-  root.innerHTML = `
+  const dailyTabContent = `
     <div class="qs-start">
       <div>
         <div class="qs-start-eyebrow">Jailbreak Listing Exchange</div>
         <div class="qs-start-title">${streak >= 3 ? '🔥 ' : '🎯 '}Daily Trade Quiz</div>
         <div style="font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.12em;color:var(--text-muted);text-transform:uppercase;margin-top:6px;">${todayLabel()}</div>
       </div>
-
       <div class="qs-streak-bar">
         <div class="qs-streak-block">
           <div class="qs-streak-num" style="color:${streakColor}">${streak > 0 ? '🔥 ' : ''}${streak}</div>
@@ -897,55 +1106,118 @@ function renderStart(data) {
           <div class="qs-streak-label">Best Streak</div>
         </div>
       </div>
-
-      <div class="qs-info-card">
-        <div class="qs-info-grid">
-          <div class="qs-info-cell">
-            <div class="qs-info-val" style="color:var(--accent)">${Q_COUNT}</div>
-            <div class="qs-info-lbl">Trades</div>
-          </div>
-          <div class="qs-info-cell">
-            <div class="qs-info-val" style="color:#39e07a">${PASS_SCORE}+</div>
-            <div class="qs-info-lbl">To Pass</div>
-          </div>
-          <div class="qs-info-cell">
-            <div class="qs-info-val" style="color:#ffd166">W·F·L</div>
-            <div class="qs-info-lbl">Format</div>
-          </div>
+      ${isDailyDone ? `
+        <div class="qs-done-banner" style="width:100%;max-width:420px">
+          <div class="qs-done-title">✅ Already played today</div>
+          <div class="qs-done-sub">Come back tomorrow for fresh trades! Your streak is safe.</div>
         </div>
+        <button class="qs-start-btn" onclick="reviewToday()">Review Today's Trades</button>
+      ` : `
+        <div class="qs-info-card">
+          <div class="qs-info-grid">
+            <div class="qs-info-cell"><div class="qs-info-val" style="color:var(--accent)">5</div><div class="qs-info-lbl">Trades</div></div>
+            <div class="qs-info-cell"><div class="qs-info-val" style="color:#39e07a">3+</div><div class="qs-info-lbl">To Pass</div></div>
+            <div class="qs-info-cell"><div class="qs-info-val" style="color:#ffd166">W·F·L</div><div class="qs-info-lbl">Format</div></div>
+          </div>
+          <p class="qs-info-desc">
+            Same 5 trades for everyone today — seeded by date.<br/>
+            <strong style="color:#ff9f43">Demand is factored in</strong> — high demand items are worth more than their raw value.
+          </p>
+        </div>
+        <button class="qs-start-btn" onclick="startDaily()">Begin Today's Quiz →</button>
+      `}
+    </div>`;
+
+  const endlessTabContent = `
+    <div class="qs-start">
+      <div>
+        <div class="qs-start-eyebrow">Jailbreak Listing Exchange</div>
+        <div class="qs-start-title">♾️ Endless Mode</div>
+        <div style="font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.12em;color:var(--text-muted);text-transform:uppercase;margin-top:6px;">Earn XP · Climb Levels · Never Stop</div>
+      </div>
+      ${xpBarHtml(ed.xp)}
+      <div class="qs-endless-stats">
+        <div class="qs-es-cell">
+          <div class="qs-es-val" style="color:#39e07a">${ed.totalCorrect}</div>
+          <div class="qs-es-lbl">Correct</div>
+        </div>
+        <div class="qs-es-cell">
+          <div class="qs-es-val" style="color:var(--text-dim)">${ed.totalPlayed}</div>
+          <div class="qs-es-lbl">Played</div>
+        </div>
+        <div class="qs-es-cell">
+          <div class="qs-es-val" style="color:#ff9f43">${ed.bestStreak || 0}</div>
+          <div class="qs-es-lbl">Best Streak</div>
+        </div>
+      </div>
+      <div class="qs-info-card">
         <p class="qs-info-desc">
-          Same 5 trades for everyone today — seeded by date.<br/>
-          Get ${PASS_SCORE}+ correct to keep your streak alive.
+          Infinite random trades, no limit. Earn <strong style="color:#ff9f43">XP</strong> for every correct answer — more XP per question as you level up.<br/>
+          <strong style="color:#ff9f43">Demand weighs into every verdict.</strong>
         </p>
       </div>
+      <button class="qs-start-btn endless-btn" onclick="startEndless()">Start Endless →</button>
+    </div>`;
 
-      <button class="qs-start-btn" onclick="startQuiz()">Begin Today's Quiz →</button>
+  root.innerHTML = `
+    <div class="qs-mode-tabs">
+      <button class="qs-mode-tab ${S.mode === 'daily' ? 'active' : ''}" onclick="switchMode('daily')">🎯 Daily</button>
+      <button class="qs-mode-tab endless-tab ${S.mode === 'endless' ? 'active' : ''}" onclick="switchMode('endless')">♾️ Endless</button>
+    </div>
+    <div id="mode-content">
+      ${S.mode === 'daily' ? dailyTabContent : endlessTabContent}
     </div>`;
 }
 
-function startQuiz() {
-  S = { phase: 'q', qIdx: 0, answers: [], correct: [] };
+window.switchMode = function(mode) {
+  S.mode = mode;
+  renderStart();
+};
+
+window.reviewToday = function() {
+  S.phase = 'end';
+  S.mode  = 'daily';
+  renderEnd();
+};
+
+window.startDaily = function() {
+  const data = load();
+  if (data.date === todayKey() && data.done) { S.phase = 'end'; render(); return; }
+  S = { ...S, mode: 'daily', phase: 'q', qIdx: 0, answers: [], correct: [], trades: DAILY_TRADES };
   render();
-}
+};
+
+window.startEndless = function() {
+  const trades = genEndlessTrades();
+  S = {
+    ...S, mode: 'endless', phase: 'q', qIdx: 0, answers: [], correct: [],
+    trades, endlessStreak: 0,
+    endlessSession: { correct: 0, played: 0, xpGained: 0, leveledUp: false, newLevel: null },
+  };
+  render();
+};
 
 // ── QUESTION ──────────────────────────────────────────────────
 function renderQ(idx) {
-  const t = TRADES[idx];
+  const t        = S.trades[idx];
   const answered = S.answers[idx] !== undefined;
+  const endless  = S.mode === 'endless';
+  const ed       = loadEndless();
 
-  const dotHtml = TRADES.map((_, i) => {
+  // Dots
+  const dotHtml = S.trades.map((_, i) => {
     let cls = 'qs-dot';
     if (i < S.correct.length) cls += S.correct[i] ? ' correct' : ' wrong';
-    else if (i === idx) cls += ' active';
+    else if (i === idx) cls += endless ? ' endless-active' : ' active';
     return `<div class="${cls}"></div>`;
   }).join('');
 
-  const pct = t.pct;
-  const pctStr = (pct >= 0 ? '+' : '') + pct.toFixed(1) + '%';
-  const diff = Math.abs(t.req - t.offer);
-  const favourable = t.req >= t.offer;
+  const effPctStr = (t.pct >= 0 ? '+' : '') + t.pct.toFixed(1) + '%';
+  const rawPctStr = (t.rawPct >= 0 ? '+' : '') + t.rawPct.toFixed(1) + '%';
+  const effDiff   = Math.abs(t.effReq - t.effOffer);
+  const favourable = t.effReq >= t.effOffer;
+  const demandShifted = Math.abs(t.pct - t.rawPct) >= 1.5;
 
-  // Button state classes
   function btnClass(b) {
     if (!answered) return '';
     if (b === t.btn) return 'is-answer';
@@ -953,88 +1225,139 @@ function renderQ(idx) {
     return 'is-dim';
   }
 
+  // XP gain display for endless
+  let xpGainHtml = '';
+  if (answered && endless && S.correct[idx]) {
+    const gain = xpForCorrect(ed.xp);
+    xpGainHtml = `<div class="qs-xp-gain">+${gain} XP earned</div>`;
+  }
+
   const feedbackHtml = answered ? `
     <div class="qs-feedback">
       <div class="qs-fb-verdict ${S.correct[idx] ? 'correct' : 'wrong'}">
         ${S.correct[idx] ? '✓ Correct!' : '✗ Wrong!'} — ${t.display}
       </div>
+      ${xpGainHtml}
       <div class="qs-fb-stats">
         <div class="fb-cell">
-          <div class="fb-cell-val" style="color:${pct>=0?'#39e07a':'#e03040'}">${pctStr}</div>
-          <div class="fb-cell-lbl">Net %</div>
+          <div class="fb-cell-val" style="color:${t.pct>=0?'#39e07a':'#e03040'}">${effPctStr}</div>
+          <div class="fb-cell-lbl">Eff. Net %</div>
         </div>
         <div class="fb-cell">
-          <div class="fb-cell-val">${fmt(diff)}</div>
-          <div class="fb-cell-lbl">Difference</div>
+          <div class="fb-cell-val">${fmt(effDiff)}</div>
+          <div class="fb-cell-lbl">Eff. Diff</div>
         </div>
         <div class="fb-cell">
-          <div class="fb-cell-val" style="color:${favourable?'#39e07a':'#e03040'};font-size:0.65rem">${favourable?'Your Favour':'Against You'}</div>
+          <div class="fb-cell-val" style="color:${favourable?'#39e07a':'#e03040'};font-size:0.6rem">${favourable?'Your Favour':'Against You'}</div>
           <div class="fb-cell-lbl">Direction</div>
         </div>
       </div>
       <div class="qs-fb-threshold"><strong>${t.display}</strong> — ${t.detail}</div>
-      <button class="qs-next-btn" onclick="nextQ()">
-        ${idx + 1 < Q_COUNT ? `Next Trade → (${idx+2}/${Q_COUNT})` : 'See Results →'}
+      ${demandShifted ? `
+        <div class="qs-fb-demand-note">
+          <strong>Demand shifted this trade</strong> — raw value was ${rawPctStr} but demand-weighted effective value is ${effPctStr}. High demand items carry more trading power.
+        </div>` : ''}
+      <button class="qs-next-btn${endless ? ' endless' : ''}" onclick="nextQ()">
+        ${idx + 1 < S.trades.length
+          ? `Next Trade → (${idx+2}/${S.trades.length})`
+          : endless ? 'Next Round →' : 'See Results →'}
       </button>
     </div>` : '';
+
+  const xpMini = endless ? xpBarHtml(ed.xp, true) : '';
+  const label  = endless
+    ? `Endless · Trade ${idx+1}`
+    : `Trade ${idx+1} of ${Q_COUNT}`;
 
   root.innerHTML = `
     <div class="qs-progress-wrap">
       <div class="qs-progress-bar">
-        <div class="qs-progress-fill" style="width:${(idx/Q_COUNT)*100}%"></div>
+        <div class="qs-progress-fill${endless ? ' endless' : ''}" style="width:${(idx/S.trades.length)*100}%"></div>
       </div>
       <div class="qs-progress-meta">
-        <div class="qs-q-label">Trade ${idx+1} of ${Q_COUNT}</div>
+        <div class="qs-q-label">${label}</div>
         <div class="qs-dots">${dotHtml}</div>
       </div>
     </div>
-
+    ${xpMini}
     <div class="qs-trade-card">
       <div class="qs-trade-layout">
         <div class="qs-side">
           <div class="qs-side-lbl give">You Give</div>
           ${t.give.map(itemHtml).join('')}
-          <div class="qs-side-total give">Total: ${fmt(t.offer)}</div>
+          <div class="qs-side-total give">
+            <span>${fmt(t.offer)} raw</span>
+            <span class="qs-side-total-eff">${fmt(t.effOffer)} effective</span>
+          </div>
         </div>
         <div class="qs-vs-col"><div class="qs-vs-text">VS</div></div>
         <div class="qs-side">
           <div class="qs-side-lbl get">You Get</div>
           ${t.get.map(itemHtml).join('')}
-          <div class="qs-side-total get">Total: ${fmt(t.req)}</div>
+          <div class="qs-side-total get">
+            <span>${fmt(t.req)} raw</span>
+            <span class="qs-side-total-eff">${fmt(t.effReq)} effective</span>
+          </div>
         </div>
       </div>
-
       <div class="qs-btn-row">
-        <button class="qbtn win ${btnClass('W')}" ${answered?'disabled':''} onclick="ans('W')">
-          Win <span class="qbtn-hint">+8% or more</span>
-        </button>
-        <button class="qbtn fair ${btnClass('F')}" ${answered?'disabled':''} onclick="ans('F')">
-          Fair <span class="qbtn-hint">within ±2%</span>
-        </button>
-        <button class="qbtn lose ${btnClass('L')}" ${answered?'disabled':''} onclick="ans('L')">
-          Lose <span class="qbtn-hint">-8% or worse</span>
-        </button>
+        <button class="qbtn win ${btnClass('W')}"  ${answered?'disabled':''} onclick="ans('W')">Win  <span class="qbtn-hint">+8% eff.+</span></button>
+        <button class="qbtn fair ${btnClass('F')}" ${answered?'disabled':''} onclick="ans('F')">Fair <span class="qbtn-hint">±2% eff.</span></button>
+        <button class="qbtn lose ${btnClass('L')}" ${answered?'disabled':''} onclick="ans('L')">Lose <span class="qbtn-hint">-8% eff.-</span></button>
       </div>
       ${feedbackHtml}
     </div>`;
 }
 
-function ans(choice) {
+window.ans = function(choice) {
   if (S.answers[S.qIdx] !== undefined) return;
-  const correct = choice === TRADES[S.qIdx].btn;
+  const correct = choice === S.trades[S.qIdx].btn;
   S.answers[S.qIdx] = choice;
   S.correct[S.qIdx] = correct;
-  renderQ(S.qIdx);
-}
 
-function nextQ() {
+  if (S.mode === 'endless' && correct) {
+    const ed   = loadEndless();
+    const gain = xpForCorrect(ed.xp);
+    const prevLvl = getLevelIndex(ed.xp);
+    ed.xp          += gain;
+    ed.totalCorrect += 1;
+    ed.totalPlayed  += 1;
+    const newLvl = getLevelIndex(ed.xp);
+    if (newLvl > prevLvl) {
+      S.endlessSession.leveledUp = true;
+      S.endlessSession.newLevel  = LEVELS[newLvl];
+    }
+    S.endlessSession.xpGained  += gain;
+    S.endlessSession.correct   += 1;
+    S.endlessStreak             += 1;
+    ed.bestStreak = Math.max(ed.bestStreak || 0, S.endlessStreak);
+    saveEndless(ed);
+  } else if (S.mode === 'endless' && !correct) {
+    const ed = loadEndless();
+    ed.totalPlayed += 1;
+    S.endlessSession.played += 1;
+    S.endlessStreak = 0;
+    saveEndless(ed);
+  }
+
+  renderQ(S.qIdx);
+};
+
+window.nextQ = function() {
   S.qIdx++;
-  if (S.qIdx >= Q_COUNT) { finishQuiz(); return; }
+  if (S.qIdx >= S.trades.length) {
+    if (S.mode === 'endless') {
+      finishEndlessRound();
+    } else {
+      finishDaily();
+    }
+    return;
+  }
   renderQ(S.qIdx);
-}
+};
 
-// ── FINISH + SAVE ────────────────────────────────────────────
-function finishQuiz() {
+// ── FINISH DAILY ─────────────────────────────────────────────
+function finishDaily() {
   const score  = S.correct.filter(Boolean).length;
   const passed = score >= PASS_SCORE;
   const data   = load();
@@ -1047,42 +1370,53 @@ function finishQuiz() {
   const newBest   = Math.max(data.best || 0, newStreak);
 
   save({ date: todayKey(), score, correct: S.correct, answers: S.answers, streak: newStreak, best: newBest, passed, done: true });
-
   S.phase = 'end';
   render();
 }
 
-// ── RESULT SCREEN ────────────────────────────────────────────
-function renderResult() { renderDone(load()); }
+// ── FINISH ENDLESS ROUND ─────────────────────────────────────
+function finishEndlessRound() {
+  S.phase = 'end';
+  render();
+}
 
-function renderDone(data) {
-  const score  = data.score || 0;
-  const corr   = data.correct || [];
+// ── END SCREEN ────────────────────────────────────────────────
+function renderEnd() {
+  if (S.mode === 'endless') renderEndlessEnd();
+  else renderDailyEnd();
+}
+
+function renderDailyEnd() {
+  const data = load();
+  const score  = data.score ?? S.correct.filter(Boolean).length;
+  const corr   = data.correct || S.correct;
   const streak = data.streak || 0;
   const best   = data.best || 0;
   const passed = data.passed;
   const pct    = Math.round((score / Q_COUNT) * 100);
 
   let grade, gradeColor;
-  if (pct === 100)    { grade = '🏆 Perfect Score';       gradeColor = '#ffd166'; }
-  else if (pct >= 80) { grade = '📈 Expert Trader';       gradeColor = '#39e07a'; }
-  else if (pct >= 60) { grade = '⚖️ Skilled Trader';      gradeColor = 'var(--accent)'; }
-  else if (pct >= 40) { grade = '📉 Rookie Trader'; gradeColor = '#e07820'; }
-  else                { grade = '❌ Keep Studying';        gradeColor = '#e03040'; }
+  if (pct === 100)    { grade = '🏆 Perfect Score';  gradeColor = '#ffd166'; }
+  else if (pct >= 80) { grade = '📈 Expert Trader';  gradeColor = '#39e07a'; }
+  else if (pct >= 60) { grade = '⚖️ Skilled Trader'; gradeColor = 'var(--accent)'; }
+  else if (pct >= 40) { grade = '📉 Rookie Trader';  gradeColor = '#e07820'; }
+  else                { grade = '❌ Keep Studying';   gradeColor = '#e03040'; }
 
-  const squares = corr.map((c, i) => `<div class="wq ${c?'correct':'wrong'}" style="animation-delay:${i*0.08}s">${c?'✓':'✗'}</div>`).join('');
+  const trades = S.trades.length ? S.trades : DAILY_TRADES;
+  const squares  = corr.map((c, i) => `<div class="wq ${c?'correct':'wrong'}" style="animation-delay:${i*0.08}s">${c?'✓':'✗'}</div>`).join('');
   const emojiRow = corr.map(c => c ? '🟩' : '🟥').join('');
   const shareText = `JBLX Daily Trade Quiz 🎯\n${todayLabel()}\n${emojiRow} ${score}/${Q_COUNT}\nStreak: ${streak} 🔥\njblx.net/quiz.html`;
 
-  const reviewRows = TRADES.map((t, i) => {
+  const reviewRows = trades.map((t, i) => {
     const c = corr[i];
+    if (c === undefined) return '';
     const ps = (t.pct >= 0 ? '+' : '') + t.pct.toFixed(1) + '%';
     const desc = `${t.give.map(x=>x.name).join(' + ')} → ${t.get.map(x=>x.name).join(' + ')}`;
     const shortDesc = desc.length > 44 ? desc.slice(0,44)+'…' : desc;
     return `
       <div class="qs-review-row">
         <div class="qs-rv-num">#${i+1}</div>
-        <div class="qs-rv-icon">${c ? '✅' : '❌'}</div>
+        <div class="qs-rv-icon">${c?'✅':'❌'}</div>
         <div class="qs-rv-trade" title="${desc}">${shortDesc}</div>
         <div class="qs-rv-verdict ${c?'c':'w'}">${t.display} (${ps})</div>
       </div>`;
@@ -1094,7 +1428,6 @@ function renderDone(data) {
         <div class="qs-result-title">Daily Quiz Complete</div>
         <div class="qs-result-date">${todayLabel()}</div>
       </div>
-
       <div class="qs-result-main">
         <div class="qs-wordle-row">${squares}</div>
         <div>
@@ -1103,24 +1436,18 @@ function renderDone(data) {
         </div>
         <div class="qs-grade" style="color:${gradeColor}">${grade}</div>
       </div>
-
       <div class="qs-streak-result">
         <div class="qs-streak-icon">${streak > 0 ? '🔥' : '💔'}</div>
         <div class="qs-streak-body">
           <div class="qs-streak-num" style="color:${streak>0?'#ff9f43':'var(--text-muted)'}">${streak}</div>
           <div class="qs-streak-lbl">Day Streak</div>
-          <div class="qs-streak-msg">
-            ${passed
-              ? (streak > 1 ? `You're on a ${streak}-day streak — come back tomorrow!` : 'Streak started — keep it going!')
-              : 'Streak reset — pass next time to rebuild!'}
-          </div>
+          <div class="qs-streak-msg">${passed ? (streak>1 ? `${streak}-day streak — come back tomorrow!` : 'Streak started!') : 'Streak reset — pass next time!'}</div>
         </div>
         <div class="qs-best-wrap">
           <div class="qs-best-num">${best}</div>
           <div class="qs-best-lbl">Best</div>
         </div>
       </div>
-
       <div class="qs-countdown">
         <div>
           <div class="qs-countdown-lbl">Next Quiz In</div>
@@ -1128,39 +1455,98 @@ function renderDone(data) {
         </div>
         <div class="qs-countdown-note">New trades daily<br/>Same seed for everyone</div>
       </div>
-
+      <button class="qs-play-again-btn" onclick="switchMode('endless');startEndless()">Play Endless Mode ♾️</button>
       <button class="qs-share-btn" id="qs-share-btn" onclick="doShare()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
         Share Result
       </button>
-
       <div class="qs-review">
         <div class="qs-review-hdr">Trade Review — Today's Answers</div>
-        ${reviewRows}
+        ${reviewRows || '<div style="padding:14px 18px;color:var(--text-muted);font-size:0.8rem">No review available</div>'}
       </div>
     </div>`;
 
-  // Countdown
   const cdEl = document.getElementById('qcd');
   function tick() { if (cdEl) cdEl.textContent = fmtCountdown(msToMidnight()); }
   tick(); setInterval(tick, 1000);
 
-  // Share
   window.doShare = function() {
     const btn = document.getElementById('qs-share-btn');
     function copied() {
-      btn.textContent = '✓ Copied to clipboard!';
-      btn.classList.add('copied');
+      btn.textContent = '✓ Copied!'; btn.classList.add('copied');
       setTimeout(() => { btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg> Share Result`; btn.classList.remove('copied'); }, 2500);
     }
-    if (navigator.share) {
-      navigator.share({ title: 'JBLX Trade Quiz', text: shareText }).catch(() => {
-        navigator.clipboard.writeText(shareText).then(copied).catch(() => alert(shareText));
-      });
-    } else {
-      navigator.clipboard.writeText(shareText).then(copied).catch(() => alert(shareText));
-    }
+    if (navigator.share) navigator.share({ title:'JBLX Trade Quiz', text:shareText }).catch(() => navigator.clipboard.writeText(shareText).then(copied).catch(()=>alert(shareText)));
+    else navigator.clipboard.writeText(shareText).then(copied).catch(()=>alert(shareText));
   };
+}
+
+function renderEndlessEnd() {
+  const ed  = loadEndless();
+  const ses = S.endlessSession;
+  const lvl = getLevel(ed.xp);
+
+  const squares = S.correct.map((c, i) =>
+    `<div class="wq ${c?'correct':'wrong'}" style="animation-delay:${i*0.08}s">${c?'✓':'✗'}</div>`
+  ).join('');
+
+  const levelUpHtml = ses.leveledUp && ses.newLevel ? `
+    <div class="qs-level-up-banner">
+      <div class="qs-level-up-title">${ses.newLevel.icon} Level Up!</div>
+      <div class="qs-level-up-sub">You reached <strong>${ses.newLevel.name}</strong>!</div>
+    </div>` : '';
+
+  const reviewRows = S.trades.map((t, i) => {
+    const c = S.correct[i];
+    if (c === undefined) return '';
+    const ps = (t.pct >= 0 ? '+' : '') + t.pct.toFixed(1) + '%';
+    const desc = `${t.give.map(x=>x.name).join(' + ')} → ${t.get.map(x=>x.name).join(' + ')}`;
+    const shortDesc = desc.length > 44 ? desc.slice(0,44)+'…' : desc;
+    return `
+      <div class="qs-review-row">
+        <div class="qs-rv-num">#${i+1}</div>
+        <div class="qs-rv-icon">${c?'✅':'❌'}</div>
+        <div class="qs-rv-trade" title="${desc}">${shortDesc}</div>
+        <div class="qs-rv-verdict ${c?'c':'w'}">${t.display} (${ps})</div>
+      </div>`;
+  }).join('');
+
+  root.innerHTML = `
+    <div class="qs-result">
+      <div class="qs-result-hdr">
+        <div class="qs-result-title">Round Complete</div>
+        <div class="qs-result-date">Endless Mode</div>
+      </div>
+      <div class="qs-endless-result">
+        <div class="qs-wordle-row">${squares}</div>
+        ${levelUpHtml}
+        <div style="text-align:center">
+          <div class="qs-big-score" style="color:#ff9f43">${ses.correct}<span>/${S.trades.length}</span></div>
+          <div class="qs-score-lbl">This Round</div>
+        </div>
+        <div style="font-family:var(--font-mono);font-size:0.7rem;color:#ff9f43;font-weight:700">+${ses.xpGained} XP earned</div>
+      </div>
+      ${xpBarHtml(ed.xp)}
+      <div class="qs-endless-stats">
+        <div class="qs-es-cell">
+          <div class="qs-es-val" style="color:#39e07a">${ed.totalCorrect}</div>
+          <div class="qs-es-lbl">All-Time</div>
+        </div>
+        <div class="qs-es-cell">
+          <div class="qs-es-val" style="color:var(--text-dim)">${ed.totalPlayed}</div>
+          <div class="qs-es-lbl">Played</div>
+        </div>
+        <div class="qs-es-cell">
+          <div class="qs-es-val" style="color:#ff9f43">${ed.bestStreak || 0}</div>
+          <div class="qs-es-lbl">Best Streak</div>
+        </div>
+      </div>
+      <button class="qs-play-again-btn" onclick="startEndless()">Next Round →</button>
+      <div class="qs-review">
+        <div class="qs-review-hdr">Round Review</div>
+        ${reviewRows}
+      </div>
+    </div>`;
 }
 
 // ── BOOT ─────────────────────────────────────────────────────
