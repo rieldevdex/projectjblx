@@ -20,7 +20,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 5px;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
     .role-pill {
       display: inline-flex;
@@ -35,6 +35,82 @@
       color: var(--accent);
       background: var(--accent-glow);
       border: 1px solid var(--border-hi);
+      white-space: nowrap;
+    }
+
+    /* ── @ HANDLE ── */
+    .team-handle {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      line-height: 1;
+    }
+    .team-handle span {
+      color: var(--text-dim);
+    }
+
+    /* ── CONTRIBUTOR SECTION ── */
+    .contributors-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 8px 0 20px;
+    }
+    .contributors-divider-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .contributors-divider-label {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    /* Contributor cards — slightly more compact, dashed border */
+    .team-card.contributor-card {
+      border-style: dashed;
+      border-color: rgba(255,255,255,0.08);
+    }
+    .team-card.contributor-card:hover {
+      border-style: solid;
+      border-color: var(--border-hi);
+    }
+
+    /* Text-only avatar for contributors without a photo */
+    .team-avatar.avatar-text {
+      background: var(--surface2);
+      border-color: var(--border);
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+    }
+
+    /* Contribution tags */
+    .contrib-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 6px;
+    }
+    .contrib-item-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.52rem;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      background: var(--bg3);
+      border: 1px solid var(--border);
       white-space: nowrap;
     }
   </style>
@@ -84,7 +160,7 @@
     <h1 class="teams-title">The JBLX Team</h1>
     <p class="teams-subtitle">The people who build, maintain and power the Jailbreak Listing Exchange.</p>
 
-    <!-- ── FOUNDERS ───────────────────────────────────────────── -->
+    <!-- ── FOUNDERS ─────────────────────────────────────────── -->
     <section class="team-section" style="animation-delay:0.08s">
       <div class="team-section-header">
         <div class="team-section-icon"></div>
@@ -93,11 +169,10 @@
       <div class="team-grid">
 
         <div class="team-card" style="animation-delay:0.10s">
-          <div class="team-avatar">
-            <img src="assets/team-photo/dev-photo.png" alt="Dev">
-          </div>
+          <div class="team-avatar"><img src="assets/team-photo/dev-photo.png" alt="Dev"></div>
           <div class="team-info">
             <div class="team-name">Dev</div>
+            <div class="team-handle"><span>@Dev</span></div>
             <div class="team-roles">
               <span class="role-pill">Web Owner</span>
               <span class="role-pill">Web Developer</span>
@@ -108,11 +183,10 @@
         </div>
 
         <div class="team-card" style="animation-delay:0.30s">
-          <div class="team-avatar">
-            <img src="assets/team-photo/mik-photo.webp" alt="mik">
-          </div>
+          <div class="team-avatar"><img src="assets/team-photo/mik-photo.webp" alt="mik"></div>
           <div class="team-info">
             <div class="team-name">MiK</div>
+            <div class="team-handle"><span>@MiK</span></div>
             <div class="team-roles">
               <span class="role-pill">Server Owner</span>
               <span class="role-pill">Value Team Manager</span>
@@ -123,11 +197,10 @@
         </div>
 
         <div class="team-card" style="animation-delay:0.14s">
-          <div class="team-avatar">
-            <img src="assets/team-photo/zai-photo.webp" alt="zai" style="background-color:black;">
-          </div>
+          <div class="team-avatar"><img src="assets/team-photo/zai-photo.webp" alt="zai" style="background-color:black;"></div>
           <div class="team-info">
             <div class="team-name">zai</div>
+            <div class="team-handle"><span>@zai</span></div>
             <div class="team-roles">
               <span class="role-pill">Server Builder</span>
               <span class="role-pill">Trade Advisor</span>
@@ -137,11 +210,10 @@
         </div>
 
         <div class="team-card" style="animation-delay:0.22s">
-          <div class="team-avatar">
-            <img src="assets/team-photo/vex-photo.webp" alt="vex">
-          </div>
+          <div class="team-avatar"><img src="assets/team-photo/vex-photo.webp" alt="vex"></div>
           <div class="team-info">
             <div class="team-name">vex</div>
+            <div class="team-handle"><span>@vex</span></div>
             <div class="team-roles">
               <span class="role-pill">Staff Manager</span>
               <span class="role-pill">Trade Advisor</span>
@@ -151,11 +223,10 @@
         </div>
 
         <div class="team-card" style="animation-delay:0.26s">
-          <div class="team-avatar">
-            <img src="assets/team-photo/some1-photo.webp" alt="some1">
-          </div>
+          <div class="team-avatar"><img src="assets/team-photo/some1-photo.webp" alt="some1"></div>
           <div class="team-info">
             <div class="team-name">some1_217654321</div>
+            <div class="team-handle"><span>@some1_217654321</span></div>
             <div class="team-roles">
               <span class="role-pill">Value Team</span>
               <span class="role-pill">Trade Advisor Manager</span>
@@ -166,11 +237,10 @@
         </div>
 
         <div class="team-card" style="animation-delay:0.44s">
-          <div class="team-avatar">
-            <img src="assets/team-photo/ellen-photo.webp" alt="zey">
-          </div>
+          <div class="team-avatar"><img src="assets/team-photo/ellen-photo.webp" alt="zey"></div>
           <div class="team-info">
             <div class="team-name">zey / ellen</div>
+            <div class="team-handle"><span>@zey</span></div>
             <div class="team-roles">
               <span class="role-pill">Administrator</span>
               <span class="role-pill">Value Team</span>
@@ -180,11 +250,10 @@
         </div>
 
         <div class="team-card" style="animation-delay:0.36s">
-          <div class="team-avatar">
-            <img src="assets/team-photo/angelus-photo.webp" alt="angelus">
-          </div>
+          <div class="team-avatar"><img src="assets/team-photo/angelus-photo.webp" alt="angelus"></div>
           <div class="team-info">
             <div class="team-name">Angelus</div>
+            <div class="team-handle"><span>@Angelus</span></div>
             <div class="team-roles">
               <span class="role-pill">Community Manager</span>
               <span class="role-pill">Events Team Manager</span>
@@ -205,11 +274,10 @@
       <div class="team-grid">
 
         <div class="team-card" style="animation-delay:0.26s">
-          <div class="team-avatar">
-            <img src="assets/team-photo/jan-photo.webp" alt="jan">
-          </div>
+          <div class="team-avatar"><img src="assets/team-photo/jan-photo.webp" alt="jan"></div>
           <div class="team-info">
             <div class="team-name">jan</div>
+            <div class="team-handle"><span>@jan</span></div>
             <div class="team-roles">
               <span class="role-pill">Value Team</span>
             </div>
@@ -217,24 +285,22 @@
           </div>
         </div>
 
-        <div class="team-card" style="animation-delay:0.26s">
-          <div class="team-avatar">
-            <img src="assets/team-photo/illusion-photo.webp" alt="illusion">
-          </div>
+        <div class="team-card" style="animation-delay:0.32s">
+          <div class="team-avatar"><img src="assets/team-photo/illusion-photo.webp" alt="illusion"></div>
           <div class="team-info">
             <div class="team-name">Illusions</div>
+            <div class="team-handle"><span>@Illusions</span></div>
             <div class="team-roles">
               <span class="role-pill">Value Team</span>
             </div>
             <p class="team-desc">Provides high-level valuation insight, market interpretation, and guidance on long-term item stability and rarity analysis.</p>
           </div>
         </div>
-
 
       </div>
     </section>
 
-    <!-- ── COMMUNITY ──────────────────────────────────────────── -->
+    <!-- ── COMMUNITY ─────────────────────────────────────────── -->
     <section class="team-section" style="animation-delay:0.34s">
       <div class="team-section-header">
         <div class="team-section-icon" style="background:#ffd166;box-shadow:0 0 10px #ffd166;"></div>
@@ -242,16 +308,74 @@
       </div>
       <div class="team-grid">
 
-        <div class="team-card" style="animation-delay:0.40s">
-          <div class="team-avatar">
-            <img src="assets/team-photo/ace213-photo.webp" alt="ace213">
-          </div>
+      </div>
+
+      <!-- ── CONTRIBUTORS sub-section ── -->
+      <div class="contributors-divider" style="margin-top:32px;">
+        <div class="contributors-divider-line"></div>
+        <div class="contributors-divider-label">Photo Contributors</div>
+        <div class="contributors-divider-line"></div>
+      </div>
+
+      <div class="team-grid">
+
+        <div class="team-card contributor-card" style="animation-delay:0.46s">
+          <div class="team-avatar avatar-text">G</div>
           <div class="team-info">
-            <div class="team-name">Ace213</div>
+            <div class="team-name">Gemlots</div>
+            <div class="team-handle"><span>@saintcarpcarp</span></div>
             <div class="team-roles">
-              <span class="role-pill">Events Team</span>
+              <span class="role-pill" style="color:#a29bfe;background:rgba(162,155,254,0.10);border-color:rgba(162,155,254,0.28);">Photo Contributor</span>
             </div>
-            <p class="team-desc">Helps organise community events and giveaways, contributing to a lively trading environment.</p>
+            <p class="team-desc">Contributed item photography to the JBLX asset library.</p>
+          </div>
+        </div>
+
+        <div class="team-card contributor-card" style="animation-delay:0.54s">
+          <div class="team-avatar avatar-text">S</div>
+          <div class="team-info">
+            <div class="team-name">#1 P1 Glazer</div>
+            <div class="team-handle"><span>@Samy7534</span></div>
+            <div class="team-roles">
+              <span class="role-pill" style="color:#a29bfe;background:rgba(162,155,254,0.10);border-color:rgba(162,155,254,0.28);">Photo Contributor</span>
+            </div>
+            <p class="team-desc">Took the item photos for several specific rims.</p>
+            <div class="contrib-items">
+              <span class="contrib-item-tag">P1 Glazer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card contributor-card" style="animation-delay:0.58s">
+          <div class="team-avatar"><img src="assets/team-photo/neom26.webp" alt="neom26"></div>
+          <div class="team-info">
+            <div class="team-name">neom26</div>
+            <div class="team-handle"><span>@nyawnyomneom</span></div>
+            <div class="team-roles">
+              <span class="role-pill" style="color:#a29bfe;background:rgba(162,155,254,0.10);border-color:rgba(162,155,254,0.28);">Photo Contributor</span>
+            </div>
+            <p class="team-desc">Took item photos for vehicles and rims across the JBLX asset library.</p>
+            <div class="contrib-items">
+              <span class="contrib-item-tag">Bandit</span>
+              <span class="contrib-item-tag">Desert Crawler</span>
+              <span class="contrib-item-tag">Steed</span>
+              <span class="contrib-item-tag">Sentinel</span>
+              <span class="contrib-item-tag">Arachnid</span>
+              <span class="contrib-item-tag">Prison Bus</span>
+              <span class="contrib-item-tag">Trion Rims</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card contributor-card" style="animation-delay:0.62s">
+          <div class="team-avatar avatar-text">2S</div>
+          <div class="team-info">
+            <div class="team-name">2seeuh</div>
+            <div class="team-handle"><span>@2seeuh</span></div>
+            <div class="team-roles">
+              <span class="role-pill" style="color:#a29bfe;background:rgba(162,155,254,0.10);border-color:rgba(162,155,254,0.28);">Photo Contributor</span>
+            </div>
+            <p class="team-desc">Contributed item photography to the JBLX asset library.</p>
           </div>
         </div>
 
