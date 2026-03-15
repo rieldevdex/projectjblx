@@ -2,25 +2,20 @@
 
 /**
  * ================================================================
- *  JBLX — JBCL Dupe Scraper v9
+ *  JBLX — JBCL Dupe Scraper v10
  *
- *  JBCL returns entries in the format:  DisplayName@RobloxUsername
- *  We store BOTH so the dupe checker can match on:
- *    - username  (the @part — used for Roblox user ID lookup)
- *    - displayName (the part before @  — shown in UI)
+ *  Parsing logic is identical to v8 (which worked — 2825 records).
+ *  The only addition is capturing displayName alongside username.
  *
- *  What the records mean:
- *    username X owns a duped copy of item Y (as detected by JBCL's
- *    inventory scanner — NOT that X is actively trading it).
+ *  JBCL format:  "DisplayName@RobloxUsername"
+ *    → username    = part after @  (Roblox handle, used for ID lookup)
+ *    → displayName = part before @ (cosmetic, shown in UI)
+ *
+ *  If no @ present, the whole string is the username (= displayName).
  *
  *  Item discovery:
- *    A) Main items  — items_metadata.json from JBCL's CDN
+ *    A) Main items  — items_metadata.json from CDN (plain fetch)
  *    B) HyperChrome — Puppeteer intercepts /api/items/dupes?id=X
- *                     while loading each HC Level 5 page
- *
- *  Output:
- *    - data/jbcl-dupes.json
- *    - js/jbcl-dupes-bundle.js
  * ================================================================
  */
 
@@ -41,7 +36,6 @@ const HC_PAGE_WAIT  = 12000;
 const OUT_JSON = path.join(__dirname, 'data', 'jbcl-dupes.json');
 const OUT_JS   = path.join(__dirname, 'js',   'jbcl-dupes-bundle.js');
 
-// Known HC Level 5 names. Add new colours here as JBCL adds them.
 const HYPERCHROME_LEVEL5_NAMES = [
   'HyperBlue Level 5',
   'HyperGreen Level 5',
@@ -59,7 +53,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 const log   = (...a) => console.log(`[${new Date().toISOString()}]`, ...a);
 
 const HEADERS = {
-  'User-Agent': 'JBLX-DupeScraper/9.0 (+https://jblx.net; permitted by JBCL owner)',
+  'User-Agent': 'JBLX-DupeScraper/10.0 (+https://jblx.net; permitted by JBCL owner)',
   'Accept': 'application/json',
 };
 
@@ -80,120 +74,100 @@ async function apiFetch(url, retries = 3) {
   return null;
 }
 
-// ── parse "DisplayName@RobloxUsername" ───────────────────────
-// Returns { displayName, username } or null.
-// username is the ROBLOX username (after @).
-// displayName is optional cosmetic (before @).
-
-function parseOwnerString(str) {
-  if (!str || typeof str !== 'string') return null;
-  str = str.trim();
-
-  if (str.includes('@')) {
-    const atIdx      = str.lastIndexOf('@');
-    const displayName = str.slice(0, atIdx).trim() || null;
-    const username    = str.slice(atIdx + 1).replace(/[^A-Za-z0-9_]/g, '').trim();
-    if (username.length >= 3 && username.length <= 30) {
-      return { displayName: displayName || username, username };
-    }
-  }
-
-  // No @ — treat entire string as username (plain username entries)
-  const clean = str.replace(/[^A-Za-z0-9_]/g, '');
-  if (clean.length >= 3 && clean.length <= 30) {
-    return { displayName: clean, username: clean };
-  }
-
-  return null;
-}
-
-function isPlainUsername(str) {
-  return /^[A-Za-z0-9_]{3,30}$/.test((str || '').trim());
-}
-
 // ── extract owners from API response ─────────────────────────
-// Returns array of { displayName, username }
-// Handles:
+// Returns array of { username, displayName }
+//
+// This is v8's extractUsernames logic (which reliably returned 2825
+// records), extended to also capture the display name component.
+//
+// JBCL returns one of:
 //   - Array of "DisplayName@Username" strings
-//   - Array of objects with owner/username/display_name fields
-//   - Wrapper objects { dupes: [...], users: [...], data: [...] }
+//   - Array of objects with a username / owner / name field
+//   - A wrapper object: { dupes: [...], users: [...], data: [...] }
 
 function extractOwners(data) {
-  const owners  = new Map(); // username.toUpperCase() → { displayName, username }
+  const seen    = new Set();
+  const owners  = [];
+
   const entries = Array.isArray(data)
     ? data
     : (data?.dupes ?? data?.users ?? data?.data ?? data?.owners ?? []);
 
   for (const entry of entries) {
+    // ── String entries ────────────────────────────────────────
     if (typeof entry === 'string') {
-      // Could be "DisplayName@Username" or just "Username"
-      const parsed = parseOwnerString(entry);
-      if (parsed && !owners.has(parsed.username.toUpperCase())) {
-        owners.set(parsed.username.toUpperCase(), parsed);
+      if (entry.includes('@')) {
+        // "DisplayName@Username"
+        const atIdx      = entry.lastIndexOf('@');
+        const displayName = entry.slice(0, atIdx).trim();
+        const username    = entry.slice(atIdx + 1).replace(/[^A-Za-z0-9_]/g, '').trim();
+        if (username.length >= 3 && username.length <= 30 && !seen.has(username.toUpperCase())) {
+          seen.add(username.toUpperCase());
+          owners.push({ username, displayName: displayName || username });
+        }
+      } else {
+        // Plain username string
+        const username = entry.replace(/[^A-Za-z0-9_]/g, '').trim();
+        if (username.length >= 3 && username.length <= 30 && !seen.has(username.toUpperCase())) {
+          seen.add(username.toUpperCase());
+          owners.push({ username, displayName: username });
+        }
       }
       continue;
     }
 
+    // ── Object entries ────────────────────────────────────────
     if (!entry || typeof entry !== 'object') continue;
 
-    // ── Try to find the combined "DisplayName@Username" string first ──
-    // JBCL often puts this in an "owner" or "user" field
-    const combinedFields = ['owner', 'user', 'player', 'owner_name', 'user_name'];
-    let found = false;
-    for (const f of combinedFields) {
-      const val = entry[f];
-      if (typeof val === 'string' && val.includes('@')) {
-        const parsed = parseOwnerString(val);
-        if (parsed && !owners.has(parsed.username.toUpperCase())) {
-          owners.set(parsed.username.toUpperCase(), parsed);
-          found = true;
+    // Step 1: look for "DisplayName@Username" in any string field
+    let username    = null;
+    let displayName = null;
+
+    for (const val of Object.values(entry)) {
+      if (typeof val !== 'string') continue;
+      if (val.includes('@') && !val.includes('http') && !val.includes('.com')) {
+        const atIdx = val.lastIndexOf('@');
+        const u     = val.slice(atIdx + 1).replace(/[^A-Za-z0-9_]/g, '').trim();
+        const dn    = val.slice(0, atIdx).trim();
+        if (u.length >= 3 && u.length <= 30) {
+          username    = u;
+          displayName = dn || u;
           break;
         }
       }
     }
-    if (found) continue;
 
-    // ── Try separate displayName + username fields ──
-    const usernameFields     = ['username', 'roblox_username', 'roblox_name', 'login'];
-    const displayNameFields  = ['display_name', 'displayName', 'display', 'name', 'alias'];
-
-    let username    = null;
-    let displayName = null;
-
-    for (const f of usernameFields) {
-      if (typeof entry[f] === 'string' && isPlainUsername(entry[f])) {
-        username = entry[f].trim();
-        break;
-      }
-    }
-
-    for (const f of displayNameFields) {
-      if (typeof entry[f] === 'string' && entry[f].trim().length > 0) {
-        displayName = entry[f].trim();
-        break;
-      }
-    }
-
-    // Fall back: if no dedicated username field, try the @ pattern in any field
+    // Step 2: if no @ found, try dedicated username fields (same as v8)
     if (!username) {
-      for (const val of Object.values(entry)) {
+      for (const f of ['username', 'user_name', 'roblox_username', 'owner', 'name', 'user', 'Username', 'Owner']) {
+        const val = entry[f];
         if (typeof val !== 'string') continue;
-        if (val.includes('@')) {
-          const parsed = parseOwnerString(val);
-          if (parsed) { username = parsed.username; displayName = displayName || parsed.displayName; break; }
+        const trimmed = val.trim();
+        if (/^[A-Za-z0-9_]{3,30}$/.test(trimmed)) {
+          username    = trimmed;
+          displayName = trimmed;
+          break;
         }
       }
     }
 
-    if (username && !owners.has(username.toUpperCase())) {
-      owners.set(username.toUpperCase(), {
-        username,
-        displayName: displayName || username,
-      });
+    // Step 3: try to get a separate display name if we found a username
+    if (username && !displayName) {
+      for (const f of ['display_name', 'displayName', 'display', 'Display']) {
+        if (typeof entry[f] === 'string' && entry[f].trim()) {
+          displayName = entry[f].trim();
+          break;
+        }
+      }
+    }
+
+    if (username && !seen.has(username.toUpperCase())) {
+      seen.add(username.toUpperCase());
+      owners.push({ username, displayName: displayName || username });
     }
   }
 
-  return [...owners.values()];
+  return owners;
 }
 
 // ── item normalisation ────────────────────────────────────────
@@ -241,7 +215,7 @@ async function fetchMainItems() {
 // ── B) HyperChrome via Puppeteer ─────────────────────────────
 
 async function fetchHyperChromeData(browser) {
-  const hcResults = new Map(); // name → { id, owners[] }
+  const hcResults = new Map();
 
   for (const name of HYPERCHROME_LEVEL5_NAMES) {
     const pageUrl = `${BASE}/item/hyperchrome/${encodeURIComponent(name)}#dupes`;
@@ -260,7 +234,6 @@ async function fetchHyperChromeData(browser) {
     page.on('response', async response => {
       const url = response.url();
       if (!url.includes('jailbreakchangelogs.xyz')) return;
-      // Match any endpoint that looks dupe/user related
       if (!url.includes('dupe') && !url.includes('user') && !url.includes('owner')) return;
 
       try {
@@ -269,18 +242,15 @@ async function fetchHyperChromeData(browser) {
         const json = await response.json().catch(() => null);
         if (!json) return;
 
-        // Extract the item ID from the URL
         const idMatch = url.match(/[?&]id=(\d+)/) || url.match(/\/(\d+)(?:[?#&]|$)/);
         if (!idMatch) return;
         const id = Number(idMatch[1]);
 
         const owners = extractOwners(json);
-        if (owners.length > 0 || !resolved) {
-          log(`    [intercept] ${url} → id=${id}, ${owners.length} owner(s)`);
-          capturedId     = id;
-          capturedOwners = owners;
-          if (!resolved) { resolved = true; resolveP(); }
-        }
+        log(`    [intercept] ${url} → id=${id}, ${owners.length} owner(s)`);
+        capturedId     = id;
+        capturedOwners = owners;
+        if (!resolved) { resolved = true; resolveP(); }
       } catch {}
     });
 
@@ -367,7 +337,7 @@ function writeOutputs(records, dupeItems) {
     totalRecords: records.length,
     source:       'jailbreakchangelogs.xyz API (used with owner permission)',
     credit:       'Data sourced from JBCL — https://jailbreakchangelogs.xyz',
-    note:         'username = Roblox username (@handle). displayName = display name shown in-game.',
+    note:         'username = Roblox @handle. displayName = in-game display name.',
   };
 
   fs.writeFileSync(OUT_JSON, JSON.stringify({ meta, records, dupeItems }, null, 2));
@@ -377,7 +347,7 @@ function writeOutputs(records, dupeItems) {
     `/**\n * AUTO-GENERATED by jbcl-scraper.js\n` +
     ` * Generated: ${meta.generated}\n` +
     ` * ${meta.credit}\n` +
-    ` * username = Roblox @handle (use for ID lookup)\n` +
+    ` * username = Roblox @handle (use for ID lookup + search)\n` +
     ` * displayName = in-game display name\n` +
     ` * DO NOT EDIT\n */\n\n` +
     `const JBCL_RECORDS = ${JSON.stringify(records, null, 2)};\n\n` +
@@ -390,7 +360,7 @@ function writeOutputs(records, dupeItems) {
 // ── main ──────────────────────────────────────────────────────
 
 async function main() {
-  log('=== JBLX Dupe Scraper v9 starting ===');
+  log('=== JBLX Dupe Scraper v10 starting ===');
 
   const existingRecords = loadExistingRecords();
   const newRecords      = [];
@@ -414,15 +384,15 @@ async function main() {
     await browser.close();
   }
 
-  // Build HC records
+  // HC records
   for (const [name, { id, owners }] of hcData) {
     if (owners.length === 0) continue;
     const itemKey = name.replace(/\s+/g, '_').toUpperCase();
     dupeItems.push({ item: name, itemKey, type: 'hyperchrome', id });
     for (const { username, displayName } of owners) {
       newRecords.push({
-        username:    username.toUpperCase(),   // Roblox @handle — use for ID lookup + search
-        displayName: displayName || username,  // in-game display name
+        username:    username.toUpperCase(),
+        displayName: displayName || username,
         item:        name,
         itemKey,
         type:        'hyperchrome',
@@ -430,9 +400,9 @@ async function main() {
       });
     }
   }
-  log(`\nHyperChrome: ${hcData.size} item(s), ${newRecords.length} HC records so far`);
+  log(`\nHyperChrome: ${hcData.size} item(s), ${newRecords.length} HC records`);
 
-  // C) Main items dupers
+  // C) Main items
   log('\nFetching owners for main items…\n');
   const ownersList = await pooled(mainItems, fetchOwnersForItem, CONCURRENCY);
 
@@ -462,7 +432,7 @@ async function main() {
 
   const byType = {};
   for (const r of newRecords) byType[r.type] = (byType[r.type] || 0) + 1;
-  log(`\nScraped by type: ${Object.entries(byType).map(([t,c]) => `${t}:${c}`).join(', ')}`);
+  log(`\nScraped by type: ${Object.entries(byType).map(([t,c]) => `${t}:${c}`).join(', ') || 'none'}`);
   log(`Summary: ${existingDeduped.length} existing + ${newRecords.length} scraped → ${merged.length} total (${added} new unique)`);
 
   writeOutputs(merged, dupeItems);
